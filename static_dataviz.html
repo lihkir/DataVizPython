@@ -1,0 +1,1369 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Visualización estática &#8212; Visualización de Datos con Python y R</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'static_dataviz';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="De la visualización estática a la interactiva" href="interactive_dataviz.html" />
+    <link rel="prev" title="Introducción a la visualización de datos con Python" href="dataviz_intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo_uninorte.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo_uninorte.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    <no title>
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dataviz_intro.html">Introducción a la visualización de datos con Python</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Visualización estática</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interactive_dataviz.html">De la visualización estática a la interactiva</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stratified_dataviz.html">Visualización de datos a través de estratos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="geo_dataviz.html">Visualización interactiva de datos geográficos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common_errors.html">Errores comunes al crear visualizaciones interactivas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="predictive_model.html">Modelo predictivo con series de tiempo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postgresql.html">Introducción a PostreSQL y Docker</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="dash_dataviz.html">Introducción a <code class="docutils literal notranslate"><span class="pre">Dash</span></code></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fstatic_dataviz.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/static_dataviz.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Visualización estática</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-13-creacion-de-un-grafico-de-dispersion-estatico">Ejercicio 13: Creación de un gráfico de dispersión estático</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-14-creacion-de-un-grafico-hexagonal-estatico-binning">Ejercicio 14: Creación de un gráfico hexagonal estático Binning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-15-creacion-de-un-grafico-de-contorno-estatico">Ejercicio 15: Creación de un gráfico de contorno estático</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-16-creacion-de-un-grafico-de-lineas-estaticas">Ejercicio 16: Creación de un gráfico de líneas estáticas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-17-presentacion-de-datos-a-traves-del-tiempo-con-multiples-graficos-de-lineas">Ejercicio 17: Presentación de datos a través del tiempo con múltiples gráficos de líneas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-18-creacion-y-exploracion-de-un-mapa-de-calor-estatico">Ejercicio 18: Creación y exploración de un mapa de calor estático</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-19-creacion-de-vinculos-en-mapas-termicos-estaticos">Ejercicio 19: Creación de vínculos en mapas térmicos estáticos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-graficos-para-representar-estadisticas">Creación de gráficos para representar estadísticas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-1-histograma-revisado">Ejemplo 1: Histograma revisado</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-20-creacion-y-exploracion-de-un-grafico-de-caja">Ejercicio 20: Creación y exploración de un gráfico de caja</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-21-creacion-de-un-grafico-de-violin">Ejercicio 21: Creación de un gráfico de violín</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tarea-1-2">Tarea 1.2</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="visualizacion-estatica">
+<h1>Visualización estática<a class="headerlink" href="#visualizacion-estatica" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Este capítulo es un manual sobre los diferentes tipos de visualización estática y los contextos en los que son más eficaces. Utilizando <strong>seaborn</strong>, aprenderá a crear una variedad de variedad de gráficos y a seleccionar el tipo correcto de visualización para la representación más adecuada de sus datos.</p></li>
+<li><p>En esta sección, estudiaremos el contexto de los gráficos que presentan patrones globales en los datos,
+como por ejemplo:</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Gráficos que muestran la varianza de las características individuales de los datos, como los histogramas</p></li>
+<li><p>Gráficos que muestran cómo varían las diferentes características presentes en los datos entre sí, como los gráficos de dispersión, los gráficos de líneas y los mapas de calor.</p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Scatter plot</strong></p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Un gráfico de dispersión es un gráfico simple que presenta los valores de dos características en un conjunto de datos.</p></li>
+<li><p>Cada punto de datos se representa mediante un punto con la coordenada <span class="math notranslate nohighlight">\(x\)</span> como valor de la primera característica y la coordenada <span class="math notranslate nohighlight">\(y\)</span> como valor de la segunda característica.</p></li>
+<li><p>Un gráfico de dispersión es una gran herramienta para aprender más sobre dos atributos numéricos.</p></li>
+<li><p>Los gráficos de dispersión pueden ayudar a descubrir las relaciones entre diferentes características de los datos, como el tiempo y las ventas, la ingesta de alimentos y las estadísticas de salud en varios contextos.</p></li>
+</ol>
+<section id="ejercicio-13-creacion-de-un-grafico-de-dispersion-estatico">
+<h2>Ejercicio 13: Creación de un gráfico de dispersión estático<a class="headerlink" href="#ejercicio-13-creacion-de-un-grafico-de-dispersion-estatico" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>En este ejercicio, generaremos un gráfico de dispersión para examinar la relación entre el <em>peso</em> (weight) y el <em>millaje (mpg)</em> de los vehículos del conjunto de datos <strong>mpg</strong>. Para ello, vamos a seguir los siguientes pasos:</p></li>
+</ul>
+<ul class="simple">
+<li><p>Abra un cuaderno Jupyter e importe los módulos de Python necesarios:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Importe el conjunto de datos de <strong>seaborn</strong>:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg_df</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;mpg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Generar un gráfico de dispersión utilizando la función <strong>scatterplot()</strong>:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;weight&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;mpg&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mpg_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/acf2f53002636240bb7aa596a89290dd468769fbab08af67de7bdda5b0a9d8fb.png" src="_images/acf2f53002636240bb7aa596a89290dd468769fbab08af67de7bdda5b0a9d8fb.png" />
+</div>
+</div>
+<p><strong>Observación:</strong> Nótese que el gráfico de dispersión muestra una disminución del <em>mileage (mpg)</em> con un aumento del <em>weight</em>. Es una visión útil de las relaciones entre las diferentes características del conjunto de datos.</p>
+</section>
+<section id="ejercicio-14-creacion-de-un-grafico-hexagonal-estatico-binning">
+<h2>Ejercicio 14: Creación de un gráfico hexagonal estático Binning<a class="headerlink" href="#ejercicio-14-creacion-de-un-grafico-hexagonal-estatico-binning" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>También existe una versión más elegante de los gráficos de dispersión, llamada <strong>hexagonal binning plot (hexbin plot)</strong>. En este ejercicio, generaremos un diagrama de dispersión hexagonal para comprender mejor la relación entre el peso <em>(weight)</em> y el millaje <em>(mileage (mpg))</em>:</p></li>
+</ul>
+<ul class="simple">
+<li><p>Abra un cuaderno Jupyter e importe los módulos de Python necesarios:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Importe el conjunto de datos de <strong>seaborn</strong>:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg_df</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;mpg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Trazar un gráfico <strong>hexbin</strong> usando <strong>jointplot</strong> con el tipo establecido en <strong>hex</strong>:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;ticks&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mpg_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;weight&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;mpg&quot;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;hex&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#4CB391&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/5bb6ba59751454a242c64bc1cfccac244cb167aa55987ededb1e0a77e291d9c7.png" src="_images/5bb6ba59751454a242c64bc1cfccac244cb167aa55987ededb1e0a77e291d9c7.png" />
+</div>
+</div>
+<p><strong>Observación:</strong> Como puede observar, el histograma de los ejes superior y derecho representa la varianza de las características representadas por los ejes <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span> respectivamente (<em>mpg</em> y <em>weight</em>, en este ejemplo). Además, es posible que haya notado en el gráfico de dispersión anterior que los datos se superponían fuertemente en ciertas áreas, ocultando la distribución real de las características. Los gráficos <strong>Hexbin</strong> son una buena herramienta de visualización utilizada cuando los datos son muy densos.</p>
+</section>
+<section id="ejercicio-15-creacion-de-un-grafico-de-contorno-estatico">
+<h2>Ejercicio 15: Creación de un gráfico de contorno estático<a class="headerlink" href="#ejercicio-15-creacion-de-un-grafico-de-contorno-estatico" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Otra alternativa a los gráficos de dispersión cuando los puntos de datos están densamente poblados en regiones específicas es un gráfico de contorno. En este ejercicio, crearemos un gráfico de contorno para mostrar la relación entre <em>weight</em> y el <em>mileage</em> en el conjunto de datos <em>mpg</em>. Podremos ver que la relación entre <em>weight</em> y <em>mileage</em> es más fuerte cuando hay mayor volumen de datos</p></li>
+</ul>
+<ul class="simple">
+<li><p>Abra un cuaderno Jupyter e importe los módulos de Python necesarios:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Importe el conjunto de datos de <strong>seaborn</strong>:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg_df</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;mpg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Crea un gráfico de contorno utilizando el método <strong>set_style</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Generar un gráfico de estimación de la densidad del núcleo (KDE). Los dos primeros parámetros son matrices de <span class="math notranslate nohighlight">\(X\)</span> e <span class="math notranslate nohighlight">\(Y\)</span> coordenadas de los puntos de datos, el parámetro shade se establece en <strong>True</strong> para que los contornos se rellenen con un gradiente de color basado en el número de puntos de datos</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mpg_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;weight&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;mpg&quot;</span><span class="p">,</span> <span class="n">shade</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/60e2a08478137a2f81acc2a7102ceb318637811b3df001ef17e2db0c829779b1.png" src="_images/60e2a08478137a2f81acc2a7102ceb318637811b3df001ef17e2db0c829779b1.png" />
+</div>
+</div>
+<p><strong>Observación:</strong> En nuestro ejemplo de <em>weight</em> frente a <em>mileage (mpg)</em>, el diagrama hexagonal y el diagrama de contorno indican que hay una determinada curva a lo largo de la cual la relación negativa entre el peso y el kilometraje es más fuerte, como es evidente por el mayor número de puntos de datos. La relación negativa se vuelve relativamente más débil a medida que nos alejamos de la curva (menos volumen de datos).</p>
+</section>
+<section id="ejercicio-16-creacion-de-un-grafico-de-lineas-estaticas">
+<h2>Ejercicio 16: Creación de un gráfico de líneas estáticas<a class="headerlink" href="#ejercicio-16-creacion-de-un-grafico-de-lineas-estaticas" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Los gráficos de líneas representan la información como una serie de puntos de datos conectados por segmentos de líneas rectas. Son útiles para indicar la relación entre una característica numérica discreta (en el eje <span class="math notranslate nohighlight">\(x\)</span>), como <strong>model_year</strong>, y una característica numérica continua (en el eje <span class="math notranslate nohighlight">\(y\)</span>), como <em>mpg</em> del conjunto de datos <strong>mpg</strong>. En este ejercicio, crearemos un gráfico de dispersión para un par de características diferentes, <strong>model_year</strong> y <strong>mpg</strong>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Abra un cuaderno Jupyter e importe los módulos de Python necesarios:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Importe el conjunto de datos de <strong>seaborn</strong>:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg_df</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;mpg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Slecciones el estilo para la figura con <code class="docutils literal notranslate"><span class="pre">set_style</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Crear un gráfico de dispersión bidimensional</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax1</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;model_year&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;mpg&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mpg_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/46201bbeafdc9ace693fe4e588baad393eef4943f195a5e4ab6f0af3d3999d09.png" src="_images/46201bbeafdc9ace693fe4e588baad393eef4943f195a5e4ab6f0af3d3999d09.png" />
+</div>
+</div>
+<p><strong>Observación:</strong> En este ejemplo, vemos que la característica <strong>model_year</strong> sólo toma valores discretos entre 70 y 82. Ahora, cuando tenemos una característica numérica discreta como esta (<strong>modelo_año</strong>), dibujar un gráfico de líneas uniendo los puntos de datos es una buena idea. Podemos dibujar un simple gráfico de líneas que muestre la relación entre año_modelo y kilometraje con el siguiente código.</p>
+<ul class="simple">
+<li><p>Dibuja un gráfico lineal simple para mostrar la relación entre <strong>model_year</strong> y <strong>mileage</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;model_year&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;mpg&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mpg_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/81dea601bd071b2c3e0a083818581559cfd7539d950f0962ea263787deed16cf.png" src="_images/81dea601bd071b2c3e0a083818581559cfd7539d950f0962ea263787deed16cf.png" />
+</div>
+</div>
+<p><strong>Observación:</strong> Como podemos ver, los puntos conectados por la línea sólida representan la media de la característica del eje <span class="math notranslate nohighlight">\(y\)</span> en la coordenada <span class="math notranslate nohighlight">\(x\)</span> correspondiente. El área sombreada alrededor de la línea muestra el intervalo de confianza para la característica del eje <span class="math notranslate nohighlight">\(y\)</span> (por defecto, <strong>seaborn</strong> establece el intervalo de confianza del 95%). El parámetro <code class="docutils literal notranslate"><span class="pre">ci</span></code> puede utilizarse para cambiar a un intervalo de confianza diferente.</p>
+<ul class="simple">
+<li><p>Cambiar el intervalo de confianza a 68</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;model_year&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;mpg&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mpg_df</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="mi">68</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;model_year&#39;, ylabel=&#39;mpg&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/122e80f62e8928cd98dfd8fd3bda88d8aa82ef28350407709bb3f680b70ca4de.png" src="_images/122e80f62e8928cd98dfd8fd3bda88d8aa82ef28350407709bb3f680b70ca4de.png" />
+</div>
+</div>
+<p><strong>Observación:</strong> Como podemos ver en el gráfico anterior, el intervalo de confianza del 68% se traduce en un rango de valores de características en el que están presentes el 68% de los puntos de datos. Los gráficos de líneas son excelentes técnicas de visualización para escenarios en los que tenemos datos que cambian con el tiempo, eje <span class="math notranslate nohighlight">\(x\)</span>, podría representar la fecha o el tiempo, y el gráfico ayudaría a visualizar cómo un valor varía a lo largo de ese periodo</p>
+</section>
+<section id="ejercicio-17-presentacion-de-datos-a-traves-del-tiempo-con-multiples-graficos-de-lineas">
+<h2>Ejercicio 17: Presentación de datos a través del tiempo con múltiples gráficos de líneas<a class="headerlink" href="#ejercicio-17-presentacion-de-datos-a-traves-del-tiempo-con-multiples-graficos-de-lineas" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>En este ejemplo, veremos cómo presentar los datos a través del tiempo con múltiples gráficos de líneas. En este ejemplo utilizamos el conjunto de datos de vuelos</p></li>
+</ul>
+<ul class="simple">
+<li><p>Abra un cuaderno Jupyter e importe los módulos de Python necesarios:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Importe el conjunto de datos de <strong>seaborn</strong>:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">flights_df</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;flights&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">flights_df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   year month  passengers
+0  1949   Jan         112
+1  1949   Feb         118
+2  1949   Mar         132
+3  1949   Apr         129
+4  1949   May         121
+</pre></div>
+</div>
+</div>
+</div>
+<p>Supongamos que quiere observar cómo varía el número de pasajeros entre meses en diferentes años. ¿Cómo mostraría esta información? Una opción es dibujar varios gráficos de líneas en una sola figura.</p>
+<ul class="simple">
+<li><p>Crear varias gráficas para los meses de diciembre y enero</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;passengers&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">flights_df</span><span class="p">[</span><span class="n">flights_df</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Jan&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;passengers&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">flights_df</span><span class="p">[</span><span class="n">flights_df</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Feb&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;passengers&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">flights_df</span><span class="p">[</span><span class="n">flights_df</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Mar&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;passengers&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">flights_df</span><span class="p">[</span><span class="n">flights_df</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Apr&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;cyan&#39;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;passengers&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">flights_df</span><span class="p">[</span><span class="n">flights_df</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;May&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;pink&#39;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;passengers&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">flights_df</span><span class="p">[</span><span class="n">flights_df</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Jun&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;passengers&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">flights_df</span><span class="p">[</span><span class="n">flights_df</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Jul&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;passengers&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">flights_df</span><span class="p">[</span><span class="n">flights_df</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Aug&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;yellow&#39;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;passengers&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">flights_df</span><span class="p">[</span><span class="n">flights_df</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Sep&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;turquoise&#39;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;passengers&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">flights_df</span><span class="p">[</span><span class="n">flights_df</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Oct&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;passengers&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">flights_df</span><span class="p">[</span><span class="n">flights_df</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Nov&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkgreen&#39;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;passengers&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">flights_df</span><span class="p">[</span><span class="n">flights_df</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Dec&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkred&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/cc4393ee3e92e884914920f439de2073303b456a22a426312fd067362a2812c3.png" src="_images/cc4393ee3e92e884914920f439de2073303b456a22a426312fd067362a2812c3.png" />
+</div>
+</div>
+<p><strong>Observación</strong> Con este ejemplo de 12 gráficos de líneas, podemos ver cómo una figura con demasiados gráficos de líneas rápidamente comienza a abarrotarse y a confundirse. Por lo tanto, para ciertos escenarios, los gráficos de líneas no son no son atractivos ni útiles. Entonces, ¿cuál es la alternativa para nuestro caso de uso? Lo veremos en el siguiente ejercicio</p>
+</section>
+<section id="ejercicio-18-creacion-y-exploracion-de-un-mapa-de-calor-estatico">
+<h2>Ejercicio 18: Creación y exploración de un mapa de calor estático<a class="headerlink" href="#ejercicio-18-creacion-y-exploracion-de-un-mapa-de-calor-estatico" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Un <strong>heatmap</strong> es una representación visual de una característica numérica continua específica en función de otras dos características discretas (ya sea una categórica o una numérica discreta) en el conjunto de datos. En este ejercicio, exploraremos y crearemos un mapa de calor. Utilizaremos el conjunto de datos de vuelos de la biblioteca <strong>seaborn</strong> para generar un <strong>mapa de calor</strong> que represente el número de pasajeros por mes en los años 1949-1960</p></li>
+</ul>
+<ul class="simple">
+<li><p>Abra un cuaderno Jupyter e importe los módulos de Python necesarios:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Importe el conjunto de datos de <strong>seaborn</strong>:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">flights_df</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;flights&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">flights_df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   year month  passengers
+0  1949   Jan         112
+1  1949   Feb         118
+2  1949   Mar         132
+3  1949   Apr         129
+4  1949   May         121
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Ahora tenemos que hacer pivotar el conjunto de datos sobre las variables requeridas utilizando la función <strong>pivot()</strong> antes de generar el mapa de calor. La función <strong>pivot</strong> toma primero como argumentos la característica que se mostrará en filas, luego la que se muestra en columnas y, por último, la característica cuya variación nos interesa observar. Utiliza los valores únicos de los índices/columnas especificados para formar los ejes del <strong>DataFrame</strong> resultante</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_pivoted</span> <span class="o">=</span> <span class="n">flights_df</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;month&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;passengers&quot;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df_pivoted</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/731ef84425662d6aa5d6d25d43b243b9021f7a6f826b5586040c5f4a2f9c7b98.png" src="_images/731ef84425662d6aa5d6d25d43b243b9021f7a6f826b5586040c5f4a2f9c7b98.png" />
+</div>
+</div>
+<p><strong>Observación:</strong> Aquí podemos observar que el número total de vuelos anuales aumentó de forma constante desde 1949 a 1960. Además, los meses de julio y agosto parecen tener el mayor número de vuelos (en comparación con el resto de los meses) en todos los años de observación.</p>
+<ul class="simple">
+<li><p>Utilice la opción <strong>clustermap</strong> para agrupar filas y columnas:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">clustermap</span><span class="p">(</span><span class="n">df_pivoted</span><span class="p">,</span> <span class="n">col_cluster</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">row_cluster</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/eb61f7d8ea0d552d8f409bb6ed22a5886f7206af65625bac4229a20e055713c1.png" src="_images/eb61f7d8ea0d552d8f409bb6ed22a5886f7206af65625bac4229a20e055713c1.png" />
+</div>
+</div>
+<p><strong>Observación:</strong> Nótese que el orden de los meses se ha reordenado en los gráficos, pero algunos meses (por ejemplo, julio y agosto) se han mantenido juntos debido a sus tendencias similares. Tanto en julio como en agosto, el número de vuelos aumentó de forma relativamente más drástica en los últimos años hasta 1960. ¿Cómo se calcula la similitud entre filas y columnas? La respuesta es que depende de la métrica de distancia</p>
+<ul class="simple">
+<li><p>Establecer la métrica como euclidiana</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">clustermap</span><span class="p">(</span><span class="n">df_pivoted</span><span class="p">,</span> <span class="n">col_cluster</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/eb61f7d8ea0d552d8f409bb6ed22a5886f7206af65625bac4229a20e055713c1.png" src="_images/eb61f7d8ea0d552d8f409bb6ed22a5886f7206af65625bac4229a20e055713c1.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>Cambiar la métrica a correlación</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">clustermap</span><span class="p">(</span><span class="n">df_pivoted</span><span class="p">,</span> <span class="n">row_cluster</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;correlation&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/88c821d68f55cc5aad0f34dfa79ccb94d0d87930f8e4edb019db7f9528bdcc2e.png" src="_images/88c821d68f55cc5aad0f34dfa79ccb94d0d87930f8e4edb019db7f9528bdcc2e.png" />
+</div>
+</div>
+<p><strong>Observación:</strong> Al leer sobre la métrica de la distancia, aprendemos que define la distancia entre dos filas/columnas. Sin embargo, si nos fijamos bien, vemos que el mapa de calor también agrupa no sólo filas o columnas individuales, sino también grupos de filas y columnas. filas o columnas individuales. Aquí es donde entra en juego la vinculación.</p>
+</section>
+<section id="ejercicio-19-creacion-de-vinculos-en-mapas-termicos-estaticos">
+<h2>Ejercicio 19: Creación de vínculos en mapas térmicos estáticos<a class="headerlink" href="#ejercicio-19-creacion-de-vinculos-en-mapas-termicos-estaticos" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Si definimos la distancia entre dos clusters como la <strong>distancia entre los dos puntos de los clusters más cercanos</strong> entre sí, la regla se denomina enlace único (<strong>single linkage</strong>).</p></li>
+<li><p>Si la regla es definir la distancia entre dos clusters como la <strong>distancia entre los puntos más alejados entre sí</strong>, se denomina vinculación completa (<strong>complete linkage</strong>).</p></li>
+<li><p>Si la regla es definir la distancia como <strong>la media de todos los posibles pares de filas en los dos clústeres</strong>, se denomina vinculación media (<strong>average linkage</strong>).</p></li>
+</ol>
+<ul class="simple">
+<li><p>En este ejercicio, generaremos un mapa de calor y comprenderemos el concepto de enlace único, completo y promedio en los mapas de calor utilizando el conjunto de datos <strong>flights</strong>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Abra un cuaderno Jupyter e importe los módulos de Python necesarios:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Importe el conjunto de datos de <strong>seaborn</strong>:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">flights_df</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;flights&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">flights_df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   year month  passengers
+0  1949   Jan         112
+1  1949   Feb         118
+2  1949   Mar         132
+3  1949   Apr         129
+4  1949   May         121
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Ahora necesitamos pivotar el conjunto de datos en las variables requeridas utilizando la función <strong>pivot()</strong> antes de generar el mapa de calor:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_pivoted</span> <span class="o">=</span> <span class="n">flights_df</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;month&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;passengers&quot;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df_pivoted</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/731ef84425662d6aa5d6d25d43b243b9021f7a6f826b5586040c5f4a2f9c7b98.png" src="_images/731ef84425662d6aa5d6d25d43b243b9021f7a6f826b5586040c5f4a2f9c7b98.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>Enlaza los mapas de calor utilizando el código que sigue</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">clustermap</span><span class="p">(</span><span class="n">df_pivoted</span><span class="p">,</span> <span class="n">col_cluster</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;correlation&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;average&#39;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">clustermap</span><span class="p">(</span><span class="n">df_pivoted</span><span class="p">,</span> <span class="n">row_cluster</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;correlation&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;complete&#39;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">clustermap</span><span class="p">(</span><span class="n">df_pivoted</span><span class="p">,</span> <span class="n">row_cluster</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;correlation&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;single&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f0fb6e8bb48d02e2ae8b9de9a433ec90062898ac8ffb5eb58886f5ffc94e9dbb.png" src="_images/f0fb6e8bb48d02e2ae8b9de9a433ec90062898ac8ffb5eb58886f5ffc94e9dbb.png" />
+<img alt="_images/ec547300d837b3835a40830ed42f178af029858aa1819165cfdb4d348e583137.png" src="_images/ec547300d837b3835a40830ed42f178af029858aa1819165cfdb4d348e583137.png" />
+<img alt="_images/98d4824ea7ee5e03971031cf4f37915506cd303f3370fa228fc5bace676dca4c.png" src="_images/98d4824ea7ee5e03971031cf4f37915506cd303f3370fa228fc5bace676dca4c.png" />
+</div>
+</div>
+<p><strong>Observación</strong> Los mapas de calor también son una buena forma de visualizar lo que ocurre en un espacio 2D. Por ejemplo, pueden utilizarse para mostrar dónde hay más acción en el campo en un partido de fútbol. Del mismo modo, en un sitio web, los mapas de calor se pueden utilizar para mostrar las áreas que son más más frecuentadas por los usuarios.</p>
+</section>
+<section id="creacion-de-graficos-para-representar-estadisticas">
+<h2>Creación de gráficos para representar estadísticas<a class="headerlink" href="#creacion-de-graficos-para-representar-estadisticas" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Cuando los conjuntos de datos son enormes, a veces resulta útil observar las estadísticas de resumen de una serie de características diferentes y hacerse una idea preliminar del conjunto de datos. Por ejemplo, las estadísticas de resumen de cualquier característica numérica incluyen medidas de tendencia central, como la media, y medidas de dispersión, como la desviación estándar. Los histogramas muestran la distribución de una característica dada en los datos, podemos hacer un gráfico un poco más informativo mostrando algunas estadísticas de resumen en el mismo gráfico.</p></li>
+</ul>
+</section>
+<section id="ejemplo-1-histograma-revisado">
+<h2>Ejemplo 1: Histograma revisado<a class="headerlink" href="#ejemplo-1-histograma-revisado" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Importar los módulos de Python necesarios; cargar el conjunto de datos; elegir el número de intervalos y si la estimación de la densidad del kernel debe mostrarse o no; usar el color rojo para mostrar media utilizando una línea recta en el eje <span class="math notranslate nohighlight">\(x\)</span> (paralela al eje <span class="math notranslate nohighlight">\(y\)</span>); definir la ubicación de la leyenda:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">mpg_df</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;mpg&quot;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">mpg_df</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">mpg_df</span><span class="o">.</span><span class="n">weight</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">mpg_df</span><span class="o">.</span><span class="n">weight</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;median&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/e928b60c86a3d234752e5df822d862716bd6d5e8e1f7197ac02a982eed466962.png" src="_images/e928b60c86a3d234752e5df822d862716bd6d5e8e1f7197ac02a982eed466962.png" />
+</div>
+</div>
+<p>Este histograma muestra la distribución de la característica de peso junto con la media y la mediana. Observe que la media no es igual a la mediana, lo que significa que la característica no está distribuida normalmente.</p>
+</section>
+<section id="ejercicio-20-creacion-y-exploracion-de-un-grafico-de-caja">
+<h2>Ejercicio 20: Creación y exploración de un gráfico de caja<a class="headerlink" href="#ejercicio-20-creacion-y-exploracion-de-un-grafico-de-caja" title="Permalink to this heading">#</a></h2>
+<p>Los gráficos de caja son una forma excelente de examinar la relación entre las estadísticas de resumen de una característica numérica en relación con otras características categóricas. En este ejercicio crearemos un diagrama para establecer la relación entre <strong>model_year</strong> and <strong>mileage</strong> using the <strong>mpg</strong> dataset. We’ll analyze manufacturing efficiency and the mileage of vehicles over a period of years. To do so, let’s go through the following steps</p>
+<ul class="simple">
+<li><p>Importe la libreria <strong>seaborn</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Cargue el <strong>dataset</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg_df</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;mpg&quot;</span><span class="p">)</span>
+<span class="n">mpg_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.0</td>
+      <td>8</td>
+      <td>307.0</td>
+      <td>130.0</td>
+      <td>3504</td>
+      <td>12.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>chevrolet chevelle malibu</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>15.0</td>
+      <td>8</td>
+      <td>350.0</td>
+      <td>165.0</td>
+      <td>3693</td>
+      <td>11.5</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>buick skylark 320</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>18.0</td>
+      <td>8</td>
+      <td>318.0</td>
+      <td>150.0</td>
+      <td>3436</td>
+      <td>11.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>plymouth satellite</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>16.0</td>
+      <td>8</td>
+      <td>304.0</td>
+      <td>150.0</td>
+      <td>3433</td>
+      <td>12.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>amc rebel sst</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>17.0</td>
+      <td>8</td>
+      <td>302.0</td>
+      <td>140.0</td>
+      <td>3449</td>
+      <td>10.5</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>ford torino</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>Crear un diagrama de cajas</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;model_year&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;mpg&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mpg_df</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/e69ee93b85f4af6d1ce34b7d8a8c76449c51e08cd461f1306c32626a902c0898.png" src="_images/e69ee93b85f4af6d1ce34b7d8a8c76449c51e08cd461f1306c32626a902c0898.png" />
+</div>
+</div>
+<p>Como podemos ver, los límites de la caja indican el rango intercuartil, el límite superior marca el cuartil del 25% y el límite inferior el cuartil del 75%. La línea horizontal dentro de la caja indica la mediana. Cualquier punto aislado fuera de los bigotes (las barras en forma de <span class="math notranslate nohighlight">\(T\)</span> por encima y por debajo de la caja) marca los valores atípicos, mientras que los propios bigotes muestran los valores mínimos y máximos que no son valores atípicos. Aparentemente, el millaje mejoró sustancialmente en los 80 en comparación con los 70.</p>
+<ul class="simple">
+<li><p>Añadamos otra característica a nuestro <strong>mpg</strong> DataFrame que denote si el coche fue fabricado en los 70 o en los 80. Modifica el DataFrame <strong>mpg</strong> creando una nueva característica, <strong>model_decade</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">mpg_df</span><span class="p">[</span><span class="s1">&#39;model_decade&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">mpg_df</span><span class="o">.</span><span class="n">model_year</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span>
+<span class="n">mpg_df</span><span class="p">[</span><span class="s1">&#39;model_decade&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mpg_df</span><span class="p">[</span><span class="s1">&#39;model_decade&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">mpg_df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+      <th>model_decade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>393</th>
+      <td>27.0</td>
+      <td>4</td>
+      <td>140.0</td>
+      <td>86.0</td>
+      <td>2790</td>
+      <td>15.6</td>
+      <td>82</td>
+      <td>usa</td>
+      <td>ford mustang gl</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>394</th>
+      <td>44.0</td>
+      <td>4</td>
+      <td>97.0</td>
+      <td>52.0</td>
+      <td>2130</td>
+      <td>24.6</td>
+      <td>82</td>
+      <td>europe</td>
+      <td>vw pickup</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>395</th>
+      <td>32.0</td>
+      <td>4</td>
+      <td>135.0</td>
+      <td>84.0</td>
+      <td>2295</td>
+      <td>11.6</td>
+      <td>82</td>
+      <td>usa</td>
+      <td>dodge rampage</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>396</th>
+      <td>28.0</td>
+      <td>4</td>
+      <td>120.0</td>
+      <td>79.0</td>
+      <td>2625</td>
+      <td>18.6</td>
+      <td>82</td>
+      <td>usa</td>
+      <td>ford ranger</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>397</th>
+      <td>31.0</td>
+      <td>4</td>
+      <td>119.0</td>
+      <td>82.0</td>
+      <td>2720</td>
+      <td>19.4</td>
+      <td>82</td>
+      <td>usa</td>
+      <td>chevy s-10</td>
+      <td>80</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>Ahora, volvamos a dibujar nuestro gráfico de caja para ver la distribución de los millajes en las dos décadas</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;model_decade&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;mpg&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mpg_df</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/90bd055f97376e0892d6caf058602347363285ca6c923dfb950a55182f976c81.png" src="_images/90bd055f97376e0892d6caf058602347363285ca6c923dfb950a55182f976c81.png" />
+</div>
+</div>
+<p>También podemos añadir otra característica, por ejemplo, la región de origen, y ver cómo afecta a la relación entre el kilometraje y el tiempo de fabricación, las dos características que hemos estado considerando hasta ahora</p>
+<ul class="simple">
+<li><p>Use the hue parameter to group by origin</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;model_decade&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;mpg&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mpg_df</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;origin&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f84706085b6229010a3f4c267b30d71ff76308658b2c2c91d070a5694ed2a9ab.png" src="_images/f84706085b6229010a3f4c267b30d71ff76308658b2c2c91d070a5694ed2a9ab.png" />
+</div>
+</div>
+<p>Como podemos ver, según el conjunto de datos de mpg, en los años 70 y principios de los 80, Europa y Japón produjeron coches con mejor millaje que los Estados Unidos.</p>
+</section>
+<section id="ejercicio-21-creacion-de-un-grafico-de-violin">
+<h2>Ejercicio 21: Creación de un gráfico de violín<a class="headerlink" href="#ejercicio-21-creacion-de-un-grafico-de-violin" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>¿Y si pudiéramos obtener una pista sobre la distribución completa de una característica numérica específica agrupada por otras características categóricas? La tipo de técnica de visualización adecuada en este caso es un gráfico de violín. Un gráfico de violín es similar a un grafico de caja pero incluye más detalles sobre las variaciones de los datos. En este ejercicio, utilizaremos el conjunto de datos <strong>mpg</strong> y generaremos un gráfico de violín que represente la variación detallada del <strong>millaje (mpg)</strong> en función de <strong>model_decade</strong> y la región de origen</p></li>
+</ul>
+<ul class="simple">
+<li><p>Importe la libreria <strong>seaborn</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Cargue el <strong>dataset</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg_df</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;mpg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Generar el gráfico de violín utilizando la función <strong>violinplot</strong> en <strong>seaborn</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">mpg_df</span><span class="p">[</span><span class="s1">&#39;model_decade&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">mpg_df</span><span class="o">.</span><span class="n">model_year</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span>
+<span class="n">mpg_df</span><span class="p">[</span><span class="s1">&#39;model_decade&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mpg_df</span><span class="p">[</span><span class="s1">&#39;model_decade&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;model_decade&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;mpg&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mpg_df</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;origin&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/c393455f37531b29222f4f1daf86b0e238b66f1d42fbc324f315f23e600d4708.png" src="_images/c393455f37531b29222f4f1daf86b0e238b66f1d42fbc324f315f23e600d4708.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>Podemos ver aquí que, durante los años 70, mientras que la mayoría de los vehículos de EE.UU. tenían un millaje medio de 19 mpg, los vehículos de Japón y Europa tenían millajes medios de alrededor de 27 y 25 mpg. Mientras que el kilometraje de los vehículos en Europa y Japón aumentó entre 7 y 8 puntos en los años 80, el kilometraje medio de los vehículos en EE.UU. seguía siendo similar al de los vehículos en Japón y Europa en la década anterior.</p></li>
+</ul>
+</section>
+<section id="tarea-1-2">
+<h2>Tarea 1.2<a class="headerlink" href="#tarea-1-2" title="Permalink to this heading">#</a></h2>
+<p><strong>Estadísticas:</strong> Seguiremos trabajando con el conjunto de datos de 120 años de historia olímpica adquirido por Randi Griffin en <a class="reference external" href="https://www.sports-reference.com/">Randi Griffin</a></p>
+<p>Como especialista en visualización, su tarea consiste en crear dos parcelas para los ganadores de medallas de 2016 de cinco deportes: atletismo, natación, remo, fútbol y hockey</p>
+<ul class="simple">
+<li><p>Crea un gráfico utilizando una técnica de visualización adecuada que presente de la mejor manera posible el patrón global de las características de <strong>height</strong> y <strong>weight</strong> de los ganadores de medallas de 2016 de los cinco deportes.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Crea un gráfico utilizando una técnica de visualización adecuada que presente de la mejor manera posible la estadística de resumen para la altura y el peso de los jugadores que ganaron cada tipo de medalla (oro/plata/bronce) en los datos.</p></li>
+</ul>
+<p>Utilizar su creatividad y sus habilidades para sacar conclusiones importantes de los datos</p>
+<p><strong>Pasos importantes</strong></p>
+<ul class="simple">
+<li><p>Descargue el conjunto de datos y formatéelo como un <strong>pandas</strong> DataFrame</p></li>
+</ul>
+<ul class="simple">
+<li><p>Filtrar el DataFrame para incluir únicamente las filas correspondientes a los ganadores de medallas de 2016 en los deportes mencionados en la descripción de la actividad</p></li>
+</ul>
+<ul class="simple">
+<li><p>Observe las características del conjunto de datos y anote su tipo de datos: ¿son categóricos o numéricos?</p></li>
+</ul>
+<ul class="simple">
+<li><p>Evaluar cuál sería la visualización adecuada para que un patrón global represente las características de <strong>height</strong> y <strong>weight</strong></p></li>
+</ul>
+<ul class="simple">
+<li><p>Evaluar cuál sería la visualización adecuada para representar las estadísticas resumidas de las características de <strong>height</strong> y <strong>weight</strong> en función de las medallas, separadas además por género de los atletas.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "ml_tf"
+        },
+        kernelOptions: {
+            name: "ml_tf",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ml_tf'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dataviz_intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introducción a la visualización de datos con Python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="interactive_dataviz.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">De la visualización estática a la interactiva</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-13-creacion-de-un-grafico-de-dispersion-estatico">Ejercicio 13: Creación de un gráfico de dispersión estático</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-14-creacion-de-un-grafico-hexagonal-estatico-binning">Ejercicio 14: Creación de un gráfico hexagonal estático Binning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-15-creacion-de-un-grafico-de-contorno-estatico">Ejercicio 15: Creación de un gráfico de contorno estático</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-16-creacion-de-un-grafico-de-lineas-estaticas">Ejercicio 16: Creación de un gráfico de líneas estáticas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-17-presentacion-de-datos-a-traves-del-tiempo-con-multiples-graficos-de-lineas">Ejercicio 17: Presentación de datos a través del tiempo con múltiples gráficos de líneas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-18-creacion-y-exploracion-de-un-mapa-de-calor-estatico">Ejercicio 18: Creación y exploración de un mapa de calor estático</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-19-creacion-de-vinculos-en-mapas-termicos-estaticos">Ejercicio 19: Creación de vínculos en mapas térmicos estáticos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-graficos-para-representar-estadisticas">Creación de gráficos para representar estadísticas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-1-histograma-revisado">Ejemplo 1: Histograma revisado</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-20-creacion-y-exploracion-de-un-grafico-de-caja">Ejercicio 20: Creación y exploración de un gráfico de caja</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-21-creacion-de-un-grafico-de-violin">Ejercicio 21: Creación de un gráfico de violín</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tarea-1-2">Tarea 1.2</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Lihki Rubio PhD in Mathematical Engineering
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright Department of Mathematics and Statistics.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
