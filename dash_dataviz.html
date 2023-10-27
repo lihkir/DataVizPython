@@ -171,7 +171,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Introducción a <code class="docutils literal notranslate"><span class="pre">Dash</span></code></a></li>
 </ul>
 
@@ -385,6 +384,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dash-app-para-mapas">Dash App para Mapas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dash-app-financiera">Dash App Financiera</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#despliegue-de-dassh-app-usando-docker">Despliegue de Dassh App usando Docker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-para-entregar">Ejercicio para entregar</a></li>
 </ul>
             </nav>
         </div>
@@ -2066,7 +2066,6 @@ pandas
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dash</span> <span class="kn">import</span> <span class="n">Dash</span><span class="p">,</span> <span class="n">dcc</span><span class="p">,</span> <span class="n">html</span><span class="p">,</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
-
 <span class="kn">import</span> <span class="nn">colorlover</span> <span class="k">as</span> <span class="nn">cl</span>
 <span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
 <span class="kn">import</span> <span class="nn">flask</span>
@@ -2172,7 +2171,7 @@ pandas
     <span class="k">return</span> <span class="n">graphs</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong><code class="docutils literal notranslate"><span class="pre">Conclusión</span></code></strong></p>
@@ -2189,11 +2188,40 @@ pandas
 </ul>
 </div>
 <ul class="simple">
-<li><p>Una vez que hayas preparado su <code class="docutils literal notranslate"><span class="pre">Dash</span></code>, puedes empezar a <code class="docutils literal notranslate"><span class="pre">Dockerizarlo</span></code> creando un archivo nombrado <strong><code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code></strong> (Dockerfile, sin ninguna extensión). El <code class="docutils literal notranslate"><span class="pre">Dockerfile</span> <span class="pre">representa</span> <span class="pre">una</span> <span class="pre">imagen</span> <span class="pre">Docker</span></code> y contiene <code class="docutils literal notranslate"><span class="pre">instrucciones</span> <span class="pre">sobre</span> <span class="pre">las</span> <span class="pre">operaciones</span> <span class="pre">a</span> <span class="pre">realizar</span> <span class="pre">cuando</span> <span class="pre">se</span> <span class="pre">construye</span> <span class="pre">un</span> <span class="pre">contenedor</span></code>. A continuación presentamos el <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> usado para Dockerizar una aplicación <code class="docutils literal notranslate"><span class="pre">Dash</span></code> que reposa en el archivo <code class="docutils literal notranslate"><span class="pre">index.py</span></code>. Cada uno de los siguientes archivos listados, <code class="docutils literal notranslate"><span class="pre">deben</span> <span class="pre">estar</span> <span class="pre">contenidos</span> <span class="pre">en</span> <span class="pre">el</span> <span class="pre">mismo</span> <span class="pre">directorio</span></code>.</p></li>
+<li><p>Una vez que hayas preparado su <code class="docutils literal notranslate"><span class="pre">Dash</span></code>, puedes empezar a <code class="docutils literal notranslate"><span class="pre">Dockerizarlo</span></code> creando un archivo nombrado <strong><code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code></strong> (Dockerfile, sin ninguna extensión). El <code class="docutils literal notranslate"><span class="pre">Dockerfile</span> <span class="pre">representa</span> <span class="pre">una</span> <span class="pre">imagen</span> <span class="pre">Docker</span></code> y contiene <code class="docutils literal notranslate"><span class="pre">instrucciones</span> <span class="pre">sobre</span> <span class="pre">las</span> <span class="pre">operaciones</span> <span class="pre">a</span> <span class="pre">realizar</span> <span class="pre">cuando</span> <span class="pre">se</span> <span class="pre">construye</span> <span class="pre">un</span> <span class="pre">contenedor</span></code>.</p></li>
+<li><p>A continuación presentamos el <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> usado para Dockerizar una aplicación <code class="docutils literal notranslate"><span class="pre">Dash</span></code> que reposa en el archivo <code class="docutils literal notranslate"><span class="pre">index.py</span></code>. Cada uno de los siguientes archivos listados, <code class="docutils literal notranslate"><span class="pre">deben</span> <span class="pre">estar</span> <span class="pre">contenidos</span> <span class="pre">en</span> <span class="pre">el</span> <span class="pre">mismo</span> <span class="pre">directorio</span></code>.</p></li>
+<li><p>Antes de <code class="docutils literal notranslate"><span class="pre">Dockerizar</span></code> su dash, es recomendable crear para este un entorno dedicado, el cual solo se use para crear la imagen <code class="docutils literal notranslate"><span class="pre">Docker</span></code> de su aplicación. Para crear el ambiente virtual de <code class="docutils literal notranslate"><span class="pre">miniconda</span></code> recuerde que puede usar el gestor de instalación de paquetes <code class="docutils literal notranslate"><span class="pre">conda</span></code>. Por ejemplo para crear el entorno virtual <code class="docutils literal notranslate"><span class="pre">dash_venv</span></code></p></li>
 </ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">dash_venv</span>
+</pre></div>
+</div>
 <figure class="align-center" id="docker-project-fig">
 <img alt="_images/docker_project.png" src="_images/docker_project.png" />
 </figure>
+<ul>
+<li><p>En un <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> para Dockerizar una aplicación Dash, se debe agregar lo siguiente:</p>
+<ul>
+<li><p>Declarar la imagen base <code class="docutils literal notranslate"><span class="pre">Python</span></code>: <code class="docutils literal notranslate"><span class="pre">python:3.9.17</span></code></p></li>
+<li><p>Instalar todas las <code class="docutils literal notranslate"><span class="pre">dependencias</span> <span class="pre">necesarias</span></code>, incluyendo las dependencias tanto para <code class="docutils literal notranslate"><span class="pre">Plotly</span></code> como para <code class="docutils literal notranslate"><span class="pre">Dash</span></code></p></li>
+<li><p>Ejecutar antes el <code class="docutils literal notranslate"><span class="pre">dashboard</span></code> que ha construido en un <code class="docutils literal notranslate"><span class="pre">environment</span> <span class="pre">separado</span></code>. Dentro de este environment, contruya el archivo de requerimientos mediante:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>freeze<span class="w"> </span>&gt;<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+</li>
+<li><p>Una vez preparado el <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code>, puedes construir el contenedor y ejecutarlo usando las instrucciones del archivo <code class="docutils literal notranslate"><span class="pre">README</span></code>. Recuerde que <code class="docutils literal notranslate"><span class="pre">debe</span> <span class="pre">tener</span> <span class="pre">iniciada</span> <span class="pre">la</span> <span class="pre">aplicación</span> <span class="pre">Docker</span></code></p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>El código del archivo <code class="docutils literal notranslate"><span class="pre">README</span></code> realiza lo siguiente:</p>
+<ul>
+<li><p>La primera línea construye un contenedor <code class="docutils literal notranslate"><span class="pre">Docker</span></code> basado en el <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> y lo nombra <code class="docutils literal notranslate"><span class="pre">barplot_fruits</span></code>. Debe <code class="docutils literal notranslate"><span class="pre">asegúrate</span> <span class="pre">de</span> <span class="pre">incluir</span> <span class="pre">&quot;.&quot;</span> <span class="pre">al</span> <span class="pre">final</span> <span class="pre">para</span> <span class="pre">indicar</span> <span class="pre">el</span> <span class="pre">directorio</span> <span class="pre">del</span> <span class="pre">archivo</span> <span class="pre">Docker</span></code>.</p></li>
+<li><p>Una vez construido el contenedor <code class="docutils literal notranslate"><span class="pre">Docker</span></code>, la segunda línea ejecuta la orden para <code class="docutils literal notranslate"><span class="pre">exponer</span> <span class="pre">la</span> <span class="pre">aplicación</span> <span class="pre">Dash</span> <span class="pre">en</span> <span class="pre">localhost:9002</span></code>. <code class="docutils literal notranslate"><span class="pre">9002:9000</span> <span class="pre">significa</span> <span class="pre">mapear</span> <span class="pre">el</span> <span class="pre">puerto</span> <span class="pre">9000</span> <span class="pre">en</span> <span class="pre">el</span> <span class="pre">contenedor</span> <span class="pre">al</span> <span class="pre">puerto</span> <span class="pre">9002</span> <span class="pre">en</span> <span class="pre">tu</span> <span class="pre">entorno</span> <span class="pre">local</span></code>.</p></li>
+<li><p>La razón para mapear el puerto 9000 del contenedor es porque <code class="docutils literal notranslate"><span class="pre">se</span> <span class="pre">declaró</span> <span class="pre">la</span> <span class="pre">aplicación</span> <span class="pre">Dash</span> <span class="pre">en</span> <span class="pre">el</span> <span class="pre">Puerto</span> <span class="pre">9000</span> <span class="pre">en</span> <span class="pre">el</span> <span class="pre">script</span> <span class="pre">Python</span></code>.</p></li>
+<li><p>Para <code class="docutils literal notranslate"><span class="pre">exponer</span> <span class="pre">la</span> <span class="pre">aplicación</span> <span class="pre">Dash</span></code>, debe <code class="docutils literal notranslate"><span class="pre">establecer</span> <span class="pre">el</span> <span class="pre">host</span> <span class="pre">=</span> <span class="pre">'0.0.0.0'</span> <span class="pre">en</span> <span class="pre">el</span> <span class="pre">entorno</span> <span class="pre">del</span> <span class="pre">contenedor</span></code>! No funcionará si lo pones en <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code>.</p></li>
+</ul>
+</li>
+</ul>
 <p><code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code></p>
 <div class="highlight-dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="w"> </span><span class="s">python:3.9.17</span>
 
@@ -2281,36 +2309,12 @@ docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </
 docker<span class="w"> </span>run<span class="w"> </span>-h<span class="w"> </span>localhost<span class="w"> </span>-p<span class="w"> </span><span class="m">9002</span>:9000<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>barplot_fruits<span class="w"> </span>barplot_fruits
 </pre></div>
 </div>
-<ul>
-<li><p>En un <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> para Dockerizar una aplicación Dash, se debe agregar lo siguiente:</p>
-<ul>
-<li><p>Declarar la imagen base <code class="docutils literal notranslate"><span class="pre">Python</span></code>: <code class="docutils literal notranslate"><span class="pre">python:3.9.17</span></code></p></li>
-<li><p>Instalar todas las <code class="docutils literal notranslate"><span class="pre">dependencias</span> <span class="pre">necesarias</span></code>, incluyendo las dependencias tanto para <code class="docutils literal notranslate"><span class="pre">Plotly</span></code> como para <code class="docutils literal notranslate"><span class="pre">Dash</span></code></p></li>
-<li><p>Ejecutar antes el <code class="docutils literal notranslate"><span class="pre">dashboard</span></code> que ha construido en un <code class="docutils literal notranslate"><span class="pre">environment</span> <span class="pre">separado</span></code>. Dentro de este environment, contruya el archivo de requerimientos mediante:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>freeze<span class="w"> </span>&gt;<span class="w"> </span>requirements.txt
-</pre></div>
-</div>
-</li>
-<li><p>Una vez preparado el <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code>, puedes construir el contenedor y ejecutarlo usando las instrucciones del archivo <code class="docutils literal notranslate"><span class="pre">README</span></code>. Recuerde que <code class="docutils literal notranslate"><span class="pre">debe</span> <span class="pre">tener</span> <span class="pre">iniciada</span> <span class="pre">la</span> <span class="pre">aplicación</span> <span class="pre">Docker</span></code></p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>El código del archivo <code class="docutils literal notranslate"><span class="pre">README</span></code> realiza lo siguiente:</p>
-<ul>
-<li><p>La primera línea construye un contenedor <code class="docutils literal notranslate"><span class="pre">Docker</span></code> basado en el <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> y lo nombra <code class="docutils literal notranslate"><span class="pre">barplot_fruits</span></code>. Debe <code class="docutils literal notranslate"><span class="pre">asegúrate</span> <span class="pre">de</span> <span class="pre">incluir</span> <span class="pre">&quot;.&quot;</span> <span class="pre">al</span> <span class="pre">final</span> <span class="pre">para</span> <span class="pre">indicar</span> <span class="pre">el</span> <span class="pre">directorio</span> <span class="pre">del</span> <span class="pre">archivo</span> <span class="pre">Docker</span></code>.</p></li>
-<li><p>Una vez construido el contenedor <code class="docutils literal notranslate"><span class="pre">Docker</span></code>, la segunda línea ejecuta la orden para <code class="docutils literal notranslate"><span class="pre">exponer</span> <span class="pre">la</span> <span class="pre">aplicación</span> <span class="pre">Dash</span> <span class="pre">en</span> <span class="pre">localhost:9002</span></code>. <code class="docutils literal notranslate"><span class="pre">9002:9000</span> <span class="pre">significa</span> <span class="pre">mapear</span> <span class="pre">el</span> <span class="pre">puerto</span> <span class="pre">9000</span> <span class="pre">en</span> <span class="pre">el</span> <span class="pre">contenedor</span> <span class="pre">al</span> <span class="pre">puerto</span> <span class="pre">9002</span> <span class="pre">en</span> <span class="pre">tu</span> <span class="pre">entorno</span> <span class="pre">local</span></code>.</p></li>
-<li><p>La razón para mapear el puerto 9000 del contenedor es porque <code class="docutils literal notranslate"><span class="pre">se</span> <span class="pre">declaró</span> <span class="pre">la</span> <span class="pre">aplicación</span> <span class="pre">Dash</span> <span class="pre">en</span> <span class="pre">el</span> <span class="pre">Puerto</span> <span class="pre">9000</span> <span class="pre">en</span> <span class="pre">el</span> <span class="pre">script</span> <span class="pre">Python</span></code>.</p></li>
-<li><p>Para <code class="docutils literal notranslate"><span class="pre">exponer</span> <span class="pre">la</span> <span class="pre">aplicación</span> <span class="pre">Dash</span></code>, debe <code class="docutils literal notranslate"><span class="pre">establecer</span> <span class="pre">el</span> <span class="pre">host</span> <span class="pre">=</span> <span class="pre">'0.0.0.0'</span> <span class="pre">en</span> <span class="pre">el</span> <span class="pre">entorno</span> <span class="pre">del</span> <span class="pre">contenedor</span></code>! No funcionará si lo pones en <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code>.</p></li>
-</ul>
-</li>
-</ul>
 <div class="admonition-observacion admonition">
 <p class="admonition-title">Observación</p>
 <p><code class="docutils literal notranslate"><span class="pre">Dockerizar</span> <span class="pre">un</span> <span class="pre">tablero</span> <span class="pre">Dash</span> <span class="pre">es</span> <span class="pre">muy</span> <span class="pre">fácil</span></code>, sólo tienes que <code class="docutils literal notranslate"><span class="pre">añadir</span> <span class="pre">un</span> <span class="pre">Dockerfile</span> <span class="pre">con</span> <span class="pre">un</span> <span class="pre">par</span> <span class="pre">de</span> <span class="pre">líneas</span> <span class="pre">de</span> <span class="pre">instrucciones,</span> <span class="pre">construir</span> <span class="pre">un</span> <span class="pre">contenedor</span> <span class="pre">con</span> <span class="pre">él,</span> <span class="pre">¡y</span> <span class="pre">ejecutarlo!</span></code></p>
 </div>
 <ul class="simple">
-<li><p>A continuación se muestra la consola a la hora de ejecutar el <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code>, crear la imagen <code class="docutils literal notranslate"><span class="pre">Docker</span></code> y ejecutarla</p></li>
+<li><p>A continuación se muestran <code class="docutils literal notranslate"><span class="pre">outputs</span> <span class="pre">en</span> <span class="pre">consola</span></code> al ejecutar el <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code>, para crear la imagen <code class="docutils literal notranslate"><span class="pre">Docker</span></code></p></li>
 </ul>
 <figure class="align-center" id="docker-build-fig">
 <img alt="_images/docker_build.png" src="_images/docker_build.png" />
@@ -2321,6 +2325,18 @@ docker<span class="w"> </span>run<span class="w"> </span>-h<span class="w"> </sp
 <figure class="align-center" id="docker-dashapp-fig">
 <img alt="_images/docker_dashapp.png" src="_images/docker_dashapp.png" />
 </figure>
+<ul class="simple">
+<li><p>Si desea desplegar la aplicación, debe dirigirse a la aplicación <code class="docutils literal notranslate"><span class="pre">Docker</span></code>. Dentro de esta debe buscar la imagen creada en el botón <code class="docutils literal notranslate"><span class="pre">Images</span></code>. Posteriormente, en contenedores, podrá visualizar el contenedor creado, a saber (<code class="docutils literal notranslate"><span class="pre">barplot_fruits</span></code>), y a la derecha los puertos donde se ejecuta el dash en el <code class="docutils literal notranslate"><span class="pre">daemon</span></code>. Haga click sobre este puerto para visualizar su <code class="docutils literal notranslate"><span class="pre">dashboard</span></code></p></li>
+</ul>
+<figure class="align-center" id="barplot-fruits-dockerized-fig">
+<img alt="_images/barplot_fruits_dockerized.png" src="_images/barplot_fruits_dockerized.png" />
+</figure>
+</section>
+<section id="ejercicio-para-entregar">
+<h2>Ejercicio para entregar<a class="headerlink" href="#ejercicio-para-entregar" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dockerize</span></code> los dashboard de los dos ejemplos estudiados en la sección <strong><code class="docutils literal notranslate"><span class="pre">Dos</span> <span class="pre">ejemplos</span> <span class="pre">de</span> <span class="pre">Dash</span></code></strong>. Esto es. Crear dos imágenes <code class="docutils literal notranslate"><span class="pre">Docker</span></code> para los <code class="docutils literal notranslate"><span class="pre">Dash</span></code> asociados con: <code class="docutils literal notranslate"><span class="pre">Dash</span> <span class="pre">App</span> <span class="pre">para</span> <span class="pre">Mapas</span></code> y <code class="docutils literal notranslate"><span class="pre">Dash</span> <span class="pre">App</span> <span class="pre">Financiera</span></code>. Realice cambios en el (<code class="docutils literal notranslate"><span class="pre">back/front</span> <span class="pre">end</span></code>) de los dos <code class="docutils literal notranslate"><span class="pre">Dashboards</span></code>. Por ejemplo, agréguele a los dashboard <code class="docutils literal notranslate"><span class="pre">nuevos</span> <span class="pre">estilos</span></code> y <code class="docutils literal notranslate"><span class="pre">operaciones</span> <span class="pre">que</span> <span class="pre">puedan</span> <span class="pre">mejorar</span> <span class="pre">la</span> <span class="pre">visualización</span></code>. Tenga en cuenta los diferentes templates usados en esta sección.</p></li>
+</ul>
 </section>
 </section>
 
@@ -2401,6 +2417,7 @@ docker<span class="w"> </span>run<span class="w"> </span>-h<span class="w"> </sp
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dash-app-para-mapas">Dash App para Mapas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dash-app-financiera">Dash App Financiera</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#despliegue-de-dassh-app-usando-docker">Despliegue de Dassh App usando Docker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-para-entregar">Ejercicio para entregar</a></li>
 </ul>
   </nav></div>
 
