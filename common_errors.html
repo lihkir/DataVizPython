@@ -368,10 +368,10 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">Introducción</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formato-e-interpretacion-de-datos">Formato e interpretación de datos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-52-visualizacion-de-valores-atipicos-en-un-conjunto-de-datos-con-un-grafico-de-cajas">Ejercicio 52: Visualización de valores atípicos en un conjunto de datos con un gráfico de cajas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-53-como-tratar-los-valores-atipicos">Ejercicio 53: Cómo tratar los valores atípicos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-54-tratamiento-de-los-valores-faltantes">Ejercicio 54: Tratamiento de los valores faltantes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tarea-2-3">Tarea 2.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-de-valores-atipicos-en-un-conjunto-de-datos-con-un-grafico-de-cajas">Visualización de valores atípicos en un conjunto de datos con un gráfico de cajas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-tratar-los-valores-atipicos">Cómo tratar los valores atípicos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tratamiento-de-los-valores-faltantes">Tratamiento de los valores faltantes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-para-entregar">Ejercicio para entregar</a></li>
 </ul>
             </nav>
         </div>
@@ -385,16 +385,15 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="errores-comunes-al-crear-visualizaciones-interactivas">
 <h1>Errores comunes al crear visualizaciones interactivas<a class="headerlink" href="#errores-comunes-al-crear-visualizaciones-interactivas" title="Permalink to this heading">#</a></h1>
+<div class="admonition-objetivos admonition">
+<p class="admonition-title">Objetivos</p>
 <ul class="simple">
-<li><p><strong>Objetivos</strong></p>
-<ul>
 <li><p>Identificar los errores que se cometen al crear visualizaciones</p></li>
 <li><p>Aplicar técnicas para corregir los errores y crear visualizaciones eficaces</p></li>
 <li><p>Seleccionar y diseñar las visualizaciones adecuadas para determinados tipos de datos</p></li>
 <li><p>Describir las diferentes bibliotecas y herramientas disponibles para crear visualizaciones</p></li>
 </ul>
-</li>
-</ul>
+</div>
 <section id="introduccion">
 <h2>Introducción<a class="headerlink" href="#introduccion" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
@@ -405,25 +404,31 @@ document.write(`
 <section id="formato-e-interpretacion-de-datos">
 <h2>Formato e interpretación de datos<a class="headerlink" href="#formato-e-interpretacion-de-datos" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>La primera fase de la visualización de datos es entender los datos frente a ti: entender lo que es, lo que significa y lo que transmite. Sólo cuando entiendas los datos serás capaz de diseñar una visualización que ayude a otros a entenderlos.</p></li>
-<li><p>Además, es importante asegurarse de que los datos tienen sentido y contienen suficiente información, ya sea categórica, numérica o una mezcla de ambas, para ser visualizados. Por lo tanto, si tratas con datos erróneos o sucios, es probable que la visualización sea defectuosa.</p></li>
+<li><p>La primera fase de la visualización de datos es <code class="docutils literal notranslate"><span class="pre">entender</span> <span class="pre">los</span> <span class="pre">datos</span> <span class="pre">frente</span> <span class="pre">a</span> <span class="pre">ti:</span> <span class="pre">entender</span> <span class="pre">lo</span> <span class="pre">que</span> <span class="pre">es,</span> <span class="pre">lo</span> <span class="pre">que</span> <span class="pre">significa</span> <span class="pre">y</span> <span class="pre">lo</span> <span class="pre">que</span> <span class="pre">transmite</span></code>. Solo cuando entiendas los datos serás capaz de diseñar una visualización que ayude a otros a entenderlos.</p></li>
+<li><p>Además, es importante <code class="docutils literal notranslate"><span class="pre">asegurarse</span> <span class="pre">de</span> <span class="pre">que</span> <span class="pre">los</span> <span class="pre">datos</span> <span class="pre">tienen</span> <span class="pre">sentido</span> <span class="pre">y</span> <span class="pre">contienen</span> <span class="pre">suficiente</span> <span class="pre">información,</span> <span class="pre">ya</span> <span class="pre">sea</span> <span class="pre">categórica,</span> <span class="pre">numérica</span> <span class="pre">o</span> <span class="pre">una</span> <span class="pre">mezcla</span> <span class="pre">de</span> <span class="pre">ambas</span></code>, para ser visualizados. Por lo tanto, si tratas con datos erróneos o sucios, es probable que la visualización sea defectuosa.</p></li>
 <li><p>En esta siguiente sección, veremos algunas formas de evitar los errores comunes que se suelen cometidos en esta fase de los datos y cómo evitarlos.</p></li>
 </ul>
 <p><strong>¿Cómo evitar los errores más comunes al tratar con datos sucios?</strong></p>
 <ul class="simple">
-<li><p>Garbage In, Garbage Out - este es un dicho popular en el campo de la ciencia de datos, especialmente con respecto a la visualización de datos. Básicamente significa que si utilizas datos desordenados y ruidosos, vas a obtener una visualización defectuosa y poco informativa. Los datos desordenados, ruidosos y sucios corresponden a una serie de problemas que se encuentran en los datos. Vamos a discutir los problemas uno por uno y las formas de tratar este tipo de datos.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Garbage</span> <span class="pre">In,</span> <span class="pre">Garbage</span> <span class="pre">Out</span></code>: Este es un dicho popular en el campo de la ciencia de datos, especialmente con respecto a la visualización de datos. Básicamente, significa que <code class="docutils literal notranslate"><span class="pre">si</span> <span class="pre">utilizas</span> <span class="pre">datos</span> <span class="pre">desordenados</span> <span class="pre">y</span> <span class="pre">ruidosos,</span> <span class="pre">vas</span> <span class="pre">a</span> <span class="pre">obtener</span> <span class="pre">una</span> <span class="pre">visualización</span> <span class="pre">defectuosa</span> <span class="pre">y</span> <span class="pre">poco</span> <span class="pre">informativa</span></code>. Los datos desordenados, ruidosos y sucios corresponden a una serie de problemas que se encuentran en los datos. Vamos a discutir los problemas uno por uno y las formas de tratar este tipo de datos.</p></li>
 </ul>
 <p><strong>Valores atípicos</strong></p>
 <ul class="simple">
-<li><p>Los datos que contienen valores inexactos o instancias que son significativamente diferentes del resto de los datos de un conjunto de datos se denominan valores atípicos. Estos valores atípicos pueden ser auténticos, es decir, parecen incorrectos pero en realidad no lo son, o son errores que se cometen al recoger o almacenar los datos. Veamos un ejemplo de un error cometido al recoger o almacenar los datos. La siguiente tabla muestra la edad, el peso y el sexo de los clientes que acuden a un determinado gimnasio. La columna de sexo consta de tres valores discretos 0, 1 y 2 que corresponden todos a una clase: hombre, mujer y otro, respectivamente. La columna de la edad se expresa en años y la columna de peso está en kilogramos</p></li>
+<li><p>Los datos que contienen valores inexactos o instancias que son <code class="docutils literal notranslate"><span class="pre">significativamente</span> <span class="pre">diferentes</span> <span class="pre">del</span> <span class="pre">resto</span> <span class="pre">de</span> <span class="pre">los</span> <span class="pre">datos</span> <span class="pre">de</span> <span class="pre">un</span> <span class="pre">dataset</span></code> se denominan valores atípicos. Estos valores atípicos pueden ser auténticos, es decir, parecen incorrectos, pero en realidad no lo son, o son errores que se cometen al recoger o almacenar los datos.</p></li>
+<li><p>Veamos un ejemplo de un error cometido al recoger o almacenar los datos. La siguiente tabla muestra la <code class="docutils literal notranslate"><span class="pre">edad,</span> <span class="pre">el</span> <span class="pre">peso</span> <span class="pre">y</span> <span class="pre">el</span> <span class="pre">sexo</span> <span class="pre">de</span> <span class="pre">los</span> <span class="pre">clientes</span> <span class="pre">que</span> <span class="pre">acuden</span> <span class="pre">a</span> <span class="pre">un</span> <span class="pre">determinado</span> <span class="pre">gimnasio</span></code>. La columna de sexo consta de tres valores discretos <code class="docutils literal notranslate"><span class="pre">0,</span> <span class="pre">1</span> <span class="pre">y</span> <span class="pre">2</span> <span class="pre">que</span> <span class="pre">corresponden</span> <span class="pre">todos</span> <span class="pre">a</span> <span class="pre">una</span> <span class="pre">clase:</span> <span class="pre">hombre,</span> <span class="pre">mujer</span> <span class="pre">y</span> <span class="pre">otro</span></code>, respectivamente. La columna de la edad se expresa en años y la columna de peso está en kilogramos</p></li>
 </ul>
-<p><img alt="" src="_images/Figure701.png" /></p>
+<figure class="align-center">
+<img alt="_images/Figure701.png" src="_images/Figure701.png" />
+</figure>
 <ul class="simple">
-<li><p>Todo parece correcto hasta que llegamos a la cuarta instancia (índice 3), donde el peso peso es de 790 kg. Esto parece extraño porque nadie puede pesar realmente 790 kg, especialmente alguien cuya estatura es de 1,5 metros y 7 pulgadas. Quien haya almacenado estos datos debe haber querido decir 79 kg y haber añadido un 0 por error. Este es un caso de un valor atípico en el conjunto de datos. Esto puede parecer trivial en este momento, sin embargo, esto puede resultar en visualizaciones defectuosas, y predicciones o patrones de modelos de aprendizaje automático, especialmente si hay múltiples repeticiones de esos datos. Ahora, veamos un ejemplo de un auténtico valor atípico en la siguiente tabla</p></li>
+<li><p>Todo parece correcto hasta que llegamos a la cuarta instancia (índice 3), donde el peso es de 790 kg. <code class="docutils literal notranslate"><span class="pre">Esto</span> <span class="pre">parece</span> <span class="pre">extraño</span> <span class="pre">porque</span> <span class="pre">nadie</span> <span class="pre">puede</span> <span class="pre">pesar</span> <span class="pre">realmente</span> <span class="pre">790</span> <span class="pre">kg,</span> <span class="pre">especialmente</span> <span class="pre">alguien</span> <span class="pre">cuya</span> <span class="pre">estatura</span> <span class="pre">es</span> <span class="pre">de</span> <span class="pre">1,5</span> <span class="pre">metros</span> <span class="pre">y</span> <span class="pre">7</span> <span class="pre">pulgadas</span></code>. Quien haya almacenado estos datos <code class="docutils literal notranslate"><span class="pre">debe</span> <span class="pre">haber</span> <span class="pre">querido</span> <span class="pre">decir</span> <span class="pre">79</span> <span class="pre">kg</span> <span class="pre">y</span> <span class="pre">haber</span> <span class="pre">añadido</span> <span class="pre">un</span> <span class="pre">0</span> <span class="pre">por</span> <span class="pre">error</span></code>. Este es un caso de un valor atípico en el conjunto de datos. Esto puede parecer trivial en este momento, sin embargo, <code class="docutils literal notranslate"><span class="pre">esto</span> <span class="pre">puede</span> <span class="pre">resultar</span> <span class="pre">en</span> <span class="pre">visualizaciones</span> <span class="pre">y</span> <span class="pre">predicciones</span> <span class="pre">o</span> <span class="pre">patrones</span> <span class="pre">de</span> <span class="pre">modelos</span> <span class="pre">de</span> <span class="pre">aprendizaje</span> <span class="pre">automático</span> <span class="pre">defectuosos</span></code>, especialmente si hay múltiples repeticiones de esos datos. Ahora, veamos un ejemplo de un auténtico valor atípico en la siguiente tabla</p></li>
 </ul>
-<p><img alt="" src="_images/Figure702.png" /></p>
+<figure class="align-center">
+<img alt="_images/Figure702.png" src="_images/Figure702.png" />
+</figure>
 <ul class="simple">
-<li><p>El peso en el cuarto caso (índice 3) es de 167 kilogramos, lo que parece extrañamente alto. Sin embargo, sigue siendo un valor verosímil, ya que es posible que alguien tenga un peso de 167 kilogramos a los 37 años. Por lo tanto, se trata de un un verdadero valor atípico. Mientras que en los ejemplos anteriores es fácil detectar el valor atípico, ya que sólo hay 5 casos, en realidad, nuestros conjuntos de datos son masivos, por lo que comprobar cada caso es una tarea tediosa y poco práctica. Por lo tanto, en la vida real, podemos utilizar visualizaciones estáticas básicas, como los gráficos de caja, para observar la existencia de valores atípicos. Los gráficos de caja son visualizaciones de datos sencillas pero informativas que pueden decirnos mucho sobre la sobre la forma en que se distribuyen nuestros datos. Muestran el rango de nuestros datos basándose en cinco valores clave:</p>
+<li><p>El peso en el cuarto caso (índice 3) es de <code class="docutils literal notranslate"><span class="pre">167</span> <span class="pre">kilogramos,</span> <span class="pre">lo</span> <span class="pre">que</span> <span class="pre">parece</span> <span class="pre">extrañamente</span> <span class="pre">alto.</span> <span class="pre">Sin</span> <span class="pre">embargo,</span> <span class="pre">sigue</span> <span class="pre">siendo</span> <span class="pre">un</span> <span class="pre">valor</span> <span class="pre">verosímil,</span> <span class="pre">ya</span> <span class="pre">que</span> <span class="pre">es</span> <span class="pre">posible</span> <span class="pre">que</span> <span class="pre">alguien</span> <span class="pre">tenga</span> <span class="pre">un</span> <span class="pre">peso</span> <span class="pre">de</span> <span class="pre">167</span> <span class="pre">kilogramos</span> <span class="pre">a</span> <span class="pre">los</span> <span class="pre">37</span> <span class="pre">años</span></code>. Por lo tanto, se trata de un <code class="docutils literal notranslate"><span class="pre">verdadero</span> <span class="pre">valor</span> <span class="pre">atípico</span></code>. Mientras que en los ejemplos anteriores es fácil detectar el valor atípico, ya que solo hay 5 casos, en realidad, nuestros conjuntos de datos son masivos, por lo que comprobar cada caso es una tarea tediosa y poco práctica.</p></li>
+<li><p>En consecuencia, en la vida real, podemos utilizar visualizaciones estáticas básicas, como los <code class="docutils literal notranslate"><span class="pre">gráficos</span> <span class="pre">de</span> <span class="pre">caja</span></code>, para observar la existencia de valores atípicos. Los gráficos de caja son visualizaciones de datos sencillas, pero informativas que pueden decirnos mucho sobre la forma en que se distribuyen nuestros datos. Muestran el rango de nuestros datos basándose en cinco valores clave:</p>
 <ul>
 <li><p>El valor mínimo de la columna</p></li>
 <li><p>El primer cuartil</p></li>
@@ -435,8 +440,8 @@ document.write(`
 <li><p>Esto es lo que hace que sean excelentes para mostrar los valores atípicos, además de describir la simetría de los datos, el grado de agrupación de los mismos (si todos los valores están repartidos en un amplio rango), y si están o no sesgados.</p></li>
 </ul>
 </section>
-<section id="ejercicio-52-visualizacion-de-valores-atipicos-en-un-conjunto-de-datos-con-un-grafico-de-cajas">
-<h2>Ejercicio 52: Visualización de valores atípicos en un conjunto de datos con un gráfico de cajas<a class="headerlink" href="#ejercicio-52-visualizacion-de-valores-atipicos-en-un-conjunto-de-datos-con-un-grafico-de-cajas" title="Permalink to this heading">#</a></h2>
+<section id="visualizacion-de-valores-atipicos-en-un-conjunto-de-datos-con-un-grafico-de-cajas">
+<h2>Visualización de valores atípicos en un conjunto de datos con un gráfico de cajas<a class="headerlink" href="#visualizacion-de-valores-atipicos-en-un-conjunto-de-datos-con-un-grafico-de-cajas" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>En este ejercicio, vamos a crear un gráfico de caja para comprobar si nuestro conjunto de datos contiene valores atípicos. Vamos a utilizar el conjunto de datos <em>gym.csv</em>, que contiene información sobre los clientes de un determinado gimnasio.</p></li>
 </ul>
@@ -462,64 +467,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>age</th>
-      <th>weight</th>
-      <th>sex</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>29</td>
-      <td>88</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>45</td>
-      <td>96</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>35</td>
-      <td>91</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>37</td>
-      <td>790</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>27</td>
-      <td>62</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <ul class="simple">
 <li><p>Como puede ver, nuestros datos tienen tres columnas: edad, peso y sexo. La columna sexo consta de tres valores discretos que corresponden a tres clases discretas - 0 es hombre, 1 es mujer y 2 es otro.</p></li>
@@ -532,32 +479,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>                            <div id="70459251-e2f9-4946-804a-a19786236406" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("70459251-e2f9-4946-804a-a19786236406")) {                    Plotly.newPlot(                        "70459251-e2f9-4946-804a-a19786236406",                        [{"alignmentgroup":"True","hovertemplate":"sex=%{x}\u003cbr\u003eweight=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":"#636efa"},"name":"","notched":false,"offsetgroup":"","orientation":"v","showlegend":false,"x":[2,1,0,1,0,0,0,0,0,1,0,1,1,1,1,1,1,1,1,1,1,2,2,0,2,0,0,1,2,2,0,0,0,1,2,0,1,1,0,2,0,1,0,2,0,2,2,1,2,0,0,0,2,2,2,2,0,2,2,1,1,0,1,1,2,2,1,2,2,0,2,0,1,2,1,2,2,1,1,2,0,2,2,0,2,2,2,2,2,1,1,0,1,1,2,1,0,0,2,0,2,1,0,2,1,2,2,2,0,2,2,0,1,0,1,2,0,1,1,1,0,0,2,0,2,1,2,2,0,2,2,2,2,0,2,1,2,0,1,0,1,1,1,1,1,2,0,2,2,2,0,0,1,1,2,2,2,2,1,2,0,0,2,2,2,2,2,2,0,1,1,2,0,1,1,1,2,0,1,1,0,2,1,1,1,1,1,0,2,0,0,2,1,0,0,2,0,0,1,2,1,1,0,0,2,1,1,1,0,2,2,1,2,0,1,0,0,1,1,1,2,1,2,2,2,0,0,0,2,2,2,1,2,2,2,2,2,0,1,0,2,2,1,1,2,0,0,0,2,1,1,1,1,0,2,2,0,1,2,0,2,0,2,2,0,0,2,0,1,0,0,1,1,1,1,0,1,1,0,2,0,2,2,2,2,0,0,2,2,2,1,2,1,1,0,1,0,2,2,1,2,0,0,2,2,1,0,2,1,2,1,2,2,0,1,2,1,1,2,1,0,0,0,2,0,0,2,1,0,1,1,1,2,1,2,1,0,1,1,0,0,1,0,1,1,2,2,1,0,2,2,0,0,2,1,1,2,2,0,1,1,1,0,0,1,2,0,2,1,2,2,0,0,0,2,1,1,0,0,1,2,2,1,2,1,0,0,2,0,1,1,1,0,2,2,2,0,0,0,2,2,2,2,1,0,1,1,1,0,2,2,2,0,1,2,0,0,2,2,2,0,1,0,1,0,0,0,2,2,0,2,1,2,0,0,2,0,1,1,0,1,2,0,2,0,2,2,1,2,0,2,1,1,2,1,1,0,0,2,0,1,1,1,1,2,1,0,2,1,0,0,1,2,1,2,1,1,0,2,1,0,0,1,1,2,2,0,2,1,1,2,0,2,1,0,1,2,2,2,2,0,1,1,1,1,1,1,0,0,2,1,0,1,0,2,0,0,1,2,0,1,0,2,1,0,1,0,1,2,2,0,2,2,2,1,0,1,0,2,1,2,1,0],"x0":" ","xaxis":"x","y":[88,96,91,790,62,55,84,96,65,77,99,74,81,84,65,59,49,63,47,100,60,58,91,81,91,100,61,55,75,57,103,83,92,91,90,82,80,54,74,58,92,80,59,99,93,66,92,89,52,76,88,57,93,75,101,63,98,90,60,68,58,74,102,89,98,59,101,98,102,102,83,102,89,103,51,84,80,69,57,57,70,95,90,96,87,51,59,94,84,92,93,86,71,58,77,97,56,87,57,88,91,72,80,59,88,96,70,73,81,60,61,96,97,98,70,70,96,71,73,99,85,55,47,68,65,75,77,67,64,54,92,74,51,65,86,92,81,91,76,87,77,74,64,102,64,80,66,65,98,78,71,84,74,71,100,80,59,82,92,90,81,63,53,95,56,70,75,76,85,51,64,53,90,86,64,50,103,91,55,58,47,72,51,52,46,56,78,78,70,92,95,64,59,48,90,95,101,48,93,97,78,60,77,96,88,79,63,50,76,74,63,73,71,80,103,71,72,50,56,78,77,56,91,101,62,52,98,93,94,97,100,79,90,59,88,87,46,98,62,99,54,50,48,47,84,76,86,64,46,53,50,77,51,90,72,95,79,100,85,66,89,78,93,83,71,100,99,89,71,50,99,101,81,98,93,56,86,50,48,86,65,68,78,87,59,47,61,49,94,68,47,51,58,86,87,54,82,51,82,65,68,89,83,67,90,75,100,61,99,97,81,102,71,97,82,50,54,77,102,55,94,52,53,47,103,67,82,92,53,57,87,84,88,79,72,64,77,62,61,80,65,68,59,95,55,100,72,96,81,77,77,51,61,71,53,53,68,59,59,65,89,49,84,87,84,91,97,82,99,84,88,76,96,99,85,49,75,76,102,86,103,80,56,46,46,65,100,80,96,91,72,92,80,57,83,49,69,77,47,98,53,87,76,57,70,84,71,74,83,54,59,96,53,96,59,50,82,100,84,90,56,50,62,77,74,64,61,79,97,57,58,61,47,81,85,76,103,72,92,63,80,94,88,90,103,88,71,93,52,49,97,84,84,92,56,63,61,63,88,79,75,53,90,77,57,81,60,65,101,68,78,61,56,68,61,87,84,54,64,94,101,57,56,103,82,93,65,92,73,68,67,102,92,94,102,83,99,66,68,84,48,55,98,71,75,73,67,74,75,47,63,54,95,60,75,54,69,57,59,51,77,67,54,74,94,55,57,86,64,100,48,65,49,81,87,89,81,89,67,46,73,57,80],"y0":" ","yaxis":"y","type":"box"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"sex"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"weight"}},"legend":{"tracegroupgap":0},"margin":{"t":60},"boxmode":"group"},                        {"responsive": true}                    ).then(function(){
-                            
-var gd = document.getElementById('70459251-e2f9-4946-804a-a19786236406');
-var x = new MutationObserver(function (mutations, observer) {{
-        var display = window.getComputedStyle(gd).display;
-        if (!display || display === 'none') {{
-            console.log([gd, 'removed!']);
-            Plotly.purge(gd);
-            observer.disconnect();
-        }}
-}});
-
-// Listen for the removal of the full notebook cells
-var notebookContainer = gd.closest('#notebook-container');
-if (notebookContainer) {{
-    x.observe(notebookContainer, {childList: true});
-}}
-
-// Listen for the clearing of the current output cell
-var outputEl = gd.closest('.output');
-if (outputEl) {{
-    x.observe(outputEl, {childList: true});
-}}
-
-                        })                };                });            </script>        </div></div></div>
 </div>
 <ul class="simple">
 <li><p>La escala del eje <span class="math notranslate nohighlight">\(y\)</span> es extrañamente grande, ya que todos los gráficos de caja están comprimidos en la octava parte inferior del gráfico, por lo que no representa una visualización clara de los datos. Esto se debe al valor atípico en la cuarta instancia de nuestro <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> <strong>790 kg</strong></p></li>
@@ -586,8 +507,8 @@ if (outputEl) {{
 <li><p><strong>Transformación</strong>: Es el proceso de transformación de los valores atípicos mediante la construcción de la columna de datos en la que se encuentra el valor atípico, por ejemplo, convirtiendo los valores en porcentajes y utilizando esa columna como característica en lugar de la columna original. En la siguiente sección, veremos un ejercicio para entender cómo podemos tratar los los valores atípicos.</p></li>
 </ul>
 </section>
-<section id="ejercicio-53-como-tratar-los-valores-atipicos">
-<h2>Ejercicio 53: Cómo tratar los valores atípicos<a class="headerlink" href="#ejercicio-53-como-tratar-los-valores-atipicos" title="Permalink to this heading">#</a></h2>
+<section id="como-tratar-los-valores-atipicos">
+<h2>Cómo tratar los valores atípicos<a class="headerlink" href="#como-tratar-los-valores-atipicos" title="Permalink to this heading">#</a></h2>
 <p><strong>Detección de valores atípicos</strong></p>
 <ul class="simple">
 <li><p>Si nuestro conjunto de datos es pequeño, podemos detectar el valor atípico simplemente mirando el conjunto de datos. Pero si tenemos un conjunto de datos enorme, ¿cómo podemos identificar los valores atípicos? Tenemos que utilizar técnicas de visualización y matemáticas. A continuación se presentan algunas de las técnicas de detección de valores atípicos</p>
@@ -602,7 +523,9 @@ if (outputEl) {{
 <ul class="simple">
 <li><p><strong>Criterio</strong>: Cualquier dato cuya puntuación <span class="math notranslate nohighlight">\(Z\)</span> esté fuera de la tercera desviación estándar es un valor atípico</p></li>
 </ul>
-<p><img alt="" src="_images/z_score.png" /></p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/z_score.png"><img alt="_images/z_score.png" src="_images/z_score.png" style="width: 560.0px; height: 364.8px;" /></a>
+</figure>
 <p><strong>Implementación</strong>:</p>
 <ul class="simple">
 <li><p>Recorrer todos los datos y calcular la puntuación <span class="math notranslate nohighlight">\(Z\)</span> mediante la fórmula <span class="math notranslate nohighlight">\((X_{i}-\mu)/\sigma\)</span>. Definir un valor de umbral de 3 y marcar los puntos de datos cuyo valor absoluto de puntuación <span class="math notranslate nohighlight">\(Z\)</span> sea mayor que el umbral como valores atípicos.</p></li>
@@ -634,11 +557,6 @@ if (outputEl) {{
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_outliers</span> <span class="o">=</span> <span class="n">detect_outliers_zscore</span><span class="p">(</span><span class="n">gym</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Outliers from Z-scores method: &quot;</span><span class="p">,</span> <span class="n">sample_outliers</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Outliers from Z-scores method:  [790]
 </pre></div>
 </div>
 </div>
@@ -679,16 +597,11 @@ if (outputEl) {{
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Outliers from IQR method:  [790]
-</pre></div>
-</div>
-</div>
 </div>
 <p><strong>Tratamiento de los valores atípicos</strong></p>
 <p><strong>Eliminación</strong></p>
 <ul class="simple">
-<li><p>En este ejercicio, vamos a eliminar la instancia que contiene el valor atípico del conjunto de datos que utilizamos en el Ejercicio 52, y visualizamos el conjunto de datos de nuevo generando un gráfico de caja basado en el nuevo conjunto de datos.</p></li>
+<li><p>En este ejercicio, vamos a eliminar la instancia que contiene el valor atípico del conjunto de datos que utilizamos en el ejercicio previo, y visualizamos el conjunto de datos de nuevo generando un gráfico de caja basado en el nuevo conjunto de datos.</p></li>
 </ul>
 <ul class="simple">
 <li><p>Importar las librerías necesarias</p></li>
@@ -712,67 +625,9 @@ if (outputEl) {{
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>age</th>
-      <th>weight</th>
-      <th>sex</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>29</td>
-      <td>88</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>45</td>
-      <td>96</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>35</td>
-      <td>91</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>37</td>
-      <td>790</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>27</td>
-      <td>62</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <ul class="simple">
-<li><p>Modificar el DataFrame del gimnasio para que sólo esté formado por los casos en los que el peso sea inferior a 103 e imprimir las cinco primeras filas:</p></li>
+<li><p>Modificar el DataFrame del gimnasio para que solo esté formado por los <em>casos en los que el peso sea inferior a 104</em> e imprimir las cinco primeras filas:</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -781,64 +636,6 @@ if (outputEl) {{
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>age</th>
-      <th>weight</th>
-      <th>sex</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>29</td>
-      <td>88</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>45</td>
-      <td>96</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>35</td>
-      <td>91</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>27</td>
-      <td>62</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>58</td>
-      <td>55</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <ul class="simple">
 <li><p>Vamos a crear un boxplot para ver el aspecto de los datos</p></li>
@@ -850,12 +647,10 @@ if (outputEl) {{
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/92fe50645465b72039f5d571f08a138f9ccf0f75e157eaa558a716998a2bb12f.svg" src="_images/92fe50645465b72039f5d571f08a138f9ccf0f75e157eaa558a716998a2bb12f.svg" /></div>
 </div>
 <p><strong>Imputación por medio de la <em>media, mediana o moda</em></strong></p>
 <ul class="simple">
-<li><p>Como el valor medio es sensible a valores atípicos, se aconseja sustituirlos por la mediana</p></li>
+<li><p>Como el <em>valor medio es sensible a valores atípicos, se aconseja sustituirlos por la mediana</em></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -867,11 +662,6 @@ if (outputEl) {{
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>median:  76.0
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -879,64 +669,6 @@ if (outputEl) {{
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>age</th>
-      <th>weight</th>
-      <th>sex</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>29</td>
-      <td>88.0</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>45</td>
-      <td>96.0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>35</td>
-      <td>91.0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>37</td>
-      <td>76.0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>27</td>
-      <td>62.0</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -945,20 +677,18 @@ if (outputEl) {{
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/84444146119125870bf9248f9245b68d1cbf158b7df1ee7a3f63f84815b7a38f.svg" src="_images/84444146119125870bf9248f9245b68d1cbf158b7df1ee7a3f63f84815b7a38f.svg" /></div>
 </div>
 </section>
-<section id="ejercicio-54-tratamiento-de-los-valores-faltantes">
-<h2>Ejercicio 54: Tratamiento de los valores faltantes<a class="headerlink" href="#ejercicio-54-tratamiento-de-los-valores-faltantes" title="Permalink to this heading">#</a></h2>
+<section id="tratamiento-de-los-valores-faltantes">
+<h2>Tratamiento de los valores faltantes<a class="headerlink" href="#tratamiento-de-los-valores-faltantes" title="Permalink to this heading">#</a></h2>
 <p><strong>Datos faltantes</strong></p>
 <ul class="simple">
 <li><p>Los datos perdidos son, como su nombre indica, valores que están en blanco (<strong>NaN, -, 0</strong> cuando no deberían ser <strong>0</strong>, etc.). Al igual que los valores atípicos, los valores perdidos pueden ser problemáticos tanto en el caso de las visualizaciones como en el de los modelos predictivos.</p></li>
 <li><p>Los valores faltantes en las visualizaciones pueden mostrar una tendencia que en realidad no existe o no representa una relación entre dos variables que, en realidad, es significativa. Aunque es posible crear visualizaciones con un conjunto de datos que contenga valores perdidos, no se recomienda hacerlo. Al hacerlo, se ignoran los casos en los que se encuentran esos valores perdidos, creando así una visualización basada en algunos de los datos pero no en todos.</p></li>
-<li><p>Por lo tanto, el tratamiento de los valores perdidos es de suma importancia. Existen dos enfoques principales para tratar los valores perdidos: la supresión y la imputación, ambos discutidos en términos de tratamiento de los valores atípicos. La La misma lógica se aplica a los valores perdidos.</p></li>
+<li><p>Por lo tanto, el tratamiento de los valores perdidos es de suma importancia. Existen dos enfoques principales para tratar los valores perdidos: <code class="docutils literal notranslate"><span class="pre">la</span> <span class="pre">supresión</span> <span class="pre">y</span> <span class="pre">la</span> <span class="pre">imputación,</span> <span class="pre">ambos</span> <span class="pre">discutidos</span> <span class="pre">en</span> <span class="pre">términos</span> <span class="pre">de</span> <span class="pre">tratamiento</span> <span class="pre">de</span> <span class="pre">los</span> <span class="pre">valores</span> <span class="pre">atípicos.</span> <span class="pre">La</span> <span class="pre">misma</span> <span class="pre">lógica</span> <span class="pre">se</span> <span class="pre">aplica</span> <span class="pre">a</span> <span class="pre">los</span> <span class="pre">valores</span> <span class="pre">faltantes</span></code>.</p></li>
 </ul>
 <ul class="simple">
-<li><p>En este ejercicio, vamos a trabajar con un conjunto de datos que tiene siete valores perdidos en forma de 0s. En primer lugar, eliminaremos las instancias que contienen estos valores perdidos y generar un gráfico de caja para ver el impacto que la eliminación de un gran número de instancias en nuestra visualización. A continuación, imputaremos el valor de la mediana de la columna que que contiene los valores perdidos y generaremos un gráfico de caja basado en este conjunto de datos imputados.</p></li>
+<li><p>En este ejercicio, vamos a trabajar con un conjunto de datos que tiene <code class="docutils literal notranslate"><span class="pre">siete</span> <span class="pre">valores</span> <span class="pre">perdidos</span> <span class="pre">en</span> <span class="pre">forma</span> <span class="pre">de</span> <span class="pre">0s</span></code>. En primer lugar, <code class="docutils literal notranslate"><span class="pre">eliminaremos</span> <span class="pre">las</span> <span class="pre">instancias</span> <span class="pre">que</span> <span class="pre">contienen</span> <span class="pre">estos</span> <span class="pre">valores</span> <span class="pre">perdidos</span> <span class="pre">y</span> <span class="pre">se</span> <span class="pre">genera</span> <span class="pre">un</span> <span class="pre">gráfico</span> <span class="pre">de</span> <span class="pre">caja</span> <span class="pre">para</span> <span class="pre">ver</span> <span class="pre">el</span> <span class="pre">impacto</span> <span class="pre">que</span> <span class="pre">la</span> <span class="pre">eliminación</span> <span class="pre">de</span> <span class="pre">un</span> <span class="pre">gran</span> <span class="pre">número</span> <span class="pre">de</span> <span class="pre">instancias</span> <span class="pre">en</span> <span class="pre">nuestra</span> <span class="pre">visualización</span></code>. A continuación, imputaremos el valor de la mediana de la columna que contiene los valores perdidos y generaremos un gráfico de caja basado en este conjunto de datos imputados.</p></li>
 </ul>
 <ul class="simple">
 <li><p>Importar las librerías necesarias</p></li>
@@ -982,58 +712,6 @@ if (outputEl) {{
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>weight</th>
-      <th>sex</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>47</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>35</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>34</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1041,73 +719,6 @@ if (outputEl) {{
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>weight</th>
-      <th>sex</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>62.000000</td>
-      <td>62.000000</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>33.887097</td>
-      <td>0.838710</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>15.683451</td>
-      <td>0.813685</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>0.000000</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>25.000000</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>35.000000</td>
-      <td>1.000000</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>46.000000</td>
-      <td>1.750000</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>56.000000</td>
-      <td>2.000000</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <ul class="simple">
 <li><p>Como podemos ver, el valor de peso mínimo en nuestro conjunto de datos es <strong>0</strong>; sin embargo, nadie puede pesar <strong>0 kgs</strong>, lo que significa que tenemos valores faltantes en forma de <strong>0s</strong>. Intentemos eliminar estas instancias.</p></li>
@@ -1120,73 +731,6 @@ if (outputEl) {{
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>weight</th>
-      <th>sex</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>55.00000</td>
-      <td>55.000000</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>38.20000</td>
-      <td>0.836364</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>10.49056</td>
-      <td>0.811118</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>21.00000</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>31.00000</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>36.00000</td>
-      <td>1.000000</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>46.50000</td>
-      <td>1.500000</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>56.00000</td>
-      <td>2.000000</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <ul class="simple">
 <li><p>Crea un <code class="docutils literal notranslate"><span class="pre">boxplot</span></code> con este nuevo <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, con el eje <span class="math notranslate nohighlight">\(x\)</span> como sexo y el eje <span class="math notranslate nohighlight">\(y\)</span> como peso</p></li>
@@ -1198,11 +742,9 @@ if (outputEl) {{
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/f2991b745afa25cf969bd9ea95d66fcc13e9611fe1325944f4c4092224c4322b.svg" src="_images/f2991b745afa25cf969bd9ea95d66fcc13e9611fe1325944f4c4092224c4322b.svg" /></div>
 </div>
 <ul class="simple">
-<li><p>Ahora, el valor del peso mínimo es 21, lo que tiene más sentido. Sin embargo, nuestro conteo se ha reducido a 55 de 62, lo que significa que hemos eliminado 7 instancias de nuestro conjunto de datos. Esto puede parecer pequeño en este ejemplo, pero en realidad, esto puede tener repercusiones serias en la información obtenida.</p></li>
+<li><p>Ahora, el valor del peso mínimo es 21, lo que tiene más sentido. Sin embargo, nuestro conteo se ha reducido a <code class="docutils literal notranslate"><span class="pre">55</span> <span class="pre">de</span> <span class="pre">62,</span> <span class="pre">lo</span> <span class="pre">que</span> <span class="pre">significa</span> <span class="pre">que</span> <span class="pre">se</span> <span class="pre">han</span> <span class="pre">eliminado</span> <span class="pre">7</span> <span class="pre">instancias</span> <span class="pre">de</span> <span class="pre">nuestro</span> <span class="pre">conjunto</span> <span class="pre">de</span> <span class="pre">datos</span></code>. Esto puede parecer pequeño en este ejemplo, pero en realidad, esto puede tener repercusiones serias en la información obtenida.</p></li>
 <li><p>Además, en el gráfico de caja anterior, el extremo inferior de la caja para el sexo 0 y el extremo superior de la caja para el sexo 2 es ligeramente anormal. Por lo tanto, sustituyamos los valores 0 de la columna de peso por el valor medio de la columna. Recuerde que tenemos que calcular la media de la columna <strong>¡columna sin tener en cuenta esos valores 0!</strong> Si los tenemos en cuenta, entonces nuestra media será incorrecta.</p></li>
 </ul>
 <ul class="simple">
@@ -1210,23 +752,18 @@ if (outputEl) {{
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_w</span> <span class="o">=</span> <span class="n">doc_w</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">mean_w</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>38.2
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">median_w</span> <span class="o">=</span> <span class="n">doc_w</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="n">median_w</span>
 </pre></div>
 </div>
 </div>
 </div>
 <ul class="simple">
-<li><p>Utilice la función <code class="docutils literal notranslate"><span class="pre">.replace()</span></code> para sustituir los valores <strong>0</strong> presentes en la columna <strong>weight</strong> del <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> original por la media de la columna <strong>weight</strong> del modificado. Guarde esto en un nuevo <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></p></li>
+<li><p>Utilice la función <code class="docutils literal notranslate"><span class="pre">.replace()</span></code> para sustituir los valores <strong>0</strong> presentes en la columna <strong>weight</strong> del <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> original por la mediana de la columna <strong>weight</strong> del modificado. Guarde esto en un nuevo <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w_new</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;weight&#39;</span><span class="p">:</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="n">mean_w</span><span class="p">}})</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w_new</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;weight&#39;</span><span class="p">:</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="n">median_w</span><span class="p">}})</span>
 </pre></div>
 </div>
 </div>
@@ -1240,73 +777,6 @@ if (outputEl) {{
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>weight</th>
-      <th>sex</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>62.000000</td>
-      <td>62.000000</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>38.200000</td>
-      <td>0.838710</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>9.870307</td>
-      <td>0.813685</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>21.000000</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>31.250000</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>38.100000</td>
-      <td>1.000000</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>46.000000</td>
-      <td>1.750000</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>56.000000</td>
-      <td>2.000000</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <ul class="simple">
 <li><p>Nuestro recuento es de 62, lo que significa que tenemos todas las instancias, y nuestro peso mínimo es 21, lo que significa que no tenemos ningún <strong>0</strong>.</p></li>
@@ -1319,38 +789,31 @@ if (outputEl) {{
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/c26d10fe6f3fcff79cff5a8951ee911343352082867fca60bccafcd4533591c0.svg" src="_images/c26d10fe6f3fcff79cff5a8951ee911343352082867fca60bccafcd4533591c0.svg" /></div>
 </div>
 <ul class="simple">
-<li><p>Ahora, tenemos una visualización que no tiene valores perdidos y representa todas las instancias que están presentes en el conjunto de datos. Veamos el tercer problema que puede generar una visualización defectuosa.</p></li>
+<li><p>Ahora, tenemos una visualización que no tiene valores perdidos y representa todas las instancias que están presentes en el conjunto de datos. Veamos el tercer problema que puede generar una visualización defectuosa. <code class="docutils literal notranslate"><span class="pre">Otras</span> <span class="pre">técnicas</span> <span class="pre">de</span> <span class="pre">imputación</span> <span class="pre">de</span> <span class="pre">datos</span> <span class="pre">fueron</span> <span class="pre">estudiadas</span> <span class="pre">en</span> <span class="pre">R,</span> <span class="pre">y</span> <span class="pre">se</span> <span class="pre">pueden</span> <span class="pre">importar</span> <span class="pre">a</span> <span class="pre">Python</span></code>. En Python, <code class="docutils literal notranslate"><span class="pre">MICE</span></code> se puede ejecutar en un paquete llamado <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.impute.IterativeImputer.html">IterativeImputer</a>. Estaba en fase experimental hasta hace poco y ahora está disponible en el paquete <code class="docutils literal notranslate"><span class="pre">sklearn.impute</span></code>.`</p></li>
 </ul>
 <p><strong>Instancias y/o funciones duplicadas</strong></p>
 <ul class="simple">
-<li><p>El tercer problema es la presencia de instancias y/o características duplicadas en un conjunto de datos. Se trata de elementos innecesarios en el conjunto de datos y, si no se eliminan, pueden pueden afectar a las tendencias y a los conocimientos que se muestran en una visualización.</p></li>
-<li><p>Por ejemplo, puede crear una visualización que muestre la relación entre el género de un adolescente y si toca el piano. Con un conjunto de datos sin valores atípicos, anomalías o valores perdidos, obtendrá una gran visualización. A partir de la visualización, podrá también podrá concluir que hay más mujeres que tocan el piano que hombres. Sin embargo, digamos que la visualización proviene del conjunto de datos siguiente</p></li>
+<li><p>El tercer problema es la presencia de <code class="docutils literal notranslate"><span class="pre">instancias</span> <span class="pre">y/o</span> <span class="pre">características</span> <span class="pre">duplicadas</span> <span class="pre">en</span> <span class="pre">un</span> <span class="pre">conjunto</span> <span class="pre">de</span> <span class="pre">datos</span></code>. Se trata de elementos innecesarios en el conjunto de datos y, si no se eliminan, <em>pueden afectar a las tendencias y a los conocimientos que se muestran en una visualización</em>.</p></li>
+<li><p>Por ejemplo, puede crear una visualización que muestre la relación entre el género de un adolescente y si toca el piano. Con un conjunto de datos sin valores atípicos, anomalías o valores perdidos, obtendrá una gran visualización. A partir de la visualización, podrá también concluir que hay más mujeres que tocan el piano que hombres. Sin embargo, digamos que la visualización proviene del conjunto de datos siguiente</p></li>
 </ul>
-<p><img alt="" src="_images/Figure714.png" /></p>
+<figure class="align-center">
+<img alt="_images/Figure714.png" src="_images/Figure714.png" />
+</figure>
 <ul class="simple">
-<li><p>Hay dos instancias para <strong>Nita Thadaka</strong> y tres instancias para <strong>Pooja Rajesh</strong>, lo que significa que hay tres instancias duplicadas en total. Esto significa que la información que la visualización está proporcionando es inexacta. La forma de tratar los duplicados es sencilla: <strong>eliminarlos</strong>. Con este fin puede utlizar la función: <code class="docutils literal notranslate"><span class="pre">.drop_duplicates()</span></code></p></li>
+<li><p>Hay dos instancias para <strong>Nita Thadaka</strong> y tres instancias para <strong>Pooja Rajesh</strong>, lo que significa que hay <code class="docutils literal notranslate"><span class="pre">tres</span> <span class="pre">instancias</span> <span class="pre">duplicadas</span> <span class="pre">en</span> <span class="pre">total</span></code>. Esto significa que la información que la visualización está proporcionando es inexacta. La forma de tratar los duplicados es sencilla: <strong>eliminarlos</strong>. Con este fin puede utlizar la función: <code class="docutils literal notranslate"><span class="pre">.drop_duplicates()</span></code></p></li>
 </ul>
 <p><strong>Mala selección de características</strong></p>
 <ul class="simple">
 <li><p>Con respecto a un conjunto de datos, una característica es una columna en el conjunto de datos, mientras que una instancia es una fila en el conjunto de datos. Por ejemplo, en la tabla anterior, nombre, sexo, tocar el piano y la edad son características, mientras que Pooja Rajesh, F, Yes y 17 es una instancia.</p></li>
-<li><p>Dado que el objetivo de una visualización es mostrar una tendencia, un patrón, una relación o algún vínculo entre dos o más características en un conjunto de datos, es importante que la selección de esas características se haga con cuidado. Por lo tanto, este es un punto crucial en la visualización de datos
-de datos.
-Si el objetivo es transmitir que existe una fuerte relación entre dos características, entonces hay que
-Si el objetivo es transmitir que existe una fuerte relación entre dos características, hay que asegurarse de que están fuertemente correlacionadas antes de proceder a su visualización.
-La selección de características insignificantes dará lugar a una visualización sin sentido y no acabará
-no transmitirá ninguna información concreta. Por ejemplo, en cuanto al conjunto de datos co2.csv,
-el conjunto de datos contiene información sobre las emisiones de dióxido de carbono por
-país y el PIB por país. Comprobamos la correlación entre las emisiones de CO2
-y el PIB antes de visualizar el conjunto de datos, garantizando que íbamos a crear una
-una visualización que valiera la pena.</p></li>
+<li><p>Dado que el objetivo de una visualización es mostrar una tendencia, un patrón, una relación o algún vínculo entre dos o más características en un conjunto de datos, <code class="docutils literal notranslate"><span class="pre">es</span> <span class="pre">importante</span> <span class="pre">que</span> <span class="pre">la</span> <span class="pre">selección</span> <span class="pre">de</span> <span class="pre">esas</span> <span class="pre">características</span> <span class="pre">se</span> <span class="pre">haga</span> <span class="pre">con</span> <span class="pre">cuidado</span></code>. Por lo tanto, este es un punto crucial en la visualización de datos.</p></li>
+<li><p>Si el objetivo es transmitir que existe una fuerte relación entre dos características, entonces hay que <code class="docutils literal notranslate"><span class="pre">asegurarse</span> <span class="pre">de</span> <span class="pre">que</span> <span class="pre">están</span> <span class="pre">fuertemente</span> <span class="pre">correlacionadas</span> <span class="pre">antes</span> <span class="pre">de</span> <span class="pre">proceder</span> <span class="pre">a</span> <span class="pre">su</span> <span class="pre">visualización</span></code>. La selección de características insignificantes dará lugar a una visualización sin sentido y no transmitirá ninguna información concreta. Por ejemplo, en cuanto al conjunto de datos co2.csv,
+el conjunto de datos contiene información sobre las emisiones de dióxido de carbono por país y el PIB por país. Comprobamos la <code class="docutils literal notranslate"><span class="pre">correlación</span> <span class="pre">entre</span> <span class="pre">las</span> <span class="pre">emisiones</span> <span class="pre">de</span> <span class="pre">CO2</span> <span class="pre">y</span> <span class="pre">el</span> <span class="pre">PIB</span> <span class="pre">antes</span> <span class="pre">de</span> <span class="pre">visualizar</span> <span class="pre">el</span> <span class="pre">conjunto</span> <span class="pre">de</span> <span class="pre">datos,</span> <span class="pre">garantizando</span> <span class="pre">que</span> <span class="pre">íbamos</span> <span class="pre">a</span> <span class="pre">crear</span> <span class="pre">una</span> <span class="pre">una</span> <span class="pre">visualización</span> <span class="pre">que</span> <span class="pre">valiera</span> <span class="pre">la</span> <span class="pre">pena</span></code>.</p></li>
 </ul>
 </section>
-<section id="tarea-2-3">
-<h2>Tarea 2.3<a class="headerlink" href="#tarea-2-3" title="Permalink to this heading">#</a></h2>
+<section id="ejercicio-para-entregar">
+<h2>Ejercicio para entregar<a class="headerlink" href="#ejercicio-para-entregar" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Determine las características que se visualizan en un gráfico de dispersión. Se le da el conjunto de datos co2.csv y se le pide que proporcione información sobre él, como por ejemplo, qué tipo de patrones existen, si hay tendencias entre las características, etc. Es necesario que su visualización final transmita información significativa. Para conseguirlo, va a crear visualizaciones para diferentes emparejamientos de características para entender están correlacionadas y, por lo tanto, vale la pena visualizarlas.</p></li>
 </ul>
@@ -1435,10 +898,10 @@ una visualización que valiera la pena.</p></li>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">Introducción</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formato-e-interpretacion-de-datos">Formato e interpretación de datos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-52-visualizacion-de-valores-atipicos-en-un-conjunto-de-datos-con-un-grafico-de-cajas">Ejercicio 52: Visualización de valores atípicos en un conjunto de datos con un gráfico de cajas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-53-como-tratar-los-valores-atipicos">Ejercicio 53: Cómo tratar los valores atípicos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-54-tratamiento-de-los-valores-faltantes">Ejercicio 54: Tratamiento de los valores faltantes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tarea-2-3">Tarea 2.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-de-valores-atipicos-en-un-conjunto-de-datos-con-un-grafico-de-cajas">Visualización de valores atípicos en un conjunto de datos con un gráfico de cajas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-tratar-los-valores-atipicos">Cómo tratar los valores atípicos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tratamiento-de-los-valores-faltantes">Tratamiento de los valores faltantes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-para-entregar">Ejercicio para entregar</a></li>
 </ul>
   </nav></div>
 
