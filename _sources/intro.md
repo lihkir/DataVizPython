@@ -2,7 +2,6 @@
 <h3>
 Visualización de Datos con Python y R</br>
 Departamento de Matemáticas y Estadística</br>
-Maestría en Estadística Aplicada</br>
 Profesor: Dr. Lihki Rubio
 </h3>
 </center>

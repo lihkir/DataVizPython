@@ -367,6 +367,8 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">Introducción</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuracion-de-su-entorno">Configuración de su entorno</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-python-no-miniconda">Usando Python. No Miniconda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacion-de-librerias">Instalación de Librerías</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diseno-de-dash">Diseño de Dash</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-informacion-sobre-los-componentes-html">Más información sobre los componentes HTML</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#componentes-reutilizables">Componentes reutilizables</a></li>
@@ -417,28 +419,72 @@ document.write(`
 <section id="configuracion-de-su-entorno">
 <h2>Configuración de su entorno<a class="headerlink" href="#configuracion-de-su-entorno" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Para la isntalación de <code class="docutils literal notranslate"><span class="pre">Dash</span></code> crearemos un entorno especial, en el cual isntalaremos cada una de las librería que necesitaremos en el transcurso de esta sección, en especial la isntalación de <code class="docutils literal notranslate"><span class="pre">Dash</span></code> mediante la orden: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">dash</span></code>. En su esencia, el propósito principal de los entornos virtuales (enviroment) de <code class="docutils literal notranslate"><span class="pre">Python</span></code> es crear un entorno aislado para los proyectos de <code class="docutils literal notranslate"><span class="pre">Python</span></code>. Esto significa que cada proyecto puede tener sus propias dependencias, independientemente de las dependencias que tengan los demás proyectos. Lo bueno de esto es que no hay límites en el número de entornos que puedes tener, ya que sólo son directorios que contienen unos pocos scripts. Además, son fácilmente creados usando las herramientas de línea de comandos <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code> o <code class="docutils literal notranslate"><span class="pre">pyenv</span></code>, en el caso de <code class="docutils literal notranslate"><span class="pre">anaconda</span></code> por medio de <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span></code></p></li>
-</ul>
-<ul class="simple">
-<li><p>Crea un enviroment virtual de <code class="docutils literal notranslate"><span class="pre">Python</span></code> en una carpeta llamada <code class="docutils literal notranslate"><span class="pre">dash_project</span></code> (o cualquier otro nombre que quieras). Esto también creará una nueva carpeta con el nombre que hayas elegido. Escriba la siguiente orden un su terminal, en el caso de <code class="docutils literal notranslate"><span class="pre">Windows</span></code>, en el <strong>Command Prompt</strong> o en el <strong>Windows PowerShell</strong> que tiene un aspecta muy parecido al de <code class="docutils literal notranslate"><span class="pre">Ubuntu</span></code>. Puedes elegir la carpeta donde van a reposar todos tus <code class="docutils literal notranslate"><span class="pre">enviroment</span></code></p></li>
-</ul>
-<figure class="align-center" id="dash2-fig">
-<img alt="_images/dash2.png" src="_images/dash2.png" />
-</figure>
-<ul class="simple">
-<li><p>Luego nos vamos a mover a la carpeta que se creó con el enviroment: <strong>dash_project</strong> usando el comando <code class="docutils literal notranslate"><span class="pre">cd</span></code>, y dentro de esta vamos a ejecutar la siguiente orden para activar en enviroment: <code class="docutils literal notranslate"><span class="pre">.\Scripts\activate</span></code> tal como se muestra en la figura. Nótese que en la parte izquierda de la línea de comandos, aparece el nombre del enviroment en color verde, indicando que ha sido creado correctamente y está activado. Luego de activado el enviroment se puede mover al directorio donde desea realizar el desarrollo de esta sección, antes instalaremos algunas librerías</p></li>
-</ul>
-<figure class="align-center" id="dash3-fig">
-<img alt="_images/dash3.png" src="_images/dash3.png" />
-</figure>
-<ul class="simple">
-<li><p>En su terminal, instale dash.</p></li>
+<li><p>Para la instalación de <code class="docutils literal notranslate"><span class="pre">Dash</span></code> crearemos un entorno especial, en el cual instalaremos cada una de las librerías que necesitaremos en el transcurso de esta sección, en especial la instalación de <code class="docutils literal notranslate"><span class="pre">Dash</span></code> mediante la orden</p></li>
 </ul>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>dash
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Esto también trae consigo la biblioteca de gráficos plotly. Esta biblioteca está en desarrollo activo, así que instala y actualiza con frecuencia. Si prefieres Jupyter notebook o JupyterLab como entorno de desarrollo, te recomendamos instalar jupyter-dash:</p></li>
+<li><p>En su esencia, el propósito principal de los entornos virtuales (virtual enviroment) de <code class="docutils literal notranslate"><span class="pre">Python</span></code> es crear un espacio aislado para cada proyecto particular de <code class="docutils literal notranslate"><span class="pre">Python</span></code>. Esto significa que, cada proyecto puede tener sus propias dependencias, independientemente de las dependencias que tengan los demás proyectos.</p></li>
+<li><p>Lo bueno de esto es que no hay límites en el número de entornos que puedes tener, ya que sólo son directorios que contienen unos pocos scripts. Además, son fácilmente creados usando las herramientas de línea de comandos <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code> o <code class="docutils literal notranslate"><span class="pre">pyenv</span></code>, en el caso de <code class="docutils literal notranslate"><span class="pre">anaconda</span></code> por medio de <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span></code></p></li>
+</ul>
+<ul class="simple">
+<li><p>En el presente curso, para facilitar la creación de un entorno de desarrollo para <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code>, se recomienda utilizar <code class="docutils literal notranslate"><span class="pre">Miniconda/Anaconda</span></code>. El sitio web oficial de <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code> directamente realiza la recomendación que se hace en el presente curso. Además de utilizar la <code class="docutils literal notranslate"><span class="pre">versión</span> <span class="pre">3.9</span> <span class="pre">de</span> <span class="pre">Python</span></code>.</p></li>
+</ul>
+<figure class="align-center">
+<img alt="_images/python_version_tf.png" src="_images/python_version_tf.png" />
+</figure>
+<ul class="simple">
+<li><p>Para crear el entorno virtual usando <code class="docutils literal notranslate"><span class="pre">Miniconda</span></code>, puede utilizar la siguiente orden</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>dash_project<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
+</pre></div>
+</div>
+<figure class="align-center">
+<img alt="_images/dash_project_venv.png" src="_images/dash_project_venv.png" />
+</figure>
+<ul class="simple">
+<li><p>Para activar y/o desactivar el entorno virtual de <code class="docutils literal notranslate"><span class="pre">Miniconda</span></code> creado, basta con utilizar las siguientes ordenes. Nótese que no es necesario usar el nombre del entorno virtual para desactivarlo</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>dash_project
+</pre></div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>deactivate
+</pre></div>
+</div>
+</section>
+<section id="usando-python-no-miniconda">
+<h2>Usando Python. No Miniconda<a class="headerlink" href="#usando-python-no-miniconda" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Solo</span> <span class="pre">en</span> <span class="pre">el</span> <span class="pre">caso</span> <span class="pre">que</span> <span class="pre">no</span> <span class="pre">desee</span> <span class="pre">utilizar</span> <span class="pre">Miniconda</span></code>. Para crear un entorno virtual usando solo <code class="docutils literal notranslate"><span class="pre">Python</span></code>, debe crear una carpeta llamada por ejemplo, <code class="docutils literal notranslate"><span class="pre">python_enviroments</span></code> (o con cualquier otro nombre) en su <code class="docutils literal notranslate"><span class="pre">disco</span> <span class="pre">local</span> <span class="pre">C</span></code> para evitar problemas de sincronización, la cual va a contener todos sus entornos virtuales.</p></li>
+<li><p>Escriba la siguiente orden un su terminal, en el caso de <code class="docutils literal notranslate"><span class="pre">Windows</span></code>, en el <strong>Command Prompt</strong> o en el <strong>Windows PowerShell</strong> que tiene un aspecto muy parecido al de <code class="docutils literal notranslate"><span class="pre">Ubuntu</span></code>. Puede elegir la carpeta donde van a reposar todos sus <code class="docutils literal notranslate"><span class="pre">enviroments</span></code>, en este caso <code class="docutils literal notranslate"><span class="pre">python_enviroments</span></code>, y el entorno virtual creado recibe el nombre <code class="docutils literal notranslate"><span class="pre">dash_project</span></code> a manera de ejemplo</p></li>
+</ul>
+<figure class="align-center" id="dash2-fig">
+<img alt="_images/dash2.png" src="_images/dash2.png" />
+</figure>
+<ul class="simple">
+<li><p>Luego debe ubicarse dentro de la carpeta que se creó con el enviroment: <strong>dash_project</strong> usando el comando <code class="docutils literal notranslate"><span class="pre">cd</span></code>, y dentro de esta ubicación debe ejecutar la siguiente orden para activar el enviroment:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span>\<span class="n">Scripts</span>\<span class="n">activate</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Tal como se muestra en la figura. Nótese que en la parte izquierda de la línea de comandos, aparece el <code class="docutils literal notranslate"><span class="pre">nombre</span> <span class="pre">del</span> <span class="pre">enviroment</span> <span class="pre">en</span> <span class="pre">color</span> <span class="pre">verde,</span> <span class="pre">indicando</span> <span class="pre">que</span> <span class="pre">ha</span> <span class="pre">sido</span> <span class="pre">creado</span> <span class="pre">correctamente</span> <span class="pre">y</span> <span class="pre">está</span> <span class="pre">activado</span></code>. Luego de activado el enviroment se puede mover al directorio donde desea realizar el desarrollo de esta sección. Procedemos ahora a instalar algunas librerías, el procedimiento es el mismo cuando usa <code class="docutils literal notranslate"><span class="pre">Miniconda</span></code> o <code class="docutils literal notranslate"><span class="pre">Python</span></code> puro.</p></li>
+</ul>
+<figure class="align-center" id="dash3-fig">
+<img alt="_images/dash3.png" src="_images/dash3.png" />
+</figure>
+</section>
+<section id="instalacion-de-librerias">
+<h2>Instalación de Librerías<a class="headerlink" href="#instalacion-de-librerias" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Independientemente de si decidió usar solo <code class="docutils literal notranslate"><span class="pre">Python</span></code> directamente, o <code class="docutils literal notranslate"><span class="pre">Miniconda</span></code> como recomienda <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code>, el procedimiento de instalación de librerías es el mismo. En su terminal, instale dash.</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>dash
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Esto también trae consigo la <code class="docutils literal notranslate"><span class="pre">biblioteca</span> <span class="pre">de</span> <span class="pre">gráficos</span> <span class="pre">plotly</span></code>. Esta biblioteca está en desarrollo activo, así que instala y actualiza con frecuencia. Si prefieres <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code> o <code class="docutils literal notranslate"><span class="pre">JupyterLab</span></code> como entorno de desarrollo, te recomendamos instalar jupyter-dash:</p></li>
 </ul>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>jupyter-dash
 </pre></div>
@@ -450,7 +496,7 @@ document.write(`
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Estamos listos para crear nuestra primera aplicación Dash. Cada una de estas librerías pueden ser isntaladas también a traves de un archivo con requerimientos, el cual podemos crear con el nombre: <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> y copiar en éste sin espacio a la izquierda el nombre de cada librería, así:</p></li>
+<li><p>Estamos listos para crear nuestra primera <code class="docutils literal notranslate"><span class="pre">aplicación</span> <span class="pre">Dash</span></code>. Cada una de estas librerías pueden ser instaladas también a traves de un archivo con requerimientos, el cual podemos crear con el nombre: <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> y copiar en éste sin espacio a la izquierda el nombre de cada librería, así:</p></li>
 </ul>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>dash
 jupyter-dash
@@ -464,7 +510,7 @@ pandas
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Estaremos usando en esta sección <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code> debido a que es gratis. Otras opciones son: <code class="docutils literal notranslate"><span class="pre">Sublime,</span> <span class="pre">VS</span> <span class="pre">Code,</span> <span class="pre">Atom</span></code> entre otras. Seleccione aquel editor con el que se sienta más comodo. Para instalar <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code> escriba dentro del mismo enviroment</p></li>
+<li><p>Estaremos usando en esta sección <code class="docutils literal notranslate"><span class="pre">JupyterLab</span></code> debido a que es un editor gratuito, que proporciona una <code class="docutils literal notranslate"><span class="pre">interfaz</span> <span class="pre">basada</span> <span class="pre">en</span> <span class="pre">navegador</span></code> que le permite utilizar varios cuadernos juntos de forma eficaz, así como también usar <code class="docutils literal notranslate"><span class="pre">Markdown</span></code>. También estaremos usando el edito <code class="docutils literal notranslate"><span class="pre">VS</span> <span class="pre">Code</span></code>, el cual ofrece soporte para una <code class="docutils literal notranslate"><span class="pre">amplia</span> <span class="pre">variedad</span> <span class="pre">de</span> <span class="pre">lenguajes</span> <span class="pre">de</span> <span class="pre">programación</span></code> y marcos de trabajo, lo que lo hace ideal para proyectos multiplataforma, esto es, puedes <code class="docutils literal notranslate"><span class="pre">usarlo</span> <span class="pre">en</span> <span class="pre">Windows,</span> <span class="pre">Mac</span> <span class="pre">y</span> <span class="pre">Linux</span></code>. Seleccione aquel editor con el que se sienta más cómodo. Para instalar <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code> escriba dentro del mismo enviroment</p></li>
 </ul>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>jupyterlab
 </pre></div>
@@ -491,7 +537,7 @@ pandas
 <section id="diseno-de-dash">
 <h2>Diseño de Dash<a class="headerlink" href="#diseno-de-dash" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Estudiaremos el diseño a través de seis aplicaciones autónomas. El diseño de las aplicaciones <code class="docutils literal notranslate"><span class="pre">Dash</span></code> de producción puede ser estilizado con <a class="reference external" href="https://plotly.com/dash/design-kit/?tab=templates">Dash Enterprise Design Kit</a>. Las aplicaciones <code class="docutils literal notranslate"><span class="pre">Dash</span></code> se componen de dos partes. La primera parte es el “diseño” de la aplicación y describe el aspecto de la misma. La segunda parte describe la interactividad de la aplicación y será cubierta más adelante.</p></li>
+<li><p>Estudiaremos el diseño a través de seis aplicaciones autónomas. El diseño de las aplicaciones <code class="docutils literal notranslate"><span class="pre">Dash</span></code> de producción puede ser estilizado con <a class="reference external" href="https://plotly.com/dash/design-kit/?tab=templates">Dash Enterprise Design Kit</a>. Las aplicaciones <code class="docutils literal notranslate"><span class="pre">Dash</span></code> se componen de dos partes. La primera parte es el <code class="docutils literal notranslate"><span class="pre">diseño</span> <span class="pre">de</span> <span class="pre">la</span> <span class="pre">aplicación</span></code> y describe el aspecto de la misma. La segunda parte describe la <code class="docutils literal notranslate"><span class="pre">interactividad</span> <span class="pre">de</span> <span class="pre">la</span> <span class="pre">aplicación</span></code> y será cubierta más adelante.</p></li>
 <li><p>Mantenemos un conjunto de componentes en la biblioteca <code class="docutils literal notranslate"><span class="pre">dash_core_components</span></code> y <code class="docutils literal notranslate"><span class="pre">dash_html_components</span></code> (<code class="docutils literal notranslate"><span class="pre">dash.html</span></code> a partir de <code class="docutils literal notranslate"><span class="pre">Dash</span> <span class="pre">v2.0</span></code>) pero también puedes construir los suyos con <code class="docutils literal notranslate"><span class="pre">JavaScript</span></code> y <code class="docutils literal notranslate"><span class="pre">React.js</span></code>. A lo largo de esta sección, los ejemplos de código <code class="docutils literal notranslate"><span class="pre">Python</span></code> están pensados para ser guardados como archivos y ejecutados usando <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">app.py</span></code>. También puedes usar <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code> con la biblioteca <code class="docutils literal notranslate"><span class="pre">JupyterDash</span></code>.</p></li>
 <li><p>Para empezar, crea un archivo llamado <code class="docutils literal notranslate"><span class="pre">app.py</span></code>, copia el código de abajo en él y ejecútalo con <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">app.py</span></code> luego visite <a class="reference external" href="http://127.0.0.1:8050/">http://127.0.0.1:8050/</a> en su navegador web para ver la aplicación</p></li>
 </ul>
@@ -541,7 +587,7 @@ pandas
 <img alt="_images/dash11.png" src="_images/dash11.png" />
 </figure>
 <ul class="simple">
-<li><p>Para tener otro estilo de visualización puede diseñar tu propio archivos <code class="docutils literal notranslate"><span class="pre">style.css</span></code> por ejemplo, o utilizar algunos libres que puedes solo importar, como por ejemplo <a class="reference external" href="https://www.bootstrapcdn.com/bootswatch/">BootstrapCDN</a> y <a class="reference external" href="https://plotly.com/python/templates/">Plotly themes</a>. Para importar los estilos de temas en tu app debe importar la librería en el archivo <code class="docutils literal notranslate"><span class="pre">.py</span></code> principal de tu app: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">dash_bootstrap_components</span> <span class="pre">as</span> <span class="pre">dbc</span></code>, además de usar la siguiente línea para seleccionar el tema de interés</p></li>
+<li><p>Para tener otro estilo de visualización puede diseñar su propio archivo <code class="docutils literal notranslate"><span class="pre">style.css</span></code> por ejemplo, o utilizar algunos libres que puede solo importar, como por ejemplo <a class="reference external" href="https://www.bootstrapcdn.com/bootswatch/">BootstrapCDN</a> y <a class="reference external" href="https://plotly.com/python/templates/">Plotly themes</a>. Para importar los estilos de temas en tu app debe importar la librería en el archivo <code class="docutils literal notranslate"><span class="pre">.py</span></code> principal de tu app: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">dash_bootstrap_components</span> <span class="pre">as</span> <span class="pre">dbc</span></code>, además de usar la siguiente línea para seleccionar el tema de interés</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">dash</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span><span class="n">external_stylesheets</span><span class="o">=</span><span class="p">[</span><span class="n">dbc</span><span class="o">.</span><span class="n">themes</span><span class="o">.</span><span class="n">BOOTSTRAP</span><span class="p">])</span>
 </pre></div>
@@ -654,7 +700,8 @@ pandas
 <section id="componentes-reutilizables">
 <h2>Componentes reutilizables<a class="headerlink" href="#componentes-reutilizables" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Escribiendo nuestro markup en <code class="docutils literal notranslate"><span class="pre">Python</span></code>, podemos crear componentes complejos reutilizables como tablas sin cambiar de contexto o de lenguaje. Aquí hay un ejemplo rápido que genera una tabla <code class="docutils literal notranslate"><span class="pre">Table</span></code> a partir de un dataframe de <code class="docutils literal notranslate"><span class="pre">Pandas</span></code>. Crea un archivo llamado <code class="docutils literal notranslate"><span class="pre">app.py</span></code> con el siguiente código</p></li>
+<li><p>Escribiendo nuestro markup en <code class="docutils literal notranslate"><span class="pre">Python</span></code>, podemos crear componentes complejos reutilizables como tablas sin cambiar de contexto o de lenguaje. Aquí hay un ejemplo rápido que genera una tabla <code class="docutils literal notranslate"><span class="pre">Table</span></code> a partir de un dataframe de <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> (ver <a class="reference external" href="https://dash.plotly.com/dash-html-components/tr">html.Tr</a>, <a class="reference external" href="https://dash.plotly.com/dash-html-components/td">html.Td</a>, <a class="reference external" href="https://dash.plotly.com/dash-html-components/thead">html.Thead
+</a>). Crea un archivo llamado <code class="docutils literal notranslate"><span class="pre">app.py</span></code> con el siguiente código</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
 <span class="kn">from</span> <span class="nn">dash</span> <span class="kn">import</span> <span class="n">html</span>
@@ -694,8 +741,8 @@ pandas
 <section id="mas-informacion-sobre-la-visualizacion">
 <h2>Más información sobre la visualización<a class="headerlink" href="#mas-informacion-sobre-la-visualizacion" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>La librería <code class="docutils literal notranslate"><span class="pre">dash_core_components</span></code> incluye un componente llamado <code class="docutils literal notranslate"><span class="pre">Graph</span></code>. <code class="docutils literal notranslate"><span class="pre">Graph</span></code> muestra visualizaciones de datos interactivas utilizando la librería de gráficos de código abierto <code class="docutils literal notranslate"><span class="pre">plotly.js</span></code>. <code class="docutils literal notranslate"><span class="pre">Plotly.js</span></code> admite más de 35 tipos de gráficos y los representa tanto en <code class="docutils literal notranslate"><span class="pre">SVG</span></code> de calidad vectorial como en <code class="docutils literal notranslate"><span class="pre">WebGL</span></code> de alto rendimiento.</p></li>
-<li><p>El argumento de figura en el <code class="docutils literal notranslate"><span class="pre">componenteGraph</span></code> es el mismo argumento de figura que utiliza <code class="docutils literal notranslate"><span class="pre">plotly.py</span></code>, la biblioteca de gráficos <code class="docutils literal notranslate"><span class="pre">Python</span></code> de código abierto de <code class="docutils literal notranslate"><span class="pre">Plotly</span></code>. Consulte la documentación y la galería de <a class="reference external" href="https://plotly.com/python/">plotly.py para obtener más información</a>. Aquí presentamos un ejemplo que crea un gráfico de dispersión a partir de un marco de datos de <code class="docutils literal notranslate"><span class="pre">Pandas</span></code>. Cree un archivo llamado <code class="docutils literal notranslate"><span class="pre">app.py</span></code> con el siguiente código:</p></li>
+<li><p>La librería <code class="docutils literal notranslate"><span class="pre">dash_core_components</span></code> incluye un componente llamado <code class="docutils literal notranslate"><span class="pre">Graph</span></code>. <code class="docutils literal notranslate"><span class="pre">Graph</span></code> muestra visualizaciones de datos interactivas utilizando la librería de gráficos de código abierto <code class="docutils literal notranslate"><span class="pre">plotly.js</span></code>. <code class="docutils literal notranslate"><span class="pre">Plotly.js</span></code> admite más de <code class="docutils literal notranslate"><span class="pre">35</span> <span class="pre">tipos</span> <span class="pre">de</span> <span class="pre">gráficos</span></code> y los representa tanto en <code class="docutils literal notranslate"><span class="pre">SVG</span></code> de calidad vectorial como en <code class="docutils literal notranslate"><span class="pre">WebGL</span></code> de alto rendimiento.</p></li>
+<li><p>El argumento de figura en el <code class="docutils literal notranslate"><span class="pre">componenteGraph</span></code> es el mismo argumento de figura que utiliza <code class="docutils literal notranslate"><span class="pre">plotly.py</span></code>, la biblioteca de gráficos <code class="docutils literal notranslate"><span class="pre">Python</span></code> de código abierto de <code class="docutils literal notranslate"><span class="pre">Plotly</span></code>. Consulte la documentación y la galería de <a class="reference external" href="https://plotly.com/python/">plotly.py para obtener más información</a>. Aquí presentamos un ejemplo que crea un gráfico de dispersión a partir de un marco de datos de <code class="docutils literal notranslate"><span class="pre">Pandas</span></code>. Crear un archivo llamado <code class="docutils literal notranslate"><span class="pre">app.py</span></code> con el siguiente código</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
 <span class="kn">from</span> <span class="nn">dash</span> <span class="kn">import</span> <span class="n">dcc</span>
@@ -729,7 +776,7 @@ pandas
 <section id="markdown">
 <h2>Markdown<a class="headerlink" href="#markdown" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Aunque <code class="docutils literal notranslate"><span class="pre">Dash</span></code> expone <code class="docutils literal notranslate"><span class="pre">HTML</span></code> a través de <code class="docutils literal notranslate"><span class="pre">dash_html_components</span></code> (<code class="docutils literal notranslate"><span class="pre">dash.html</span></code> a partir de <code class="docutils literal notranslate"><span class="pre">Dash</span> <span class="pre">v2.0</span></code>) , puede ser tedioso escribir tu copia en <code class="docutils literal notranslate"><span class="pre">HTML</span></code>. Para escribir bloques de texto, puedes utilizar el componente <code class="docutils literal notranslate"><span class="pre">Markdown</span></code> en <code class="docutils literal notranslate"><span class="pre">dash_core_components</span></code>. Crea un archivo llamado <a class="reference external" href="http://app.py">app.py</a> con el siguiente código:</p></li>
+<li><p>Aunque <code class="docutils literal notranslate"><span class="pre">Dash</span></code> expone <code class="docutils literal notranslate"><span class="pre">HTML</span></code> a través de <code class="docutils literal notranslate"><span class="pre">dash_html_components</span></code> (<code class="docutils literal notranslate"><span class="pre">dash.html</span></code> a partir de <code class="docutils literal notranslate"><span class="pre">Dash</span> <span class="pre">v2.0</span></code>) , puede ser tedioso escribir tu copia en <code class="docutils literal notranslate"><span class="pre">HTML</span></code>. Para escribir bloques de texto, puedes utilizar el componente <code class="docutils literal notranslate"><span class="pre">Markdown</span></code> en <code class="docutils literal notranslate"><span class="pre">dash_core_components</span></code>. Crear un archivo llamado <a class="reference external" href="http://app.py">app.py</a> con el siguiente código:</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
 <span class="kn">from</span> <span class="nn">dash</span> <span class="kn">import</span> <span class="n">dcc</span>
@@ -776,7 +823,7 @@ pandas
     <span class="n">dcc</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
         <span class="n">options</span><span class="o">=</span><span class="p">[</span>
             <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;New York City&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;NYC&#39;</span><span class="p">},</span>
-            <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="sa">u</span><span class="s1">&#39;Montréal&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;MTL&#39;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="sa">u</span><span class="s1">&#39;Montréal&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;MTL&#39;</span><span class="p">},</span> 
             <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;San Francisco&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;SF&#39;</span><span class="p">}</span>
         <span class="p">],</span>
         <span class="n">value</span><span class="o">=</span><span class="s1">&#39;MTL&#39;</span>
@@ -881,6 +928,9 @@ pandas
     <span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
+<figure class="align-center" id="initialvalue-callback-fig">
+<img alt="_images/initialvalue_callback.png" src="_images/initialvalue_callback.png" />
+</figure>
 <p><strong>Observaciones</strong></p>
 <ul>
 <li><p>Las “<code class="docutils literal notranslate"><span class="pre">inputs</span></code>” y “<code class="docutils literal notranslate"><span class="pre">outputs</span></code>” de la interfaz de nuestra aplicación se describen declarativamente como argumentos del decorador <code class="docutils literal notranslate"><span class="pre">&#64;app.callback</span></code>.</p>
@@ -900,6 +950,90 @@ pandas
 </section>
 <section id="dash-app-layout-con-figura-y-sliderm">
 <h2>Dash App Layout con Figura y Sliderm<a class="headerlink" href="#dash-app-layout-con-figura-y-sliderm" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/lihkir/Uninorte/main/AppliedStatisticMS/DataVisualizationRPython/Lectures/Python/PythonDataSets/gapminderDataFiveYear.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>year</th>
+      <th>pop</th>
+      <th>continent</th>
+      <th>lifeExp</th>
+      <th>gdpPercap</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Afghanistan</td>
+      <td>1952</td>
+      <td>8425333.0</td>
+      <td>Asia</td>
+      <td>28.801</td>
+      <td>779.445314</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Afghanistan</td>
+      <td>1957</td>
+      <td>9240934.0</td>
+      <td>Asia</td>
+      <td>30.332</td>
+      <td>820.853030</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Afghanistan</td>
+      <td>1962</td>
+      <td>10267083.0</td>
+      <td>Asia</td>
+      <td>31.997</td>
+      <td>853.100710</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Afghanistan</td>
+      <td>1967</td>
+      <td>11537966.0</td>
+      <td>Asia</td>
+      <td>34.020</td>
+      <td>836.197138</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Afghanistan</td>
+      <td>1972</td>
+      <td>13079460.0</td>
+      <td>Asia</td>
+      <td>36.088</td>
+      <td>739.981106</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
 <span class="kn">from</span> <span class="nn">dash</span> <span class="kn">import</span> <span class="n">dcc</span>
 <span class="kn">from</span> <span class="nn">dash</span> <span class="kn">import</span> <span class="n">html</span>
@@ -2452,7 +2586,24 @@ docker<span class="w"> </span>run<span class="w"> </span>-h<span class="w"> </sp
 <section id="ejercicio-para-entregar">
 <h2>Ejercicio para entregar<a class="headerlink" href="#ejercicio-para-entregar" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Dockerize</span></code> los dashboard de los dos ejemplos estudiados en la sección <strong><code class="docutils literal notranslate"><span class="pre">Dos</span> <span class="pre">ejemplos</span> <span class="pre">de</span> <span class="pre">Dash</span></code></strong>. Esto es. Crear dos imágenes <code class="docutils literal notranslate"><span class="pre">Docker</span></code> para los <code class="docutils literal notranslate"><span class="pre">Dash</span></code> asociados con: <code class="docutils literal notranslate"><span class="pre">Dash</span> <span class="pre">App</span> <span class="pre">para</span> <span class="pre">Mapas</span></code> y <code class="docutils literal notranslate"><span class="pre">Dash</span> <span class="pre">App</span> <span class="pre">Financiera</span></code>. Realice cambios en el (<code class="docutils literal notranslate"><span class="pre">back/front</span> <span class="pre">end</span></code>) de los dos <code class="docutils literal notranslate"><span class="pre">Dashboards</span></code>. Por ejemplo, agréguele a los dashboard <code class="docutils literal notranslate"><span class="pre">nuevos</span> <span class="pre">estilos</span></code> y <code class="docutils literal notranslate"><span class="pre">operaciones</span> <span class="pre">que</span> <span class="pre">puedan</span> <span class="pre">mejorar</span> <span class="pre">la</span> <span class="pre">visualización</span></code>. Tenga en cuenta los diferentes templates usados en esta sección.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dockerizar</span></code> los dashboard de los dos ejemplos estudiados en la sección <strong><code class="docutils literal notranslate"><span class="pre">Dos</span> <span class="pre">ejemplos</span> <span class="pre">de</span> <span class="pre">Dash</span></code></strong>. Esto es, crear dos imágenes <code class="docutils literal notranslate"><span class="pre">Docker</span></code> para los <code class="docutils literal notranslate"><span class="pre">Dash</span></code> asociados con: <code class="docutils literal notranslate"><span class="pre">Dash</span> <span class="pre">App</span> <span class="pre">para</span> <span class="pre">Mapas</span></code> y <code class="docutils literal notranslate"><span class="pre">Dash</span> <span class="pre">App</span> <span class="pre">Financiera</span></code>.</p></li>
+<li><p>Posteriormente, realice cambios en el (<code class="docutils literal notranslate"><span class="pre">back/front</span> <span class="pre">end</span></code>) de los dos <code class="docutils literal notranslate"><span class="pre">Dashboards</span></code> teniendo en cuenta los diferentes templates usados en esta sección. Por ejemplo,</p>
+<ul>
+<li><p>Agregue a los dashboard <code class="docutils literal notranslate"><span class="pre">nuevos</span> <span class="pre">estilos</span></code>: Cambiar título, logo, color de fondo,….</p></li>
+<li><p>Agregue además de la ventana de selección de stocks, un nuevo <code class="docutils literal notranslate"><span class="pre">Dropdown</span></code>, el cual le permita por medio de un menú de opciones, <code class="docutils literal notranslate"><span class="pre">seleccionar</span> <span class="pre">entre</span> <span class="pre">4</span> <span class="pre">indicadores</span> <span class="pre">de</span> <span class="pre">análisis</span> <span class="pre">técnico</span></code> (ver  <a class="reference external" href="https://www.investopedia.com/top-7-technical-analysis-tools-4773275">7 Technical Indicators to Build a Trading Toolkit</a>, <a class="reference external" href="https://youtu.be/fFmcONKy3bA?feature=shared">Top 5 Technical Analysis Indicators | Moving Average, RSI, Bollinger Bands, MACD</a>), por ejemplo:</p>
+<ul>
+<li><p>On-balance volume (OBV)</p></li>
+<li><p>Accumulation/distribution (A/D) line</p></li>
+<li><p>Average directional index</p></li>
+<li><p>Aroon oscillator</p></li>
+<li><p>Moving average convergence divergence (MACD)</p></li>
+<li><p>Relative strength index (RSI)</p></li>
+<li><p>Stochastic oscillator</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Asegúrese de que <code class="docutils literal notranslate"><span class="pre">todos</span> <span class="pre">los</span> <span class="pre">indicadores</span> <span class="pre">seleccionados</span> <span class="pre">aparezcan</span> <span class="pre">en</span> <span class="pre">el</span> <span class="pre">mismo</span> <span class="pre">candlestick</span></code>, esto es fundamental para la toma de decisiones. Por ejemplo, en un solo chart, el objetivo es que el inversionista pueda obtener un mínimo de 4 confirmaciones, por medio del análisis visual de cada uno de los indicadores suministrados por el Dashboard, antes de tomar una decisión de compra o venta (<code class="docutils literal notranslate"><span class="pre">long/short</span></code>). Por lo tanto, <code class="docutils literal notranslate"><span class="pre">debe</span> <span class="pre">visualizar</span> <span class="pre">todos</span> <span class="pre">los</span> <span class="pre">4</span> <span class="pre">indicadores</span> <span class="pre">en</span> <span class="pre">un</span> <span class="pre">solo</span> <span class="pre">plot</span></code>.</p></li>
 </ul>
 </section>
 </section>
@@ -2517,6 +2668,8 @@ docker<span class="w"> </span>run<span class="w"> </span>-h<span class="w"> </sp
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">Introducción</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuracion-de-su-entorno">Configuración de su entorno</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-python-no-miniconda">Usando Python. No Miniconda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacion-de-librerias">Instalación de Librerías</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diseno-de-dash">Diseño de Dash</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-informacion-sobre-los-componentes-html">Más información sobre los componentes HTML</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#componentes-reutilizables">Componentes reutilizables</a></li>
