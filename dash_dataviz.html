@@ -952,7 +952,8 @@ pandas
 <h2>Dash App Layout con Figura y Sliderm<a class="headerlink" href="#dash-app-layout-con-figura-y-sliderm" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/lihkir/Uninorte/main/AppliedStatisticMS/DataVisualizationRPython/Lectures/Python/PythonDataSets/gapminderDataFiveYear.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/lihkir/Uninorte/main/AppliedStatisticMS/DataVisualizationRPython/Lectures/Python/PythonDataSets/gapminderDataFiveYear.csv&#39;</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1109,8 +1110,80 @@ pandas
 <section id="aplicacion-dash-con-multiples-entradas">
 <h2>Aplicación Dash con múltiples entradas<a class="headerlink" href="#aplicacion-dash-con-multiples-entradas" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>En <code class="docutils literal notranslate"><span class="pre">Dash</span></code>, cualquier “<code class="docutils literal notranslate"><span class="pre">Output</span></code>” puede tener múltiples componentes “<code class="docutils literal notranslate"><span class="pre">Input</span></code>”. Aquí hay un ejemplo simple que une cinco <code class="docutils literal notranslate"><span class="pre">Inputs</span></code> (la propiedad value de dos componentes <code class="docutils literal notranslate"><span class="pre">dcc.Dropdown</span></code>, dos componentes <code class="docutils literal notranslate"><span class="pre">dcc.RadioItems</span></code>, y un componente <code class="docutils literal notranslate"><span class="pre">dcc.Slider</span></code>) a 1 componente <code class="docutils literal notranslate"><span class="pre">Output</span></code> (la propiedad <code class="docutils literal notranslate"><span class="pre">figure</span></code> del componente <code class="docutils literal notranslate"><span class="pre">Graph</span></code>). Observe cómo <code class="docutils literal notranslate"><span class="pre">app.callback</span></code> enumera los cinco elementos de entrada después de la salida.</p></li>
+<li><p>En <code class="docutils literal notranslate"><span class="pre">Dash</span></code>, cualquier “<code class="docutils literal notranslate"><span class="pre">Output</span></code>” puede tener múltiples componentes “<code class="docutils literal notranslate"><span class="pre">Input</span></code>”. Aquí hay un ejemplo simple que une cinco <code class="docutils literal notranslate"><span class="pre">Inputs</span></code> (la propiedad value de dos componentes <code class="docutils literal notranslate"><span class="pre">dcc.Dropdown</span></code>, dos componentes <code class="docutils literal notranslate"><span class="pre">dcc.RadioItems</span></code>, y un componente <code class="docutils literal notranslate"><span class="pre">dcc.Slider</span></code>) a un componente <code class="docutils literal notranslate"><span class="pre">Output</span></code> (la propiedad <code class="docutils literal notranslate"><span class="pre">figure</span></code> del componente <code class="docutils literal notranslate"><span class="pre">Graph</span></code>). Observe cómo <code class="docutils literal notranslate"><span class="pre">app.callback</span></code> enumera los cinco elementos de entrada después de la salida.</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/lihkir/Uninorte/main/AppliedStatisticMS/DataVisualizationRPython/Lectures/Python/PythonDataSets/country_indicators.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Country Name</th>
+      <th>Indicator Name</th>
+      <th>Year</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Arab World</td>
+      <td>Agriculture, value added (% of GDP)</td>
+      <td>1962</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Arab World</td>
+      <td>CO2 emissions (metric tons per capita)</td>
+      <td>1962</td>
+      <td>0.760996</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Arab World</td>
+      <td>Domestic credit provided by financial sector (...</td>
+      <td>1962</td>
+      <td>18.168690</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Arab World</td>
+      <td>Electric power consumption (kWh per capita)</td>
+      <td>1962</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Arab World</td>
+      <td>Energy use (kg of oil equivalent per capita)</td>
+      <td>1962</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
 <span class="kn">from</span> <span class="nn">dash</span> <span class="kn">import</span> <span class="n">dcc</span>
 <span class="kn">from</span> <span class="nn">dash</span> <span class="kn">import</span> <span class="n">html</span>
