@@ -1148,12 +1148,6 @@ FROM<span class="w"> </span>customer<span class="p">;</span>
 FROM<span class="w"> </span>customer<span class="p">;</span>
 </pre></div>
 </div>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>SELECT<span class="w"> </span>
-<span class="w">   </span>first_name,<span class="w"> </span>
-<span class="w">   </span>last_name<span class="w"> </span>AS<span class="w"> </span>surname
-FROM<span class="w"> </span>customer<span class="p">;</span>
-</pre></div>
-</div>
 <figure class="align-center" id="aliassurname-pgadmin-fig">
 <a class="reference internal image-reference" href="_images/aliassurname_pgadmin.png"><img alt="_images/aliassurname_pgadmin.png" src="_images/aliassurname_pgadmin.png" style="width: 612.9px; height: 457.65000000000003px;" /></a>
 <figcaption>
@@ -1925,12 +1919,22 @@ scikit-learn
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PostgreSQL server information
-{&#39;user&#39;: &#39;undatascience-user&#39;, &#39;channel_binding&#39;: &#39;prefer&#39;, &#39;dbname&#39;: &#39;undatascience-db&#39;, &#39;host&#39;: &#39;localhost&#39;, &#39;port&#39;: &#39;5432&#39;, &#39;options&#39;: &#39;&#39;, &#39;sslmode&#39;: &#39;prefer&#39;, &#39;sslcompression&#39;: &#39;0&#39;, &#39;sslcertmode&#39;: &#39;allow&#39;, &#39;sslsni&#39;: &#39;1&#39;, &#39;ssl_min_protocol_version&#39;: &#39;TLSv1.2&#39;, &#39;gssencmode&#39;: &#39;disable&#39;, &#39;krbsrvname&#39;: &#39;postgres&#39;, &#39;gssdelegation&#39;: &#39;0&#39;, &#39;target_session_attrs&#39;: &#39;any&#39;, &#39;load_balance_hosts&#39;: &#39;disable&#39;} 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error while connecting to PostgreSQL connection to server at &quot;localhost&quot; (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at &quot;localhost&quot; (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">19</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error while connecting to PostgreSQL&quot;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="k">finally</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">19</span>     <span class="k">if</span> <span class="p">(</span><span class="n">connection</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>         <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span>         <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-You are connected to -  (&#39;PostgreSQL 16.0 (Debian 16.0-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit&#39;,) 
-
-PostgreSQL connection is closed
+<span class="ne">NameError</span>: name &#39;connection&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -2995,16 +2999,16 @@ if (outputEl) {{
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "ml_tf"
+            mode: "python"
         },
         kernelOptions: {
-            name: "ml_tf",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'ml_tf'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
