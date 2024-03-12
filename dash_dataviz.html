@@ -166,8 +166,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="stratified_dataviz.html">Visualización de datos a través de estratos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="geo_dataviz.html">Visualización interactiva de datos geográficos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common_errors.html">Errores comunes al crear visualizaciones interactivas</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="predictive_model.html">Modelo predictivo con series de tiempo</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="postgresql.html">Introducción a PostreSQL y Docker</a></li>
+
 
 
 
@@ -2662,7 +2665,7 @@ docker<span class="w"> </span>run<span class="w"> </span>-h<span class="w"> </sp
 <li><p><code class="docutils literal notranslate"><span class="pre">Dockerizar</span></code> los dashboard de los dos ejemplos estudiados en la sección <strong><code class="docutils literal notranslate"><span class="pre">Dos</span> <span class="pre">ejemplos</span> <span class="pre">de</span> <span class="pre">Dash</span></code></strong>. Esto es, crear dos imágenes <code class="docutils literal notranslate"><span class="pre">Docker</span></code> para los <code class="docutils literal notranslate"><span class="pre">Dash</span></code> asociados con: <code class="docutils literal notranslate"><span class="pre">Dash</span> <span class="pre">App</span> <span class="pre">para</span> <span class="pre">Mapas</span></code> y <code class="docutils literal notranslate"><span class="pre">Dash</span> <span class="pre">App</span> <span class="pre">Financiera</span></code>.</p></li>
 <li><p>Posteriormente, realice cambios en el (<code class="docutils literal notranslate"><span class="pre">back/front</span> <span class="pre">end</span></code>) de los dos <code class="docutils literal notranslate"><span class="pre">Dashboards</span></code> teniendo en cuenta los diferentes templates usados en esta sección. Por ejemplo,</p>
 <ul>
-<li><p>Agregue a los dashboard <code class="docutils literal notranslate"><span class="pre">nuevos</span> <span class="pre">estilos</span></code>: Cambiar título, logo, color de fondo,….</p></li>
+<li><p>Agregue a los dashboard <code class="docutils literal notranslate"><span class="pre">nuevos</span> <span class="pre">estilos</span></code>: Cambiar título, logo, color de fondo,….. Además, agregué un nuevo <em>Dropdown</em> para la columna <code class="docutils literal notranslate"><span class="pre">Affected</span> <span class="pre">by</span></code>. Agregue divisiones con diagramas descriptivos para cada una de las columnas del <code class="docutils literal notranslate"><span class="pre">dataframe</span></code>. Realice agrupación por <code class="docutils literal notranslate"><span class="pre">State,</span> <span class="pre">Affected</span> <span class="pre">by,</span> <span class="pre">Year</span></code> y realice gráficos descriptivos que entreguen información valiosa.</p></li>
 <li><p>Agregue además de la ventana de selección de stocks, un nuevo <code class="docutils literal notranslate"><span class="pre">Dropdown</span></code>, el cual le permita por medio de un menú de opciones, <code class="docutils literal notranslate"><span class="pre">seleccionar</span> <span class="pre">entre</span> <span class="pre">4</span> <span class="pre">indicadores</span> <span class="pre">de</span> <span class="pre">análisis</span> <span class="pre">técnico</span></code> (ver  <a class="reference external" href="https://www.investopedia.com/top-7-technical-analysis-tools-4773275">7 Technical Indicators to Build a Trading Toolkit</a>, <a class="reference external" href="https://youtu.be/NqW_-wL_RBc?si=72gFjuyxAjF8wEO5">Best Day Trading Indicators for Beginners</a>), por ejemplo:</p>
 <ul>
 <li><p>On-balance volume (OBV)</p></li>
