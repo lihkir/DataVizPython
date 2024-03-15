@@ -167,7 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="geo_dataviz.html">Visualización interactiva de datos geográficos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common_errors.html">Errores comunes al crear visualizaciones interactivas</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="predictive_model.html">Modelo predictivo con series de tiempo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="predictive_model.html">Predicción de series de tiempo</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="postgresql.html">Introducción a PostreSQL y Docker</a></li>
 
@@ -542,7 +542,13 @@ pandas
 <ul class="simple">
 <li><p>Estudiaremos el diseño a través de seis aplicaciones autónomas. El diseño de las aplicaciones <code class="docutils literal notranslate"><span class="pre">Dash</span></code> de producción puede ser estilizado con <a class="reference external" href="https://plotly.com/dash/design-kit/?tab=templates">Dash Enterprise Design Kit</a>. Las aplicaciones <code class="docutils literal notranslate"><span class="pre">Dash</span></code> se componen de dos partes. La primera parte es el <code class="docutils literal notranslate"><span class="pre">diseño</span> <span class="pre">de</span> <span class="pre">la</span> <span class="pre">aplicación</span></code> y describe el aspecto de la misma. La segunda parte describe la <code class="docutils literal notranslate"><span class="pre">interactividad</span> <span class="pre">de</span> <span class="pre">la</span> <span class="pre">aplicación</span></code> y será cubierta más adelante.</p></li>
 <li><p>Mantenemos un conjunto de componentes en la biblioteca <code class="docutils literal notranslate"><span class="pre">dash_core_components</span></code> y <code class="docutils literal notranslate"><span class="pre">dash_html_components</span></code> (<code class="docutils literal notranslate"><span class="pre">dash.html</span></code> a partir de <code class="docutils literal notranslate"><span class="pre">Dash</span> <span class="pre">v2.0</span></code>) pero también puedes construir los suyos con <code class="docutils literal notranslate"><span class="pre">JavaScript</span></code> y <code class="docutils literal notranslate"><span class="pre">React.js</span></code>. A lo largo de esta sección, los ejemplos de código <code class="docutils literal notranslate"><span class="pre">Python</span></code> están pensados para ser guardados como archivos y ejecutados usando <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">app.py</span></code>. También puedes usar <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code> con la biblioteca <code class="docutils literal notranslate"><span class="pre">JupyterDash</span></code>.</p></li>
-<li><p>Para empezar, crea un archivo llamado <code class="docutils literal notranslate"><span class="pre">app.py</span></code>, copia el código de abajo en él y ejecútalo con <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">app.py</span></code> luego visite <a class="reference external" href="http://127.0.0.1:8050/">http://127.0.0.1:8050/</a> en su navegador web para ver la aplicación</p></li>
+<li><p>Para empezar, crea un archivo llamado <code class="docutils literal notranslate"><span class="pre">app.py</span></code> usando su editor favorito, copie el código de abajo en él y ejecútalo con</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>app.py
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Luego visite <a class="reference external" href="http://127.0.0.1:8050/">http://127.0.0.1:8050/</a> en su navegador web para ver la aplicación</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
 <span class="kn">from</span> <span class="nn">dash</span> <span class="kn">import</span> <span class="n">dcc</span>
@@ -1328,7 +1334,7 @@ pandas
 </pre></div>
 </div>
 <figure class="align-center" id="multiple-outputs-dash-fig">
-<img alt="_images/multiple_outputs_dash.png" src="_images/multiple_outputs_dash.png" />
+<a class="reference internal image-reference" href="_images/multiple_outputs_dash.png"><img alt="_images/multiple_outputs_dash.png" src="_images/multiple_outputs_dash.png" style="width: 217.60000000000002px; height: 308.8px;" /></a>
 </figure>
 <ul class="simple">
 <li><p>No siempre es una buena idea combinar las salidas, aunque se pueda. Si los <code class="docutils literal notranslate"><span class="pre">Outputs</span></code> dependen de algunas pero no todas los mismos <code class="docutils literal notranslate"><span class="pre">Inputs</span></code>, mantenerlas separadas puede evitar actualizaciones innecesarias. Si tienen los mismos <code class="docutils literal notranslate"><span class="pre">Inputs</span></code> pero hacen cálculos independientes con estas entradas, <code class="docutils literal notranslate"><span class="pre">mantener</span> <span class="pre">las</span> <span class="pre">devoluciones</span> <span class="pre">de</span> <span class="pre">llamada</span> <span class="pre">separadas</span> <span class="pre">puede</span> <span class="pre">permitir</span> <span class="pre">que</span> <span class="pre">se</span> <span class="pre">ejecuten</span> <span class="pre">en</span> <span class="pre">paralelo</span></code>.</p></li>
@@ -1375,7 +1381,7 @@ pandas
     <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;cities-radio&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">),</span> <span class="c1"># &lt;- as value</span>
     <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;cities-radio&#39;</span><span class="p">,</span> <span class="s1">&#39;options&#39;</span><span class="p">))</span>  <span class="c1"># &lt;- as option</span>
 <span class="k">def</span> <span class="nf">set_cities_value</span><span class="p">(</span><span class="n">available_options</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">available_options</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;value&#39;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">available_options</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="c1"># &lt;- return first city value from the list</span>
 
 <span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
     <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;display-selected-values&#39;</span><span class="p">,</span> <span class="s1">&#39;children&#39;</span><span class="p">),</span>
@@ -1435,7 +1441,7 @@ pandas
 <img alt="_images/dash23.png" src="_images/dash23.png" />
 </figure>
 <ul class="simple">
-<li><p>En este ejemplo, <code class="docutils literal notranslate"><span class="pre">la</span> <span class="pre">función</span> <span class="pre">callback</span> <span class="pre">se</span> <span class="pre">dispara</span> <span class="pre">cada</span> <span class="pre">vez</span> <span class="pre">que</span> <span class="pre">cambia</span> <span class="pre">alguno</span> <span class="pre">de</span> <span class="pre">los</span> <span class="pre">atributos</span> <span class="pre">descritos</span> <span class="pre">por</span> <span class="pre">la</span> <span class="pre">entrada</span> <span class="pre">Input</span></code>. Pruébelo usted mismo introduciendo datos en las entradas anteriores. El estado le permite pasar valores adicionales sin disparar las devoluciones de llamada. Aquí está el mismo ejemplo anterior pero con el <code class="docutils literal notranslate"><span class="pre">dcc.Input</span></code> como <code class="docutils literal notranslate"><span class="pre">State</span></code> y un botón como <code class="docutils literal notranslate"><span class="pre">Input</span></code>.</p></li>
+<li><p>En este ejemplo, <code class="docutils literal notranslate"><span class="pre">la</span> <span class="pre">función</span> <span class="pre">callback</span> <span class="pre">se</span> <span class="pre">dispara</span> <span class="pre">cada</span> <span class="pre">vez</span> <span class="pre">que</span> <span class="pre">cambia</span> <span class="pre">alguno</span> <span class="pre">de</span> <span class="pre">los</span> <span class="pre">atributos</span> <span class="pre">descritos</span> <span class="pre">por</span> <span class="pre">la</span> <span class="pre">entrada</span> <span class="pre">Input</span></code>. Pruébelo usted mismo introduciendo datos en las entradas anteriores. El estado le permite pasar valores adicionales sin disparar las devoluciones de llamada. Aquí está el mismo ejemplo anterior pero con el <code class="docutils literal notranslate"><span class="pre">dcc.Input</span></code> como <code class="docutils literal notranslate"><span class="pre">State</span></code> y un botón como <code class="docutils literal notranslate"><span class="pre">Input</span></code>. Recuerde que, la letra <code class="docutils literal notranslate"><span class="pre">&quot;u&quot;</span></code> delante de los valores del stirng significa que la cadena es <code class="docutils literal notranslate"><span class="pre">Unicode</span></code>.</p></li>
 </ul>
 </section>
 <section id="actualizar-graficos-al-deslizar-el-cursor">
@@ -1528,6 +1534,9 @@ pandas
 </table>
 </div></div></div>
 </div>
+<ul class="simple">
+<li><p>En este ejemplo, <code class="docutils literal notranslate"><span class="pre">display:inline-block</span></code> permite establecer un ancho y una altura en el elemento. El <code class="docutils literal notranslate"><span class="pre">padding</span></code> de un elemento es el espacio entre su contenido y su borde.</p></li>
+</ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
 <span class="kn">from</span> <span class="nn">dash</span> <span class="kn">import</span> <span class="n">dcc</span>
 <span class="kn">from</span> <span class="nn">dash</span> <span class="kn">import</span> <span class="n">html</span>
