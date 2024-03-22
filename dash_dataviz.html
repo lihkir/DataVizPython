@@ -390,6 +390,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dash-app-financiera">Dash App Financiera</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#despliegue-de-dash-app-usando-docker">Despliegue de Dash App usando Docker</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lista-de-dockerfiles">Lista de Dockerfiles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#render-y-dash-tool">Render y Dash Tool</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-para-entregar">Ejercicio para entregar</a></li>
 </ul>
             </nav>
@@ -1128,70 +1129,6 @@ pandas
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Country Name</th>
-      <th>Indicator Name</th>
-      <th>Year</th>
-      <th>Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Arab World</td>
-      <td>Agriculture, value added (% of GDP)</td>
-      <td>1962</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Arab World</td>
-      <td>CO2 emissions (metric tons per capita)</td>
-      <td>1962</td>
-      <td>0.760996</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Arab World</td>
-      <td>Domestic credit provided by financial sector (...</td>
-      <td>1962</td>
-      <td>18.168690</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Arab World</td>
-      <td>Electric power consumption (kWh per capita)</td>
-      <td>1962</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Arab World</td>
-      <td>Energy use (kg of oil equivalent per capita)</td>
-      <td>1962</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
 <span class="kn">from</span> <span class="nn">dash</span> <span class="kn">import</span> <span class="n">dcc</span>
@@ -1469,70 +1406,6 @@ pandas
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Country Name</th>
-      <th>Indicator Name</th>
-      <th>Year</th>
-      <th>Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Arab World</td>
-      <td>Agriculture, value added (% of GDP)</td>
-      <td>1962</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Arab World</td>
-      <td>CO2 emissions (metric tons per capita)</td>
-      <td>1962</td>
-      <td>0.760996</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Arab World</td>
-      <td>Domestic credit provided by financial sector (...</td>
-      <td>1962</td>
-      <td>18.168690</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Arab World</td>
-      <td>Electric power consumption (kWh per capita)</td>
-      <td>1962</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Arab World</td>
-      <td>Energy use (kg of oil equivalent per capita)</td>
-      <td>1962</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <ul class="simple">
 <li><p>En este ejemplo, <code class="docutils literal notranslate"><span class="pre">display:inline-block</span></code> permite establecer un ancho y una altura en el elemento. El <code class="docutils literal notranslate"><span class="pre">padding</span></code> de un elemento es el espacio entre su contenido y su borde.</p></li>
@@ -1716,94 +1589,6 @@ pandas
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Program</th>
-      <th>Year</th>
-      <th>Period</th>
-      <th>State</th>
-      <th>ANSI</th>
-      <th>Affected by</th>
-      <th>Pct of Colonies Impacted</th>
-      <th>state_code</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>SURVEY</td>
-      <td>2019</td>
-      <td>JAN THRU MAR</td>
-      <td>Alabama</td>
-      <td>1</td>
-      <td>Disease</td>
-      <td>1.8</td>
-      <td>AL</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>SURVEY</td>
-      <td>2019</td>
-      <td>JAN THRU MAR</td>
-      <td>Alabama</td>
-      <td>1</td>
-      <td>Other</td>
-      <td>3.1</td>
-      <td>AL</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>SURVEY</td>
-      <td>2019</td>
-      <td>JAN THRU MAR</td>
-      <td>Alabama</td>
-      <td>1</td>
-      <td>Pesticides</td>
-      <td>0.3</td>
-      <td>AL</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>SURVEY</td>
-      <td>2019</td>
-      <td>JAN THRU MAR</td>
-      <td>Alabama</td>
-      <td>1</td>
-      <td>Pests_excl_Varroa</td>
-      <td>22.7</td>
-      <td>AL</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>SURVEY</td>
-      <td>2019</td>
-      <td>JAN THRU MAR</td>
-      <td>Alabama</td>
-      <td>1</td>
-      <td>Unknown</td>
-      <td>9.0</td>
-      <td>AL</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <ul class="simple">
 <li><p>Luego agrupamos nuestro <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> basados en las columnas de interés y calculamos el <code class="docutils literal notranslate"><span class="pre">porcentaje</span> <span class="pre">promedio</span> <span class="pre">de</span> <span class="pre">colonias</span> <span class="pre">afectadas</span></code> para esta agrupación <code class="docutils literal notranslate"><span class="pre">'Pct</span> <span class="pre">of</span> <span class="pre">Colonies</span> <span class="pre">Impacted'</span></code></p></li>
@@ -1816,82 +1601,6 @@ pandas
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>State</th>
-      <th>ANSI</th>
-      <th>Affected by</th>
-      <th>Year</th>
-      <th>state_code</th>
-      <th>Pct of Colonies Impacted</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Alabama</td>
-      <td>1</td>
-      <td>Disease</td>
-      <td>2015</td>
-      <td>AL</td>
-      <td>0.05</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Alabama</td>
-      <td>1</td>
-      <td>Disease</td>
-      <td>2016</td>
-      <td>AL</td>
-      <td>1.20</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Alabama</td>
-      <td>1</td>
-      <td>Disease</td>
-      <td>2017</td>
-      <td>AL</td>
-      <td>2.25</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Alabama</td>
-      <td>1</td>
-      <td>Disease</td>
-      <td>2018</td>
-      <td>AL</td>
-      <td>1.30</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Alabama</td>
-      <td>1</td>
-      <td>Disease</td>
-      <td>2019</td>
-      <td>AL</td>
-      <td>1.80</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <ul class="simple">
 <li><p>Comenzamos a implementar nuestro <code class="docutils literal notranslate"><span class="pre">app.layout</span></code> que como es sabido, esta componente corresponde al “diseño” de la aplicación y describe el aspecto de la misma. <code class="docutils literal notranslate"><span class="pre">html.H1</span></code> recuerde que es una envoltura para el elemento <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span> <span class="pre">de</span> <span class="pre">HTML5</span></code>, elemento de encabezado de primer nivel. Luego de esto escribimos nuestro <code class="docutils literal notranslate"><span class="pre">dcc.Dropdown</span></code> con su respectivo <code class="docutils literal notranslate"><span class="pre">id</span></code> el cual sera invocado por nuesta función <code class="docutils literal notranslate"><span class="pre">callback</span></code>. El <code class="docutils literal notranslate"><span class="pre">dcc.Dropdown</span></code> corresponde a nuestro menu de opciones, en las que colocamos por defecto <code class="docutils literal notranslate"><span class="pre">value=2015</span></code>. Luego escribimos un nuevo <code class="docutils literal notranslate"><span class="pre">html.Div</span></code> para crear un output que entregue como mensaje cual fué el años seleccionado, esta es una clase <code class="docutils literal notranslate"><span class="pre">children</span></code>, pues depende del input suministrado en el <code class="docutils literal notranslate"><span class="pre">Dropdown</span></code>. Luego agregamos el componente <code class="docutils literal notranslate"><span class="pre">dcc.Graph</span></code> se puede utilizar para renderizar cualquier visualización de datos <code class="docutils literal notranslate"><span class="pre">plotly-powered</span></code>, recibe como argumento <code class="docutils literal notranslate"><span class="pre">figure</span></code>. Nótese que se le asgina también un <code class="docutils literal notranslate"><span class="pre">id</span></code> el cual será leido por nuestro <code class="docutils literal notranslate"><span class="pre">callback</span></code></p></li>
@@ -2040,136 +1749,6 @@ pandas
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Unnamed: 0</th>
-      <th>Date</th>
-      <th>Open</th>
-      <th>High</th>
-      <th>Low</th>
-      <th>Close</th>
-      <th>Volume</th>
-      <th>ExDividend</th>
-      <th>SplitRatio</th>
-      <th>AdjOpen</th>
-      <th>AdjHigh</th>
-      <th>AdjLow</th>
-      <th>AdjClose</th>
-      <th>AdjVolume</th>
-      <th>Stock</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>2017-12-29</td>
-      <td>170.52</td>
-      <td>170.590</td>
-      <td>169.220</td>
-      <td>169.23</td>
-      <td>25643711.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>170.52</td>
-      <td>170.590</td>
-      <td>169.220</td>
-      <td>169.23</td>
-      <td>25643711.0</td>
-      <td>AAPL</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>2017-12-28</td>
-      <td>171.00</td>
-      <td>171.850</td>
-      <td>170.480</td>
-      <td>171.08</td>
-      <td>15997739.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>171.00</td>
-      <td>171.850</td>
-      <td>170.480</td>
-      <td>171.08</td>
-      <td>15997739.0</td>
-      <td>AAPL</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2</td>
-      <td>2017-12-27</td>
-      <td>170.10</td>
-      <td>170.780</td>
-      <td>169.710</td>
-      <td>170.60</td>
-      <td>21672062.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>170.10</td>
-      <td>170.780</td>
-      <td>169.710</td>
-      <td>170.60</td>
-      <td>21672062.0</td>
-      <td>AAPL</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>3</td>
-      <td>2017-12-26</td>
-      <td>170.80</td>
-      <td>171.470</td>
-      <td>169.679</td>
-      <td>170.57</td>
-      <td>32968167.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>170.80</td>
-      <td>171.470</td>
-      <td>169.679</td>
-      <td>170.57</td>
-      <td>32968167.0</td>
-      <td>AAPL</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>4</td>
-      <td>2017-12-22</td>
-      <td>174.68</td>
-      <td>175.424</td>
-      <td>174.500</td>
-      <td>175.01</td>
-      <td>16052615.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>174.68</td>
-      <td>175.424</td>
-      <td>174.500</td>
-      <td>175.01</td>
-      <td>16052615.0</td>
-      <td>AAPL</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <ul class="simple">
 <li><p>Luego de cargar nuestro <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> nos disponemos a implementar nuestro <code class="docutils literal notranslate"><span class="pre">app.layout</span></code> o “diseño” de la aplicación, tal como lo hicimos con la aplicación anterior. En este caso usamos <code class="docutils literal notranslate"><span class="pre">html.H2</span></code> que es una envoltura para el elemento <code class="docutils literal notranslate"><span class="pre">&lt;h2&gt;</span> <span class="pre">de</span> <span class="pre">HTML5</span></code>, elemento de encabezado de segundo nivel, en este caso también agragamos el logo de <code class="docutils literal notranslate"><span class="pre">Plotly</span></code>, usted puede agragar el logo de su preferencia.</p></li>
@@ -2668,6 +2247,196 @@ docker<span class="w"> </span>run<span class="w"> </span>-h<span class="w"> </sp
 <img alt="_images/barplot_fruits_dockerized.png" src="_images/barplot_fruits_dockerized.png" />
 </figure>
 </section>
+<section id="render-y-dash-tool">
+<h2>Render y Dash Tool<a class="headerlink" href="#render-y-dash-tool" title="Permalink to this heading">#</a></h2>
+<div class="tip admonition">
+<p class="admonition-title">Introducción</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Render</span></code> es una <strong>plataforma en la nube que ofrece servicios de alojamiento web y despliegue de aplicaciones</strong>. Permite a los desarrolladores <strong>implementar fácilmente aplicaciones web, sitios estáticos y API en la nube de manera rápida y sencilla</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Render</span></code> proporciona características como <strong>escalabilidad automática, integración continua y despliegue continuo, seguridad y monitoreo avanzado</strong>.</p></li>
+<li><p>También ofrece una <strong>interfaz de usuario intuitiva</strong> con costos razonables, y <strong>sin tarifas de inicio</strong>. En resumen, <code class="docutils literal notranslate"><span class="pre">Render</span></code> es una plataforma que simplifica el proceso de despliegue y administración de aplicaciones web y servicios en la nube.</p></li>
+</ul>
+</div>
+<ol class="arabic simple">
+<li><p>El primer paso consiste en crearse una cuenta en <a class="reference external" href="https://render.com/">Render</a>. Es recomendable utilizar su cuenta de <code class="docutils literal notranslate"><span class="pre">GitHub</span></code> para crear esta cuenta</p></li>
+</ol>
+<ol class="arabic" start="2">
+<li><p>El segundo paso consiste en <strong>verificar que su aplicación funciona correctamente</strong>. Para este ejemplo de despliegue en <code class="docutils literal notranslate"><span class="pre">Render</span></code>, necesitaremos nombrar la aplicación como <code class="docutils literal notranslate"><span class="pre">app.py</span></code>. Luego que cambien el nombre de la aplicación, verifique que funciona correctamente. Para esto, con su entorno activado, siguiendo el mismo ejemplo de la sección anterior, ejecute en la terminal la siguiente orden.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>app.py
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Luego en su navegador visite <a class="reference external" href="http://127.0.0.1:8050/">http://127.0.0.1:8050/</a> para ver la aplicación.</p></li>
+<li><p>Recuerde que la aplicación es la siguiente</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="kn">import</span> <span class="nn">dash</span>
+ <span class="kn">from</span> <span class="nn">dash</span> <span class="kn">import</span> <span class="n">dcc</span>
+ <span class="kn">from</span> <span class="nn">dash</span> <span class="kn">import</span> <span class="n">html</span>
+ <span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+ <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+ 
+ <span class="n">ext_style</span> <span class="o">=</span> <span class="s2">&quot;https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/darkly/bootstrap.min.css&quot;</span>
+ <span class="n">app</span> <span class="o">=</span> <span class="n">dash</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span><span class="n">external_stylesheets</span><span class="o">=</span><span class="p">[</span><span class="n">ext_style</span><span class="p">])</span>
+ 
+ <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+     <span class="s2">&quot;Fruit&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Apples&quot;</span><span class="p">,</span> <span class="s2">&quot;Oranges&quot;</span><span class="p">,</span> <span class="s2">&quot;Bananas&quot;</span><span class="p">,</span> <span class="s2">&quot;Apples&quot;</span><span class="p">,</span> <span class="s2">&quot;Oranges&quot;</span><span class="p">,</span> <span class="s2">&quot;Bananas&quot;</span><span class="p">],</span>
+     <span class="s2">&quot;Amount&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+     <span class="s2">&quot;City&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;SF&quot;</span><span class="p">,</span> <span class="s2">&quot;SF&quot;</span><span class="p">,</span> <span class="s2">&quot;SF&quot;</span><span class="p">,</span> <span class="s2">&quot;Montreal&quot;</span><span class="p">,</span> <span class="s2">&quot;Montreal&quot;</span><span class="p">,</span> <span class="s2">&quot;Montreal&quot;</span><span class="p">]</span>
+ <span class="p">})</span>
+ 
+ <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Fruit&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;Amount&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;City&quot;</span><span class="p">,</span> <span class="n">barmode</span> <span class="o">=</span> <span class="s2">&quot;group&quot;</span><span class="p">,</span> <span class="n">template</span> <span class="o">=</span> <span class="s2">&quot;plotly_dark&quot;</span><span class="p">)</span>
+ 
+ <span class="n">app</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span><span class="n">children</span><span class="o">=</span><span class="p">[</span>
+     <span class="n">html</span><span class="o">.</span><span class="n">H1</span><span class="p">(</span><span class="n">children</span> <span class="o">=</span> <span class="s1">&#39;Hello Dash&#39;</span><span class="p">),</span>
+     
+     <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span><span class="n">children</span><span class="o">=</span><span class="s1">&#39;&#39;&#39;Dash: A web application framework for your data.&#39;&#39;&#39;</span><span class="p">),</span>
+ 
+     <span class="n">dcc</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span>
+         <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;example-graph&#39;</span><span class="p">,</span>
+         <span class="n">figure</span><span class="o">=</span><span class="n">fig</span>
+     <span class="p">)</span>
+ <span class="p">])</span>
+ 
+ <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+     <span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p>El siguiente paso es <strong>crear un nuevo directorio con el nombre que usted decida</strong>, por ejemplo <code class="docutils literal notranslate"><span class="pre">DeployWithRender</span></code> y dentro de esta carpeta, <strong>debe crear otro directorio, el cual nombraremos</strong> <code class="docutils literal notranslate"><span class="pre">src</span></code> el cual va a <strong>contener el archivo con nuestra aplicación</strong> <code class="docutils literal notranslate"><span class="pre">app.py</span></code>. Si abre la aplicación desde <code class="docutils literal notranslate"><span class="pre">VSCode</span></code> debe verse de la siguiente forma</p></li>
+</ol>
+<figure class="align-center" id="render-wit-deploy1-fig">
+<img alt="_images/render_wit_deploy1.png" src="_images/render_wit_deploy1.png" />
+</figure>
+<ol class="arabic" start="4">
+<li><p>El siguiente paso es <strong>instalar</strong> <a class="reference external" href="https://pypi.org/project/dash-tools/">dash-tools</a> <strong>utilizando la siguiente línea de comando</strong> desde su entorno virtual</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>dash-tools
+</pre></div>
+</div>
+</li>
+</ol>
+<ol class="arabic" start="5">
+<li><p>El siguiente paso requiere del uso del cliente de <code class="docutils literal notranslate"><span class="pre">Git</span></code>. Si no lo tiene instalado, realice la instalación desde el siguiente link <a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Getting-Started-Installing-Git</a>. Luego de haber instalado <code class="docutils literal notranslate"><span class="pre">Git</span></code> desde la línea de comandos, por ejemplo, de <code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">Powershell</span></code> ejecute los siguientes comandos de <code class="docutils literal notranslate"><span class="pre">Git</span></code>. Recuerde que debe estar desde la terminal, ubicado dentro de la carpeta creada <code class="docutils literal notranslate"><span class="pre">DeployWithRender</span></code></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>init
+</pre></div>
+</div>
+<p>Luego para iniciar <code class="docutils literal notranslate"><span class="pre">dashtools</span></code></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>dashtools<span class="w"> </span>gui
+</pre></div>
+</div>
+</li>
+</ol>
+<figure class="align-center" id="render-wit-deploy2-fig">
+<img alt="_images/render_wit_deploy2.png" src="_images/render_wit_deploy2.png" />
+</figure>
+<figure class="align-center" id="render-wit-deploy3-fig">
+<img alt="_images/render_wit_deploy3.png" src="_images/render_wit_deploy3.png" />
+</figure>
+<ol class="arabic simple" start="6">
+<li><p>El siguiente paso es copiar dentro de la ventana <code class="docutils literal notranslate"><span class="pre">Deploy</span></code> la ubicación de la carpeta creada para el proyecto. En este caso la carpeta nombrada <code class="docutils literal notranslate"><span class="pre">DeployWithRender</span></code>. A la derecha <strong>podrá visualizar todos los archivos que debe preparar antes de realizar el despliegue de su aplicación</strong>. Posterior a esto se activará el botón <code class="docutils literal notranslate"><span class="pre">Deploy</span> <span class="pre">to</span> <span class="pre">Render</span></code>. Haga click en <code class="docutils literal notranslate"><span class="pre">Generate</span> <span class="pre">random</span> <span class="pre">name</span></code> para asignar un nombre a su aplicación</p></li>
+</ol>
+<figure class="align-center" id="render-wit-deploy4-fig">
+<img alt="_images/render_wit_deploy4.png" src="_images/render_wit_deploy4.png" />
+</figure>
+<ol class="arabic simple" start="7">
+<li><p>Luego de haber creado el nombre aleatorio, podrá generar los archivos: <code class="docutils literal notranslate"><span class="pre">render.yaml</span></code> y <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>. Solo debe <strong>hacer click sobre el botón para generar cada archivo que aparece al lado derecho de cada nombre</strong></p></li>
+</ol>
+<figure class="align-center" id="render-wit-deploy5-fig">
+<img alt="_images/render_wit_deploy5.png" src="_images/render_wit_deploy5.png" />
+</figure>
+<ol class="arabic" start="8">
+<li><p>Luego debajo de la instancia de <code class="docutils literal notranslate"><span class="pre">Dash</span></code> en su aplicación. Agregue la línea <code class="docutils literal notranslate"><span class="pre">server</span> <span class="pre">=</span> <span class="pre">app.server</span></code> tal como lo indica <code class="docutils literal notranslate"><span class="pre">Render</span></code>. Esto es, la aplicación debería verse de la siguiente forma</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="kn">import</span> <span class="nn">dash</span>
+ <span class="kn">from</span> <span class="nn">dash</span> <span class="kn">import</span> <span class="n">dcc</span>
+ <span class="kn">from</span> <span class="nn">dash</span> <span class="kn">import</span> <span class="n">html</span>
+ <span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+ <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+ 
+ <span class="n">ext_style</span> <span class="o">=</span> <span class="s2">&quot;https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/darkly/bootstrap.min.css&quot;</span>
+ <span class="n">app</span> <span class="o">=</span> <span class="n">dash</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span><span class="n">external_stylesheets</span><span class="o">=</span><span class="p">[</span><span class="n">ext_style</span><span class="p">])</span>
+
+ <span class="n">server</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">server</span> <span class="c1"># &lt;- For Render</span>
+ 
+ <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+     <span class="s2">&quot;Fruit&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Apples&quot;</span><span class="p">,</span> <span class="s2">&quot;Oranges&quot;</span><span class="p">,</span> <span class="s2">&quot;Bananas&quot;</span><span class="p">,</span> <span class="s2">&quot;Apples&quot;</span><span class="p">,</span> <span class="s2">&quot;Oranges&quot;</span><span class="p">,</span> <span class="s2">&quot;Bananas&quot;</span><span class="p">],</span>
+     <span class="s2">&quot;Amount&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+     <span class="s2">&quot;City&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;SF&quot;</span><span class="p">,</span> <span class="s2">&quot;SF&quot;</span><span class="p">,</span> <span class="s2">&quot;SF&quot;</span><span class="p">,</span> <span class="s2">&quot;Montreal&quot;</span><span class="p">,</span> <span class="s2">&quot;Montreal&quot;</span><span class="p">,</span> <span class="s2">&quot;Montreal&quot;</span><span class="p">]</span>
+ <span class="p">})</span>
+ 
+ <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Fruit&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;Amount&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;City&quot;</span><span class="p">,</span> <span class="n">barmode</span> <span class="o">=</span> <span class="s2">&quot;group&quot;</span><span class="p">,</span> <span class="n">template</span> <span class="o">=</span> <span class="s2">&quot;plotly_dark&quot;</span><span class="p">)</span>
+ 
+ <span class="n">app</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span><span class="n">children</span><span class="o">=</span><span class="p">[</span>
+     <span class="n">html</span><span class="o">.</span><span class="n">H1</span><span class="p">(</span><span class="n">children</span> <span class="o">=</span> <span class="s1">&#39;Hello Dash&#39;</span><span class="p">),</span>
+     
+     <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span><span class="n">children</span><span class="o">=</span><span class="s1">&#39;&#39;&#39;Dash: A web application framework for your data.&#39;&#39;&#39;</span><span class="p">),</span>
+ 
+     <span class="n">dcc</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span>
+         <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;example-graph&#39;</span><span class="p">,</span>
+         <span class="n">figure</span><span class="o">=</span><span class="n">fig</span>
+     <span class="p">)</span>
+ <span class="p">])</span>
+ 
+ <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+     <span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<br>
+<p>Va a notar <strong>en el Dashboard de Render que aparece el check en verde para</strong> <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">exists:</span> <span class="pre">server</span> <span class="pre">=</span> <span class="pre">app.server</span> <span class="pre">in</span> <span class="pre">src/app.py</span></code></p>
+</li>
+</ol>
+<figure class="align-center" id="render-wit-deploy6-fig">
+<img alt="_images/render_wit_deploy6.png" src="_images/render_wit_deploy6.png" />
+</figure>
+<ol class="arabic simple" start="9">
+<li><p>Ahora debe hacer un <code class="docutils literal notranslate"><span class="pre">Push</span></code> en <code class="docutils literal notranslate"><span class="pre">GitHub</span></code> con el proyecto creado <code class="docutils literal notranslate"><span class="pre">DeployWithRender</span></code>. Para esto, diríjase a su cuenta de <code class="docutils literal notranslate"><span class="pre">GitHub</span></code> y en la pestaña <code class="docutils literal notranslate"><span class="pre">Your</span> <span class="pre">repositories</span></code> haga click en <code class="docutils literal notranslate"><span class="pre">New</span></code>. Luego, abra una nueva terminal, y ubíquese dentro de la carpeta <code class="docutils literal notranslate"><span class="pre">DeployWithRender</span></code>. Dentro de esta carpeta, pegue los comandos de Git, que se han generado al crear el repositorio, como se ve en las siguientes imágenes. Haga <code class="docutils literal notranslate"><span class="pre">Enter</span></code> en la última línea de código pegada.</p></li>
+</ol>
+<figure class="align-center" id="render-wit-deploy7-fig">
+<img alt="_images/render_wit_deploy7.png" src="_images/render_wit_deploy7.png" />
+</figure>
+<figure class="align-center" id="render-wit-deploy8-fig">
+<img alt="_images/render_wit_deploy8.png" src="_images/render_wit_deploy8.png" />
+</figure>
+<figure class="align-center" id="render-wit-deploy9-fig">
+<img alt="_images/render_wit_deploy9.png" src="_images/render_wit_deploy9.png" />
+</figure>
+<figure class="align-center" id="render-wit-deploy10-fig">
+<img alt="_images/render_wit_deploy10.png" src="_images/render_wit_deploy10.png" />
+</figure>
+<ol class="arabic" start="10">
+<li><p>El siguiente paso es hacer un <code class="docutils literal notranslate"><span class="pre">Push</span></code> con todos los archivos asociados al proyecto <code class="docutils literal notranslate"><span class="pre">DeployWithRender</span></code> creado para la aplicación. Para esto hacemos uso de las siguientes líneas de comandos <code class="docutils literal notranslate"><span class="pre">Git</span></code>. Su repositorio de <code class="docutils literal notranslate"><span class="pre">Git</span></code> debe visualizarse tal como aparece en la siguiente imagen</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Adding DeployWithRender Files&quot;</span>
+git<span class="w"> </span>push
+</pre></div>
+</div>
+</li>
+</ol>
+<figure class="align-center" id="render-wit-deploy11-fig">
+<img alt="_images/render_wit_deploy11.png" src="_images/render_wit_deploy11.png" />
+</figure>
+<ol class="arabic simple" start="11">
+<li><p>El siguiente paso es hacer click en <code class="docutils literal notranslate"><span class="pre">Deploy</span> <span class="pre">to</span> <span class="pre">Render</span></code> desde el Dashboard de Render, tal como se muestra en la siguiente imagen. Verifique que cada uno de los requerimientos para el despliegue aparecen con sus respectivos <strong>checks en verde</strong>. Posterior a esto, asigne un nombre <code class="docutils literal notranslate"><span class="pre">Blueprint</span></code>, en este caso para identificar la aplicación, hemos utilizado el mismo nombre del repositorio en <code class="docutils literal notranslate"><span class="pre">GitHub</span></code>. Luego haga click en <code class="docutils literal notranslate"><span class="pre">Apply</span></code>. El proceso puede tomar algunos minutos, por favor, sea paciente.</p></li>
+</ol>
+<figure class="align-center" id="render-wit-deploy12-fig">
+<img alt="_images/render_wit_deploy12.png" src="_images/render_wit_deploy12.png" />
+</figure>
+<figure class="align-center" id="render-wit-deploy13-fig">
+<img alt="_images/render_wit_deploy13.png" src="_images/render_wit_deploy13.png" />
+</figure>
+<ol class="arabic simple" start="12">
+<li><p>Haga click ahora en <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">web</span> <span class="pre">service</span> <span class="pre">...</span></code>. Podrá ver el link de la página web en la parte superior izquierda, tal como se observa en la siguiente imagen. En este caso el link generado con la aplicación es el siguiente <a class="reference external" href="https://barbeque-talk-tuba-z58u.onrender.com">barbeque-talk-tuba-z58u</a>.</p></li>
+</ol>
+<figure class="align-center" id="render-wit-deploy14-fig">
+<img alt="_images/render_wit_deploy14.png" src="_images/render_wit_deploy14.png" />
+</figure>
+<ol class="arabic simple" start="13">
+<li><p>Para realizar un cambio en su aplicación debe realizar un <code class="docutils literal notranslate"><span class="pre">commit</span></code> nuevamente con estos cambios, y además, desde el Dashboard de Render, hacer luego click en <code class="docutils literal notranslate"><span class="pre">Deploy</span> <span class="pre">latest</span> <span class="pre">commit</span></code> tal como aparece en la siguiente imagen. <strong>Esto es, debe repetir el ítem 10</strong></p></li>
+</ol>
+<figure class="align-center" id="render-wit-deploy15-fig">
+<img alt="_images/render_wit_deploy15.png" src="_images/render_wit_deploy15.png" />
+</figure>
+</section>
 <section id="ejercicio-para-entregar">
 <h2>Ejercicio para entregar<a class="headerlink" href="#ejercicio-para-entregar" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
@@ -2774,6 +2543,7 @@ docker<span class="w"> </span>run<span class="w"> </span>-h<span class="w"> </sp
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dash-app-financiera">Dash App Financiera</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#despliegue-de-dash-app-usando-docker">Despliegue de Dash App usando Docker</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lista-de-dockerfiles">Lista de Dockerfiles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#render-y-dash-tool">Render y Dash Tool</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-para-entregar">Ejercicio para entregar</a></li>
 </ul>
   </nav></div>
