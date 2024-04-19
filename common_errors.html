@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Errores comunes al crear visualizaciones interactivas &#8212; Visualización de Datos con Python y R</title>
+    <title>Errores comunes y Tratamiento de Datos Faltantes y Atípicos &#8212; Visualización de Datos con Python y R</title>
   
   
   
@@ -163,10 +163,10 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dataviz_intro.html">Introducción a la visualización de datos con Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="static_dataviz.html">Visualización estática</a></li>
-<li class="toctree-l1"><a class="reference internal" href="interactive_dataviz.html">De la visualización estática a la interactiva</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stratified_dataviz.html">Visualización de datos a través de estratos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interactive_dataviz.html">De la visualización estática a la interactiva: Bokeh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stratified_dataviz.html">Visualización de datos a través de capas: Altair</a></li>
 <li class="toctree-l1"><a class="reference internal" href="geo_dataviz.html">Visualización interactiva de datos geográficos</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Errores comunes al crear visualizaciones interactivas</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Errores comunes y Tratamiento de Datos Faltantes y Atípicos</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="predictive_model.html">Predicción de series de tiempo</a></li>
 
@@ -359,7 +359,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Errores comunes al crear visualizaciones interactivas</h1>
+    <h1>Errores comunes y Tratamiento de Datos Faltantes y Atípicos</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -369,7 +369,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Errores comunes al crear visualizaciones interactivas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Errores comunes y Tratamiento de Datos Faltantes y Atípicos</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">Introducción</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formato-e-interpretacion-de-datos">Formato e interpretación de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-de-valores-atipicos-en-un-conjunto-de-datos-con-un-grafico-de-cajas">Visualización de valores atípicos en un conjunto de datos con un gráfico de cajas</a></li>
@@ -399,8 +399,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="errores-comunes-al-crear-visualizaciones-interactivas">
-<h1>Errores comunes al crear visualizaciones interactivas<a class="headerlink" href="#errores-comunes-al-crear-visualizaciones-interactivas" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="errores-comunes-y-tratamiento-de-datos-faltantes-y-atipicos">
+<h1>Errores comunes y Tratamiento de Datos Faltantes y Atípicos<a class="headerlink" href="#errores-comunes-y-tratamiento-de-datos-faltantes-y-atipicos" title="Permalink to this heading">#</a></h1>
 <div class="admonition-objetivos admonition">
 <p class="admonition-title">Objetivos</p>
 <ul class="simple">
@@ -2451,7 +2451,7 @@ una visualización que valiera la pena</strong></em>.</p></li>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Errores comunes al crear visualizaciones interactivas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Errores comunes y Tratamiento de Datos Faltantes y Atípicos</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">Introducción</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formato-e-interpretacion-de-datos">Formato e interpretación de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-de-valores-atipicos-en-un-conjunto-de-datos-con-un-grafico-de-cajas">Visualización de valores atípicos en un conjunto de datos con un gráfico de cajas</a></li>

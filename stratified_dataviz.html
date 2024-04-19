@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Visualización de datos a través de estratos &#8212; Visualización de Datos con Python y R</title>
+    <title>Visualización de datos a través de capas: Altair &#8212; Visualización de Datos con Python y R</title>
   
   
   
@@ -69,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Visualización interactiva de datos geográficos" href="geo_dataviz.html" />
-    <link rel="prev" title="De la visualización estática a la interactiva" href="interactive_dataviz.html" />
+    <link rel="prev" title="De la visualización estática a la interactiva: Bokeh" href="interactive_dataviz.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -163,10 +163,10 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dataviz_intro.html">Introducción a la visualización de datos con Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="static_dataviz.html">Visualización estática</a></li>
-<li class="toctree-l1"><a class="reference internal" href="interactive_dataviz.html">De la visualización estática a la interactiva</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Visualización de datos a través de estratos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interactive_dataviz.html">De la visualización estática a la interactiva: Bokeh</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Visualización de datos a través de capas: Altair</a></li>
 <li class="toctree-l1"><a class="reference internal" href="geo_dataviz.html">Visualización interactiva de datos geográficos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common_errors.html">Errores comunes al crear visualizaciones interactivas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common_errors.html">Errores comunes y Tratamiento de Datos Faltantes y Atípicos</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="predictive_model.html">Predicción de series de tiempo</a></li>
 
@@ -359,7 +359,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Visualización de datos a través de estratos</h1>
+    <h1>Visualización de datos a través de capas: Altair</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -393,8 +393,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="visualizacion-de-datos-a-traves-de-estratos">
-<h1>Visualización de datos a través de estratos<a class="headerlink" href="#visualizacion-de-datos-a-traves-de-estratos" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="visualizacion-de-datos-a-traves-de-capas-altair">
+<h1>Visualización de datos a través de capas: Altair<a class="headerlink" href="#visualizacion-de-datos-a-traves-de-capas-altair" title="Permalink to this heading">#</a></h1>
 <div class="admonition-objetivos admonition">
 <p class="admonition-title">Objetivos</p>
 <ul class="simple">
@@ -403,13 +403,12 @@ document.write(`
 <li><p>Crear gráficos de barras y mapas de calor interactivos</p></li>
 <li><p>Crear enlaces dinámicos entre diferentes tipos de gráficos dentro de una única visualización interactiva</p></li>
 </ul>
-<p>En este capítulo, aprenderá a crear visualizaciones interactivas para datos estratificados con respecto a cualquier variable categórica.</p>
 </div>
 <section id="introduccion">
 <h2>Introducción<a class="headerlink" href="#introduccion" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Una observación hecha en la sección anterior fue que cuando cuando se trata de introducir interactividad en ciertos tipos de gráficos de <code class="docutils literal notranslate"><span class="pre">Python</span></code>, <code class="docutils literal notranslate"><span class="pre">plotly</span></code> puede a veces ser verboso, y puede implicar una curva de aprendizaje empinada. Por lo tanto, en este capítulo, presentaremos <code class="docutils literal notranslate"><span class="pre">altair</span></code>, una biblioteca diseñada especialmente para generar gráficos interactivos. - Demostraremos cómo crear visualizaciones interactivas con <code class="docutils literal notranslate"><span class="pre">altair</span></code> para datos estratificados con respecto a cualquier variable categórica. A modo de ilustración, utilizaremos un conjunto de datos para generar gráficos de dispersión y de barras con las características del conjunto de datos y añadir una variedad de elementos interactivos a los gráficos. También conoceremos algunas ventajas específicas del uso de <code class="docutils literal notranslate"><span class="pre">altair</span></code> sobre una biblioteca más polivalente como <code class="docutils literal notranslate"><span class="pre">plotly</span></code>.</p></li>
-<li><p>Utilizaremos el conjunto de datos del <code class="docutils literal notranslate"><span class="pre">Índice</span> <span class="pre">de</span> <span class="pre">Felicidad</span> <span class="pre">Planetaria</span> <span class="pre">(HPI)</span></code> (ver <a class="reference external" href="http://happyplanetindex.org/">happyplanetindex</a>) a lo largo de esta sección. <code class="docutils literal notranslate"><span class="pre">Este</span> <span class="pre">conjunto</span> <span class="pre">de</span> <span class="pre">datos</span> <span class="pre">muestra</span> <span class="pre">en</span> <span class="pre">qué</span> <span class="pre">lugares</span> <span class="pre">del</span> <span class="pre">mundo</span> <span class="pre">la</span> <span class="pre">gente</span> <span class="pre">utiliza</span> <span class="pre">recursos</span> <span class="pre">ecológicos</span> <span class="pre">de</span> <span class="pre">forma</span> <span class="pre">más</span> <span class="pre">eficiente</span> <span class="pre">para</span> <span class="pre">vivir</span> <span class="pre">una</span> <span class="pre">vida</span> <span class="pre">larga</span> <span class="pre">y</span> <span class="pre">feliz</span></code>. No sólo es un recurso interesante para conocer mejor las condiciones ecológicas y el bienestar socioeconómico de bienestar socioeconómico en varias partes de nuestro planeta, sino que también tiene una interesante mezcla de características que nos ayudan a demostrar ciertos conceptos clave de la visualización interactiva.</p></li>
+<li><p>Una observación hecha en la sección anterior fue que cuando se trata de introducir interactividad en ciertos tipos de gráficos de <code class="docutils literal notranslate"><span class="pre">Python</span></code>, <code class="docutils literal notranslate"><span class="pre">plotly</span></code> puede a veces ser verboso, y puede implicar una curva de aprendizaje empinada. Por lo tanto, en este capítulo, presentaremos <code class="docutils literal notranslate"><span class="pre">altair</span></code>, una biblioteca diseñada especialmente para generar gráficos interactivos. Demostraremos cómo crear visualizaciones interactivas con <code class="docutils literal notranslate"><span class="pre">altair</span></code> para datos estratificados con respecto a cualquier variable categórica. A modo de ilustración, utilizaremos un conjunto de datos para generar gráficos de dispersión y de barras con las características del conjunto de datos y añadir una variedad de elementos interactivos a los gráficos. También conoceremos algunas ventajas específicas del uso de <code class="docutils literal notranslate"><span class="pre">altair</span></code> sobre una biblioteca más polivalente como <code class="docutils literal notranslate"><span class="pre">plotly</span></code>.</p></li>
+<li><p>Utilizaremos el conjunto de datos del <em><strong>Índice de Felicidad Planetaria (HPI)</strong></em> (ver <a class="reference external" href="http://happyplanetindex.org/">happyplanetindex</a>) a lo largo de esta sección. <em><strong>Este conjunto de datos muestra en qué lugares del mundo la gente utiliza recursos ecológicos de forma más eficiente para vivir una vida larga y feliz</strong></em>. No solo es un recurso interesante para conocer mejor las condiciones ecológicas y el bienestar socioeconómico de bienestar socioeconómico en varias partes de nuestro planeta, sino que también tiene una interesante mezcla de características que nos ayudan a demostrar ciertos conceptos clave de la visualización interactiva.</p></li>
 </ul>
 </section>
 <section id="graficos-de-dispersion-interactivos">
@@ -699,23 +698,23 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-e0443b6220a0460f9d500ed8dc98c57d.vega-embed {
+  #altair-viz-2575e3483ef34bb390d380b61e2b231c.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-e0443b6220a0460f9d500ed8dc98c57d.vega-embed details,
-  #altair-viz-e0443b6220a0460f9d500ed8dc98c57d.vega-embed details summary {
+  #altair-viz-2575e3483ef34bb390d380b61e2b231c.vega-embed details,
+  #altair-viz-2575e3483ef34bb390d380b61e2b231c.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-e0443b6220a0460f9d500ed8dc98c57d"></div>
+<div id="altair-viz-2575e3483ef34bb390d380b61e2b231c"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-e0443b6220a0460f9d500ed8dc98c57d") {
-      outputDiv = document.getElementById("altair-viz-e0443b6220a0460f9d500ed8dc98c57d");
+    if (outputDiv.id !== "altair-viz-2575e3483ef34bb390d380b61e2b231c") {
+      outputDiv = document.getElementById("altair-viz-2575e3483ef34bb390d380b61e2b231c");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -812,23 +811,23 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-e36b1428767f4854a8db58c7126f8253.vega-embed {
+  #altair-viz-083c29b10a5a44ec9723a085fa2af816.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-e36b1428767f4854a8db58c7126f8253.vega-embed details,
-  #altair-viz-e36b1428767f4854a8db58c7126f8253.vega-embed details summary {
+  #altair-viz-083c29b10a5a44ec9723a085fa2af816.vega-embed details,
+  #altair-viz-083c29b10a5a44ec9723a085fa2af816.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-e36b1428767f4854a8db58c7126f8253"></div>
+<div id="altair-viz-083c29b10a5a44ec9723a085fa2af816"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-e36b1428767f4854a8db58c7126f8253") {
-      outputDiv = document.getElementById("altair-viz-e36b1428767f4854a8db58c7126f8253");
+    if (outputDiv.id !== "altair-viz-083c29b10a5a44ec9723a085fa2af816") {
+      outputDiv = document.getElementById("altair-viz-083c29b10a5a44ec9723a085fa2af816");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -895,23 +894,23 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-d135865d43cf41df96cb76b900ab99f7.vega-embed {
+  #altair-viz-0fd299a2101045dfad379af4d7f3e360.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-d135865d43cf41df96cb76b900ab99f7.vega-embed details,
-  #altair-viz-d135865d43cf41df96cb76b900ab99f7.vega-embed details summary {
+  #altair-viz-0fd299a2101045dfad379af4d7f3e360.vega-embed details,
+  #altair-viz-0fd299a2101045dfad379af4d7f3e360.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-d135865d43cf41df96cb76b900ab99f7"></div>
+<div id="altair-viz-0fd299a2101045dfad379af4d7f3e360"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-d135865d43cf41df96cb76b900ab99f7") {
-      outputDiv = document.getElementById("altair-viz-d135865d43cf41df96cb76b900ab99f7");
+    if (outputDiv.id !== "altair-viz-0fd299a2101045dfad379af4d7f3e360") {
+      outputDiv = document.getElementById("altair-viz-0fd299a2101045dfad379af4d7f3e360");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1021,23 +1020,23 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-a49c6bb3fd514d12b50b10c89a1c26f0.vega-embed {
+  #altair-viz-1053a603b94a485d93f39ad6c1bc1c97.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-a49c6bb3fd514d12b50b10c89a1c26f0.vega-embed details,
-  #altair-viz-a49c6bb3fd514d12b50b10c89a1c26f0.vega-embed details summary {
+  #altair-viz-1053a603b94a485d93f39ad6c1bc1c97.vega-embed details,
+  #altair-viz-1053a603b94a485d93f39ad6c1bc1c97.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-a49c6bb3fd514d12b50b10c89a1c26f0"></div>
+<div id="altair-viz-1053a603b94a485d93f39ad6c1bc1c97"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-a49c6bb3fd514d12b50b10c89a1c26f0") {
-      outputDiv = document.getElementById("altair-viz-a49c6bb3fd514d12b50b10c89a1c26f0");
+    if (outputDiv.id !== "altair-viz-1053a603b94a485d93f39ad6c1bc1c97") {
+      outputDiv = document.getElementById("altair-viz-1053a603b94a485d93f39ad6c1bc1c97");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1105,23 +1104,23 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-d46e9e612caf475aab8adc42418a4728.vega-embed {
+  #altair-viz-28d3315a0f4e4bc8b7f81d11d7b3e70f.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-d46e9e612caf475aab8adc42418a4728.vega-embed details,
-  #altair-viz-d46e9e612caf475aab8adc42418a4728.vega-embed details summary {
+  #altair-viz-28d3315a0f4e4bc8b7f81d11d7b3e70f.vega-embed details,
+  #altair-viz-28d3315a0f4e4bc8b7f81d11d7b3e70f.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-d46e9e612caf475aab8adc42418a4728"></div>
+<div id="altair-viz-28d3315a0f4e4bc8b7f81d11d7b3e70f"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-d46e9e612caf475aab8adc42418a4728") {
-      outputDiv = document.getElementById("altair-viz-d46e9e612caf475aab8adc42418a4728");
+    if (outputDiv.id !== "altair-viz-28d3315a0f4e4bc8b7f81d11d7b3e70f") {
+      outputDiv = document.getElementById("altair-viz-28d3315a0f4e4bc8b7f81d11d7b3e70f");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1229,23 +1228,23 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-1b3b4032698d457692e983dea89eaeac.vega-embed {
+  #altair-viz-62e2123269d14108a01e344602795094.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-1b3b4032698d457692e983dea89eaeac.vega-embed details,
-  #altair-viz-1b3b4032698d457692e983dea89eaeac.vega-embed details summary {
+  #altair-viz-62e2123269d14108a01e344602795094.vega-embed details,
+  #altair-viz-62e2123269d14108a01e344602795094.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-1b3b4032698d457692e983dea89eaeac"></div>
+<div id="altair-viz-62e2123269d14108a01e344602795094"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-1b3b4032698d457692e983dea89eaeac") {
-      outputDiv = document.getElementById("altair-viz-1b3b4032698d457692e983dea89eaeac");
+    if (outputDiv.id !== "altair-viz-62e2123269d14108a01e344602795094") {
+      outputDiv = document.getElementById("altair-viz-62e2123269d14108a01e344602795094");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1317,23 +1316,23 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-1adccd846c644e8d81654a3cb5f8fbf2.vega-embed {
+  #altair-viz-afca5e275529475f96a712f130100df7.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-1adccd846c644e8d81654a3cb5f8fbf2.vega-embed details,
-  #altair-viz-1adccd846c644e8d81654a3cb5f8fbf2.vega-embed details summary {
+  #altair-viz-afca5e275529475f96a712f130100df7.vega-embed details,
+  #altair-viz-afca5e275529475f96a712f130100df7.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-1adccd846c644e8d81654a3cb5f8fbf2"></div>
+<div id="altair-viz-afca5e275529475f96a712f130100df7"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-1adccd846c644e8d81654a3cb5f8fbf2") {
-      outputDiv = document.getElementById("altair-viz-1adccd846c644e8d81654a3cb5f8fbf2");
+    if (outputDiv.id !== "altair-viz-afca5e275529475f96a712f130100df7") {
+      outputDiv = document.getElementById("altair-viz-afca5e275529475f96a712f130100df7");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1527,23 +1526,23 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-559d3db367694724b3d23812f4fadce1.vega-embed {
+  #altair-viz-6b1f8a07861542479a3c9e8e2e3f2aab.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-559d3db367694724b3d23812f4fadce1.vega-embed details,
-  #altair-viz-559d3db367694724b3d23812f4fadce1.vega-embed details summary {
+  #altair-viz-6b1f8a07861542479a3c9e8e2e3f2aab.vega-embed details,
+  #altair-viz-6b1f8a07861542479a3c9e8e2e3f2aab.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-559d3db367694724b3d23812f4fadce1"></div>
+<div id="altair-viz-6b1f8a07861542479a3c9e8e2e3f2aab"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-559d3db367694724b3d23812f4fadce1") {
-      outputDiv = document.getElementById("altair-viz-559d3db367694724b3d23812f4fadce1");
+    if (outputDiv.id !== "altair-viz-6b1f8a07861542479a3c9e8e2e3f2aab") {
+      outputDiv = document.getElementById("altair-viz-6b1f8a07861542479a3c9e8e2e3f2aab");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1589,7 +1588,7 @@ document.write(`
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-06c1dbec64553b487ce4599ce4c93c9b"}, "mark": {"type": "circle"}, "encoding": {"color": {"condition": {"param": "Select", "field": "Region", "type": "nominal"}, "value": "lightgray"}, "tooltip": {"field": "Region", "type": "nominal"}, "x": {"field": "Wellbeing (0-10)", "type": "quantitative"}, "y": {"field": "Happy Planet Index", "type": "quantitative"}}, "params": [{"name": "Select", "select": {"type": "point", "fields": ["Region"]}, "bind": {"input": "select", "options": ["Sub Saharan Africa", "Europe", "Americas", "Post-communist", "Asia Pacific", "Middle East and North Africa"]}}], "$schema": "https://vega.github.io/schema/vega-lite/v5.15.1.json", "datasets": {"data-06c1dbec64553b487ce4599ce4c93c9b": [{"HPI Rank": 1, "Country": "Costa Rica", "Region": "Americas", "Life Expectancy (years)": 79.1, "Wellbeing (0-10)": 7.3, "Inequality of outcomes": "15%", "Ecological Footprint (gha/capita)": 2.8, "Happy Planet Index": 44.7}, {"HPI Rank": 2, "Country": "Mexico", "Region": "Americas", "Life Expectancy (years)": 76.4, "Wellbeing (0-10)": 7.3, "Inequality of outcomes": "19%", "Ecological Footprint (gha/capita)": 2.9, "Happy Planet Index": 40.7}, {"HPI Rank": 3, "Country": "Colombia", "Region": "Americas", "Life Expectancy (years)": 73.7, "Wellbeing (0-10)": 6.4, "Inequality of outcomes": "24%", "Ecological Footprint (gha/capita)": 1.9, "Happy Planet Index": 40.7}, {"HPI Rank": 4, "Country": "Vanuatu", "Region": "Asia Pacific", "Life Expectancy (years)": 71.3, "Wellbeing (0-10)": 6.5, "Inequality of outcomes": "22%", "Ecological Footprint (gha/capita)": 1.9, "Happy Planet Index": 40.6}, {"HPI Rank": 5, "Country": "Vietnam", "Region": "Asia Pacific", "Life Expectancy (years)": 75.5, "Wellbeing (0-10)": 5.5, "Inequality of outcomes": "19%", "Ecological Footprint (gha/capita)": 1.7, "Happy Planet Index": 40.3}, {"HPI Rank": 6, "Country": "Panama", "Region": "Americas", "Life Expectancy (years)": 77.2, "Wellbeing (0-10)": 6.9, "Inequality of outcomes": "19%", "Ecological Footprint (gha/capita)": 2.8, "Happy Planet Index": 39.5}, {"HPI Rank": 7, "Country": "Nicaragua", "Region": "Americas", "Life Expectancy (years)": 74.3, "Wellbeing (0-10)": 5.4, "Inequality of outcomes": "25%", "Ecological Footprint (gha/capita)": 1.4, "Happy Planet Index": 38.7}, {"HPI Rank": 8, "Country": "Bangladesh", "Region": "Asia Pacific", "Life Expectancy (years)": 70.8, "Wellbeing (0-10)": 4.7, "Inequality of outcomes": "27%", "Ecological Footprint (gha/capita)": 0.7, "Happy Planet Index": 38.4}, {"HPI Rank": 9, "Country": "Thailand", "Region": "Asia Pacific", "Life Expectancy (years)": 74.1, "Wellbeing (0-10)": 6.3, "Inequality of outcomes": "15%", "Ecological Footprint (gha/capita)": 2.7, "Happy Planet Index": 37.3}, {"HPI Rank": 10, "Country": "Ecuador", "Region": "Americas", "Life Expectancy (years)": 75.4, "Wellbeing (0-10)": 6.0, "Inequality of outcomes": "22%", "Ecological Footprint (gha/capita)": 2.2, "Happy Planet Index": 37.0}, {"HPI Rank": 11, "Country": "Jamaica", "Region": "Americas", "Life Expectancy (years)": 75.3, "Wellbeing (0-10)": 5.6, "Inequality of outcomes": "21%", "Ecological Footprint (gha/capita)": 1.9, "Happy Planet Index": 36.9}, {"HPI Rank": 12, "Country": "Norway", "Region": "Europe", "Life Expectancy (years)": 81.3, "Wellbeing (0-10)": 7.7, "Inequality of outcomes": "7%", "Ecological Footprint (gha/capita)": 5.0, "Happy Planet Index": 36.8}, {"HPI Rank": 13, "Country": "Albania", "Region": "Post-communist", "Life Expectancy (years)": 77.3, "Wellbeing (0-10)": 5.5, "Inequality of outcomes": "17%", "Ecological Footprint (gha/capita)": 2.2, "Happy Planet Index": 36.8}, {"HPI Rank": 14, "Country": "Uruguay", "Region": "Americas", "Life Expectancy (years)": 76.9, "Wellbeing (0-10)": 6.4, "Inequality of outcomes": "18%", "Ecological Footprint (gha/capita)": 2.9, "Happy Planet Index": 36.1}, {"HPI Rank": 15, "Country": "Spain", "Region": "Europe", "Life Expectancy (years)": 82.2, "Wellbeing (0-10)": 6.3, "Inequality of outcomes": "10%", "Ecological Footprint (gha/capita)": 3.7, "Happy Planet Index": 36.0}, {"HPI Rank": 16, "Country": "Indonesia", "Region": "Asia Pacific", "Life Expectancy (years)": 68.5, "Wellbeing (0-10)": 5.4, "Inequality of outcomes": "21%", "Ecological Footprint (gha/capita)": 1.6, "Happy Planet Index": 35.7}, {"HPI Rank": 17, "Country": "El Salvador", "Region": "Americas", "Life Expectancy (years)": 72.5, "Wellbeing (0-10)": 5.9, "Inequality of outcomes": "22%", "Ecological Footprint (gha/capita)": 2.1, "Happy Planet Index": 35.6}, {"HPI Rank": 18, "Country": "Netherlands", "Region": "Europe", "Life Expectancy (years)": 81.2, "Wellbeing (0-10)": 7.5, "Inequality of outcomes": "4%", "Ecological Footprint (gha/capita)": 5.3, "Happy Planet Index": 35.3}, {"HPI Rank": 19, "Country": "Argentina", "Region": "Americas", "Life Expectancy (years)": 75.9, "Wellbeing (0-10)": 6.5, "Inequality of outcomes": "16%", "Ecological Footprint (gha/capita)": 3.1, "Happy Planet Index": 35.2}, {"HPI Rank": 20, "Country": "Philippines", "Region": "Asia Pacific", "Life Expectancy (years)": 67.9, "Wellbeing (0-10)": 5.0, "Inequality of outcomes": "26%", "Ecological Footprint (gha/capita)": 1.1, "Happy Planet Index": 35.0}, {"HPI Rank": 21, "Country": "Peru", "Region": "Americas", "Life Expectancy (years)": 74.1, "Wellbeing (0-10)": 5.8, "Inequality of outcomes": "21%", "Ecological Footprint (gha/capita)": 2.3, "Happy Planet Index": 34.6}, {"HPI Rank": 22, "Country": "Palestine", "Region": "Middle East and North Africa", "Life Expectancy (years)": 72.6, "Wellbeing (0-10)": 4.6, "Inequality of outcomes": "24%", "Ecological Footprint (gha/capita)": 1.2, "Happy Planet Index": 34.5}, {"HPI Rank": 23, "Country": "Brazil", "Region": "Americas", "Life Expectancy (years)": 73.9, "Wellbeing (0-10)": 6.9, "Inequality of outcomes": "22%", "Ecological Footprint (gha/capita)": 3.1, "Happy Planet Index": 34.3}, {"HPI Rank": 24, "Country": "Switzerland", "Region": "Europe", "Life Expectancy (years)": 82.6, "Wellbeing (0-10)": 7.8, "Inequality of outcomes": "6%", "Ecological Footprint (gha/capita)": 5.8, "Happy Planet Index": 34.3}, {"HPI Rank": 25, "Country": "Tajikistan", "Region": "Post-communist", "Life Expectancy (years)": 69.0, "Wellbeing (0-10)": 4.5, "Inequality of outcomes": "26%", "Ecological Footprint (gha/capita)": 0.9, "Happy Planet Index": 34.2}, {"HPI Rank": 26, "Country": "Guatemala", "Region": "Americas", "Life Expectancy (years)": 71.4, "Wellbeing (0-10)": 5.9, "Inequality of outcomes": "27%", "Ecological Footprint (gha/capita)": 1.9, "Happy Planet Index": 34.2}, {"HPI Rank": 27, "Country": "Belize", "Region": "Americas", "Life Expectancy (years)": 69.8, "Wellbeing (0-10)": 6.1, "Inequality of outcomes": "18%", "Ecological Footprint (gha/capita)": 2.5, "Happy Planet Index": 33.8}, {"HPI Rank": 28, "Country": "Sri Lanka", "Region": "Asia Pacific", "Life Expectancy (years)": 74.6, "Wellbeing (0-10)": 4.2, "Inequality of outcomes": "17%", "Ecological Footprint (gha/capita)": 1.3, "Happy Planet Index": 33.8}, {"HPI Rank": 29, "Country": "Venezuela", "Region": "Americas", "Life Expectancy (years)": 73.9, "Wellbeing (0-10)": 7.1, "Inequality of outcomes": "19%", "Ecological Footprint (gha/capita)": 3.6, "Happy Planet Index": 33.6}, {"HPI Rank": 30, "Country": "Algeria", "Region": "Middle East and North Africa", "Life Expectancy (years)": 74.3, "Wellbeing (0-10)": 5.6, "Inequality of outcomes": "24%", "Ecological Footprint (gha/capita)": 2.1, "Happy Planet Index": 33.3}, {"HPI Rank": 31, "Country": "Kyrgyzstan", "Region": "Post-communist", "Life Expectancy (years)": 69.7, "Wellbeing (0-10)": 5.2, "Inequality of outcomes": "18%", "Ecological Footprint (gha/capita)": 1.9, "Happy Planet Index": 33.1}, {"HPI Rank": 32, "Country": "Denmark", "Region": "Europe", "Life Expectancy (years)": 79.8, "Wellbeing (0-10)": 7.5, "Inequality of outcomes": "7%", "Ecological Footprint (gha/capita)": 5.5, "Happy Planet Index": 32.7}, {"HPI Rank": 33, "Country": "Morocco", "Region": "Middle East and North Africa", "Life Expectancy (years)": 73.4, "Wellbeing (0-10)": 5.0, "Inequality of outcomes": "25%", "Ecological Footprint (gha/capita)": 1.7, "Happy Planet Index": 32.7}, {"HPI Rank": 34, "Country": "United Kingdom", "Region": "Europe", "Life Expectancy (years)": 80.4, "Wellbeing (0-10)": 6.9, "Inequality of outcomes": "9%", "Ecological Footprint (gha/capita)": 4.9, "Happy Planet Index": 31.9}, {"HPI Rank": 35, "Country": "Chile", "Region": "Americas", "Life Expectancy (years)": 81.1, "Wellbeing (0-10)": 6.6, "Inequality of outcomes": "14%", "Ecological Footprint (gha/capita)": 4.4, "Happy Planet Index": 31.7}, {"HPI Rank": 36, "Country": "Pakistan", "Region": "Asia Pacific", "Life Expectancy (years)": 65.7, "Wellbeing (0-10)": 5.1, "Inequality of outcomes": "40%", "Ecological Footprint (gha/capita)": 0.8, "Happy Planet Index": 31.5}, {"HPI Rank": 37, "Country": "Finland", "Region": "Europe", "Life Expectancy (years)": 80.4, "Wellbeing (0-10)": 7.4, "Inequality of outcomes": "6%", "Ecological Footprint (gha/capita)": 5.9, "Happy Planet Index": 31.3}, {"HPI Rank": 38, "Country": "New Zealand", "Region": "Asia Pacific", "Life Expectancy (years)": 81.4, "Wellbeing (0-10)": 7.2, "Inequality of outcomes": "8%", "Ecological Footprint (gha/capita)": 5.6, "Happy Planet Index": 31.3}, {"HPI Rank": 39, "Country": "Iceland", "Region": "Europe", "Life Expectancy (years)": 82.2, "Wellbeing (0-10)": 7.6, "Inequality of outcomes": "5%", "Ecological Footprint (gha/capita)": 6.4, "Happy Planet Index": 31.1}, {"HPI Rank": 40, "Country": "Georgia", "Region": "Post-communist", "Life Expectancy (years)": 74.6, "Wellbeing (0-10)": 4.3, "Inequality of outcomes": "20%", "Ecological Footprint (gha/capita)": 1.6, "Happy Planet Index": 31.1}, {"HPI Rank": 41, "Country": "Cyprus", "Region": "Europe", "Life Expectancy (years)": 79.8, "Wellbeing (0-10)": 6.2, "Inequality of outcomes": "12%", "Ecological Footprint (gha/capita)": 4.2, "Happy Planet Index": 30.7}, {"HPI Rank": 42, "Country": "Nepal", "Region": "Asia Pacific", "Life Expectancy (years)": 68.8, "Wellbeing (0-10)": 4.2, "Inequality of outcomes": "27%", "Ecological Footprint (gha/capita)": 1.0, "Happy Planet Index": 30.5}, {"HPI Rank": 43, "Country": "Austria", "Region": "Europe", "Life Expectancy (years)": 81.0, "Wellbeing (0-10)": 7.4, "Inequality of outcomes": "7%", "Ecological Footprint (gha/capita)": 6.1, "Happy Planet Index": 30.5}, {"HPI Rank": 44, "Country": "France", "Region": "Europe", "Life Expectancy (years)": 81.8, "Wellbeing (0-10)": 6.6, "Inequality of outcomes": "9%", "Ecological Footprint (gha/capita)": 5.1, "Happy Planet Index": 30.4}, {"HPI Rank": 45, "Country": "Dominican Republic", "Region": "Americas", "Life Expectancy (years)": 73.1, "Wellbeing (0-10)": 4.8, "Inequality of outcomes": "30%", "Ecological Footprint (gha/capita)": 1.5, "Happy Planet Index": 30.3}, {"HPI Rank": 46, "Country": "Malaysia", "Region": "Asia Pacific", "Life Expectancy (years)": 74.4, "Wellbeing (0-10)": 5.9, "Inequality of outcomes": "10%", "Ecological Footprint (gha/capita)": 3.7, "Happy Planet Index": 30.3}, {"HPI Rank": 47, "Country": "Croatia", "Region": "Post-communist", "Life Expectancy (years)": 77.0, "Wellbeing (0-10)": 6.0, "Inequality of outcomes": "12%", "Ecological Footprint (gha/capita)": 3.9, "Happy Planet Index": 30.2}, {"HPI Rank": 48, "Country": "Ireland", "Region": "Europe", "Life Expectancy (years)": 80.5, "Wellbeing (0-10)": 7.0, "Inequality of outcomes": "8%", "Ecological Footprint (gha/capita)": 5.6, "Happy Planet Index": 30.0}, {"HPI Rank": 49, "Country": "Germany", "Region": "Europe", "Life Expectancy (years)": 80.6, "Wellbeing (0-10)": 6.7, "Inequality of outcomes": "8%", "Ecological Footprint (gha/capita)": 5.3, "Happy Planet Index": 29.8}, {"HPI Rank": 50, "Country": "India", "Region": "Asia Pacific", "Life Expectancy (years)": 67.3, "Wellbeing (0-10)": 4.6, "Inequality of outcomes": "31%", "Ecological Footprint (gha/capita)": 1.2, "Happy Planet Index": 29.2}, {"HPI Rank": 51, "Country": "Uzbekistan", "Region": "Post-communist", "Life Expectancy (years)": 68.2, "Wellbeing (0-10)": 6.0, "Inequality of outcomes": "30%", "Ecological Footprint (gha/capita)": 2.3, "Happy Planet Index": 29.1}, {"HPI Rank": 52, "Country": "Serbia", "Region": "Post-communist", "Life Expectancy (years)": 74.5, "Wellbeing (0-10)": 5.2, "Inequality of outcomes": "19%", "Ecological Footprint (gha/capita)": 2.7, "Happy Planet Index": 29.0}, {"HPI Rank": 53, "Country": "Malta", "Region": "Europe", "Life Expectancy (years)": 80.2, "Wellbeing (0-10)": 6.0, "Inequality of outcomes": "13%", "Ecological Footprint (gha/capita)": 4.4, "Happy Planet Index": 29.0}, {"HPI Rank": 54, "Country": "Israel", "Region": "Middle East and North Africa", "Life Expectancy (years)": 81.9, "Wellbeing (0-10)": 7.1, "Inequality of outcomes": "8%", "Ecological Footprint (gha/capita)": 6.2, "Happy Planet Index": 28.8}, {"HPI Rank": 55, "Country": "Romania", "Region": "Post-communist", "Life Expectancy (years)": 74.3, "Wellbeing (0-10)": 5.2, "Inequality of outcomes": "19%", "Ecological Footprint (gha/capita)": 2.7, "Happy Planet Index": 28.8}, {"HPI Rank": 56, "Country": "Bhutan", "Region": "Asia Pacific", "Life Expectancy (years)": 68.7, "Wellbeing (0-10)": 5.6, "Inequality of outcomes": "27%", "Ecological Footprint (gha/capita)": 2.3, "Happy Planet Index": 28.6}, {"HPI Rank": 57, "Country": "Haiti", "Region": "Americas", "Life Expectancy (years)": 62.1, "Wellbeing (0-10)": 4.4, "Inequality of outcomes": "37%", "Ecological Footprint (gha/capita)": 0.6, "Happy Planet Index": 28.6}, {"HPI Rank": 58, "Country": "Japan", "Region": "Asia Pacific", "Life Expectancy (years)": 83.2, "Wellbeing (0-10)": 6.0, "Inequality of outcomes": "9%", "Ecological Footprint (gha/capita)": 5.0, "Happy Planet Index": 28.3}, {"HPI Rank": 59, "Country": "Slovakia", "Region": "Post-communist", "Life Expectancy (years)": 75.9, "Wellbeing (0-10)": 5.9, "Inequality of outcomes": "13%", "Ecological Footprint (gha/capita)": 4.1, "Happy Planet Index": 28.2}, {"HPI Rank": 60, "Country": "Italy", "Region": "Europe", "Life Expectancy (years)": 82.7, "Wellbeing (0-10)": 5.8, "Inequality of outcomes": "12%", "Ecological Footprint (gha/capita)": 4.6, "Happy Planet Index": 28.1}, {"HPI Rank": 61, "Country": "Sweden", "Region": "Europe", "Life Expectancy (years)": 81.8, "Wellbeing (0-10)": 7.6, "Inequality of outcomes": "6%", "Ecological Footprint (gha/capita)": 7.3, "Happy Planet Index": 28.0}, {"HPI Rank": 62, "Country": "Poland", "Region": "Post-communist", "Life Expectancy (years)": 76.9, "Wellbeing (0-10)": 5.9, "Inequality of outcomes": "11%", "Ecological Footprint (gha/capita)": 4.4, "Happy Planet Index": 27.5}, {"HPI Rank": 63, "Country": "Mauritius", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 74.0, "Wellbeing (0-10)": 5.5, "Inequality of outcomes": "17%", "Ecological Footprint (gha/capita)": 3.5, "Happy Planet Index": 27.4}, {"HPI Rank": 64, "Country": "Czech Republic", "Region": "Post-communist", "Life Expectancy (years)": 78.2, "Wellbeing (0-10)": 6.3, "Inequality of outcomes": "9%", "Ecological Footprint (gha/capita)": 5.2, "Happy Planet Index": 27.3}, {"HPI Rank": 65, "Country": "Honduras", "Region": "Americas", "Life Expectancy (years)": 72.8, "Wellbeing (0-10)": 4.6, "Inequality of outcomes": "31%", "Ecological Footprint (gha/capita)": 1.7, "Happy Planet Index": 27.2}, {"HPI Rank": 66, "Country": "Ethiopia", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 62.8, "Wellbeing (0-10)": 4.6, "Inequality of outcomes": "36%", "Ecological Footprint (gha/capita)": 1.0, "Happy Planet Index": 26.7}, {"HPI Rank": 67, "Country": "Iraq", "Region": "Middle East and North Africa", "Life Expectancy (years)": 69.0, "Wellbeing (0-10)": 4.7, "Inequality of outcomes": "27%", "Ecological Footprint (gha/capita)": 1.9, "Happy Planet Index": 26.5}, {"HPI Rank": 68, "Country": "Turkey", "Region": "Middle East and North Africa", "Life Expectancy (years)": 74.7, "Wellbeing (0-10)": 5.3, "Inequality of outcomes": "19%", "Ecological Footprint (gha/capita)": 3.3, "Happy Planet Index": 26.4}, {"HPI Rank": 69, "Country": "Hungary", "Region": "Post-communist", "Life Expectancy (years)": 74.9, "Wellbeing (0-10)": 4.7, "Inequality of outcomes": "15%", "Ecological Footprint (gha/capita)": 2.9, "Happy Planet Index": 26.4}, {"HPI Rank": 70, "Country": "Ukraine", "Region": "Post-communist", "Life Expectancy (years)": 70.3, "Wellbeing (0-10)": 5.0, "Inequality of outcomes": "17%", "Ecological Footprint (gha/capita)": 2.8, "Happy Planet Index": 26.4}, {"HPI Rank": 71, "Country": "Tunisia", "Region": "Middle East and North Africa", "Life Expectancy (years)": 74.6, "Wellbeing (0-10)": 4.5, "Inequality of outcomes": "22%", "Ecological Footprint (gha/capita)": 2.3, "Happy Planet Index": 26.2}, {"HPI Rank": 72, "Country": "China", "Region": "Asia Pacific", "Life Expectancy (years)": 75.4, "Wellbeing (0-10)": 5.1, "Inequality of outcomes": "17%", "Ecological Footprint (gha/capita)": 3.4, "Happy Planet Index": 25.7}, {"HPI Rank": 73, "Country": "Armenia", "Region": "Post-communist", "Life Expectancy (years)": 74.4, "Wellbeing (0-10)": 4.3, "Inequality of outcomes": "22%", "Ecological Footprint (gha/capita)": 2.2, "Happy Planet Index": 25.7}, {"HPI Rank": 74, "Country": "Cambodia", "Region": "Asia Pacific", "Life Expectancy (years)": 67.5, "Wellbeing (0-10)": 3.9, "Inequality of outcomes": "28%", "Ecological Footprint (gha/capita)": 1.2, "Happy Planet Index": 25.6}, {"HPI Rank": 75, "Country": "Suriname", "Region": "Americas", "Life Expectancy (years)": 70.8, "Wellbeing (0-10)": 6.3, "Inequality of outcomes": "19%", "Ecological Footprint (gha/capita)": 4.3, "Happy Planet Index": 25.4}, {"HPI Rank": 76, "Country": "Bosnia and Herzegovina", "Region": "Post-communist", "Life Expectancy (years)": 76.2, "Wellbeing (0-10)": 4.8, "Inequality of outcomes": "19%", "Ecological Footprint (gha/capita)": 3.1, "Happy Planet Index": 25.3}, {"HPI Rank": 77, "Country": "Zambia", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 58.4, "Wellbeing (0-10)": 5.0, "Inequality of outcomes": "41%", "Ecological Footprint (gha/capita)": 1.0, "Happy Planet Index": 25.2}, {"HPI Rank": 78, "Country": "Montenegro", "Region": "Post-communist", "Life Expectancy (years)": 75.8, "Wellbeing (0-10)": 5.2, "Inequality of outcomes": "16%", "Ecological Footprint (gha/capita)": 3.8, "Happy Planet Index": 25.1}, {"HPI Rank": 79, "Country": "Portugal", "Region": "Europe", "Life Expectancy (years)": 80.3, "Wellbeing (0-10)": 5.0, "Inequality of outcomes": "16%", "Ecological Footprint (gha/capita)": 3.9, "Happy Planet Index": 24.8}, {"HPI Rank": 80, "Country": "South Korea", "Region": "Asia Pacific", "Life Expectancy (years)": 81.3, "Wellbeing (0-10)": 6.0, "Inequality of outcomes": "11%", "Ecological Footprint (gha/capita)": 5.7, "Happy Planet Index": 24.8}, {"HPI Rank": 81, "Country": "Myanmar", "Region": "Asia Pacific", "Life Expectancy (years)": 65.5, "Wellbeing (0-10)": 4.4, "Inequality of outcomes": "32%", "Ecological Footprint (gha/capita)": 1.4, "Happy Planet Index": 24.7}, {"HPI Rank": 82, "Country": "Slovenia", "Region": "Post-communist", "Life Expectancy (years)": 80.0, "Wellbeing (0-10)": 6.1, "Inequality of outcomes": "10%", "Ecological Footprint (gha/capita)": 5.8, "Happy Planet Index": 24.6}, {"HPI Rank": 83, "Country": "Kenya", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 60.3, "Wellbeing (0-10)": 4.5, "Inequality of outcomes": "38%", "Ecological Footprint (gha/capita)": 1.0, "Happy Planet Index": 24.2}, {"HPI Rank": 84, "Country": "Iran", "Region": "Middle East and North Africa", "Life Expectancy (years)": 74.8, "Wellbeing (0-10)": 4.6, "Inequality of outcomes": "23%", "Ecological Footprint (gha/capita)": 2.8, "Happy Planet Index": 24.0}, {"HPI Rank": 85, "Country": "Canada", "Region": "Americas", "Life Expectancy (years)": 81.7, "Wellbeing (0-10)": 7.4, "Inequality of outcomes": "9%", "Ecological Footprint (gha/capita)": 8.2, "Happy Planet Index": 23.9}, {"HPI Rank": 86, "Country": "Egypt", "Region": "Middle East and North Africa", "Life Expectancy (years)": 70.7, "Wellbeing (0-10)": 4.2, "Inequality of outcomes": "23%", "Ecological Footprint (gha/capita)": 2.2, "Happy Planet Index": 23.8}, {"HPI Rank": 87, "Country": "Belgium", "Region": "Europe", "Life Expectancy (years)": 80.4, "Wellbeing (0-10)": 6.9, "Inequality of outcomes": "9%", "Ecological Footprint (gha/capita)": 7.4, "Happy Planet Index": 23.7}, {"HPI Rank": 88, "Country": "Mozambique", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 54.3, "Wellbeing (0-10)": 5.0, "Inequality of outcomes": "43%", "Ecological Footprint (gha/capita)": 0.9, "Happy Planet Index": 23.7}, {"HPI Rank": 89, "Country": "Greece", "Region": "Europe", "Life Expectancy (years)": 80.5, "Wellbeing (0-10)": 5.1, "Inequality of outcomes": "16%", "Ecological Footprint (gha/capita)": 4.4, "Happy Planet Index": 23.6}, {"HPI Rank": 90, "Country": "Macedonia", "Region": "Post-communist", "Life Expectancy (years)": 75.1, "Wellbeing (0-10)": 4.6, "Inequality of outcomes": "18%", "Ecological Footprint (gha/capita)": 3.3, "Happy Planet Index": 23.4}, {"HPI Rank": 91, "Country": "Paraguay", "Region": "Americas", "Life Expectancy (years)": 72.6, "Wellbeing (0-10)": 5.8, "Inequality of outcomes": "22%", "Ecological Footprint (gha/capita)": 4.2, "Happy Planet Index": 23.3}, {"HPI Rank": 92, "Country": "Bolivia", "Region": "Americas", "Life Expectancy (years)": 67.5, "Wellbeing (0-10)": 6.0, "Inequality of outcomes": "35%", "Ecological Footprint (gha/capita)": 3.0, "Happy Planet Index": 23.3}, {"HPI Rank": 93, "Country": "Comoros", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 62.6, "Wellbeing (0-10)": 4.0, "Inequality of outcomes": "36%", "Ecological Footprint (gha/capita)": 1.0, "Happy Planet Index": 23.1}, {"HPI Rank": 94, "Country": "Yemen", "Region": "Middle East and North Africa", "Life Expectancy (years)": 63.3, "Wellbeing (0-10)": 4.1, "Inequality of outcomes": "39%", "Ecological Footprint (gha/capita)": 1.0, "Happy Planet Index": 22.8}, {"HPI Rank": 95, "Country": "Nigeria", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 52.1, "Wellbeing (0-10)": 5.5, "Inequality of outcomes": "44%", "Ecological Footprint (gha/capita)": 1.2, "Happy Planet Index": 22.2}, {"HPI Rank": 96, "Country": "Liberia", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 60.2, "Wellbeing (0-10)": 4.4, "Inequality of outcomes": "38%", "Ecological Footprint (gha/capita)": 1.2, "Happy Planet Index": 22.2}, {"HPI Rank": 97, "Country": "Tanzania", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 63.5, "Wellbeing (0-10)": 4.0, "Inequality of outcomes": "33%", "Ecological Footprint (gha/capita)": 1.3, "Happy Planet Index": 22.1}, {"HPI Rank": 98, "Country": "Malawi", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 60.1, "Wellbeing (0-10)": 4.3, "Inequality of outcomes": "45%", "Ecological Footprint (gha/capita)": 0.8, "Happy Planet Index": 22.1}, {"HPI Rank": 99, "Country": "Zimbabwe", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 53.7, "Wellbeing (0-10)": 5.0, "Inequality of outcomes": "37%", "Ecological Footprint (gha/capita)": 1.4, "Happy Planet Index": 22.1}, {"HPI Rank": 100, "Country": "Lebanon", "Region": "Middle East and North Africa", "Life Expectancy (years)": 78.8, "Wellbeing (0-10)": 4.6, "Inequality of outcomes": "19%", "Ecological Footprint (gha/capita)": 3.8, "Happy Planet Index": 21.9}, {"HPI Rank": 101, "Country": "Senegal", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 65.4, "Wellbeing (0-10)": 3.7, "Inequality of outcomes": "33%", "Ecological Footprint (gha/capita)": 1.2, "Happy Planet Index": 21.9}, {"HPI Rank": 102, "Country": "Belarus", "Region": "Post-communist", "Life Expectancy (years)": 70.9, "Wellbeing (0-10)": 5.7, "Inequality of outcomes": "13%", "Ecological Footprint (gha/capita)": 5.1, "Happy Planet Index": 21.7}, {"HPI Rank": 103, "Country": "Namibia", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 64.0, "Wellbeing (0-10)": 4.7, "Inequality of outcomes": "26%", "Ecological Footprint (gha/capita)": 2.5, "Happy Planet Index": 21.6}, {"HPI Rank": 104, "Country": "Ghana", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 61.0, "Wellbeing (0-10)": 5.1, "Inequality of outcomes": "38%", "Ecological Footprint (gha/capita)": 2.0, "Happy Planet Index": 21.4}, {"HPI Rank": 105, "Country": "Australia", "Region": "Asia Pacific", "Life Expectancy (years)": 82.1, "Wellbeing (0-10)": 7.2, "Inequality of outcomes": "8%", "Ecological Footprint (gha/capita)": 9.3, "Happy Planet Index": 21.2}, {"HPI Rank": 106, "Country": "Oman", "Region": "Middle East and North Africa", "Life Expectancy (years)": 76.3, "Wellbeing (0-10)": 6.9, "Inequality of outcomes": "13%", "Ecological Footprint (gha/capita)": 7.5, "Happy Planet Index": 21.1}, {"HPI Rank": 107, "Country": "Lithuania", "Region": "Post-communist", "Life Expectancy (years)": 72.8, "Wellbeing (0-10)": 5.8, "Inequality of outcomes": "11%", "Ecological Footprint (gha/capita)": 5.8, "Happy Planet Index": 21.0}, {"HPI Rank": 108, "Country": "United States of America", "Region": "Americas", "Life Expectancy (years)": 78.8, "Wellbeing (0-10)": 7.0, "Inequality of outcomes": "13%", "Ecological Footprint (gha/capita)": 8.2, "Happy Planet Index": 20.7}, {"HPI Rank": 109, "Country": "Bulgaria", "Region": "Post-communist", "Life Expectancy (years)": 73.9, "Wellbeing (0-10)": 4.2, "Inequality of outcomes": "19%", "Ecological Footprint (gha/capita)": 3.3, "Happy Planet Index": 20.4}, {"HPI Rank": 110, "Country": "Afghanistan", "Region": "Middle East and North Africa", "Life Expectancy (years)": 59.7, "Wellbeing (0-10)": 3.8, "Inequality of outcomes": "43%", "Ecological Footprint (gha/capita)": 0.8, "Happy Planet Index": 20.2}, {"HPI Rank": 111, "Country": "Rwanda", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 63.1, "Wellbeing (0-10)": 3.3, "Inequality of outcomes": "37%", "Ecological Footprint (gha/capita)": 0.9, "Happy Planet Index": 19.6}, {"HPI Rank": 112, "Country": "Uganda", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 57.1, "Wellbeing (0-10)": 4.3, "Inequality of outcomes": "41%", "Ecological Footprint (gha/capita)": 1.2, "Happy Planet Index": 19.4}, {"HPI Rank": 113, "Country": "Syria", "Region": "Middle East and North Africa", "Life Expectancy (years)": 70.4, "Wellbeing (0-10)": 3.2, "Inequality of outcomes": "30%", "Ecological Footprint (gha/capita)": 1.5, "Happy Planet Index": 19.1}, {"HPI Rank": 114, "Country": "Kazakhstan", "Region": "Post-communist", "Life Expectancy (years)": 68.6, "Wellbeing (0-10)": 5.8, "Inequality of outcomes": "18%", "Ecological Footprint (gha/capita)": 5.6, "Happy Planet Index": 19.1}, {"HPI Rank": 115, "Country": "Republic of Congo", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 61.0, "Wellbeing (0-10)": 3.9, "Inequality of outcomes": "40%", "Ecological Footprint (gha/capita)": 1.3, "Happy Planet Index": 18.8}, {"HPI Rank": 116, "Country": "Russia", "Region": "Post-communist", "Life Expectancy (years)": 69.5, "Wellbeing (0-10)": 5.6, "Inequality of outcomes": "16%", "Ecological Footprint (gha/capita)": 5.7, "Happy Planet Index": 18.7}, {"HPI Rank": 117, "Country": "Mauritania", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 62.6, "Wellbeing (0-10)": 4.7, "Inequality of outcomes": "37%", "Ecological Footprint (gha/capita)": 2.5, "Happy Planet Index": 18.0}, {"HPI Rank": 118, "Country": "Estonia", "Region": "Post-communist", "Life Expectancy (years)": 76.2, "Wellbeing (0-10)": 5.4, "Inequality of outcomes": "12%", "Ecological Footprint (gha/capita)": 6.9, "Happy Planet Index": 17.9}, {"HPI Rank": 119, "Country": "Burkina Faso", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 58.0, "Wellbeing (0-10)": 4.0, "Inequality of outcomes": "43%", "Ecological Footprint (gha/capita)": 1.2, "Happy Planet Index": 17.9}, {"HPI Rank": 120, "Country": "Gabon", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 63.3, "Wellbeing (0-10)": 4.0, "Inequality of outcomes": "36%", "Ecological Footprint (gha/capita)": 2.0, "Happy Planet Index": 17.5}, {"HPI Rank": 121, "Country": "Latvia", "Region": "Post-communist", "Life Expectancy (years)": 73.6, "Wellbeing (0-10)": 5.1, "Inequality of outcomes": "14%", "Ecological Footprint (gha/capita)": 6.3, "Happy Planet Index": 17.1}, {"HPI Rank": 122, "Country": "Niger", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 60.0, "Wellbeing (0-10)": 3.8, "Inequality of outcomes": "40%", "Ecological Footprint (gha/capita)": 1.6, "Happy Planet Index": 16.8}, {"HPI Rank": 123, "Country": "Hong Kong", "Region": "Asia Pacific", "Life Expectancy (years)": 83.6, "Wellbeing (0-10)": 5.5, "Inequality of outcomes": "10%", "Ecological Footprint (gha/capita)": 8.8, "Happy Planet Index": 16.8}, {"HPI Rank": 124, "Country": "Cameroon", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 54.6, "Wellbeing (0-10)": 4.2, "Inequality of outcomes": "47%", "Ecological Footprint (gha/capita)": 1.2, "Happy Planet Index": 16.7}, {"HPI Rank": 125, "Country": "Lesotho", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 48.9, "Wellbeing (0-10)": 4.9, "Inequality of outcomes": "42%", "Ecological Footprint (gha/capita)": 1.7, "Happy Planet Index": 16.7}, {"HPI Rank": 126, "Country": "Botswana", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 64.2, "Wellbeing (0-10)": 4.8, "Inequality of outcomes": "28%", "Ecological Footprint (gha/capita)": 3.8, "Happy Planet Index": 16.6}, {"HPI Rank": 127, "Country": "Djibouti", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 61.3, "Wellbeing (0-10)": 4.4, "Inequality of outcomes": "42%", "Ecological Footprint (gha/capita)": 2.2, "Happy Planet Index": 16.4}, {"HPI Rank": 128, "Country": "South Africa", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 56.3, "Wellbeing (0-10)": 5.1, "Inequality of outcomes": "33%", "Ecological Footprint (gha/capita)": 3.3, "Happy Planet Index": 15.9}, {"HPI Rank": 129, "Country": "Guinea", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 57.7, "Wellbeing (0-10)": 3.7, "Inequality of outcomes": "42%", "Ecological Footprint (gha/capita)": 1.4, "Happy Planet Index": 15.9}, {"HPI Rank": 130, "Country": "Trinidad and Tobago", "Region": "Americas", "Life Expectancy (years)": 70.1, "Wellbeing (0-10)": 6.4, "Inequality of outcomes": "21%", "Ecological Footprint (gha/capita)": 7.9, "Happy Planet Index": 15.7}, {"HPI Rank": 131, "Country": "Burundi", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 55.8, "Wellbeing (0-10)": 3.4, "Inequality of outcomes": "48%", "Ecological Footprint (gha/capita)": 0.8, "Happy Planet Index": 15.6}, {"HPI Rank": 132, "Country": "Swaziland", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 48.9, "Wellbeing (0-10)": 4.9, "Inequality of outcomes": "41%", "Ecological Footprint (gha/capita)": 2.0, "Happy Planet Index": 15.5}, {"HPI Rank": 133, "Country": "Sierra Leone", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 49.8, "Wellbeing (0-10)": 4.5, "Inequality of outcomes": "50%", "Ecological Footprint (gha/capita)": 1.2, "Happy Planet Index": 15.3}, {"HPI Rank": 134, "Country": "Turkmenistan", "Region": "Post-communist", "Life Expectancy (years)": 65.3, "Wellbeing (0-10)": 5.5, "Inequality of outcomes": "31%", "Ecological Footprint (gha/capita)": 5.5, "Happy Planet Index": 14.6}, {"HPI Rank": 135, "Country": "Cote d'Ivoire", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 50.8, "Wellbeing (0-10)": 3.8, "Inequality of outcomes": "45%", "Ecological Footprint (gha/capita)": 1.3, "Happy Planet Index": 14.4}, {"HPI Rank": 136, "Country": "Mongolia", "Region": "Asia Pacific", "Life Expectancy (years)": 68.6, "Wellbeing (0-10)": 4.9, "Inequality of outcomes": "22%", "Ecological Footprint (gha/capita)": 6.1, "Happy Planet Index": 14.3}, {"HPI Rank": 137, "Country": "Benin", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 59.2, "Wellbeing (0-10)": 3.2, "Inequality of outcomes": "44%", "Ecological Footprint (gha/capita)": 1.4, "Happy Planet Index": 13.4}, {"HPI Rank": 138, "Country": "Togo", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 58.6, "Wellbeing (0-10)": 2.9, "Inequality of outcomes": "43%", "Ecological Footprint (gha/capita)": 1.1, "Happy Planet Index": 13.2}, {"HPI Rank": 139, "Country": "Luxembourg", "Region": "Europe", "Life Expectancy (years)": 81.1, "Wellbeing (0-10)": 7.0, "Inequality of outcomes": "7%", "Ecological Footprint (gha/capita)": 15.8, "Happy Planet Index": 13.2}, {"HPI Rank": 140, "Country": "Chad", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 50.8, "Wellbeing (0-10)": 4.0, "Inequality of outcomes": "51%", "Ecological Footprint (gha/capita)": 1.5, "Happy Planet Index": 12.8}]}}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-06c1dbec64553b487ce4599ce4c93c9b"}, "mark": {"type": "circle"}, "encoding": {"color": {"condition": {"param": "Select", "field": "Region", "type": "nominal"}, "value": "lightgray"}, "tooltip": {"field": "Region", "type": "nominal"}, "x": {"field": "Wellbeing (0-10)", "type": "quantitative"}, "y": {"field": "Happy Planet Index", "type": "quantitative"}}, "params": [{"name": "Select", "select": {"type": "point", "fields": ["Region"]}, "bind": {"input": "select", "options": ["Middle East and North Africa", "Sub Saharan Africa", "Asia Pacific", "Post-communist", "Americas", "Europe"]}}], "$schema": "https://vega.github.io/schema/vega-lite/v5.15.1.json", "datasets": {"data-06c1dbec64553b487ce4599ce4c93c9b": [{"HPI Rank": 1, "Country": "Costa Rica", "Region": "Americas", "Life Expectancy (years)": 79.1, "Wellbeing (0-10)": 7.3, "Inequality of outcomes": "15%", "Ecological Footprint (gha/capita)": 2.8, "Happy Planet Index": 44.7}, {"HPI Rank": 2, "Country": "Mexico", "Region": "Americas", "Life Expectancy (years)": 76.4, "Wellbeing (0-10)": 7.3, "Inequality of outcomes": "19%", "Ecological Footprint (gha/capita)": 2.9, "Happy Planet Index": 40.7}, {"HPI Rank": 3, "Country": "Colombia", "Region": "Americas", "Life Expectancy (years)": 73.7, "Wellbeing (0-10)": 6.4, "Inequality of outcomes": "24%", "Ecological Footprint (gha/capita)": 1.9, "Happy Planet Index": 40.7}, {"HPI Rank": 4, "Country": "Vanuatu", "Region": "Asia Pacific", "Life Expectancy (years)": 71.3, "Wellbeing (0-10)": 6.5, "Inequality of outcomes": "22%", "Ecological Footprint (gha/capita)": 1.9, "Happy Planet Index": 40.6}, {"HPI Rank": 5, "Country": "Vietnam", "Region": "Asia Pacific", "Life Expectancy (years)": 75.5, "Wellbeing (0-10)": 5.5, "Inequality of outcomes": "19%", "Ecological Footprint (gha/capita)": 1.7, "Happy Planet Index": 40.3}, {"HPI Rank": 6, "Country": "Panama", "Region": "Americas", "Life Expectancy (years)": 77.2, "Wellbeing (0-10)": 6.9, "Inequality of outcomes": "19%", "Ecological Footprint (gha/capita)": 2.8, "Happy Planet Index": 39.5}, {"HPI Rank": 7, "Country": "Nicaragua", "Region": "Americas", "Life Expectancy (years)": 74.3, "Wellbeing (0-10)": 5.4, "Inequality of outcomes": "25%", "Ecological Footprint (gha/capita)": 1.4, "Happy Planet Index": 38.7}, {"HPI Rank": 8, "Country": "Bangladesh", "Region": "Asia Pacific", "Life Expectancy (years)": 70.8, "Wellbeing (0-10)": 4.7, "Inequality of outcomes": "27%", "Ecological Footprint (gha/capita)": 0.7, "Happy Planet Index": 38.4}, {"HPI Rank": 9, "Country": "Thailand", "Region": "Asia Pacific", "Life Expectancy (years)": 74.1, "Wellbeing (0-10)": 6.3, "Inequality of outcomes": "15%", "Ecological Footprint (gha/capita)": 2.7, "Happy Planet Index": 37.3}, {"HPI Rank": 10, "Country": "Ecuador", "Region": "Americas", "Life Expectancy (years)": 75.4, "Wellbeing (0-10)": 6.0, "Inequality of outcomes": "22%", "Ecological Footprint (gha/capita)": 2.2, "Happy Planet Index": 37.0}, {"HPI Rank": 11, "Country": "Jamaica", "Region": "Americas", "Life Expectancy (years)": 75.3, "Wellbeing (0-10)": 5.6, "Inequality of outcomes": "21%", "Ecological Footprint (gha/capita)": 1.9, "Happy Planet Index": 36.9}, {"HPI Rank": 12, "Country": "Norway", "Region": "Europe", "Life Expectancy (years)": 81.3, "Wellbeing (0-10)": 7.7, "Inequality of outcomes": "7%", "Ecological Footprint (gha/capita)": 5.0, "Happy Planet Index": 36.8}, {"HPI Rank": 13, "Country": "Albania", "Region": "Post-communist", "Life Expectancy (years)": 77.3, "Wellbeing (0-10)": 5.5, "Inequality of outcomes": "17%", "Ecological Footprint (gha/capita)": 2.2, "Happy Planet Index": 36.8}, {"HPI Rank": 14, "Country": "Uruguay", "Region": "Americas", "Life Expectancy (years)": 76.9, "Wellbeing (0-10)": 6.4, "Inequality of outcomes": "18%", "Ecological Footprint (gha/capita)": 2.9, "Happy Planet Index": 36.1}, {"HPI Rank": 15, "Country": "Spain", "Region": "Europe", "Life Expectancy (years)": 82.2, "Wellbeing (0-10)": 6.3, "Inequality of outcomes": "10%", "Ecological Footprint (gha/capita)": 3.7, "Happy Planet Index": 36.0}, {"HPI Rank": 16, "Country": "Indonesia", "Region": "Asia Pacific", "Life Expectancy (years)": 68.5, "Wellbeing (0-10)": 5.4, "Inequality of outcomes": "21%", "Ecological Footprint (gha/capita)": 1.6, "Happy Planet Index": 35.7}, {"HPI Rank": 17, "Country": "El Salvador", "Region": "Americas", "Life Expectancy (years)": 72.5, "Wellbeing (0-10)": 5.9, "Inequality of outcomes": "22%", "Ecological Footprint (gha/capita)": 2.1, "Happy Planet Index": 35.6}, {"HPI Rank": 18, "Country": "Netherlands", "Region": "Europe", "Life Expectancy (years)": 81.2, "Wellbeing (0-10)": 7.5, "Inequality of outcomes": "4%", "Ecological Footprint (gha/capita)": 5.3, "Happy Planet Index": 35.3}, {"HPI Rank": 19, "Country": "Argentina", "Region": "Americas", "Life Expectancy (years)": 75.9, "Wellbeing (0-10)": 6.5, "Inequality of outcomes": "16%", "Ecological Footprint (gha/capita)": 3.1, "Happy Planet Index": 35.2}, {"HPI Rank": 20, "Country": "Philippines", "Region": "Asia Pacific", "Life Expectancy (years)": 67.9, "Wellbeing (0-10)": 5.0, "Inequality of outcomes": "26%", "Ecological Footprint (gha/capita)": 1.1, "Happy Planet Index": 35.0}, {"HPI Rank": 21, "Country": "Peru", "Region": "Americas", "Life Expectancy (years)": 74.1, "Wellbeing (0-10)": 5.8, "Inequality of outcomes": "21%", "Ecological Footprint (gha/capita)": 2.3, "Happy Planet Index": 34.6}, {"HPI Rank": 22, "Country": "Palestine", "Region": "Middle East and North Africa", "Life Expectancy (years)": 72.6, "Wellbeing (0-10)": 4.6, "Inequality of outcomes": "24%", "Ecological Footprint (gha/capita)": 1.2, "Happy Planet Index": 34.5}, {"HPI Rank": 23, "Country": "Brazil", "Region": "Americas", "Life Expectancy (years)": 73.9, "Wellbeing (0-10)": 6.9, "Inequality of outcomes": "22%", "Ecological Footprint (gha/capita)": 3.1, "Happy Planet Index": 34.3}, {"HPI Rank": 24, "Country": "Switzerland", "Region": "Europe", "Life Expectancy (years)": 82.6, "Wellbeing (0-10)": 7.8, "Inequality of outcomes": "6%", "Ecological Footprint (gha/capita)": 5.8, "Happy Planet Index": 34.3}, {"HPI Rank": 25, "Country": "Tajikistan", "Region": "Post-communist", "Life Expectancy (years)": 69.0, "Wellbeing (0-10)": 4.5, "Inequality of outcomes": "26%", "Ecological Footprint (gha/capita)": 0.9, "Happy Planet Index": 34.2}, {"HPI Rank": 26, "Country": "Guatemala", "Region": "Americas", "Life Expectancy (years)": 71.4, "Wellbeing (0-10)": 5.9, "Inequality of outcomes": "27%", "Ecological Footprint (gha/capita)": 1.9, "Happy Planet Index": 34.2}, {"HPI Rank": 27, "Country": "Belize", "Region": "Americas", "Life Expectancy (years)": 69.8, "Wellbeing (0-10)": 6.1, "Inequality of outcomes": "18%", "Ecological Footprint (gha/capita)": 2.5, "Happy Planet Index": 33.8}, {"HPI Rank": 28, "Country": "Sri Lanka", "Region": "Asia Pacific", "Life Expectancy (years)": 74.6, "Wellbeing (0-10)": 4.2, "Inequality of outcomes": "17%", "Ecological Footprint (gha/capita)": 1.3, "Happy Planet Index": 33.8}, {"HPI Rank": 29, "Country": "Venezuela", "Region": "Americas", "Life Expectancy (years)": 73.9, "Wellbeing (0-10)": 7.1, "Inequality of outcomes": "19%", "Ecological Footprint (gha/capita)": 3.6, "Happy Planet Index": 33.6}, {"HPI Rank": 30, "Country": "Algeria", "Region": "Middle East and North Africa", "Life Expectancy (years)": 74.3, "Wellbeing (0-10)": 5.6, "Inequality of outcomes": "24%", "Ecological Footprint (gha/capita)": 2.1, "Happy Planet Index": 33.3}, {"HPI Rank": 31, "Country": "Kyrgyzstan", "Region": "Post-communist", "Life Expectancy (years)": 69.7, "Wellbeing (0-10)": 5.2, "Inequality of outcomes": "18%", "Ecological Footprint (gha/capita)": 1.9, "Happy Planet Index": 33.1}, {"HPI Rank": 32, "Country": "Denmark", "Region": "Europe", "Life Expectancy (years)": 79.8, "Wellbeing (0-10)": 7.5, "Inequality of outcomes": "7%", "Ecological Footprint (gha/capita)": 5.5, "Happy Planet Index": 32.7}, {"HPI Rank": 33, "Country": "Morocco", "Region": "Middle East and North Africa", "Life Expectancy (years)": 73.4, "Wellbeing (0-10)": 5.0, "Inequality of outcomes": "25%", "Ecological Footprint (gha/capita)": 1.7, "Happy Planet Index": 32.7}, {"HPI Rank": 34, "Country": "United Kingdom", "Region": "Europe", "Life Expectancy (years)": 80.4, "Wellbeing (0-10)": 6.9, "Inequality of outcomes": "9%", "Ecological Footprint (gha/capita)": 4.9, "Happy Planet Index": 31.9}, {"HPI Rank": 35, "Country": "Chile", "Region": "Americas", "Life Expectancy (years)": 81.1, "Wellbeing (0-10)": 6.6, "Inequality of outcomes": "14%", "Ecological Footprint (gha/capita)": 4.4, "Happy Planet Index": 31.7}, {"HPI Rank": 36, "Country": "Pakistan", "Region": "Asia Pacific", "Life Expectancy (years)": 65.7, "Wellbeing (0-10)": 5.1, "Inequality of outcomes": "40%", "Ecological Footprint (gha/capita)": 0.8, "Happy Planet Index": 31.5}, {"HPI Rank": 37, "Country": "Finland", "Region": "Europe", "Life Expectancy (years)": 80.4, "Wellbeing (0-10)": 7.4, "Inequality of outcomes": "6%", "Ecological Footprint (gha/capita)": 5.9, "Happy Planet Index": 31.3}, {"HPI Rank": 38, "Country": "New Zealand", "Region": "Asia Pacific", "Life Expectancy (years)": 81.4, "Wellbeing (0-10)": 7.2, "Inequality of outcomes": "8%", "Ecological Footprint (gha/capita)": 5.6, "Happy Planet Index": 31.3}, {"HPI Rank": 39, "Country": "Iceland", "Region": "Europe", "Life Expectancy (years)": 82.2, "Wellbeing (0-10)": 7.6, "Inequality of outcomes": "5%", "Ecological Footprint (gha/capita)": 6.4, "Happy Planet Index": 31.1}, {"HPI Rank": 40, "Country": "Georgia", "Region": "Post-communist", "Life Expectancy (years)": 74.6, "Wellbeing (0-10)": 4.3, "Inequality of outcomes": "20%", "Ecological Footprint (gha/capita)": 1.6, "Happy Planet Index": 31.1}, {"HPI Rank": 41, "Country": "Cyprus", "Region": "Europe", "Life Expectancy (years)": 79.8, "Wellbeing (0-10)": 6.2, "Inequality of outcomes": "12%", "Ecological Footprint (gha/capita)": 4.2, "Happy Planet Index": 30.7}, {"HPI Rank": 42, "Country": "Nepal", "Region": "Asia Pacific", "Life Expectancy (years)": 68.8, "Wellbeing (0-10)": 4.2, "Inequality of outcomes": "27%", "Ecological Footprint (gha/capita)": 1.0, "Happy Planet Index": 30.5}, {"HPI Rank": 43, "Country": "Austria", "Region": "Europe", "Life Expectancy (years)": 81.0, "Wellbeing (0-10)": 7.4, "Inequality of outcomes": "7%", "Ecological Footprint (gha/capita)": 6.1, "Happy Planet Index": 30.5}, {"HPI Rank": 44, "Country": "France", "Region": "Europe", "Life Expectancy (years)": 81.8, "Wellbeing (0-10)": 6.6, "Inequality of outcomes": "9%", "Ecological Footprint (gha/capita)": 5.1, "Happy Planet Index": 30.4}, {"HPI Rank": 45, "Country": "Dominican Republic", "Region": "Americas", "Life Expectancy (years)": 73.1, "Wellbeing (0-10)": 4.8, "Inequality of outcomes": "30%", "Ecological Footprint (gha/capita)": 1.5, "Happy Planet Index": 30.3}, {"HPI Rank": 46, "Country": "Malaysia", "Region": "Asia Pacific", "Life Expectancy (years)": 74.4, "Wellbeing (0-10)": 5.9, "Inequality of outcomes": "10%", "Ecological Footprint (gha/capita)": 3.7, "Happy Planet Index": 30.3}, {"HPI Rank": 47, "Country": "Croatia", "Region": "Post-communist", "Life Expectancy (years)": 77.0, "Wellbeing (0-10)": 6.0, "Inequality of outcomes": "12%", "Ecological Footprint (gha/capita)": 3.9, "Happy Planet Index": 30.2}, {"HPI Rank": 48, "Country": "Ireland", "Region": "Europe", "Life Expectancy (years)": 80.5, "Wellbeing (0-10)": 7.0, "Inequality of outcomes": "8%", "Ecological Footprint (gha/capita)": 5.6, "Happy Planet Index": 30.0}, {"HPI Rank": 49, "Country": "Germany", "Region": "Europe", "Life Expectancy (years)": 80.6, "Wellbeing (0-10)": 6.7, "Inequality of outcomes": "8%", "Ecological Footprint (gha/capita)": 5.3, "Happy Planet Index": 29.8}, {"HPI Rank": 50, "Country": "India", "Region": "Asia Pacific", "Life Expectancy (years)": 67.3, "Wellbeing (0-10)": 4.6, "Inequality of outcomes": "31%", "Ecological Footprint (gha/capita)": 1.2, "Happy Planet Index": 29.2}, {"HPI Rank": 51, "Country": "Uzbekistan", "Region": "Post-communist", "Life Expectancy (years)": 68.2, "Wellbeing (0-10)": 6.0, "Inequality of outcomes": "30%", "Ecological Footprint (gha/capita)": 2.3, "Happy Planet Index": 29.1}, {"HPI Rank": 52, "Country": "Serbia", "Region": "Post-communist", "Life Expectancy (years)": 74.5, "Wellbeing (0-10)": 5.2, "Inequality of outcomes": "19%", "Ecological Footprint (gha/capita)": 2.7, "Happy Planet Index": 29.0}, {"HPI Rank": 53, "Country": "Malta", "Region": "Europe", "Life Expectancy (years)": 80.2, "Wellbeing (0-10)": 6.0, "Inequality of outcomes": "13%", "Ecological Footprint (gha/capita)": 4.4, "Happy Planet Index": 29.0}, {"HPI Rank": 54, "Country": "Israel", "Region": "Middle East and North Africa", "Life Expectancy (years)": 81.9, "Wellbeing (0-10)": 7.1, "Inequality of outcomes": "8%", "Ecological Footprint (gha/capita)": 6.2, "Happy Planet Index": 28.8}, {"HPI Rank": 55, "Country": "Romania", "Region": "Post-communist", "Life Expectancy (years)": 74.3, "Wellbeing (0-10)": 5.2, "Inequality of outcomes": "19%", "Ecological Footprint (gha/capita)": 2.7, "Happy Planet Index": 28.8}, {"HPI Rank": 56, "Country": "Bhutan", "Region": "Asia Pacific", "Life Expectancy (years)": 68.7, "Wellbeing (0-10)": 5.6, "Inequality of outcomes": "27%", "Ecological Footprint (gha/capita)": 2.3, "Happy Planet Index": 28.6}, {"HPI Rank": 57, "Country": "Haiti", "Region": "Americas", "Life Expectancy (years)": 62.1, "Wellbeing (0-10)": 4.4, "Inequality of outcomes": "37%", "Ecological Footprint (gha/capita)": 0.6, "Happy Planet Index": 28.6}, {"HPI Rank": 58, "Country": "Japan", "Region": "Asia Pacific", "Life Expectancy (years)": 83.2, "Wellbeing (0-10)": 6.0, "Inequality of outcomes": "9%", "Ecological Footprint (gha/capita)": 5.0, "Happy Planet Index": 28.3}, {"HPI Rank": 59, "Country": "Slovakia", "Region": "Post-communist", "Life Expectancy (years)": 75.9, "Wellbeing (0-10)": 5.9, "Inequality of outcomes": "13%", "Ecological Footprint (gha/capita)": 4.1, "Happy Planet Index": 28.2}, {"HPI Rank": 60, "Country": "Italy", "Region": "Europe", "Life Expectancy (years)": 82.7, "Wellbeing (0-10)": 5.8, "Inequality of outcomes": "12%", "Ecological Footprint (gha/capita)": 4.6, "Happy Planet Index": 28.1}, {"HPI Rank": 61, "Country": "Sweden", "Region": "Europe", "Life Expectancy (years)": 81.8, "Wellbeing (0-10)": 7.6, "Inequality of outcomes": "6%", "Ecological Footprint (gha/capita)": 7.3, "Happy Planet Index": 28.0}, {"HPI Rank": 62, "Country": "Poland", "Region": "Post-communist", "Life Expectancy (years)": 76.9, "Wellbeing (0-10)": 5.9, "Inequality of outcomes": "11%", "Ecological Footprint (gha/capita)": 4.4, "Happy Planet Index": 27.5}, {"HPI Rank": 63, "Country": "Mauritius", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 74.0, "Wellbeing (0-10)": 5.5, "Inequality of outcomes": "17%", "Ecological Footprint (gha/capita)": 3.5, "Happy Planet Index": 27.4}, {"HPI Rank": 64, "Country": "Czech Republic", "Region": "Post-communist", "Life Expectancy (years)": 78.2, "Wellbeing (0-10)": 6.3, "Inequality of outcomes": "9%", "Ecological Footprint (gha/capita)": 5.2, "Happy Planet Index": 27.3}, {"HPI Rank": 65, "Country": "Honduras", "Region": "Americas", "Life Expectancy (years)": 72.8, "Wellbeing (0-10)": 4.6, "Inequality of outcomes": "31%", "Ecological Footprint (gha/capita)": 1.7, "Happy Planet Index": 27.2}, {"HPI Rank": 66, "Country": "Ethiopia", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 62.8, "Wellbeing (0-10)": 4.6, "Inequality of outcomes": "36%", "Ecological Footprint (gha/capita)": 1.0, "Happy Planet Index": 26.7}, {"HPI Rank": 67, "Country": "Iraq", "Region": "Middle East and North Africa", "Life Expectancy (years)": 69.0, "Wellbeing (0-10)": 4.7, "Inequality of outcomes": "27%", "Ecological Footprint (gha/capita)": 1.9, "Happy Planet Index": 26.5}, {"HPI Rank": 68, "Country": "Turkey", "Region": "Middle East and North Africa", "Life Expectancy (years)": 74.7, "Wellbeing (0-10)": 5.3, "Inequality of outcomes": "19%", "Ecological Footprint (gha/capita)": 3.3, "Happy Planet Index": 26.4}, {"HPI Rank": 69, "Country": "Hungary", "Region": "Post-communist", "Life Expectancy (years)": 74.9, "Wellbeing (0-10)": 4.7, "Inequality of outcomes": "15%", "Ecological Footprint (gha/capita)": 2.9, "Happy Planet Index": 26.4}, {"HPI Rank": 70, "Country": "Ukraine", "Region": "Post-communist", "Life Expectancy (years)": 70.3, "Wellbeing (0-10)": 5.0, "Inequality of outcomes": "17%", "Ecological Footprint (gha/capita)": 2.8, "Happy Planet Index": 26.4}, {"HPI Rank": 71, "Country": "Tunisia", "Region": "Middle East and North Africa", "Life Expectancy (years)": 74.6, "Wellbeing (0-10)": 4.5, "Inequality of outcomes": "22%", "Ecological Footprint (gha/capita)": 2.3, "Happy Planet Index": 26.2}, {"HPI Rank": 72, "Country": "China", "Region": "Asia Pacific", "Life Expectancy (years)": 75.4, "Wellbeing (0-10)": 5.1, "Inequality of outcomes": "17%", "Ecological Footprint (gha/capita)": 3.4, "Happy Planet Index": 25.7}, {"HPI Rank": 73, "Country": "Armenia", "Region": "Post-communist", "Life Expectancy (years)": 74.4, "Wellbeing (0-10)": 4.3, "Inequality of outcomes": "22%", "Ecological Footprint (gha/capita)": 2.2, "Happy Planet Index": 25.7}, {"HPI Rank": 74, "Country": "Cambodia", "Region": "Asia Pacific", "Life Expectancy (years)": 67.5, "Wellbeing (0-10)": 3.9, "Inequality of outcomes": "28%", "Ecological Footprint (gha/capita)": 1.2, "Happy Planet Index": 25.6}, {"HPI Rank": 75, "Country": "Suriname", "Region": "Americas", "Life Expectancy (years)": 70.8, "Wellbeing (0-10)": 6.3, "Inequality of outcomes": "19%", "Ecological Footprint (gha/capita)": 4.3, "Happy Planet Index": 25.4}, {"HPI Rank": 76, "Country": "Bosnia and Herzegovina", "Region": "Post-communist", "Life Expectancy (years)": 76.2, "Wellbeing (0-10)": 4.8, "Inequality of outcomes": "19%", "Ecological Footprint (gha/capita)": 3.1, "Happy Planet Index": 25.3}, {"HPI Rank": 77, "Country": "Zambia", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 58.4, "Wellbeing (0-10)": 5.0, "Inequality of outcomes": "41%", "Ecological Footprint (gha/capita)": 1.0, "Happy Planet Index": 25.2}, {"HPI Rank": 78, "Country": "Montenegro", "Region": "Post-communist", "Life Expectancy (years)": 75.8, "Wellbeing (0-10)": 5.2, "Inequality of outcomes": "16%", "Ecological Footprint (gha/capita)": 3.8, "Happy Planet Index": 25.1}, {"HPI Rank": 79, "Country": "Portugal", "Region": "Europe", "Life Expectancy (years)": 80.3, "Wellbeing (0-10)": 5.0, "Inequality of outcomes": "16%", "Ecological Footprint (gha/capita)": 3.9, "Happy Planet Index": 24.8}, {"HPI Rank": 80, "Country": "South Korea", "Region": "Asia Pacific", "Life Expectancy (years)": 81.3, "Wellbeing (0-10)": 6.0, "Inequality of outcomes": "11%", "Ecological Footprint (gha/capita)": 5.7, "Happy Planet Index": 24.8}, {"HPI Rank": 81, "Country": "Myanmar", "Region": "Asia Pacific", "Life Expectancy (years)": 65.5, "Wellbeing (0-10)": 4.4, "Inequality of outcomes": "32%", "Ecological Footprint (gha/capita)": 1.4, "Happy Planet Index": 24.7}, {"HPI Rank": 82, "Country": "Slovenia", "Region": "Post-communist", "Life Expectancy (years)": 80.0, "Wellbeing (0-10)": 6.1, "Inequality of outcomes": "10%", "Ecological Footprint (gha/capita)": 5.8, "Happy Planet Index": 24.6}, {"HPI Rank": 83, "Country": "Kenya", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 60.3, "Wellbeing (0-10)": 4.5, "Inequality of outcomes": "38%", "Ecological Footprint (gha/capita)": 1.0, "Happy Planet Index": 24.2}, {"HPI Rank": 84, "Country": "Iran", "Region": "Middle East and North Africa", "Life Expectancy (years)": 74.8, "Wellbeing (0-10)": 4.6, "Inequality of outcomes": "23%", "Ecological Footprint (gha/capita)": 2.8, "Happy Planet Index": 24.0}, {"HPI Rank": 85, "Country": "Canada", "Region": "Americas", "Life Expectancy (years)": 81.7, "Wellbeing (0-10)": 7.4, "Inequality of outcomes": "9%", "Ecological Footprint (gha/capita)": 8.2, "Happy Planet Index": 23.9}, {"HPI Rank": 86, "Country": "Egypt", "Region": "Middle East and North Africa", "Life Expectancy (years)": 70.7, "Wellbeing (0-10)": 4.2, "Inequality of outcomes": "23%", "Ecological Footprint (gha/capita)": 2.2, "Happy Planet Index": 23.8}, {"HPI Rank": 87, "Country": "Belgium", "Region": "Europe", "Life Expectancy (years)": 80.4, "Wellbeing (0-10)": 6.9, "Inequality of outcomes": "9%", "Ecological Footprint (gha/capita)": 7.4, "Happy Planet Index": 23.7}, {"HPI Rank": 88, "Country": "Mozambique", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 54.3, "Wellbeing (0-10)": 5.0, "Inequality of outcomes": "43%", "Ecological Footprint (gha/capita)": 0.9, "Happy Planet Index": 23.7}, {"HPI Rank": 89, "Country": "Greece", "Region": "Europe", "Life Expectancy (years)": 80.5, "Wellbeing (0-10)": 5.1, "Inequality of outcomes": "16%", "Ecological Footprint (gha/capita)": 4.4, "Happy Planet Index": 23.6}, {"HPI Rank": 90, "Country": "Macedonia", "Region": "Post-communist", "Life Expectancy (years)": 75.1, "Wellbeing (0-10)": 4.6, "Inequality of outcomes": "18%", "Ecological Footprint (gha/capita)": 3.3, "Happy Planet Index": 23.4}, {"HPI Rank": 91, "Country": "Paraguay", "Region": "Americas", "Life Expectancy (years)": 72.6, "Wellbeing (0-10)": 5.8, "Inequality of outcomes": "22%", "Ecological Footprint (gha/capita)": 4.2, "Happy Planet Index": 23.3}, {"HPI Rank": 92, "Country": "Bolivia", "Region": "Americas", "Life Expectancy (years)": 67.5, "Wellbeing (0-10)": 6.0, "Inequality of outcomes": "35%", "Ecological Footprint (gha/capita)": 3.0, "Happy Planet Index": 23.3}, {"HPI Rank": 93, "Country": "Comoros", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 62.6, "Wellbeing (0-10)": 4.0, "Inequality of outcomes": "36%", "Ecological Footprint (gha/capita)": 1.0, "Happy Planet Index": 23.1}, {"HPI Rank": 94, "Country": "Yemen", "Region": "Middle East and North Africa", "Life Expectancy (years)": 63.3, "Wellbeing (0-10)": 4.1, "Inequality of outcomes": "39%", "Ecological Footprint (gha/capita)": 1.0, "Happy Planet Index": 22.8}, {"HPI Rank": 95, "Country": "Nigeria", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 52.1, "Wellbeing (0-10)": 5.5, "Inequality of outcomes": "44%", "Ecological Footprint (gha/capita)": 1.2, "Happy Planet Index": 22.2}, {"HPI Rank": 96, "Country": "Liberia", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 60.2, "Wellbeing (0-10)": 4.4, "Inequality of outcomes": "38%", "Ecological Footprint (gha/capita)": 1.2, "Happy Planet Index": 22.2}, {"HPI Rank": 97, "Country": "Tanzania", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 63.5, "Wellbeing (0-10)": 4.0, "Inequality of outcomes": "33%", "Ecological Footprint (gha/capita)": 1.3, "Happy Planet Index": 22.1}, {"HPI Rank": 98, "Country": "Malawi", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 60.1, "Wellbeing (0-10)": 4.3, "Inequality of outcomes": "45%", "Ecological Footprint (gha/capita)": 0.8, "Happy Planet Index": 22.1}, {"HPI Rank": 99, "Country": "Zimbabwe", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 53.7, "Wellbeing (0-10)": 5.0, "Inequality of outcomes": "37%", "Ecological Footprint (gha/capita)": 1.4, "Happy Planet Index": 22.1}, {"HPI Rank": 100, "Country": "Lebanon", "Region": "Middle East and North Africa", "Life Expectancy (years)": 78.8, "Wellbeing (0-10)": 4.6, "Inequality of outcomes": "19%", "Ecological Footprint (gha/capita)": 3.8, "Happy Planet Index": 21.9}, {"HPI Rank": 101, "Country": "Senegal", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 65.4, "Wellbeing (0-10)": 3.7, "Inequality of outcomes": "33%", "Ecological Footprint (gha/capita)": 1.2, "Happy Planet Index": 21.9}, {"HPI Rank": 102, "Country": "Belarus", "Region": "Post-communist", "Life Expectancy (years)": 70.9, "Wellbeing (0-10)": 5.7, "Inequality of outcomes": "13%", "Ecological Footprint (gha/capita)": 5.1, "Happy Planet Index": 21.7}, {"HPI Rank": 103, "Country": "Namibia", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 64.0, "Wellbeing (0-10)": 4.7, "Inequality of outcomes": "26%", "Ecological Footprint (gha/capita)": 2.5, "Happy Planet Index": 21.6}, {"HPI Rank": 104, "Country": "Ghana", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 61.0, "Wellbeing (0-10)": 5.1, "Inequality of outcomes": "38%", "Ecological Footprint (gha/capita)": 2.0, "Happy Planet Index": 21.4}, {"HPI Rank": 105, "Country": "Australia", "Region": "Asia Pacific", "Life Expectancy (years)": 82.1, "Wellbeing (0-10)": 7.2, "Inequality of outcomes": "8%", "Ecological Footprint (gha/capita)": 9.3, "Happy Planet Index": 21.2}, {"HPI Rank": 106, "Country": "Oman", "Region": "Middle East and North Africa", "Life Expectancy (years)": 76.3, "Wellbeing (0-10)": 6.9, "Inequality of outcomes": "13%", "Ecological Footprint (gha/capita)": 7.5, "Happy Planet Index": 21.1}, {"HPI Rank": 107, "Country": "Lithuania", "Region": "Post-communist", "Life Expectancy (years)": 72.8, "Wellbeing (0-10)": 5.8, "Inequality of outcomes": "11%", "Ecological Footprint (gha/capita)": 5.8, "Happy Planet Index": 21.0}, {"HPI Rank": 108, "Country": "United States of America", "Region": "Americas", "Life Expectancy (years)": 78.8, "Wellbeing (0-10)": 7.0, "Inequality of outcomes": "13%", "Ecological Footprint (gha/capita)": 8.2, "Happy Planet Index": 20.7}, {"HPI Rank": 109, "Country": "Bulgaria", "Region": "Post-communist", "Life Expectancy (years)": 73.9, "Wellbeing (0-10)": 4.2, "Inequality of outcomes": "19%", "Ecological Footprint (gha/capita)": 3.3, "Happy Planet Index": 20.4}, {"HPI Rank": 110, "Country": "Afghanistan", "Region": "Middle East and North Africa", "Life Expectancy (years)": 59.7, "Wellbeing (0-10)": 3.8, "Inequality of outcomes": "43%", "Ecological Footprint (gha/capita)": 0.8, "Happy Planet Index": 20.2}, {"HPI Rank": 111, "Country": "Rwanda", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 63.1, "Wellbeing (0-10)": 3.3, "Inequality of outcomes": "37%", "Ecological Footprint (gha/capita)": 0.9, "Happy Planet Index": 19.6}, {"HPI Rank": 112, "Country": "Uganda", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 57.1, "Wellbeing (0-10)": 4.3, "Inequality of outcomes": "41%", "Ecological Footprint (gha/capita)": 1.2, "Happy Planet Index": 19.4}, {"HPI Rank": 113, "Country": "Syria", "Region": "Middle East and North Africa", "Life Expectancy (years)": 70.4, "Wellbeing (0-10)": 3.2, "Inequality of outcomes": "30%", "Ecological Footprint (gha/capita)": 1.5, "Happy Planet Index": 19.1}, {"HPI Rank": 114, "Country": "Kazakhstan", "Region": "Post-communist", "Life Expectancy (years)": 68.6, "Wellbeing (0-10)": 5.8, "Inequality of outcomes": "18%", "Ecological Footprint (gha/capita)": 5.6, "Happy Planet Index": 19.1}, {"HPI Rank": 115, "Country": "Republic of Congo", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 61.0, "Wellbeing (0-10)": 3.9, "Inequality of outcomes": "40%", "Ecological Footprint (gha/capita)": 1.3, "Happy Planet Index": 18.8}, {"HPI Rank": 116, "Country": "Russia", "Region": "Post-communist", "Life Expectancy (years)": 69.5, "Wellbeing (0-10)": 5.6, "Inequality of outcomes": "16%", "Ecological Footprint (gha/capita)": 5.7, "Happy Planet Index": 18.7}, {"HPI Rank": 117, "Country": "Mauritania", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 62.6, "Wellbeing (0-10)": 4.7, "Inequality of outcomes": "37%", "Ecological Footprint (gha/capita)": 2.5, "Happy Planet Index": 18.0}, {"HPI Rank": 118, "Country": "Estonia", "Region": "Post-communist", "Life Expectancy (years)": 76.2, "Wellbeing (0-10)": 5.4, "Inequality of outcomes": "12%", "Ecological Footprint (gha/capita)": 6.9, "Happy Planet Index": 17.9}, {"HPI Rank": 119, "Country": "Burkina Faso", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 58.0, "Wellbeing (0-10)": 4.0, "Inequality of outcomes": "43%", "Ecological Footprint (gha/capita)": 1.2, "Happy Planet Index": 17.9}, {"HPI Rank": 120, "Country": "Gabon", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 63.3, "Wellbeing (0-10)": 4.0, "Inequality of outcomes": "36%", "Ecological Footprint (gha/capita)": 2.0, "Happy Planet Index": 17.5}, {"HPI Rank": 121, "Country": "Latvia", "Region": "Post-communist", "Life Expectancy (years)": 73.6, "Wellbeing (0-10)": 5.1, "Inequality of outcomes": "14%", "Ecological Footprint (gha/capita)": 6.3, "Happy Planet Index": 17.1}, {"HPI Rank": 122, "Country": "Niger", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 60.0, "Wellbeing (0-10)": 3.8, "Inequality of outcomes": "40%", "Ecological Footprint (gha/capita)": 1.6, "Happy Planet Index": 16.8}, {"HPI Rank": 123, "Country": "Hong Kong", "Region": "Asia Pacific", "Life Expectancy (years)": 83.6, "Wellbeing (0-10)": 5.5, "Inequality of outcomes": "10%", "Ecological Footprint (gha/capita)": 8.8, "Happy Planet Index": 16.8}, {"HPI Rank": 124, "Country": "Cameroon", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 54.6, "Wellbeing (0-10)": 4.2, "Inequality of outcomes": "47%", "Ecological Footprint (gha/capita)": 1.2, "Happy Planet Index": 16.7}, {"HPI Rank": 125, "Country": "Lesotho", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 48.9, "Wellbeing (0-10)": 4.9, "Inequality of outcomes": "42%", "Ecological Footprint (gha/capita)": 1.7, "Happy Planet Index": 16.7}, {"HPI Rank": 126, "Country": "Botswana", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 64.2, "Wellbeing (0-10)": 4.8, "Inequality of outcomes": "28%", "Ecological Footprint (gha/capita)": 3.8, "Happy Planet Index": 16.6}, {"HPI Rank": 127, "Country": "Djibouti", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 61.3, "Wellbeing (0-10)": 4.4, "Inequality of outcomes": "42%", "Ecological Footprint (gha/capita)": 2.2, "Happy Planet Index": 16.4}, {"HPI Rank": 128, "Country": "South Africa", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 56.3, "Wellbeing (0-10)": 5.1, "Inequality of outcomes": "33%", "Ecological Footprint (gha/capita)": 3.3, "Happy Planet Index": 15.9}, {"HPI Rank": 129, "Country": "Guinea", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 57.7, "Wellbeing (0-10)": 3.7, "Inequality of outcomes": "42%", "Ecological Footprint (gha/capita)": 1.4, "Happy Planet Index": 15.9}, {"HPI Rank": 130, "Country": "Trinidad and Tobago", "Region": "Americas", "Life Expectancy (years)": 70.1, "Wellbeing (0-10)": 6.4, "Inequality of outcomes": "21%", "Ecological Footprint (gha/capita)": 7.9, "Happy Planet Index": 15.7}, {"HPI Rank": 131, "Country": "Burundi", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 55.8, "Wellbeing (0-10)": 3.4, "Inequality of outcomes": "48%", "Ecological Footprint (gha/capita)": 0.8, "Happy Planet Index": 15.6}, {"HPI Rank": 132, "Country": "Swaziland", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 48.9, "Wellbeing (0-10)": 4.9, "Inequality of outcomes": "41%", "Ecological Footprint (gha/capita)": 2.0, "Happy Planet Index": 15.5}, {"HPI Rank": 133, "Country": "Sierra Leone", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 49.8, "Wellbeing (0-10)": 4.5, "Inequality of outcomes": "50%", "Ecological Footprint (gha/capita)": 1.2, "Happy Planet Index": 15.3}, {"HPI Rank": 134, "Country": "Turkmenistan", "Region": "Post-communist", "Life Expectancy (years)": 65.3, "Wellbeing (0-10)": 5.5, "Inequality of outcomes": "31%", "Ecological Footprint (gha/capita)": 5.5, "Happy Planet Index": 14.6}, {"HPI Rank": 135, "Country": "Cote d'Ivoire", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 50.8, "Wellbeing (0-10)": 3.8, "Inequality of outcomes": "45%", "Ecological Footprint (gha/capita)": 1.3, "Happy Planet Index": 14.4}, {"HPI Rank": 136, "Country": "Mongolia", "Region": "Asia Pacific", "Life Expectancy (years)": 68.6, "Wellbeing (0-10)": 4.9, "Inequality of outcomes": "22%", "Ecological Footprint (gha/capita)": 6.1, "Happy Planet Index": 14.3}, {"HPI Rank": 137, "Country": "Benin", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 59.2, "Wellbeing (0-10)": 3.2, "Inequality of outcomes": "44%", "Ecological Footprint (gha/capita)": 1.4, "Happy Planet Index": 13.4}, {"HPI Rank": 138, "Country": "Togo", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 58.6, "Wellbeing (0-10)": 2.9, "Inequality of outcomes": "43%", "Ecological Footprint (gha/capita)": 1.1, "Happy Planet Index": 13.2}, {"HPI Rank": 139, "Country": "Luxembourg", "Region": "Europe", "Life Expectancy (years)": 81.1, "Wellbeing (0-10)": 7.0, "Inequality of outcomes": "7%", "Ecological Footprint (gha/capita)": 15.8, "Happy Planet Index": 13.2}, {"HPI Rank": 140, "Country": "Chad", "Region": "Sub Saharan Africa", "Life Expectancy (years)": 50.8, "Wellbeing (0-10)": 4.0, "Inequality of outcomes": "51%", "Ecological Footprint (gha/capita)": 1.5, "Happy Planet Index": 12.8}]}}, {"mode": "vega-lite"});
 </script></div></div>
 </div>
 <ul class="simple">
@@ -1736,23 +1735,23 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-39d35909e21a41378323ccbddbadd4d9.vega-embed {
+  #altair-viz-677fe9f4fe814a7fb532dbc88e0ae0b7.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-39d35909e21a41378323ccbddbadd4d9.vega-embed details,
-  #altair-viz-39d35909e21a41378323ccbddbadd4d9.vega-embed details summary {
+  #altair-viz-677fe9f4fe814a7fb532dbc88e0ae0b7.vega-embed details,
+  #altair-viz-677fe9f4fe814a7fb532dbc88e0ae0b7.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-39d35909e21a41378323ccbddbadd4d9"></div>
+<div id="altair-viz-677fe9f4fe814a7fb532dbc88e0ae0b7"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-39d35909e21a41378323ccbddbadd4d9") {
-      outputDiv = document.getElementById("altair-viz-39d35909e21a41378323ccbddbadd4d9");
+    if (outputDiv.id !== "altair-viz-677fe9f4fe814a7fb532dbc88e0ae0b7") {
+      outputDiv = document.getElementById("altair-viz-677fe9f4fe814a7fb532dbc88e0ae0b7");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1816,23 +1815,23 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-65c40e9c89fc48b1a5ff4caf1d5f7cd6.vega-embed {
+  #altair-viz-5c285c73080f4272a569ddb2cb13705a.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-65c40e9c89fc48b1a5ff4caf1d5f7cd6.vega-embed details,
-  #altair-viz-65c40e9c89fc48b1a5ff4caf1d5f7cd6.vega-embed details summary {
+  #altair-viz-5c285c73080f4272a569ddb2cb13705a.vega-embed details,
+  #altair-viz-5c285c73080f4272a569ddb2cb13705a.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-65c40e9c89fc48b1a5ff4caf1d5f7cd6"></div>
+<div id="altair-viz-5c285c73080f4272a569ddb2cb13705a"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-65c40e9c89fc48b1a5ff4caf1d5f7cd6") {
-      outputDiv = document.getElementById("altair-viz-65c40e9c89fc48b1a5ff4caf1d5f7cd6");
+    if (outputDiv.id !== "altair-viz-5c285c73080f4272a569ddb2cb13705a") {
+      outputDiv = document.getElementById("altair-viz-5c285c73080f4272a569ddb2cb13705a");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1898,23 +1897,23 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-4e1d90f5d2b54a3d96c1d781d4becd76.vega-embed {
+  #altair-viz-2552caa2a3864c15830da57262112667.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-4e1d90f5d2b54a3d96c1d781d4becd76.vega-embed details,
-  #altair-viz-4e1d90f5d2b54a3d96c1d781d4becd76.vega-embed details summary {
+  #altair-viz-2552caa2a3864c15830da57262112667.vega-embed details,
+  #altair-viz-2552caa2a3864c15830da57262112667.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-4e1d90f5d2b54a3d96c1d781d4becd76"></div>
+<div id="altair-viz-2552caa2a3864c15830da57262112667"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-4e1d90f5d2b54a3d96c1d781d4becd76") {
-      outputDiv = document.getElementById("altair-viz-4e1d90f5d2b54a3d96c1d781d4becd76");
+    if (outputDiv.id !== "altair-viz-2552caa2a3864c15830da57262112667") {
+      outputDiv = document.getElementById("altair-viz-2552caa2a3864c15830da57262112667");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1986,23 +1985,23 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-c9fb6f7d741d46e7b362182d8ef1b7f1.vega-embed {
+  #altair-viz-7160115a5af84aaaa39fb37f2a3352ef.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-c9fb6f7d741d46e7b362182d8ef1b7f1.vega-embed details,
-  #altair-viz-c9fb6f7d741d46e7b362182d8ef1b7f1.vega-embed details summary {
+  #altair-viz-7160115a5af84aaaa39fb37f2a3352ef.vega-embed details,
+  #altair-viz-7160115a5af84aaaa39fb37f2a3352ef.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-c9fb6f7d741d46e7b362182d8ef1b7f1"></div>
+<div id="altair-viz-7160115a5af84aaaa39fb37f2a3352ef"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-c9fb6f7d741d46e7b362182d8ef1b7f1") {
-      outputDiv = document.getElementById("altair-viz-c9fb6f7d741d46e7b362182d8ef1b7f1");
+    if (outputDiv.id !== "altair-viz-7160115a5af84aaaa39fb37f2a3352ef") {
+      outputDiv = document.getElementById("altair-viz-7160115a5af84aaaa39fb37f2a3352ef");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -2076,23 +2075,23 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-8699937f5ea24bdfb9dc4c80e90726e5.vega-embed {
+  #altair-viz-1b33224b66b745a29b35f7e235f33b24.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-8699937f5ea24bdfb9dc4c80e90726e5.vega-embed details,
-  #altair-viz-8699937f5ea24bdfb9dc4c80e90726e5.vega-embed details summary {
+  #altair-viz-1b33224b66b745a29b35f7e235f33b24.vega-embed details,
+  #altair-viz-1b33224b66b745a29b35f7e235f33b24.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-8699937f5ea24bdfb9dc4c80e90726e5"></div>
+<div id="altair-viz-1b33224b66b745a29b35f7e235f33b24"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-8699937f5ea24bdfb9dc4c80e90726e5") {
-      outputDiv = document.getElementById("altair-viz-8699937f5ea24bdfb9dc4c80e90726e5");
+    if (outputDiv.id !== "altair-viz-1b33224b66b745a29b35f7e235f33b24") {
+      outputDiv = document.getElementById("altair-viz-1b33224b66b745a29b35f7e235f33b24");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -2172,23 +2171,23 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-a15a7f960cd546e98a56301c72530161.vega-embed {
+  #altair-viz-3b6f83f3dc9f4fc9b3ca046e3f1c342f.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-a15a7f960cd546e98a56301c72530161.vega-embed details,
-  #altair-viz-a15a7f960cd546e98a56301c72530161.vega-embed details summary {
+  #altair-viz-3b6f83f3dc9f4fc9b3ca046e3f1c342f.vega-embed details,
+  #altair-viz-3b6f83f3dc9f4fc9b3ca046e3f1c342f.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-a15a7f960cd546e98a56301c72530161"></div>
+<div id="altair-viz-3b6f83f3dc9f4fc9b3ca046e3f1c342f"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-a15a7f960cd546e98a56301c72530161") {
-      outputDiv = document.getElementById("altair-viz-a15a7f960cd546e98a56301c72530161");
+    if (outputDiv.id !== "altair-viz-3b6f83f3dc9f4fc9b3ca046e3f1c342f") {
+      outputDiv = document.getElementById("altair-viz-3b6f83f3dc9f4fc9b3ca046e3f1c342f");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -2269,23 +2268,23 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-63bce017878946fca6944f8c24316dbd.vega-embed {
+  #altair-viz-472b02d92ceb409d9c971468d0f10892.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-63bce017878946fca6944f8c24316dbd.vega-embed details,
-  #altair-viz-63bce017878946fca6944f8c24316dbd.vega-embed details summary {
+  #altair-viz-472b02d92ceb409d9c971468d0f10892.vega-embed details,
+  #altair-viz-472b02d92ceb409d9c971468d0f10892.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-63bce017878946fca6944f8c24316dbd"></div>
+<div id="altair-viz-472b02d92ceb409d9c971468d0f10892"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-63bce017878946fca6944f8c24316dbd") {
-      outputDiv = document.getElementById("altair-viz-63bce017878946fca6944f8c24316dbd");
+    if (outputDiv.id !== "altair-viz-472b02d92ceb409d9c971468d0f10892") {
+      outputDiv = document.getElementById("altair-viz-472b02d92ceb409d9c971468d0f10892");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -2467,23 +2466,23 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-8908bdd7f79e48b9bfa041cb8cfd6760.vega-embed {
+  #altair-viz-0b15a588cf31406f944c3bfc481882fd.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-8908bdd7f79e48b9bfa041cb8cfd6760.vega-embed details,
-  #altair-viz-8908bdd7f79e48b9bfa041cb8cfd6760.vega-embed details summary {
+  #altair-viz-0b15a588cf31406f944c3bfc481882fd.vega-embed details,
+  #altair-viz-0b15a588cf31406f944c3bfc481882fd.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-8908bdd7f79e48b9bfa041cb8cfd6760"></div>
+<div id="altair-viz-0b15a588cf31406f944c3bfc481882fd"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-8908bdd7f79e48b9bfa041cb8cfd6760") {
-      outputDiv = document.getElementById("altair-viz-8908bdd7f79e48b9bfa041cb8cfd6760");
+    if (outputDiv.id !== "altair-viz-0b15a588cf31406f944c3bfc481882fd") {
+      outputDiv = document.getElementById("altair-viz-0b15a588cf31406f944c3bfc481882fd");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -2548,23 +2547,23 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-d43f1ca1308e4774ad262ac5c62202d4.vega-embed {
+  #altair-viz-2f6603dfd13f4bd0abd2871618dd54eb.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-d43f1ca1308e4774ad262ac5c62202d4.vega-embed details,
-  #altair-viz-d43f1ca1308e4774ad262ac5c62202d4.vega-embed details summary {
+  #altair-viz-2f6603dfd13f4bd0abd2871618dd54eb.vega-embed details,
+  #altair-viz-2f6603dfd13f4bd0abd2871618dd54eb.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-d43f1ca1308e4774ad262ac5c62202d4"></div>
+<div id="altair-viz-2f6603dfd13f4bd0abd2871618dd54eb"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-d43f1ca1308e4774ad262ac5c62202d4") {
-      outputDiv = document.getElementById("altair-viz-d43f1ca1308e4774ad262ac5c62202d4");
+    if (outputDiv.id !== "altair-viz-2f6603dfd13f4bd0abd2871618dd54eb") {
+      outputDiv = document.getElementById("altair-viz-2f6603dfd13f4bd0abd2871618dd54eb");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -2634,23 +2633,23 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-7a603f41d8dd4154825ce3fc83f04ada.vega-embed {
+  #altair-viz-8d62324079184a1bb3151f9fbcfdb539.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-7a603f41d8dd4154825ce3fc83f04ada.vega-embed details,
-  #altair-viz-7a603f41d8dd4154825ce3fc83f04ada.vega-embed details summary {
+  #altair-viz-8d62324079184a1bb3151f9fbcfdb539.vega-embed details,
+  #altair-viz-8d62324079184a1bb3151f9fbcfdb539.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-7a603f41d8dd4154825ce3fc83f04ada"></div>
+<div id="altair-viz-8d62324079184a1bb3151f9fbcfdb539"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-7a603f41d8dd4154825ce3fc83f04ada") {
-      outputDiv = document.getElementById("altair-viz-7a603f41d8dd4154825ce3fc83f04ada");
+    if (outputDiv.id !== "altair-viz-8d62324079184a1bb3151f9fbcfdb539") {
+      outputDiv = document.getElementById("altair-viz-8d62324079184a1bb3151f9fbcfdb539");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -2742,23 +2741,23 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-20ef7c1f061c4593b5b58e6caa2578ab.vega-embed {
+  #altair-viz-80ff0290ee5b4913b58af13662a801b2.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-20ef7c1f061c4593b5b58e6caa2578ab.vega-embed details,
-  #altair-viz-20ef7c1f061c4593b5b58e6caa2578ab.vega-embed details summary {
+  #altair-viz-80ff0290ee5b4913b58af13662a801b2.vega-embed details,
+  #altair-viz-80ff0290ee5b4913b58af13662a801b2.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-20ef7c1f061c4593b5b58e6caa2578ab"></div>
+<div id="altair-viz-80ff0290ee5b4913b58af13662a801b2"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-20ef7c1f061c4593b5b58e6caa2578ab") {
-      outputDiv = document.getElementById("altair-viz-20ef7c1f061c4593b5b58e6caa2578ab");
+    if (outputDiv.id !== "altair-viz-80ff0290ee5b4913b58af13662a801b2") {
+      outputDiv = document.getElementById("altair-viz-80ff0290ee5b4913b58af13662a801b2");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -2823,23 +2822,23 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-8900d318a7a3454d9053ca2292fc35c2.vega-embed {
+  #altair-viz-7332d0cc54514f0da513e73a288aad90.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-8900d318a7a3454d9053ca2292fc35c2.vega-embed details,
-  #altair-viz-8900d318a7a3454d9053ca2292fc35c2.vega-embed details summary {
+  #altair-viz-7332d0cc54514f0da513e73a288aad90.vega-embed details,
+  #altair-viz-7332d0cc54514f0da513e73a288aad90.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-8900d318a7a3454d9053ca2292fc35c2"></div>
+<div id="altair-viz-7332d0cc54514f0da513e73a288aad90"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-8900d318a7a3454d9053ca2292fc35c2") {
-      outputDiv = document.getElementById("altair-viz-8900d318a7a3454d9053ca2292fc35c2");
+    if (outputDiv.id !== "altair-viz-7332d0cc54514f0da513e73a288aad90") {
+      outputDiv = document.getElementById("altair-viz-7332d0cc54514f0da513e73a288aad90");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -2910,23 +2909,23 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-a886f73bfb1c492cabd14f7a9a104c06.vega-embed {
+  #altair-viz-bb6bb69bc3dc4fb5856e52d5169492f9.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-a886f73bfb1c492cabd14f7a9a104c06.vega-embed details,
-  #altair-viz-a886f73bfb1c492cabd14f7a9a104c06.vega-embed details summary {
+  #altair-viz-bb6bb69bc3dc4fb5856e52d5169492f9.vega-embed details,
+  #altair-viz-bb6bb69bc3dc4fb5856e52d5169492f9.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-a886f73bfb1c492cabd14f7a9a104c06"></div>
+<div id="altair-viz-bb6bb69bc3dc4fb5856e52d5169492f9"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-a886f73bfb1c492cabd14f7a9a104c06") {
-      outputDiv = document.getElementById("altair-viz-a886f73bfb1c492cabd14f7a9a104c06");
+    if (outputDiv.id !== "altair-viz-bb6bb69bc3dc4fb5856e52d5169492f9") {
+      outputDiv = document.getElementById("altair-viz-bb6bb69bc3dc4fb5856e52d5169492f9");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -3145,23 +3144,23 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-f5f377e5b9034cb9b2d8823161a73dd8.vega-embed {
+  #altair-viz-5b6d856a0bd4406e9c96d819e781b5e6.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-f5f377e5b9034cb9b2d8823161a73dd8.vega-embed details,
-  #altair-viz-f5f377e5b9034cb9b2d8823161a73dd8.vega-embed details summary {
+  #altair-viz-5b6d856a0bd4406e9c96d819e781b5e6.vega-embed details,
+  #altair-viz-5b6d856a0bd4406e9c96d819e781b5e6.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-f5f377e5b9034cb9b2d8823161a73dd8"></div>
+<div id="altair-viz-5b6d856a0bd4406e9c96d819e781b5e6"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-f5f377e5b9034cb9b2d8823161a73dd8") {
-      outputDiv = document.getElementById("altair-viz-f5f377e5b9034cb9b2d8823161a73dd8");
+    if (outputDiv.id !== "altair-viz-5b6d856a0bd4406e9c96d819e781b5e6") {
+      outputDiv = document.getElementById("altair-viz-5b6d856a0bd4406e9c96d819e781b5e6");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -3418,7 +3417,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">De la visualización estática a la interactiva</p>
+        <p class="prev-next-title">De la visualización estática a la interactiva: Bokeh</p>
       </div>
     </a>
     <a class="right-next"
