@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Introducción a Dash &#8212; Visualización de Datos con Python y R</title>
   
@@ -19,53 +18,50 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'dash_dataviz';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Introducción a PostreSQL y Docker" href="postgresql.html" />
@@ -78,7 +74,15 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -113,11 +117,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -132,9 +139,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -144,12 +153,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_uninorte.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo_uninorte.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo_uninorte.png" class="logo__image only-light" alt="Visualización de Datos con Python y R - Home"/>
+    <script>document.write(`<img src="_static/logo_uninorte.png" class="logo__image only-dark" alt="Visualización de Datos con Python y R - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -162,8 +182,8 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dataviz_intro.html">Introducción a la visualización de datos con Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="static_dataviz.html">Visualización estática</a></li>
-<li class="toctree-l1"><a class="reference internal" href="interactive_dataviz.html">De la visualización estática a la interactiva</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stratified_dataviz.html">Visualización de datos a través de estratos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interactive_dataviz.html">De la visualización estática a la interactiva: Bokeh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stratified_dataviz.html">Visualización de datos a través de capas: Altair</a></li>
 <li class="toctree-l1"><a class="reference internal" href="geo_dataviz.html">Visualización interactiva de datos geográficos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common_errors.html">Errores comunes y Tratamiento de Datos Faltantes y Atípicos</a></li>
 
@@ -328,20 +348,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -401,12 +423,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduccion-a-dash">
-<h1>Introducción a <code class="docutils literal notranslate"><span class="pre">Dash</span></code><a class="headerlink" href="#introduccion-a-dash" title="Permalink to this heading">#</a></h1>
+<h1>Introducción a <code class="docutils literal notranslate"><span class="pre">Dash</span></code><a class="headerlink" href="#introduccion-a-dash" title="Link to this heading">#</a></h1>
 <section id="introduccion">
-<h2>Introducción<a class="headerlink" href="#introduccion" title="Permalink to this heading">#</a></h2>
+<h2>Introducción<a class="headerlink" href="#introduccion" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Descargado 600.000 veces al mes, Dash es el marco original de bajo código para construir rápidamente aplicaciones de datos en <code class="docutils literal notranslate"><span class="pre">Python,</span> <span class="pre">R,</span> <span class="pre">Julia</span> <span class="pre">y</span> <span class="pre">F#.</span></code></p></li>
 <li><p>Escrito sobre <code class="docutils literal notranslate"><span class="pre">Plotly.js</span></code> y <code class="docutils literal notranslate"><span class="pre">React.js</span></code>, <code class="docutils literal notranslate"><span class="pre">Dash</span></code> es ideal para construir y desplegar aplicaciones de datos con interfaces de usuario personalizadas en <code class="docutils literal notranslate"><span class="pre">Python,</span> <span class="pre">R,</span> <span class="pre">Julia</span></code> o <code class="docutils literal notranslate"><span class="pre">F#</span></code>. Es particularmente adecuado para cualquiera que trabaje con datos.</p></li>
@@ -417,11 +439,12 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">Dash</span></code> es una librería de código abierto liberada bajo la permisiva licencia MIT. <code class="docutils literal notranslate"><span class="pre">Plotly</span></code> desarrolla <code class="docutils literal notranslate"><span class="pre">Dash</span></code> y también ofrece una plataforma para escribir y desplegar aplicaciones <code class="docutils literal notranslate"><span class="pre">Dash</span></code> en un entorno empresarial.</p></li>
 </ul>
 <figure class="align-center" id="dash1-fig">
-<a class="reference internal image-reference" href="_images/dash1.png"><img alt="_images/dash1.png" src="_images/dash1.png" style="width: 828.0px; height: 124.19999999999999px;" /></a>
+<a class="reference internal image-reference" href="_images/dash1.png"><img alt="_images/dash1.png" src="_images/dash1.png" style="width: 828.0px; height: 124.19999999999999px;" />
+</a>
 </figure>
 </section>
 <section id="configuracion-de-su-entorno">
-<h2>Configuración de su entorno<a class="headerlink" href="#configuracion-de-su-entorno" title="Permalink to this heading">#</a></h2>
+<h2>Configuración de su entorno<a class="headerlink" href="#configuracion-de-su-entorno" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Para la instalación de <code class="docutils literal notranslate"><span class="pre">Dash</span></code> crearemos un entorno especial, en el cual instalaremos cada una de las librerías que necesitaremos en el transcurso de esta sección, en especial la instalación de <code class="docutils literal notranslate"><span class="pre">Dash</span></code> mediante la orden</p></li>
 </ul>
@@ -458,7 +481,7 @@ document.write(`
 </div>
 </section>
 <section id="usando-python-no-miniconda">
-<h2>Usando Python. No Miniconda<a class="headerlink" href="#usando-python-no-miniconda" title="Permalink to this heading">#</a></h2>
+<h2>Usando Python. No Miniconda<a class="headerlink" href="#usando-python-no-miniconda" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Solo</span> <span class="pre">en</span> <span class="pre">el</span> <span class="pre">caso</span> <span class="pre">que</span> <span class="pre">no</span> <span class="pre">desee</span> <span class="pre">utilizar</span> <span class="pre">Miniconda</span></code>. Para crear un entorno virtual usando solo <code class="docutils literal notranslate"><span class="pre">Python</span></code>, debe crear una carpeta llamada por ejemplo, <code class="docutils literal notranslate"><span class="pre">python_enviroments</span></code> (o con cualquier otro nombre) en su <code class="docutils literal notranslate"><span class="pre">disco</span> <span class="pre">local</span> <span class="pre">C</span></code> para evitar problemas de sincronización, la cual va a contener todos sus entornos virtuales.</p></li>
 <li><p>Escriba la siguiente orden un su terminal, en el caso de <code class="docutils literal notranslate"><span class="pre">Windows</span></code>, en el <strong>Command Prompt</strong> o en el <strong>Windows PowerShell</strong> que tiene un aspecto muy parecido al de <code class="docutils literal notranslate"><span class="pre">Ubuntu</span></code>. Puede elegir la carpeta donde van a reposar todos sus <code class="docutils literal notranslate"><span class="pre">enviroments</span></code>, en este caso <code class="docutils literal notranslate"><span class="pre">python_enviroments</span></code>, y el entorno virtual creado recibe el nombre <code class="docutils literal notranslate"><span class="pre">dash_project</span></code> a manera de ejemplo</p></li>
@@ -480,7 +503,7 @@ document.write(`
 </figure>
 </section>
 <section id="instalacion-de-librerias">
-<h2>Instalación de Librerías<a class="headerlink" href="#instalacion-de-librerias" title="Permalink to this heading">#</a></h2>
+<h2>Instalación de Librerías<a class="headerlink" href="#instalacion-de-librerias" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Independientemente de si decidió usar solo <code class="docutils literal notranslate"><span class="pre">Python</span></code> directamente, o <code class="docutils literal notranslate"><span class="pre">Miniconda</span></code> como recomienda <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code>, el procedimiento de instalación de librerías es el mismo. En su terminal, instale dash.</p></li>
 </ul>
@@ -539,7 +562,7 @@ pandas
 </figure>
 </section>
 <section id="diseno-de-dash">
-<h2>Diseño de Dash<a class="headerlink" href="#diseno-de-dash" title="Permalink to this heading">#</a></h2>
+<h2>Diseño de Dash<a class="headerlink" href="#diseno-de-dash" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Estudiaremos el diseño a través de seis aplicaciones autónomas. El diseño de las aplicaciones <code class="docutils literal notranslate"><span class="pre">Dash</span></code> de producción puede ser estilizado con <a class="reference external" href="https://plotly.com/dash/design-kit/?tab=templates">Dash Enterprise Design Kit</a>. Las aplicaciones <code class="docutils literal notranslate"><span class="pre">Dash</span></code> se componen de dos partes. La primera parte es el <code class="docutils literal notranslate"><span class="pre">diseño</span> <span class="pre">de</span> <span class="pre">la</span> <span class="pre">aplicación</span></code> y describe el aspecto de la misma. La segunda parte describe la <code class="docutils literal notranslate"><span class="pre">interactividad</span> <span class="pre">de</span> <span class="pre">la</span> <span class="pre">aplicación</span></code> y será cubierta más adelante.</p></li>
 <li><p>Mantenemos un conjunto de componentes en la biblioteca <code class="docutils literal notranslate"><span class="pre">dash_core_components</span></code> y <code class="docutils literal notranslate"><span class="pre">dash_html_components</span></code> (<code class="docutils literal notranslate"><span class="pre">dash.html</span></code> a partir de <code class="docutils literal notranslate"><span class="pre">Dash</span> <span class="pre">v2.0</span></code>) pero también puedes construir los suyos con <code class="docutils literal notranslate"><span class="pre">JavaScript</span></code> y <code class="docutils literal notranslate"><span class="pre">React.js</span></code>. A lo largo de esta sección, los ejemplos de código <code class="docutils literal notranslate"><span class="pre">Python</span></code> están pensados para ser guardados como archivos y ejecutados usando <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">app.py</span></code>. También puedes usar <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code> con la biblioteca <code class="docutils literal notranslate"><span class="pre">JupyterDash</span></code>.</p></li>
@@ -626,7 +649,7 @@ pandas
 </ul>
 </section>
 <section id="mas-informacion-sobre-los-componentes-html">
-<h2>Más información sobre los componentes HTML<a class="headerlink" href="#mas-informacion-sobre-los-componentes-html" title="Permalink to this heading">#</a></h2>
+<h2>Más información sobre los componentes HTML<a class="headerlink" href="#mas-informacion-sobre-los-componentes-html" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">dash_html_components</span></code> (<code class="docutils literal notranslate"><span class="pre">dash.html</span></code> a partir de <code class="docutils literal notranslate"><span class="pre">Dash</span> <span class="pre">v2.0</span></code>) contiene una clase de componente para cada etiqueta <code class="docutils literal notranslate"><span class="pre">HTML</span></code>, así como argumentos de palabras clave para todos los argumentos <code class="docutils literal notranslate"><span class="pre">HTML</span></code>. Vamos a personalizar el texto de nuestra aplicación modificando los estilos en línea de los componentes. Crea un archivo llamado <code class="docutils literal notranslate"><span class="pre">app.py</span></code> con el siguiente código</p></li>
 </ul>
@@ -708,7 +731,7 @@ pandas
 </ul>
 </section>
 <section id="componentes-reutilizables">
-<h2>Componentes reutilizables<a class="headerlink" href="#componentes-reutilizables" title="Permalink to this heading">#</a></h2>
+<h2>Componentes reutilizables<a class="headerlink" href="#componentes-reutilizables" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Escribiendo nuestro markup en <code class="docutils literal notranslate"><span class="pre">Python</span></code>, podemos crear componentes complejos reutilizables como tablas sin cambiar de contexto o de lenguaje. Aquí hay un ejemplo rápido que genera una tabla <code class="docutils literal notranslate"><span class="pre">Table</span></code> a partir de un dataframe de <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> (ver <a class="reference external" href="https://dash.plotly.com/dash-html-components/tr">html.Tr</a>, <a class="reference external" href="https://dash.plotly.com/dash-html-components/td">html.Td</a>, <a class="reference external" href="https://dash.plotly.com/dash-html-components/thead">html.Thead
 </a>). Crea un archivo llamado <code class="docutils literal notranslate"><span class="pre">app.py</span></code> con el siguiente código</p></li>
@@ -749,7 +772,7 @@ pandas
 </figure>
 </section>
 <section id="mas-informacion-sobre-la-visualizacion">
-<h2>Más información sobre la visualización<a class="headerlink" href="#mas-informacion-sobre-la-visualizacion" title="Permalink to this heading">#</a></h2>
+<h2>Más información sobre la visualización<a class="headerlink" href="#mas-informacion-sobre-la-visualizacion" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>La librería <code class="docutils literal notranslate"><span class="pre">dash_core_components</span></code> incluye un componente llamado <code class="docutils literal notranslate"><span class="pre">Graph</span></code>. <code class="docutils literal notranslate"><span class="pre">Graph</span></code> muestra visualizaciones de datos interactivas utilizando la librería de gráficos de código abierto <code class="docutils literal notranslate"><span class="pre">plotly.js</span></code>. <code class="docutils literal notranslate"><span class="pre">Plotly.js</span></code> admite más de <code class="docutils literal notranslate"><span class="pre">35</span> <span class="pre">tipos</span> <span class="pre">de</span> <span class="pre">gráficos</span></code> y los representa tanto en <code class="docutils literal notranslate"><span class="pre">SVG</span></code> de calidad vectorial como en <code class="docutils literal notranslate"><span class="pre">WebGL</span></code> de alto rendimiento.</p></li>
 <li><p>El argumento de figura en el <code class="docutils literal notranslate"><span class="pre">componenteGraph</span></code> es el mismo argumento de figura que utiliza <code class="docutils literal notranslate"><span class="pre">plotly.py</span></code>, la biblioteca de gráficos <code class="docutils literal notranslate"><span class="pre">Python</span></code> de código abierto de <code class="docutils literal notranslate"><span class="pre">Plotly</span></code>. Consulte la documentación y la galería de <a class="reference external" href="https://plotly.com/python/">plotly.py para obtener más información</a>. Aquí presentamos un ejemplo que crea un gráfico de dispersión a partir de un marco de datos de <code class="docutils literal notranslate"><span class="pre">Pandas</span></code>. Crear un archivo llamado <code class="docutils literal notranslate"><span class="pre">app.py</span></code> con el siguiente código</p></li>
@@ -784,7 +807,7 @@ pandas
 </figure>
 </section>
 <section id="markdown">
-<h2>Markdown<a class="headerlink" href="#markdown" title="Permalink to this heading">#</a></h2>
+<h2>Markdown<a class="headerlink" href="#markdown" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Aunque <code class="docutils literal notranslate"><span class="pre">Dash</span></code> expone <code class="docutils literal notranslate"><span class="pre">HTML</span></code> a través de <code class="docutils literal notranslate"><span class="pre">dash_html_components</span></code> (<code class="docutils literal notranslate"><span class="pre">dash.html</span></code> a partir de <code class="docutils literal notranslate"><span class="pre">Dash</span> <span class="pre">v2.0</span></code>) , puede ser tedioso escribir tu copia en <code class="docutils literal notranslate"><span class="pre">HTML</span></code>. Para escribir bloques de texto, puedes utilizar el componente <code class="docutils literal notranslate"><span class="pre">Markdown</span></code> en <code class="docutils literal notranslate"><span class="pre">dash_core_components</span></code>. Crear un archivo llamado <a class="reference external" href="http://app.py">app.py</a> con el siguiente código:</p></li>
 </ul>
@@ -815,7 +838,7 @@ pandas
 </figure>
 </section>
 <section id="componentes-principales">
-<h2>Componentes principales<a class="headerlink" href="#componentes-principales" title="Permalink to this heading">#</a></h2>
+<h2>Componentes principales<a class="headerlink" href="#componentes-principales" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">dash_core_components</span></code> incluye un conjunto de componentes de alto nivel como los desplegables, los gráficos, los bloques markdown, etc.</p></li>
 <li><p>Como todos los componentes de <code class="docutils literal notranslate"><span class="pre">Dash</span></code>, se describen de forma totalmente declarativa. Cada opción configurable está disponible como un argumento de palabra clave del componente.</p></li>
@@ -902,7 +925,7 @@ pandas
 <p>La siguiente parte de esta seccíon cubre cómo hacer estas aplicaciones interactivas. Luego estudiaremos con más profundidad algunos <code class="docutils literal notranslate"><span class="pre">Callbacks</span></code> básicos</p>
 </section>
 <section id="callbacks-basicos-dash">
-<h2>Callbacks básicos Dash<a class="headerlink" href="#callbacks-basicos-dash" title="Permalink to this heading">#</a></h2>
+<h2>Callbacks básicos Dash<a class="headerlink" href="#callbacks-basicos-dash" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Como se ha visto, <code class="docutils literal notranslate"><span class="pre">app.layout</span></code> describe el aspecto de la aplicación y es un árbol jerárquico de componentes. La biblioteca <code class="docutils literal notranslate"><span class="pre">dash_html_components</span></code> proporciona clases para todas las etiquetas <code class="docutils literal notranslate"><span class="pre">HTML</span></code>, y los argumentos de las palabras clave describen los atributos <code class="docutils literal notranslate"><span class="pre">HTML</span></code> como style, <code class="docutils literal notranslate"><span class="pre">className</span></code> e <code class="docutils literal notranslate"><span class="pre">id</span></code>. La biblioteca <code class="docutils literal notranslate"><span class="pre">dash_core_components</span></code> genera componentes de nivel superior como controles y gráficos.</p></li>
 <li><p>Ahora se describirá cómo hacer que tus aplicaciones <code class="docutils literal notranslate"><span class="pre">Dash</span></code> utilicen funciones de devolución de llamada (<code class="docutils literal notranslate"><span class="pre">callbacks</span></code>): funciones que son llamadas automáticamente por <code class="docutils literal notranslate"><span class="pre">Dash</span></code> cada vez que la propiedad de un componente de entrada cambia. Comencemos con un ejemplo sencillo de una aplicación Dash interactiva.</p></li>
@@ -959,7 +982,7 @@ pandas
 </ul>
 </section>
 <section id="dash-app-layout-con-figura-y-sliderm">
-<h2>Dash App Layout con Figura y Sliderm<a class="headerlink" href="#dash-app-layout-con-figura-y-sliderm" title="Permalink to this heading">#</a></h2>
+<h2>Dash App Layout con Figura y Sliderm<a class="headerlink" href="#dash-app-layout-con-figura-y-sliderm" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1118,7 +1141,7 @@ pandas
 </ul>
 </section>
 <section id="aplicacion-dash-con-multiples-entradas">
-<h2>Aplicación Dash con múltiples entradas<a class="headerlink" href="#aplicacion-dash-con-multiples-entradas" title="Permalink to this heading">#</a></h2>
+<h2>Aplicación Dash con múltiples entradas<a class="headerlink" href="#aplicacion-dash-con-multiples-entradas" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>En <code class="docutils literal notranslate"><span class="pre">Dash</span></code>, cualquier “<code class="docutils literal notranslate"><span class="pre">Output</span></code>” puede tener múltiples componentes “<code class="docutils literal notranslate"><span class="pre">Input</span></code>”. Aquí hay un ejemplo simple que une cinco <code class="docutils literal notranslate"><span class="pre">Inputs</span></code> (la propiedad value de dos componentes <code class="docutils literal notranslate"><span class="pre">dcc.Dropdown</span></code>, dos componentes <code class="docutils literal notranslate"><span class="pre">dcc.RadioItems</span></code>, y un componente <code class="docutils literal notranslate"><span class="pre">dcc.Slider</span></code>) a un componente <code class="docutils literal notranslate"><span class="pre">Output</span></code> (la propiedad <code class="docutils literal notranslate"><span class="pre">figure</span></code> del componente <code class="docutils literal notranslate"><span class="pre">Graph</span></code>). Observe cómo <code class="docutils literal notranslate"><span class="pre">app.callback</span></code> enumera los cinco elementos de entrada después de la salida.</p></li>
 </ul>
@@ -1292,7 +1315,7 @@ pandas
 </ul>
 </section>
 <section id="aplicacion-dash-con-multiples-salidas">
-<h2>Aplicación Dash con múltiples salidas<a class="headerlink" href="#aplicacion-dash-con-multiples-salidas" title="Permalink to this heading">#</a></h2>
+<h2>Aplicación Dash con múltiples salidas<a class="headerlink" href="#aplicacion-dash-con-multiples-salidas" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Hasta ahora todos los <code class="docutils literal notranslate"><span class="pre">callbacks</span></code> que hemos escrito sólo actualizan una propiedad de salida. También podemos actualizar varias a la vez. Puede enumerar todas las propiedades que requiera actualizar en <code class="docutils literal notranslate"><span class="pre">app.callback</span></code>, y devolver ese número de elementos desde el <code class="docutils literal notranslate"><span class="pre">callback</span></code>. Esto es particularmente bueno si dos salidas dependen del mismo resultado intermedio computacionalmente intenso, como una consulta lenta a la base de datos.</p></li>
 </ul>
@@ -1335,14 +1358,15 @@ pandas
 </pre></div>
 </div>
 <figure class="align-center" id="multiple-outputs-dash-fig">
-<a class="reference internal image-reference" href="_images/multiple_outputs_dash.png"><img alt="_images/multiple_outputs_dash.png" src="_images/multiple_outputs_dash.png" style="width: 217.60000000000002px; height: 308.8px;" /></a>
+<a class="reference internal image-reference" href="_images/multiple_outputs_dash.png"><img alt="_images/multiple_outputs_dash.png" src="_images/multiple_outputs_dash.png" style="width: 217.60000000000002px; height: 308.8px;" />
+</a>
 </figure>
 <ul class="simple">
 <li><p>No siempre es una buena idea combinar las salidas, aunque se pueda. Si los <code class="docutils literal notranslate"><span class="pre">Outputs</span></code> dependen de algunas pero no todas los mismos <code class="docutils literal notranslate"><span class="pre">Inputs</span></code>, mantenerlas separadas puede evitar actualizaciones innecesarias. Si tienen los mismos <code class="docutils literal notranslate"><span class="pre">Inputs</span></code> pero hacen cálculos independientes con estas entradas, <code class="docutils literal notranslate"><span class="pre">mantener</span> <span class="pre">las</span> <span class="pre">devoluciones</span> <span class="pre">de</span> <span class="pre">llamada</span> <span class="pre">separadas</span> <span class="pre">puede</span> <span class="pre">permitir</span> <span class="pre">que</span> <span class="pre">se</span> <span class="pre">ejecuten</span> <span class="pre">en</span> <span class="pre">paralelo</span></code>.</p></li>
 </ul>
 </section>
 <section id="dash-app-con-callbacks-encadenados">
-<h2>Dash App con callbacks encadenados<a class="headerlink" href="#dash-app-con-callbacks-encadenados" title="Permalink to this heading">#</a></h2>
+<h2>Dash App con callbacks encadenados<a class="headerlink" href="#dash-app-con-callbacks-encadenados" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>También puedes encadenar salidas y entradas. <code class="docutils literal notranslate"><span class="pre">La</span> <span class="pre">salida</span> <span class="pre">de</span> <span class="pre">una</span> <span class="pre">función</span> <span class="pre">callback</span> <span class="pre">puede</span> <span class="pre">ser</span> <span class="pre">la</span> <span class="pre">entrada</span> <span class="pre">de</span> <span class="pre">otra</span> <span class="pre">función</span> <span class="pre">callback</span></code>. Este patrón puede ser utilizado para crear <code class="docutils literal notranslate"><span class="pre">UIs</span></code> dinámicas donde un componente de entrada actualiza las opciones disponibles del siguiente componente de entrada</p></li>
 </ul>
@@ -1408,7 +1432,7 @@ pandas
 </ul>
 </section>
 <section id="dash-app-con-estado">
-<h2>Dash App con Estado<a class="headerlink" href="#dash-app-con-estado" title="Permalink to this heading">#</a></h2>
+<h2>Dash App con Estado<a class="headerlink" href="#dash-app-con-estado" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>En algunos casos, puede tener un patrón de tipo “formulario” en su aplicación. En esta situación, es posible que quieras <code class="docutils literal notranslate"><span class="pre">leer</span> <span class="pre">el</span> <span class="pre">valor</span> <span class="pre">del</span> <span class="pre">componente</span> <span class="pre">de</span> <span class="pre">entrada,</span> <span class="pre">pero</span> <span class="pre">sólo</span> <span class="pre">cuando</span> <span class="pre">el</span> <span class="pre">usuario</span> <span class="pre">haya</span> <span class="pre">terminado</span> <span class="pre">de</span> <span class="pre">introducir</span> <span class="pre">toda</span> <span class="pre">su</span> <span class="pre">información</span> <span class="pre">en</span> <span class="pre">el</span> <span class="pre">formulario</span></code>. Adjuntar una llamada de retorno a los valores de entrada directamente puede tener este aspecto:</p></li>
 </ul>
@@ -1446,7 +1470,7 @@ pandas
 </ul>
 </section>
 <section id="actualizar-graficos-al-deslizar-el-cursor">
-<h2>Actualizar gráficos al deslizar el cursor<a class="headerlink" href="#actualizar-graficos-al-deslizar-el-cursor" title="Permalink to this heading">#</a></h2>
+<h2>Actualizar gráficos al deslizar el cursor<a class="headerlink" href="#actualizar-graficos-al-deslizar-el-cursor" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Actualicemos nuestro ejemplo de indicadores mundiales, <code class="docutils literal notranslate"><span class="pre">actualizando</span> <span class="pre">las</span> <span class="pre">series</span> <span class="pre">de</span> <span class="pre">tiempo</span> <span class="pre">cuando</span> <span class="pre">pasamos</span> <span class="pre">por</span> <span class="pre">encima</span> <span class="pre">de</span> <span class="pre">los</span> <span class="pre">puntos</span> <span class="pre">de</span> <span class="pre">nuestro</span> <span class="pre">gráfico</span> <span class="pre">de</span> <span class="pre">dispersión</span></code>. la opción <code class="docutils literal notranslate"><span class="pre">padding</span></code> en el dash es utilizada para configurar el área de relleno en los cuatro lados de un elemento a la vez (ver <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding">padding</a>).</p></li>
 </ul>
@@ -1692,13 +1716,13 @@ pandas
 </figure>
 </section>
 <section id="dos-ejemplos-de-dash">
-<h2>Dos ejemplos de Dash<a class="headerlink" href="#dos-ejemplos-de-dash" title="Permalink to this heading">#</a></h2>
+<h2>Dos ejemplos de Dash<a class="headerlink" href="#dos-ejemplos-de-dash" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>En esta sección estudiaremos <code class="docutils literal notranslate"><span class="pre">dos</span> <span class="pre">ejemplos</span> <span class="pre">de</span> <span class="pre">app</span> <span class="pre">dash</span></code> para poner en practica lo estudiado en las dos primeras secciones. <code class="docutils literal notranslate"><span class="pre">El</span> <span class="pre">primero</span> <span class="pre">es</span> <span class="pre">relacionado</span> <span class="pre">con</span> <span class="pre">mapas</span> <span class="pre">y</span> <span class="pre">el</span> <span class="pre">segundo</span> <span class="pre">con</span> <span class="pre">series</span> <span class="pre">de</span> <span class="pre">tiempo</span> <span class="pre">financieras</span></code>. El objetivo principal es hacer uso de la metodología aprender por ejemplos</p></li>
 </ul>
 </section>
 <section id="dash-app-para-mapas">
-<h2>Dash App para Mapas<a class="headerlink" href="#dash-app-para-mapas" title="Permalink to this heading">#</a></h2>
+<h2>Dash App para Mapas<a class="headerlink" href="#dash-app-para-mapas" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Iniciamos cargando el <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> a utlizar en nuestra app. Los datos provienen del archivo <code class="docutils literal notranslate"><span class="pre">intro_bees.csv</span></code> que contiene información sobre <code class="docutils literal notranslate"><span class="pre">enfermedades</span> <span class="pre">que</span> <span class="pre">afectan</span> <span class="pre">a</span> <span class="pre">ciertas</span> <span class="pre">colonias</span> <span class="pre">de</span> <span class="pre">abejas,</span> <span class="pre">en</span> <span class="pre">determinados</span> <span class="pre">estados</span> <span class="pre">en</span> <span class="pre">USA</span></code>. Las columnas de interés en este ejemplo son:</p></li>
 </ul>
@@ -2027,7 +2051,7 @@ pandas
 </div>
 </section>
 <section id="dash-app-financiera">
-<h2>Dash App Financiera<a class="headerlink" href="#dash-app-financiera" title="Permalink to this heading">#</a></h2>
+<h2>Dash App Financiera<a class="headerlink" href="#dash-app-financiera" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>En esta aplicación <code class="docutils literal notranslate"><span class="pre">graficáremos</span> <span class="pre">el</span> <span class="pre">precio</span> <span class="pre">de</span> <span class="pre">distintos</span> <span class="pre">stocks,</span> <span class="pre">junto</span> <span class="pre">al</span> <span class="pre">indicador</span> <span class="pre">de</span> <span class="pre">análisis</span> <span class="pre">técnico,</span> <span class="pre">Bollinger</span> <span class="pre">Bands</span></code>. Este indicador considera para cualquier stock, la media del orden de preferencia, y a esta le suma y resta la desviación estándar para tener la banda. Este indicador en bastante utilizado en <code class="docutils literal notranslate"><span class="pre">análisis</span> <span class="pre">técnico</span></code>, sobre todo cuando deseamos conocer posibles sectores de compra y venta.</p></li>
 </ul>
@@ -2401,7 +2425,7 @@ pandas
 </ul>
 </section>
 <section id="despliegue-de-dash-app-usando-docker">
-<h2>Despliegue de Dash App usando Docker<a class="headerlink" href="#despliegue-de-dash-app-usando-docker" title="Permalink to this heading">#</a></h2>
+<h2>Despliegue de Dash App usando Docker<a class="headerlink" href="#despliegue-de-dash-app-usando-docker" title="Link to this heading">#</a></h2>
 <div class="admonition-introduccion admonition">
 <p class="admonition-title">Introducción</p>
 <ul class="simple">
@@ -2558,7 +2582,7 @@ docker<span class="w"> </span>run<span class="w"> </span>-h<span class="w"> </sp
 </ul>
 </section>
 <section id="lista-de-dockerfiles">
-<h2>Lista de Dockerfiles<a class="headerlink" href="#lista-de-dockerfiles" title="Permalink to this heading">#</a></h2>
+<h2>Lista de Dockerfiles<a class="headerlink" href="#lista-de-dockerfiles" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code></p>
 <div class="highlight-dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="w"> </span><span class="s">python:3.9.17</span>
 
@@ -2670,7 +2694,7 @@ docker<span class="w"> </span>run<span class="w"> </span>-h<span class="w"> </sp
 </figure>
 </section>
 <section id="render-y-dash-tool">
-<h2>Render y Dash Tool<a class="headerlink" href="#render-y-dash-tool" title="Permalink to this heading">#</a></h2>
+<h2>Render y Dash Tool<a class="headerlink" href="#render-y-dash-tool" title="Link to this heading">#</a></h2>
 <div class="tip admonition">
 <p class="admonition-title">Introducción</p>
 <ul class="simple">
@@ -2859,11 +2883,11 @@ git<span class="w"> </span>push
 <img alt="_images/render_wit_deploy15.png" src="_images/render_wit_deploy15.png" />
 </figure>
 <ul class="simple">
-<li><p>Los pasos abordados en esta sección fueron tomados del tutorial de <a class="reference external" href="https://www.youtube.com/watch?v=XWJBJoV5yww&amp;ab_channel=CharmingData">CharmingData</a>. Pueden visitar el sitio web oficial <a class="reference external" href="https://charming-data.circle.so/home">charming-data.circle.so</a> donde podrán encontrar, en esta gran comunidad, más tutoriales sobre <code class="docutils literal notranslate"><span class="pre">Dash</span> <span class="pre">Plotly</span></code>.</p></li>
+<li><p>Los pasos abordados en esta sección fueron tomados del tutorial de <a class="reference external" href="https://www.youtube.com/watch?v=XWJBJoV5yww&amp;amp;ab_channel=CharmingData">CharmingData</a>. Pueden visitar el sitio web oficial <a class="reference external" href="https://charming-data.circle.so/home">charming-data.circle.so</a> donde podrán encontrar, en esta gran comunidad, más tutoriales sobre <code class="docutils literal notranslate"><span class="pre">Dash</span> <span class="pre">Plotly</span></code>.</p></li>
 </ul>
 </section>
 <section id="ejercicio-para-entregar">
-<h2>Ejercicio para entregar<a class="headerlink" href="#ejercicio-para-entregar" title="Permalink to this heading">#</a></h2>
+<h2>Ejercicio para entregar<a class="headerlink" href="#ejercicio-para-entregar" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Dockerizar</span></code> los dashboard de los dos ejemplos estudiados en la sección <strong><code class="docutils literal notranslate"><span class="pre">Dos</span> <span class="pre">ejemplos</span> <span class="pre">de</span> <span class="pre">Dash</span></code></strong>. Esto es, crear dos imágenes <code class="docutils literal notranslate"><span class="pre">Docker</span></code> para los <code class="docutils literal notranslate"><span class="pre">Dash</span></code> asociados con: <code class="docutils literal notranslate"><span class="pre">Dash</span> <span class="pre">App</span> <span class="pre">para</span> <span class="pre">Mapas</span></code> y <code class="docutils literal notranslate"><span class="pre">Dash</span> <span class="pre">App</span> <span class="pre">Financiera</span></code>.</p></li>
 <li><p>Posteriormente, realice cambios en el (<code class="docutils literal notranslate"><span class="pre">back/front</span> <span class="pre">end</span></code>) de los dos <code class="docutils literal notranslate"><span class="pre">Dashboards</span></code> teniendo en cuenta los diferentes templates usados en esta sección. Por ejemplo,</p>
@@ -2913,11 +2937,10 @@ git<span class="w"> </span>push
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="postgresql.html"
@@ -2928,10 +2951,7 @@ git<span class="w"> </span>push
         <p class="prev-next-title">Introducción a PostreSQL y Docker</p>
       </div>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -2939,6 +2959,7 @@ git<span class="w"> </span>push
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -2991,6 +3012,7 @@ By Lihki Rubio PhD in Mathematical Engineering
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright Department of Mathematics and Statistics.
@@ -3017,8 +3039,8 @@ By Lihki Rubio PhD in Mathematical Engineering
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

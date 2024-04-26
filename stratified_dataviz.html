@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Visualización de datos a través de capas: Altair &#8212; Visualización de Datos con Python y R</title>
   
@@ -19,53 +18,50 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'stratified_dataviz';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Visualización interactiva de datos geográficos" href="geo_dataviz.html" />
@@ -79,7 +75,15 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -114,11 +118,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -133,9 +140,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -145,12 +154,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_uninorte.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo_uninorte.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo_uninorte.png" class="logo__image only-light" alt="Visualización de Datos con Python y R - Home"/>
+    <script>document.write(`<img src="_static/logo_uninorte.png" class="logo__image only-dark" alt="Visualización de Datos con Python y R - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -329,20 +349,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -391,10 +413,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="visualizacion-de-datos-a-traves-de-capas-altair">
-<h1>Visualización de datos a través de capas: Altair<a class="headerlink" href="#visualizacion-de-datos-a-traves-de-capas-altair" title="Permalink to this heading">#</a></h1>
+<h1>Visualización de datos a través de capas: Altair<a class="headerlink" href="#visualizacion-de-datos-a-traves-de-capas-altair" title="Link to this heading">#</a></h1>
 <div class="admonition-objetivos admonition">
 <p class="admonition-title">Objetivos</p>
 <ul class="simple">
@@ -405,14 +427,14 @@ document.write(`
 </ul>
 </div>
 <section id="introduccion">
-<h2>Introducción<a class="headerlink" href="#introduccion" title="Permalink to this heading">#</a></h2>
+<h2>Introducción<a class="headerlink" href="#introduccion" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Una observación hecha en la sección anterior fue que cuando se trata de introducir interactividad en ciertos tipos de gráficos de <code class="docutils literal notranslate"><span class="pre">Python</span></code>, <code class="docutils literal notranslate"><span class="pre">plotly</span></code> puede a veces ser verboso, y puede implicar una curva de aprendizaje empinada. Por lo tanto, en este capítulo, presentaremos <code class="docutils literal notranslate"><span class="pre">altair</span></code>, una biblioteca diseñada especialmente para generar gráficos interactivos. Demostraremos cómo crear visualizaciones interactivas con <code class="docutils literal notranslate"><span class="pre">altair</span></code> para datos estratificados con respecto a cualquier variable categórica. A modo de ilustración, utilizaremos un conjunto de datos para generar gráficos de dispersión y de barras con las características del conjunto de datos y añadir una variedad de elementos interactivos a los gráficos. También conoceremos algunas ventajas específicas del uso de <code class="docutils literal notranslate"><span class="pre">altair</span></code> sobre una biblioteca más polivalente como <code class="docutils literal notranslate"><span class="pre">plotly</span></code>.</p></li>
 <li><p>Utilizaremos el conjunto de datos del <em><strong>Índice de Felicidad Planetaria (HPI)</strong></em> (ver <a class="reference external" href="http://happyplanetindex.org/">happyplanetindex</a>) a lo largo de esta sección. <em><strong>Este conjunto de datos muestra en qué lugares del mundo la gente utiliza recursos ecológicos de forma más eficiente para vivir una vida larga y feliz</strong></em>. No solo es un recurso interesante para conocer mejor las condiciones ecológicas y el bienestar socioeconómico de bienestar socioeconómico en varias partes de nuestro planeta, sino que también tiene una interesante mezcla de características que nos ayudan a demostrar ciertos conceptos clave de la visualización interactiva.</p></li>
 </ul>
 </section>
 <section id="graficos-de-dispersion-interactivos">
-<h2>Gráficos de dispersión interactivos<a class="headerlink" href="#graficos-de-dispersion-interactivos" title="Permalink to this heading">#</a></h2>
+<h2>Gráficos de dispersión interactivos<a class="headerlink" href="#graficos-de-dispersion-interactivos" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Como ya sabe, los gráficos de dispersión son uno de los tipos de gráficos más esenciales para presentar patrones globales dentro de un conjunto de datos. Naturalmente, es importante saber cómo introducir la interactividad en estos gráficos. En primer lugar, veremos las acciones de zoom y restablecimiento de los gráficos. Antes de eso, sin embargo, vamos a echar un vistazo al conjunto de datos. Podemos ver el conjunto de datos del <strong>HPI</strong> utilizando el siguiente código</p></li>
 </ul>
@@ -538,7 +560,7 @@ document.write(`
 </ul>
 </section>
 <section id="anadir-zoom-in-y-zoom-out-a-un-grafico-de-dispersion-estatico">
-<h2>Añadir Zoom-In y Zoom-Out a un gráfico de dispersión estático<a class="headerlink" href="#anadir-zoom-in-y-zoom-out-a-un-grafico-de-dispersion-estatico" title="Permalink to this heading">#</a></h2>
+<h2>Añadir Zoom-In y Zoom-Out a un gráfico de dispersión estático<a class="headerlink" href="#anadir-zoom-in-y-zoom-out-a-un-grafico-de-dispersion-estatico" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>En este ejercicio, generaremos un gráfico de dispersión estático utilizando <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. Utilizaremos el conjunto de datos <strong>hpi_data_countries</strong> para el gráfico y analizaremos las puntuaciones de <strong>Wellbeing</strong> de cada país representado por la leyenda del gráfico. Seguiremos adelante y añadiremos una función de <code class="docutils literal notranslate"><span class="pre">zoom</span></code>. Para ello utilizaremos la biblioteca <code class="docutils literal notranslate"><span class="pre">altair</span></code>.</p></li>
 </ul>
@@ -770,7 +792,7 @@ document.write(`
 </ul>
 </section>
 <section id="anadir-la-funcionalidad-hover-y-tooltip-a-un-grafico-de-dispersion">
-<h2>Añadir la funcionalidad Hover y Tooltip a un gráfico de dispersión<a class="headerlink" href="#anadir-la-funcionalidad-hover-y-tooltip-a-un-grafico-de-dispersion" title="Permalink to this heading">#</a></h2>
+<h2>Añadir la funcionalidad Hover y Tooltip a un gráfico de dispersión<a class="headerlink" href="#anadir-la-funcionalidad-hover-y-tooltip-a-un-grafico-de-dispersion" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Cargar el conjunto de datos <strong>hpi</strong> y leer desde el conjunto de datos usando pandas:</p></li>
 </ul>
@@ -964,7 +986,7 @@ document.write(`
 </ul>
 </section>
 <section id="explorar-la-funcionalidad-de-seleccionar-y-resaltar-en-un-grafico-de-dispersion">
-<h2>Explorar la funcionalidad de seleccionar y resaltar en un gráfico de dispersión<a class="headerlink" href="#explorar-la-funcionalidad-de-seleccionar-y-resaltar-en-un-grafico-de-dispersion" title="Permalink to this heading">#</a></h2>
+<h2>Explorar la funcionalidad de seleccionar y resaltar en un gráfico de dispersión<a class="headerlink" href="#explorar-la-funcionalidad-de-seleccionar-y-resaltar-en-un-grafico-de-dispersion" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>En este ejercicio, vamos a utilizar la funcionalidad de seleccionar y resaltar utilizando <code class="docutils literal notranslate"><span class="pre">altair</span></code>. Nosotros podemos hacer esto usando una función llamada <code class="docutils literal notranslate"><span class="pre">add_selection</span></code>. Primero tenemos que definir una variable que almacenará un intervalo de selección y luego generar el gráfico al que queremos añadir la función de selección. En el gráfico resultante, podemos hacer clic y luego arrastrar el cursor para crear un área de selección, que se coloreará de gris. Sigamos los siguientes pasos para hacerlo</p></li>
 </ul>
@@ -1174,7 +1196,7 @@ document.write(`
 </ul>
 </section>
 <section id="generacion-de-un-trazado-con-las-funciones-de-seleccion-zoom-y-hover-seleccion-a-traves-de-multiples-parcelas">
-<h2>Generación de un trazado con las funciones de selección, zoom y hover. Selección a través de múltiples parcelas<a class="headerlink" href="#generacion-de-un-trazado-con-las-funciones-de-seleccion-zoom-y-hover-seleccion-a-traves-de-multiples-parcelas" title="Permalink to this heading">#</a></h2>
+<h2>Generación de un trazado con las funciones de selección, zoom y hover. Selección a través de múltiples parcelas<a class="headerlink" href="#generacion-de-un-trazado-con-las-funciones-de-seleccion-zoom-y-hover-seleccion-a-traves-de-multiples-parcelas" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>En este ejercicio, seguiremos trabajando con el conjunto de datos del <strong>Happy Planet Index</strong>.  La tarea de tarea consiste en crear un gráfico de dispersión para <strong>Well-being</strong> vs <strong>Happy Planet Index</strong> y hacer <code class="docutils literal notranslate"><span class="pre">zoom</span></code> en el área con un alto <strong>Well-being</strong> y un alto <strong>Happy Planet index</strong>.</p></li>
 </ul>
@@ -1386,7 +1408,7 @@ document.write(`
 </ul>
 </section>
 <section id="seleccion-basada-en-los-valores-de-una-caracteristica">
-<h2>Selección basada en los valores de una característica<a class="headerlink" href="#seleccion-basada-en-los-valores-de-una-caracteristica" title="Permalink to this heading">#</a></h2>
+<h2>Selección basada en los valores de una característica<a class="headerlink" href="#seleccion-basada-en-los-valores-de-una-caracteristica" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>En este ejercicio, crearemos un gráfico interactivo donde podremos ver los puntos de datos en función de una <strong>Region</strong> determinada. Utilizaremos la función <code class="docutils literal notranslate"><span class="pre">selection_single()</span></code> para obtener un conjunto seleccionado de puntos de datos. Si se estudia el código con atención, se verá que los parámetros de esta función se explican por sí mismos. Para cualquier aclaración, por favor lea sobre ellos en la documentación oficial en
 <a class="reference external" href="https://altair-viz.github.io/user_guide/generated/api/altair.selection_single.html">https://altair-viz.github.io/user_guide/generated/api/altair.selection_single.html</a>.</p></li>
@@ -1599,7 +1621,7 @@ document.write(`
 </ul>
 </section>
 <section id="anadir-una-funcion-de-zoom-in-zoom-out-y-calcular-la-media-en-un-grafico-de-barras-estatico">
-<h2>Añadir una función de Zoom-In/Zoom-Out y calcular la media en un gráfico de barras estático<a class="headerlink" href="#anadir-una-funcion-de-zoom-in-zoom-out-y-calcular-la-media-en-un-grafico-de-barras-estatico" title="Permalink to this heading">#</a></h2>
+<h2>Añadir una función de Zoom-In/Zoom-Out y calcular la media en un gráfico de barras estático<a class="headerlink" href="#anadir-una-funcion-de-zoom-in-zoom-out-y-calcular-la-media-en-un-grafico-de-barras-estatico" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>En este ejercicio, primero generaremos un simple gráfico de barras (estático) y luego exploraremos la interactividad, como el acercamiento y el alejamiento. A continuación, utilizaremos el mismo gráfico de barras y averiguaremos la media del <strong>Happy Planet Index</strong> de cada región. Utilizaremos la biblioteca <code class="docutils literal notranslate"><span class="pre">altair</span></code> y el conjunto de datos del <strong>Happy Planet Index</strong></p></li>
 </ul>
@@ -2146,7 +2168,7 @@ document.write(`
 </ul>
 </section>
 <section id="un-atajo-alternativo-para-representar-la-media-en-un-grafico-de-barras">
-<h2>Un atajo alternativo para representar la media en un gráfico de barras<a class="headerlink" href="#un-atajo-alternativo-para-representar-la-media-en-un-grafico-de-barras" title="Permalink to this heading">#</a></h2>
+<h2>Un atajo alternativo para representar la media en un gráfico de barras<a class="headerlink" href="#un-atajo-alternativo-para-representar-la-media-en-un-grafico-de-barras" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>En este ejercicio, calcularemos la media del índice <strong>HPI</strong> en un gráfico de barras utilizando un del código utilizado en el Ejercicio 33, añadiendo  cálculo de la media en un gráfico de barras estático.</p></li>
 </ul>
@@ -2335,7 +2357,7 @@ document.write(`
 </div>
 </section>
 <section id="anadir-una-funcion-de-zoom-en-un-mapa-de-calor-estatico">
-<h2>Añadir una función de zoom en un mapa de calor estático<a class="headerlink" href="#anadir-una-funcion-de-zoom-en-un-mapa-de-calor-estatico" title="Permalink to this heading">#</a></h2>
+<h2>Añadir una función de zoom en un mapa de calor estático<a class="headerlink" href="#anadir-una-funcion-de-zoom-en-un-mapa-de-calor-estatico" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>En este ejercicio, utilizaremos <code class="docutils literal notranslate"><span class="pre">altair</span></code> para crear un mapa de calor que indique el número de países con el <strong>HPI</strong> y el <strong>Wellbeing</strong> en varios rangos. A continuación, añadiremos la función de zoom al mapa. También añadiremos círculos en el mapa de calor para mostrar diferentes países.</p></li>
 </ul>
@@ -2700,7 +2722,7 @@ document.write(`
 </div>
 </section>
 <section id="creacion-de-un-diagrama-de-barras-y-un-mapa-de-calor-contiguos">
-<h2>Creación de un diagrama de barras y un mapa de calor contiguos<a class="headerlink" href="#creacion-de-un-diagrama-de-barras-y-un-mapa-de-calor-contiguos" title="Permalink to this heading">#</a></h2>
+<h2>Creación de un diagrama de barras y un mapa de calor contiguos<a class="headerlink" href="#creacion-de-un-diagrama-de-barras-y-un-mapa-de-calor-contiguos" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>En este ejercicio, seguiremos trabajando con el conjunto de datos del HPI. El objetivo es dibujar un diagrama de barras que represente el número de países en cada región y un mapa de calor al lado, indicando el número de países en varios rangos de <strong>wellbeing</strong> y <strong>life-expectancy</strong></p></li>
 </ul>
@@ -2976,7 +2998,7 @@ document.write(`
 </div>
 </section>
 <section id="vincular-dinamicamente-un-grafico-de-barras-y-un-mapa-de-calor">
-<h2>Vincular dinámicamente un gráfico de barras y un mapa de calor<a class="headerlink" href="#vincular-dinamicamente-un-grafico-de-barras-y-un-mapa-de-calor" title="Permalink to this heading">#</a></h2>
+<h2>Vincular dinámicamente un gráfico de barras y un mapa de calor<a class="headerlink" href="#vincular-dinamicamente-un-grafico-de-barras-y-un-mapa-de-calor" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>En este ejercicio, enlazaremos un gráfico de barras y un mapa de calor de forma dinámica. Considere un escenario en el que desea poder hacer clic en cualquiera de las barras de un gráfico de barras y tener un mapa de calor correspondiente a la región representada por la barra. Así, por ejemplo, quiere actualizar el mapa térmico de la <strong>Life Expectancy</strong> frente al <strong>Well Being</strong> sólo para los países de una región determinada.</p></li>
 </ul>
@@ -3226,7 +3248,7 @@ document.write(`
 </ul>
 </section>
 <section id="ejercicio-para-entregar">
-<h2>Ejercicio para entregar<a class="headerlink" href="#ejercicio-para-entregar" title="Permalink to this heading">#</a></h2>
+<h2>Ejercicio para entregar<a class="headerlink" href="#ejercicio-para-entregar" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Trabajaremos con el conjunto de datos de <strong>Google Play Store Apps</strong> alojado en <a class="reference external" href="https://raw.githubusercontent.com/lihkir/Uninorte/main/AppliedStatisticMS/DataVisualizationRPython/Lectures/Python/PythonDataSets/googleplaystore.csv">googleplaystore.csv</a>. Su tarea es crear una visualización con:</p>
 <ul>
@@ -3405,11 +3427,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="interactive_dataviz.html"
@@ -3429,10 +3450,7 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -3440,6 +3458,7 @@ document.write(`
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -3481,6 +3500,7 @@ By Lihki Rubio PhD in Mathematical Engineering
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright Department of Mathematics and Statistics.
@@ -3507,8 +3527,8 @@ By Lihki Rubio PhD in Mathematical Engineering
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

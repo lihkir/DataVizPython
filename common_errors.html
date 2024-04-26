@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Errores comunes y Tratamiento de Datos Faltantes y Atípicos &#8212; Visualización de Datos con Python y R</title>
   
@@ -19,53 +18,50 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'common_errors';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Predicción de series de tiempo" href="predictive_model.html" />
@@ -79,7 +75,15 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -114,11 +118,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -133,9 +140,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -145,12 +154,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_uninorte.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo_uninorte.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo_uninorte.png" class="logo__image only-light" alt="Visualización de Datos con Python y R - Home"/>
+    <script>document.write(`<img src="_static/logo_uninorte.png" class="logo__image only-dark" alt="Visualización de Datos con Python y R - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -329,20 +349,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -397,10 +419,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="errores-comunes-y-tratamiento-de-datos-faltantes-y-atipicos">
-<h1>Errores comunes y Tratamiento de Datos Faltantes y Atípicos<a class="headerlink" href="#errores-comunes-y-tratamiento-de-datos-faltantes-y-atipicos" title="Permalink to this heading">#</a></h1>
+<h1>Errores comunes y Tratamiento de Datos Faltantes y Atípicos<a class="headerlink" href="#errores-comunes-y-tratamiento-de-datos-faltantes-y-atipicos" title="Link to this heading">#</a></h1>
 <div class="admonition-objetivos admonition">
 <p class="admonition-title">Objetivos</p>
 <ul class="simple">
@@ -411,14 +433,14 @@ document.write(`
 </ul>
 </div>
 <section id="introduccion">
-<h2>Introducción<a class="headerlink" href="#introduccion" title="Permalink to this heading">#</a></h2>
+<h2>Introducción<a class="headerlink" href="#introduccion" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>En éste capítulo se enumera y explica los posibles fallos y errores que se cometen durante varias etapas del proceso de visualización de datos, como la <strong>visualización de elementos no correlacionados de un conjunto de datos</strong> para mostrar una relación o <strong>crear una característica interactiva inapropiada</strong>.</p></li>
 <li><p>El proceso de visualización de datos puede parecer sencillo: tome algunos datos, trace algunos gráficos, añadir algunas características interactivas, y el trabajo está hecho. O, tal vez, no lo sea: podría haber varios lugares durante el trayecto en los que se pueden cometer errores. Estos errores terminan por dar lugar a una <strong>visualización defectuosa que no puede de manera fácil y eficaz transmitir lo que dicen los datos</strong>, lo que hace que sea completamente inútil para el público que lo está viendo.</p></li>
 </ul>
 </section>
 <section id="formato-e-interpretacion-de-datos">
-<h2>Formato e interpretación de datos<a class="headerlink" href="#formato-e-interpretacion-de-datos" title="Permalink to this heading">#</a></h2>
+<h2>Formato e interpretación de datos<a class="headerlink" href="#formato-e-interpretacion-de-datos" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>La primera fase de la visualización de datos es <strong>entender los datos frente a ti: entender lo que es, lo que significa y lo que transmite</strong>. Solo cuando entiendas los datos serás capaz de diseñar una visualización que ayude a otros a entenderlos.</p></li>
 <li><p>Además, es importante <strong>asegurarse de que los datos tienen sentido y contienen suficiente información, ya sea categórica, numérica o una mezcla de ambas</strong>, para ser visualizados. Por lo tanto, si tratas con datos erróneos o sucios, es probable que la visualización sea defectuosa.</p></li>
@@ -434,14 +456,16 @@ document.write(`
 <li><p>Veamos un ejemplo de un error cometido al recoger o almacenar los datos. La siguiente tabla muestra la <em><strong>edad, el peso y el sexo de los clientes que acuden a un determinado gimnasio</strong></em>. La columna de sexo consta de tres valores discretos <em>0, 1 y 2 que corresponden todos a una clase: hombre, mujer y otro</em>, respectivamente. La columna de la edad se expresa en años y la columna de peso está en kilogramos</p></li>
 </ul>
 <figure class="align-center">
-<a class="reference internal image-reference" href="_images/Figure701.png"><img alt="_images/Figure701.png" src="_images/Figure701.png" style="width: 335.20000000000005px; height: 290.40000000000003px;" /></a>
+<a class="reference internal image-reference" href="_images/Figure701.png"><img alt="_images/Figure701.png" src="_images/Figure701.png" style="width: 335.20000000000005px; height: 290.40000000000003px;" />
+</a>
 </figure>
 <ul class="simple">
 <li><p>Todo parece correcto hasta que llegamos a la cuarta instancia (índice 3), donde el peso es de 790 kg. <em><strong>Esto parece extraño porque nadie puede pesar realmente 790 kg, especialmente alguien cuya estatura es de 1,5 metros y 7 pulgadas</strong></em>. Quien haya almacenado estos datos <em>debe haber querido decir 79 kg y haber añadido un 0 por error</em>.</p></li>
 <li><p>Este es un caso de un valor atípico en el conjunto de datos. Esto puede parecer trivial en este momento, sin embargo, <em>esto puede resultar en <strong>visualizaciones y predicciones o patrones de modelos de aprendizaje automático defectuosos</strong></em>, especialmente si hay múltiples repeticiones de esos datos. Ahora, veamos un ejemplo de un auténtico valor atípico en la siguiente tabla.</p></li>
 </ul>
 <figure class="align-center">
-<a class="reference internal image-reference" href="_images/Figure702.png"><img alt="_images/Figure702.png" src="_images/Figure702.png" style="width: 286.40000000000003px; height: 251.20000000000002px;" /></a>
+<a class="reference internal image-reference" href="_images/Figure702.png"><img alt="_images/Figure702.png" src="_images/Figure702.png" style="width: 286.40000000000003px; height: 251.20000000000002px;" />
+</a>
 </figure>
 <ul class="simple">
 <li><p>El peso en el cuarto caso (índice 3) es de <em>167 kilogramos, lo que parece extrañamente alto. Sin embargo, sigue siendo un valor verosímil, ya que <strong>es posible que alguien tenga un peso de 167 kilogramos a los 37 años</strong></em>. Por lo tanto, se trata de un <em><strong>verdadero valor atípico</strong></em>. Mientras que en los ejemplos anteriores es fácil detectar el valor atípico, ya que solo hay 5 casos, en realidad, nuestros conjuntos de datos son masivos, por lo que comprobar cada caso es una tarea tediosa y poco práctica.</p></li>
@@ -458,7 +482,7 @@ document.write(`
 </ul>
 </section>
 <section id="visualizacion-de-valores-atipicos-en-un-conjunto-de-datos-con-un-grafico-de-cajas">
-<h2>Visualización de valores atípicos en un conjunto de datos con un gráfico de cajas<a class="headerlink" href="#visualizacion-de-valores-atipicos-en-un-conjunto-de-datos-con-un-grafico-de-cajas" title="Permalink to this heading">#</a></h2>
+<h2>Visualización de valores atípicos en un conjunto de datos con un gráfico de cajas<a class="headerlink" href="#visualizacion-de-valores-atipicos-en-un-conjunto-de-datos-con-un-grafico-de-cajas" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>En este ejercicio, vamos a crear un gráfico de caja para comprobar si nuestro conjunto de datos contiene valores atípicos. Vamos a utilizar el conjunto de datos <em>gym.csv</em>, que contiene información sobre los clientes de un determinado gimnasio.</p></li>
 </ul>
@@ -636,7 +660,7 @@ if (outputEl) {{
 </ul>
 </section>
 <section id="como-tratar-los-valores-atipicos">
-<h2>Cómo tratar los valores atípicos<a class="headerlink" href="#como-tratar-los-valores-atipicos" title="Permalink to this heading">#</a></h2>
+<h2>Cómo tratar los valores atípicos<a class="headerlink" href="#como-tratar-los-valores-atipicos" title="Link to this heading">#</a></h2>
 <p><strong>Detección de valores atípicos</strong></p>
 <ul class="simple">
 <li><p>Si nuestro conjunto de datos es pequeño, podemos detectar el valor atípico simplemente mirando el conjunto de datos. Pero si tenemos un conjunto de datos enorme, ¿cómo podemos identificar los valores atípicos? Tenemos que utilizar técnicas de visualización y matemáticas. A continuación se presentan algunas de las técnicas de detección de valores atípicos</p>
@@ -652,7 +676,8 @@ if (outputEl) {{
 <li><p><strong>Criterio</strong>: Cualquier dato cuya puntuación <span class="math notranslate nohighlight">\(Z\)</span> esté <strong>fuera de la tercera desviación estándar es un valor atípico</strong></p></li>
 </ul>
 <figure class="align-center">
-<a class="reference internal image-reference" href="_images/z_score.png"><img alt="_images/z_score.png" src="_images/z_score.png" style="width: 560.0px; height: 364.8px;" /></a>
+<a class="reference internal image-reference" href="_images/z_score.png"><img alt="_images/z_score.png" src="_images/z_score.png" style="width: 560.0px; height: 364.8px;" />
+</a>
 </figure>
 <p><strong>Implementación</strong>:</p>
 <ul class="simple">
@@ -738,7 +763,7 @@ if (outputEl) {{
 </div>
 </section>
 <section id="tratamiento-de-los-valores-atipicos">
-<h2>Tratamiento de los valores atípicos<a class="headerlink" href="#tratamiento-de-los-valores-atipicos" title="Permalink to this heading">#</a></h2>
+<h2>Tratamiento de los valores atípicos<a class="headerlink" href="#tratamiento-de-los-valores-atipicos" title="Link to this heading">#</a></h2>
 <p><strong>Eliminación</strong></p>
 <ul class="simple">
 <li><p>En este ejercicio, vamos a eliminar la instancia que contiene el valor atípico del conjunto de datos que utilizamos en el ejercicio previo, y visualizamos el conjunto de datos de nuevo generando un gráfico de caja basado en el nuevo conjunto de datos.</p></li>
@@ -1051,7 +1076,7 @@ if (outputEl) {{
 </div>
 </section>
 <section id="tratamiento-de-los-valores-faltantes">
-<h2>Tratamiento de los valores faltantes<a class="headerlink" href="#tratamiento-de-los-valores-faltantes" title="Permalink to this heading">#</a></h2>
+<h2>Tratamiento de los valores faltantes<a class="headerlink" href="#tratamiento-de-los-valores-faltantes" title="Link to this heading">#</a></h2>
 <p><strong>Datos faltantes</strong></p>
 <ul class="simple">
 <li><p>Los datos perdidos son, como su nombre indica, valores que están en blanco (<strong>NaN, -, 0</strong> cuando no deberían ser <strong>0</strong>, etc.). Al igual que los valores atípicos, los valores perdidos pueden ser problemáticos tanto en el caso de las visualizaciones como en el de los modelos predictivos.</p></li>
@@ -1473,7 +1498,7 @@ if (outputEl) {{
 </div>
 </section>
 <section id="imputacion-multiple-iterativa">
-<h2>Imputación múltiple iterativa<a class="headerlink" href="#imputacion-multiple-iterativa" title="Permalink to this heading">#</a></h2>
+<h2>Imputación múltiple iterativa<a class="headerlink" href="#imputacion-multiple-iterativa" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Ahora, tenemos una visualización que no tiene valores perdidos y representa todas las instancias que están presentes en el conjunto de datos. Veamos el tercer problema que puede generar una visualización defectuosa. <strong>Otras técnicas de imputación de datos fueron estudiadas en R, y se pueden importar a Python</strong>. En Python, <code class="docutils literal notranslate"><span class="pre">MICE</span></code> se puede ejecutar en un paquete llamado <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.impute.IterativeImputer.html">IterativeImputer</a>, el cual está en fase experimental y está disponible en el paquete <code class="docutils literal notranslate"><span class="pre">sklearn.impute</span></code>.</p></li>
 <li><p>La siguiente figura describe como funciona la imputación múltiple iterativa, la cual seguiremos analizando también usando el lenguaje <code class="docutils literal notranslate"><span class="pre">R</span></code></p></li>
@@ -1481,18 +1506,18 @@ if (outputEl) {{
 <figure class="align-center" id="multiple-imputation-fig">
 <img alt="_images/multiple_imputation.png" src="_images/multiple_imputation.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Funcionamiento del método de <em><strong>imputación múltiple por ecuaciones encadenadas</strong></em>.</span><a class="headerlink" href="#multiple-imputation-fig" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Funcionamiento del método de <em><strong>imputación múltiple por ecuaciones encadenadas</strong></em>.</span><a class="headerlink" href="#multiple-imputation-fig" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="pmm-imputation-fig">
 <img alt="_images/pmm_imputation.png" src="_images/pmm_imputation.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Funcionamiento del método de <em><strong>imputación por emparejamiento predictivo medio</strong></em>.</span><a class="headerlink" href="#pmm-imputation-fig" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Funcionamiento del método de <em><strong>imputación por emparejamiento predictivo medio</strong></em>.</span><a class="headerlink" href="#pmm-imputation-fig" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="aplicacion-de-iterativeimputer">
-<h2>Aplicación de IterativeImputer<a class="headerlink" href="#aplicacion-de-iterativeimputer" title="Permalink to this heading">#</a></h2>
+<h2>Aplicación de IterativeImputer<a class="headerlink" href="#aplicacion-de-iterativeimputer" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>El conjunto de datos del presente ejemplo, describe las características médicas de caballos con cólico y si sobrevivieron o murieron (ver <a class="reference external" href="https://raw.githubusercontent.com/lihkir/Data/main/horse-colic.names.txt">horse-colic</a>). Hay 300 filas y 26 variables de entrada con una variable de salida. Es una tarea de predicción de <strong>clasificación binaria</strong> que implica predecir <em>1 si el caballo vivió y 2 si el caballo murió</em>.</p></li>
 <li><p>Hay muchos campos que podríamos seleccionar para predecir en este conjunto de datos. En este caso, <strong>predeciremos si el problema fue quirúrgico o no (índice de columna 23)</strong>, convirtiéndolo en un problema de clasificación binaria.</p></li>
@@ -2048,7 +2073,7 @@ if (outputEl) {{
 </div>
 </section>
 <section id="iterativeimputer-y-evaluacion-de-modelos">
-<h2>IterativeImputer y evaluación de modelos<a class="headerlink" href="#iterativeimputer-y-evaluacion-de-modelos" title="Permalink to this heading">#</a></h2>
+<h2>IterativeImputer y evaluación de modelos<a class="headerlink" href="#iterativeimputer-y-evaluacion-de-modelos" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Para aplicar correctamente la imputación iterativa de datos faltantes y <strong>evitar la fuga de datos</strong>, se crea un <code class="docutils literal notranslate"><span class="pre">pipeline</span></code> de modelado donde el <strong>primer paso sea la imputación iterativa</strong>, y el <strong>segundo paso sea el modelo</strong>. Esto se puede lograr utilizando la clase <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code>. Por ejemplo, el <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> a continuación utiliza un <code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code> con la estrategia predeterminada, seguido de un <strong>modelo de bosque aleatorio</strong>.</p></li>
 <li><p>Podemos evaluar el conjunto de datos imputado y el <code class="docutils literal notranslate"><span class="pre">pipeline</span></code> de modelado de bosque aleatorio para el conjunto de datos con <em>validación cruzada</em> repetida de 10 pliegues.</p></li>
@@ -2118,7 +2143,7 @@ if (outputEl) {{
 </ul>
 </section>
 <section id="iterativeimputer-y-diferente-orden-de-imputacion">
-<h2>IterativeImputer y diferente orden de imputación<a class="headerlink" href="#iterativeimputer-y-diferente-orden-de-imputacion" title="Permalink to this heading">#</a></h2>
+<h2>IterativeImputer y diferente orden de imputación<a class="headerlink" href="#iterativeimputer-y-diferente-orden-de-imputacion" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Por defecto, la imputación se realiza en <em>orden ascendente, desde la característica con menos valores faltantes hasta la característica con más valores faltantes</em>. Sin embargo, podemos experimentar con diferentes estrategias de orden de imputación, como <strong>descendente, de derecha a izquierda (árabe), de izquierda a derecha (romano) y aleatorio</strong>.</p></li>
 </ul>
@@ -2188,7 +2213,7 @@ if (outputEl) {{
 </ul>
 </section>
 <section id="iterativeimputer-y-diferente-numero-de-iteraciones">
-<h2>IterativeImputer y diferente número de iteraciones<a class="headerlink" href="#iterativeimputer-y-diferente-numero-de-iteraciones" title="Permalink to this heading">#</a></h2>
+<h2>IterativeImputer y diferente número de iteraciones<a class="headerlink" href="#iterativeimputer-y-diferente-numero-de-iteraciones" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Por defecto, <code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code> repetirá el número de iteraciones 10 veces. Es posible que un <strong>gran número de iteraciones comience a sesgar o distorsionar la estimación y que se prefieran pocas iteraciones</strong>. El número de iteraciones del procedimiento se puede especificar mediante el argumento <code class="docutils literal notranslate"><span class="pre">&quot;max_iter&quot;</span></code>. El siguiente ejemplo compara diferentes valores para <code class="docutils literal notranslate"><span class="pre">&quot;max_iter&quot;</span></code> desde 1 hasta 20.</p></li>
 </ul>
@@ -2273,7 +2298,7 @@ if (outputEl) {{
 </ul>
 </section>
 <section id="iterativeimputer-al-hacer-una-prediccion">
-<h2>IterativeImputer al hacer una predicción<a class="headerlink" href="#iterativeimputer-al-hacer-una-prediccion" title="Permalink to this heading">#</a></h2>
+<h2>IterativeImputer al hacer una predicción<a class="headerlink" href="#iterativeimputer-al-hacer-una-prediccion" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Podemos desear crear un <code class="docutils literal notranslate"><span class="pre">pipeline</span></code> de modelado final <em>con la imputación iterativa y el algoritmo de bosque aleatorio</em>, y luego hacer una predicción para nuevos datos. Esto se puede lograr definiendo el <code class="docutils literal notranslate"><span class="pre">pipeline</span></code> y ajustándolo en todos los datos disponibles, luego llamando a la función <code class="docutils literal notranslate"><span class="pre">predict()</span></code>, pasando los nuevos datos como argumento. Es importante destacar que la fila de nuevos datos debe marcar cualquier valor faltante utilizando el valor <code class="docutils literal notranslate"><span class="pre">NaN</span></code>.</p></li>
 </ul>
@@ -2325,21 +2350,22 @@ if (outputEl) {{
 </div>
 </section>
 <section id="instancias-y-o-funciones-duplicadas">
-<h2>Instancias y/o funciones duplicadas<a class="headerlink" href="#instancias-y-o-funciones-duplicadas" title="Permalink to this heading">#</a></h2>
+<h2>Instancias y/o funciones duplicadas<a class="headerlink" href="#instancias-y-o-funciones-duplicadas" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>El tercer problema es la presencia de <em><strong>instancias y/o características duplicadas en un conjunto de datos</strong></em>. Se trata de elementos innecesarios en el conjunto de datos y, si no se eliminan, <em>pueden afectar a las tendencias y a los conocimientos que se muestran en una visualización</em>.</p></li>
 <li><p>Por ejemplo, puede crear una visualización que muestre la relación entre el género de un adolescente y si toca el piano. Con un conjunto de datos sin valores atípicos, anomalías o valores perdidos, obtendrá una gran visualización.</p></li>
 <li><p>A partir de la visualización, podrá también concluir que <strong>hay más mujeres que tocan el piano que hombres</strong>. Sin embargo, digamos que la visualización proviene del conjunto de datos siguiente</p></li>
 </ul>
 <figure class="align-center">
-<a class="reference internal image-reference" href="_images/Figure714.png"><img alt="_images/Figure714.png" src="_images/Figure714.png" style="width: 469.6px; height: 284.0px;" /></a>
+<a class="reference internal image-reference" href="_images/Figure714.png"><img alt="_images/Figure714.png" src="_images/Figure714.png" style="width: 469.6px; height: 284.0px;" />
+</a>
 </figure>
 <ul class="simple">
 <li><p>Hay dos instancias para <strong>Nita Thadaka</strong> y tres instancias para <strong>Pooja Rajesh</strong>, lo que significa que hay <em><strong>tres instancias duplicadas en total</strong></em>. Esto significa que la información que la visualización está proporcionando es inexacta. La forma de tratar los duplicados es sencilla: <strong>eliminarlos</strong>. Con este fin puede utlizar la función: <code class="docutils literal notranslate"><span class="pre">.drop_duplicates()</span></code></p></li>
 </ul>
 </section>
 <section id="mala-seleccion-de-caracteristicas">
-<h2>Mala selección de características<a class="headerlink" href="#mala-seleccion-de-caracteristicas" title="Permalink to this heading">#</a></h2>
+<h2>Mala selección de características<a class="headerlink" href="#mala-seleccion-de-caracteristicas" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Con respecto a un conjunto de datos, una característica es una columna en el conjunto de datos, mientras que una instancia es una fila en el conjunto de datos. Por ejemplo, en la tabla anterior, nombre, sexo, tocar el piano y la edad son características, mientras que Pooja Rajesh, F, Yes y 17 es una instancia.</p></li>
 <li><p>Dado que el objetivo de una visualización es mostrar una tendencia, un patrón, una relación o algún vínculo entre dos o más características en un conjunto de datos, <em><strong>es importante que la selección de esas características se haga con cuidado</strong></em>. Por lo tanto, este es un punto crucial en la visualización de datos.</p></li>
@@ -2349,7 +2375,7 @@ una visualización que valiera la pena</strong></em>.</p></li>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="ejercicio-para-entregar">
-<h1>Ejercicio para entregar<a class="headerlink" href="#ejercicio-para-entregar" title="Permalink to this heading">#</a></h1>
+<h1>Ejercicio para entregar<a class="headerlink" href="#ejercicio-para-entregar" title="Link to this heading">#</a></h1>
 <ol class="arabic">
 <li><p>Determine las características que se visualizan en un gráfico de dispersión. Se le da el conjunto de datos <a class="reference external" href="https://raw.githubusercontent.com/lihkir/Uninorte/main/AppliedStatisticMS/DataVisualizationRPython/Lectures/Python/PythonDataSets/co2.csv">co2.csv</a> y se le pide que proporcione información sobre él, como por ejemplo, qué tipo de patrones existen, si hay tendencias entre las características, etc. Es necesario que su visualización final transmita información significativa. Para conseguirlo, va a crear visualizaciones para diferentes emparejamientos de características para entender están correlacionadas y, por lo tanto, vale la pena visualizarlas.</p>
 <p><strong>Pasos principales</strong></p>
@@ -2409,11 +2435,10 @@ una visualización que valiera la pena</strong></em>.</p></li>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="geo_dataviz.html"
@@ -2433,10 +2458,7 @@ una visualización que valiera la pena</strong></em>.</p></li>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -2444,6 +2466,7 @@ una visualización que valiera la pena</strong></em>.</p></li>
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -2491,6 +2514,7 @@ By Lihki Rubio PhD in Mathematical Engineering
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright Department of Mathematics and Statistics.
@@ -2517,8 +2541,8 @@ By Lihki Rubio PhD in Mathematical Engineering
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

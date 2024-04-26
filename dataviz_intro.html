@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Introducción a la visualización de datos con Python &#8212; Visualización de Datos con Python y R</title>
   
@@ -19,53 +18,50 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'dataviz_intro';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Visualización estática" href="static_dataviz.html" />
@@ -79,7 +75,15 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -114,11 +118,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -133,9 +140,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -145,12 +154,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_uninorte.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo_uninorte.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo_uninorte.png" class="logo__image only-light" alt="Visualización de Datos con Python y R - Home"/>
+    <script>document.write(`<img src="_static/logo_uninorte.png" class="logo__image only-dark" alt="Visualización de Datos con Python y R - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -163,8 +183,8 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Introducción a la visualización de datos con Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="static_dataviz.html">Visualización estática</a></li>
-<li class="toctree-l1"><a class="reference internal" href="interactive_dataviz.html">De la visualización estática a la interactiva</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stratified_dataviz.html">Visualización de datos a través de estratos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interactive_dataviz.html">De la visualización estática a la interactiva: Bokeh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stratified_dataviz.html">Visualización de datos a través de capas: Altair</a></li>
 <li class="toctree-l1"><a class="reference internal" href="geo_dataviz.html">Visualización interactiva de datos geográficos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common_errors.html">Errores comunes y Tratamiento de Datos Faltantes y Atípicos</a></li>
 
@@ -329,20 +349,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -392,10 +414,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduccion-a-la-visualizacion-de-datos-con-python">
-<h1>Introducción a la visualización de datos con Python<a class="headerlink" href="#introduccion-a-la-visualizacion-de-datos-con-python" title="Permalink to this heading">#</a></h1>
+<h1>Introducción a la visualización de datos con Python<a class="headerlink" href="#introduccion-a-la-visualizacion-de-datos-con-python" title="Link to this heading">#</a></h1>
 <div class="admonition-introduccion admonition">
 <p class="admonition-title">Introducción</p>
 <ul class="simple">
@@ -407,13 +429,13 @@ document.write(`
 </ul>
 </div>
 <section id="manejo-de-datos-con-pandas-dataframe">
-<h2>Manejo de datos con pandas DataFrame<a class="headerlink" href="#manejo-de-datos-con-pandas-dataframe" title="Permalink to this heading">#</a></h2>
+<h2>Manejo de datos con pandas DataFrame<a class="headerlink" href="#manejo-de-datos-con-pandas-dataframe" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>La biblioteca <strong>pandas</strong> es un conjunto de herramientas de código abierto extremadamente ingenioso para manejar manipular y analizar datos estructurados. Las tablas de datos se pueden almacenar en el objeto <strong>DataFrame</strong> disponible en <strong>pandas</strong>, y los datos en múltiples formatos (por ejemplo, <strong>.csv, .tsv, .xlsx</strong> y <strong>.json</strong>) pueden leerse directamente en un <strong>DataFrame</strong>.</p></li>
 </ul>
 </section>
 <section id="lectura-de-datos-desde-archivos">
-<h2>Lectura de datos desde archivos<a class="headerlink" href="#lectura-de-datos-desde-archivos" title="Permalink to this heading">#</a></h2>
+<h2>Lectura de datos desde archivos<a class="headerlink" href="#lectura-de-datos-desde-archivos" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bokeh.resources</span> <span class="kn">import</span> <span class="n">INLINE</span>
@@ -2232,7 +2254,7 @@ document.write(`
 </div>
 </section>
 <section id="observacion-y-descripcion-de-datos">
-<h2>Observación y descripción de datos<a class="headerlink" href="#observacion-y-descripcion-de-datos" title="Permalink to this heading">#</a></h2>
+<h2>Observación y descripción de datos<a class="headerlink" href="#observacion-y-descripcion-de-datos" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>En este ejercicio, veremos cómo observar y describir datos en un <strong>DataFrame</strong>. Volveremos a utilizar el conjunto de datos de diamantes</p></li>
 <li><p>Cargue la librería pandas:</p></li>
@@ -2709,7 +2731,7 @@ memory usage: 4.1+ MB
 </div>
 </section>
 <section id="anadir-nuevas-columnas-al-dataframe">
-<h2>Añadir nuevas columnas al DataFrame<a class="headerlink" href="#anadir-nuevas-columnas-al-dataframe" title="Permalink to this heading">#</a></h2>
+<h2>Añadir nuevas columnas al DataFrame<a class="headerlink" href="#anadir-nuevas-columnas-al-dataframe" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>En este ejercicio, vamos a añadir nuevas columnas al conjunto de datos de diamantes en la biblioteca <strong>pandas</strong>. Empezaremos con la adición simple de columnas y luego avanzaremos y veremos la adición condicional de columnas. Para ello, vamos a seguir los siguientes pasos:</p></li>
 <li><p>Cargue la biblioteca <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p></li>
@@ -3085,7 +3107,7 @@ memory usage: 4.1+ MB
 </div>
 </section>
 <section id="aplicacion-de-funciones-a-las-columnas-de-dataframe">
-<h2>Aplicación de funciones a las columnas de DataFrame<a class="headerlink" href="#aplicacion-de-funciones-a-las-columnas-de-dataframe" title="Permalink to this heading">#</a></h2>
+<h2>Aplicación de funciones a las columnas de DataFrame<a class="headerlink" href="#aplicacion-de-funciones-a-las-columnas-de-dataframe" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>En este ejercicio, consideraremos un escenario en el que el precio de los diamantes ha aumentado y queremos aplicar un factor de incremento de 1.3 al precio de todos los diamantes en nuestro registro. Podemos conseguirlo aplicando una sencilla función. A continuación, redondearemos el precio de los diamantes hasta su tope. Para ello, vamos a seguir los siguientes pasos</p></li>
 </ul>
@@ -3704,7 +3726,7 @@ memory usage: 4.1+ MB
 </div>
 </section>
 <section id="aplicacion-de-funciones-en-varias-columnas">
-<h2>Aplicación de funciones en varias columnas<a class="headerlink" href="#aplicacion-de-funciones-en-varias-columnas" title="Permalink to this heading">#</a></h2>
+<h2>Aplicación de funciones en varias columnas<a class="headerlink" href="#aplicacion-de-funciones-en-varias-columnas" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Supongamos que estamos interesados en comprar diamantes que tengan <strong>Ideal</strong> <strong>cut</strong> y <strong>color</strong> <strong>D</strong> (totalmente incoloro). Este ejercicio consiste en añadir una nueva columna, <strong>desired</strong>, al <strong>DataFrame</strong>, cuyo valor será <strong>yes</strong> si se cumplen nuestros criterios y <strong>no</strong> si no se cumplen. Veamos cómo lo hacemos:</p></li>
 </ul>
@@ -3960,7 +3982,7 @@ memory usage: 4.1+ MB
 </div>
 </section>
 <section id="eliminacion-de-columnas-de-un-dataframe">
-<h2>Eliminación de columnas de un DataFrame<a class="headerlink" href="#eliminacion-de-columnas-de-un-dataframe" title="Permalink to this heading">#</a></h2>
+<h2>Eliminación de columnas de un DataFrame<a class="headerlink" href="#eliminacion-de-columnas-de-un-dataframe" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Por último, vamos a ver cómo eliminar columnas de un <strong>DataFrame</strong> de <strong>pandas</strong>. Por ejemplo, borraremos las columnas <strong>rounded_price</strong> y <strong>rounded_price_to_100multiple</strong></p></li>
 </ul>
@@ -4724,7 +4746,7 @@ memory usage: 4.1+ MB
 </div>
 </section>
 <section id="escribir-un-dataframe-en-un-archivo">
-<h2>Escribir un DataFrame en un archivo<a class="headerlink" href="#escribir-un-dataframe-en-un-archivo" title="Permalink to this heading">#</a></h2>
+<h2>Escribir un DataFrame en un archivo<a class="headerlink" href="#escribir-un-dataframe-en-un-archivo" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>En este ejercicio, escribiremos un <strong>DataFrame</strong> de diamantes en un archivo <strong>.csv</strong>. Para ello, utilizaremos el siguiente código:</p></li>
 </ul>
@@ -4875,7 +4897,7 @@ memory usage: 4.1+ MB
 </ul>
 </section>
 <section id="trazado-y-analisis-de-un-histograma">
-<h2>Trazado y análisis de un histograma<a class="headerlink" href="#trazado-y-analisis-de-un-histograma" title="Permalink to this heading">#</a></h2>
+<h2>Trazado y análisis de un histograma<a class="headerlink" href="#trazado-y-analisis-de-un-histograma" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>En este ejercicio, crearemos un <strong>histograma</strong> de la frecuencia de los diamantes en el conjunto de datos con sus respectivas especificaciones de <strong>carat</strong> (quilates) en el eje <span class="math notranslate nohighlight">\(x\)</span>:</p></li>
 </ul>
@@ -5072,7 +5094,7 @@ memory usage: 4.1+ MB
 <p>Qué valores de las características son más frecuentes en el conjunto de datos (en este caso, hay un pico en torno a 6.8 y otro pico entre 8.5 y 9, nótese que <code class="docutils literal notranslate"><span class="pre">log(price)</span> <span class="pre">=</span> <span class="pre">valores</span></code>, en este caso</p>
 </section>
 <section id="creacion-de-un-grafico-de-barras-y-calculo-de-la-distribucion-del-precio-medio">
-<h2>Creación de un gráfico de barras y cálculo de la distribución del precio medio<a class="headerlink" href="#creacion-de-un-grafico-de-barras-y-calculo-de-la-distribucion-del-precio-medio" title="Permalink to this heading">#</a></h2>
+<h2>Creación de un gráfico de barras y cálculo de la distribución del precio medio<a class="headerlink" href="#creacion-de-un-grafico-de-barras-y-calculo-de-la-distribucion-del-precio-medio" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>En este ejercicio, aprenderemos a crear una tabla utilizando la función <code class="docutils literal notranslate"><span class="pre">pandas</span> <span class="pre">crosstab</span></code>. Utilizaremos una tabla para generar un gráfico de barras. A continuación, exploraremos un gráfico de barras generado con la biblioteca <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> y calcularemos la distribución del precio medio. Para ello, vamos a realizar los siguientes pasos</p></li>
 </ul>
@@ -5462,7 +5484,7 @@ memory usage: 4.1+ MB
 </div>
 </section>
 <section id="creacion-de-graficos-de-barras-agrupados-por-una-caracteristica-especifica">
-<h2>Creación de gráficos de barras agrupados por una característica específica<a class="headerlink" href="#creacion-de-graficos-de-barras-agrupados-por-una-caracteristica-especifica" title="Permalink to this heading">#</a></h2>
+<h2>Creación de gráficos de barras agrupados por una característica específica<a class="headerlink" href="#creacion-de-graficos-de-barras-agrupados-por-una-caracteristica-especifica" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>En este ejercicio, utilizaremos el conjunto de datos de los diamantes para generar la distribución de los precios con respecto al color para cada calidad de corte. En el ejercicio 7, vimos la distribución de precios para diamantes de diferentes calidades de talla. Ahora, nos gustaría ver la variación de cada color:</p></li>
 </ul>
@@ -5604,7 +5626,7 @@ memory usage: 4.1+ MB
 <p>Aquí podemos observar que los patrones de precios de los diamantes de diferentes colores son similares para cada calidad de talla.</p>
 </section>
 <section id="como-ajustar-los-parametros-de-un-grafico-de-barras-agrupadas">
-<h2>Cómo ajustar los parámetros de un gráfico de barras agrupadas<a class="headerlink" href="#como-ajustar-los-parametros-de-un-grafico-de-barras-agrupadas" title="Permalink to this heading">#</a></h2>
+<h2>Cómo ajustar los parámetros de un gráfico de barras agrupadas<a class="headerlink" href="#como-ajustar-los-parametros-de-un-grafico-de-barras-agrupadas" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>En este ejercicio, modificaremos los parámetros de los gráficos, por ejemplo, <code class="docutils literal notranslate"><span class="pre">hue</span></code>, de un gráfico de barras agrupadas. Veremos cómo colocar las leyendas y las etiquetas de los ejes en los lugares adecuados y también exploraremos la función de rotación</p></li>
 </ul>
@@ -5788,7 +5810,7 @@ memory usage: 4.1+ MB
 <p>La función de rotación es especialmente útil cuando las etiquetas de ticks son largas y se amontonan en el eje <span class="math notranslate nohighlight">\(x\)</span>.</p>
 </section>
 <section id="anotar-un-grafico-de-barras">
-<h2>Anotar un gráfico de barras<a class="headerlink" href="#anotar-un-grafico-de-barras" title="Permalink to this heading">#</a></h2>
+<h2>Anotar un gráfico de barras<a class="headerlink" href="#anotar-un-grafico-de-barras" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>En este ejercicio, anotaremos un gráfico de barras, generado con la función <strong>catplot</strong> de <strong>seaborn</strong>, utilizando una nota justo encima del gráfico.</p></li>
 </ul>
@@ -6104,7 +6126,7 @@ memory usage: 4.1+ MB
 </ul>
 </section>
 <section id="ejercicio-para-entregar">
-<h2>Ejercicio para entregar<a class="headerlink" href="#ejercicio-para-entregar" title="Permalink to this heading">#</a></h2>
+<h2>Ejercicio para entregar<a class="headerlink" href="#ejercicio-para-entregar" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Trabajaremos con el conjunto de datos de 120 años de historia olímpica adquirido por Randi Griffin en <a class="reference external" href="https://www.sports-reference.com/">Randi-Griffin</a> y puesto a disposición en <a class="reference external" href="https://raw.githubusercontent.com/lihkirun/AppliedStatisticMS/main/DataVisualizationRPython/Lectures/Python/PythonDataSets/athlete_events.csv">athlete_events</a>. - Su tarea consiste en identificar los cinco deportes más importantes según el mayor número de medallas otorgadas en el año 2016, y luego realizar el siguiente análisis:</p></li>
 </ul>
@@ -6155,11 +6177,10 @@ memory usage: 4.1+ MB
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="intro.html"
@@ -6179,10 +6200,7 @@ memory usage: 4.1+ MB
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -6190,6 +6208,7 @@ memory usage: 4.1+ MB
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -6232,6 +6251,7 @@ By Lihki Rubio PhD in Mathematical Engineering
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright Department of Mathematics and Statistics.
@@ -6258,8 +6278,8 @@ By Lihki Rubio PhD in Mathematical Engineering
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

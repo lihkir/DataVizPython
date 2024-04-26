@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Predicción de series de tiempo &#8212; Visualización de Datos con Python y R</title>
   
@@ -19,53 +18,50 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'predictive_model';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Introducción a PostreSQL y Docker" href="postgresql.html" />
@@ -79,7 +75,15 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -114,11 +118,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -133,9 +140,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -145,12 +154,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_uninorte.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo_uninorte.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo_uninorte.png" class="logo__image only-light" alt="Visualización de Datos con Python y R - Home"/>
+    <script>document.write(`<img src="_static/logo_uninorte.png" class="logo__image only-dark" alt="Visualización de Datos con Python y R - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -163,8 +183,8 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dataviz_intro.html">Introducción a la visualización de datos con Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="static_dataviz.html">Visualización estática</a></li>
-<li class="toctree-l1"><a class="reference internal" href="interactive_dataviz.html">De la visualización estática a la interactiva</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stratified_dataviz.html">Visualización de datos a través de estratos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interactive_dataviz.html">De la visualización estática a la interactiva: Bokeh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stratified_dataviz.html">Visualización de datos a través de capas: Altair</a></li>
 <li class="toctree-l1"><a class="reference internal" href="geo_dataviz.html">Visualización interactiva de datos geográficos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common_errors.html">Errores comunes y Tratamiento de Datos Faltantes y Atípicos</a></li>
 
@@ -329,20 +349,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -390,10 +412,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="prediccion-de-series-de-tiempo">
-<h1>Predicción de series de tiempo<a class="headerlink" href="#prediccion-de-series-de-tiempo" title="Permalink to this heading">#</a></h1>
+<h1>Predicción de series de tiempo<a class="headerlink" href="#prediccion-de-series-de-tiempo" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p><strong>Definición:</strong>
 Un <strong>proceso estocástico</strong> es una colección o familia de variables aleatorias <span class="math notranslate nohighlight">\(\{X_{t}\}_{t\in I}\)</span> ordenadas según el subíndice <span class="math notranslate nohighlight">\(t\)</span> que en general se suele identificar con el tiempo. Llamamos trayectoria del proceso a una realización del proceso estocástico. Si <span class="math notranslate nohighlight">\(I\)</span> es discreto, el proceso es en tiempo discreto. Si <span class="math notranslate nohighlight">\(I\)</span> es continuo, el proceso es en tiempo continuo.</p></li>
@@ -406,7 +428,8 @@ Un <strong>proceso estocástico</strong> es una colección o familia de variable
 <li><p><strong>Definición:</strong> Una <strong>serie temporal</strong> es una realización parcial de un proceso estocástico de parámetro tiempo discreto, donde los elementos de <span class="math notranslate nohighlight">\(I\)</span> están ordenados y corresponden a instantes equidistantes del tiempo.</p></li>
 </ul>
 <figure class="align-center" id="stochastic-process-fig">
-<a class="reference internal image-reference" href="_images/stochastic_process.png"><img alt="_images/stochastic_process.png" src="_images/stochastic_process.png" style="width: 303.75px; height: 86.85000000000001px;" /></a>
+<a class="reference internal image-reference" href="_images/stochastic_process.png"><img alt="_images/stochastic_process.png" src="_images/stochastic_process.png" style="width: 303.75px; height: 86.85000000000001px;" />
+</a>
 </figure>
 <ul class="simple">
 <li><p><strong>Definición:</strong> Un proceso estocástico <span class="math notranslate nohighlight">\((Y_{t})\)</span> es <strong>estacionario</strong> cuando las propiedades estadísticas de cualquier secuencia finita <span class="math notranslate nohighlight">\(Y_{t_{1}}, Y{t_{2}},\dots, Y{t_{n}}, (n\geq1)\)</span> de componentes de <span class="math notranslate nohighlight">\((Y_{t})\)</span> son semejantes a las de la secuencia <span class="math notranslate nohighlight">\(Y_{t_{1}+h}, Y_{t_{2}+h},\dots, Y_{t_{n}+h}\)</span> para cualquier número entero <span class="math notranslate nohighlight">\(h = \pm1, \pm2,\dots\)</span></p></li>
@@ -425,7 +448,7 @@ Un <strong>proceso estocástico</strong> es una colección o familia de variable
 <li><p><strong>Definición:</strong> Un <strong>modelo</strong> para un proceso estocástico es cualquier conjunto de hipótesis bien definidas sobre las propiedades estadísticas de dicho proceso.</p></li>
 </ul>
 <section id="introduccion-al-modelo-arima">
-<h2>Introducción al modelo ARIMA<a class="headerlink" href="#introduccion-al-modelo-arima" title="Permalink to this heading">#</a></h2>
+<h2>Introducción al modelo ARIMA<a class="headerlink" href="#introduccion-al-modelo-arima" title="Link to this heading">#</a></h2>
 <ul>
 <li><p>Los modelos <strong><code class="docutils literal notranslate"><span class="pre">ARIMA</span> <span class="pre">(Autorregresivo</span> <span class="pre">integrado</span> <span class="pre">de</span> <span class="pre">media</span> <span class="pre">móvil)</span></code></strong> aproximan los valores futuros de una serie temporal como una función lineal de observaciones pasadas y términos de ruido blanco. Una serie de tiempo <span class="math notranslate nohighlight">\(y_{t}\)</span> se llama un proceso de media móvil integrada autorregresiva (ARIMA) de órdenes <span class="math notranslate nohighlight">\(p, d\)</span>, y <span class="math notranslate nohighlight">\(q\)</span>, denotado ARIMA(<span class="math notranslate nohighlight">\(p, d, q\)</span>) si su diferencia <span class="math notranslate nohighlight">\(d\)</span> da lugar a un proceso estacionario ARMA(<span class="math notranslate nohighlight">\(p, q\)</span>). Por lo tanto, un ARIMA(<span class="math notranslate nohighlight">\(p, d, q\)</span>) puede escribirse como</p>
 <div class="math notranslate nohighlight">
@@ -441,7 +464,7 @@ Un <strong>proceso estocástico</strong> es una colección o familia de variable
 </ul>
 </section>
 <section id="implementacion-del-modelo-arima">
-<h2>Implementación del modelo ARIMA<a class="headerlink" href="#implementacion-del-modelo-arima" title="Permalink to this heading">#</a></h2>
+<h2>Implementación del modelo ARIMA<a class="headerlink" href="#implementacion-del-modelo-arima" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Durante esta sección estudiaremos el uso de las <strong>APIs</strong> para cargar datos de interes de estudio, los cuales en esta sección corresponden a series de tiempo financieras, especificamente la serie de tiempo de las acciones de <strong>Apple</strong> cotizadas en bolsas de valores será considerada.</p></li>
 <li><p>En las secciones pasadas los datos eran cargados a un <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> usando la función <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> de <strong>Python</strong> utlizando el link de <code class="docutils literal notranslate"><span class="pre">github</span></code> en formato <code class="docutils literal notranslate"><span class="pre">raw</span></code> o simplemente con la dirección del directorio local donde reposaba el archivo en formato <em>CSV</em> que deseabamos cargar, en éste caso utlizaremos un protocolo de internet intermediario que nos permitirá obtener dichos datos.</p></li>
@@ -452,7 +475,7 @@ Un <strong>proceso estocástico</strong> es una colección o familia de variable
 </ul>
 </section>
 <section id="yahoo-finance">
-<h2>Yahoo Finance<a class="headerlink" href="#yahoo-finance" title="Permalink to this heading">#</a></h2>
+<h2>Yahoo Finance<a class="headerlink" href="#yahoo-finance" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Una opción gratuita, en el caso de que no desee pagar por los servicios de APIs tales como la de finnhub, es <em>Yahoo Finance</em>. En esta sección estudiaremos como hacer uso de la <em>API de Yahoo Finance</em> y además, como podemos descargar la <em>información necesaria para un EDA</em> y graficos de velas por ejemplo.</p></li>
 <li><p>Descargaremos para este ejemplo los datos de las acciones de <strong>Apple</strong> utilizando la API de yahoo Finance. Para esto debe primero que todo, debe instalar la librería que le permitirá hacer uso de API</p></li>
@@ -1030,7 +1053,7 @@ H_{0}:\text{la serie de tiempo es no estacionaria}.
 <li><p>Los intervalos de confianza se dibujan como un cono. Por defecto, se establece un intervalo de confianza del 95%. Al observar el gráfico de autocorrelación para la segunda diferenciación, la <em>segunda autocorrelación entra en la zona negativa con bastante rapidez</em>, lo que indica que <em>la serie podría haber sido sobrediferenciada</em>.</p></li>
 </ul>
 <section id="criterios-aic-bic-hqic">
-<h3>Criterios AIC, BIC, HQIC<a class="headerlink" href="#criterios-aic-bic-hqic" title="Permalink to this heading">#</a></h3>
+<h3>Criterios AIC, BIC, HQIC<a class="headerlink" href="#criterios-aic-bic-hqic" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>El <code class="docutils literal notranslate"><span class="pre">AIC,</span> <span class="pre">BIC,</span> <span class="pre">HQIC</span></code> utilizan la estimación de máxima verosimilitud (<em>Log Likelihood</em>) de un modelo como medida de ajuste. Los valores de <code class="docutils literal notranslate"><span class="pre">AIC,</span> <span class="pre">BIC,</span> <span class="pre">HQIC</span></code> son bajos para los modelos con <em>Log Likelihood</em> altos. Esto significa que el modelo se ajusta mejor a los datos, que es lo que queremos. Por ejemplo, <code class="docutils literal notranslate"><span class="pre">AIC</span></code> se define de la siguiente forma: <span class="math notranslate nohighlight">\(AIC=2k-2\ln(L)\)</span>, donde <span class="math notranslate nohighlight">\(k\)</span> es el <code class="docutils literal notranslate"><span class="pre">número</span> <span class="pre">de</span> <span class="pre">parámetros</span></code> en el modelo estadístico, y <span class="math notranslate nohighlight">\(L\)</span> es el <em>máximo valor de la función de verosimilitud</em> para el modelo estimado.</p></li>
 <li><p>Al ajustar modelos, es posible <em>aumentar la verosimilitud añadiendo parámetros</em>, pero <em>hacerlo puede dar lugar a un sobreajuste</em>. Tanto el <code class="docutils literal notranslate"><span class="pre">BIC</span></code> como el <code class="docutils literal notranslate"><span class="pre">AIC</span></code> intentan resolver este problema <em>introduciendo un término de penalización por el número de parámetros del modelo</em>; el término de penalización es mayor en el <code class="docutils literal notranslate"><span class="pre">BIC</span></code> que en el <code class="docutils literal notranslate"><span class="pre">AIC</span></code> para tamaños de muestra superiores a 7.</p></li>
@@ -1278,7 +1301,7 @@ Total fit time: 0.067 seconds
 </div>
 </section>
 <section id="rolling-forecast">
-<h3>Rolling forecast<a class="headerlink" href="#rolling-forecast" title="Permalink to this heading">#</a></h3>
+<h3>Rolling forecast<a class="headerlink" href="#rolling-forecast" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Realizamos ahora predicciones utilizando <em>rolling forecasting</em>. El <em>rolling forecast</em> entrega reportes que utilizan datos históricos para predecir cifras futuras de forma continua durante un periodo de tiempo. Las previsiones continuas se utilizan a menudo en los reportes financieros, la gestión de la cadena de suministro, la planificación y la elaboración de presupuestos.</p></li>
 <li><p>El <em>rolling forecast</em> es una ayuda esencial para tomar decisiones empresariales acertadas. Gracias a su capacidad de respuesta, las previsiones continuas ayudan a las empresas a responder más rápidamente a las condiciones cambiantes del mercado. Si se utilizan con eficacia, las previsiones continuas pueden ayudar a identificar las deficiencias de rendimiento, acortar los ciclos de planificación y tomar la mejor decisión para los resultados. Para nuestros ejemplos, nuestro horizonte de predicción será de un día</p></li>
@@ -1422,13 +1445,14 @@ predicted=175.540522, expected=176.550003
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="ejercicio-para-entregar">
-<h1>Ejercicio para entregar<a class="headerlink" href="#ejercicio-para-entregar" title="Permalink to this heading">#</a></h1>
+<h1>Ejercicio para entregar<a class="headerlink" href="#ejercicio-para-entregar" title="Link to this heading">#</a></h1>
 <ol class="arabic simple">
 <li><p>Considere la serie de tiempo asociada con los futuros de la criptomoneda <strong>Bitcoin</strong> desde que comenzó a comercializarse hasta la fecha del día de hoy. Utilice la <strong>API</strong> de <code class="docutils literal notranslate"><span class="pre">Yahoo</span> <span class="pre">Finance</span></code> para obtener esta serie de tiempo.</p></li>
 <li><p>Repita <strong>TODOS</strong> los pasos indicados en esta sección para encontrar modelos <strong>ARIMA</strong> para predecir el precio de <strong>Bitcoin</strong> con los siguientes horizontes: <strong>7, 14, 21 y 28 días</strong>. Utilizar siempre predicciones usando <em>rolling</em> con ventana de predicción continua de un día. Cualquier cantidad de pasos extra para enriquecer su análisis predictivo serán aceptados siempre y cuando sean acordes con lo que indica la teoría de análisis de series de tiempo.</p></li>
 </ol>
 <figure class="align-center" id="homework-timeseries-dataviz-fig">
-<a class="reference internal image-reference" href="_images/homework_timeseries_dataviz.png"><img alt="_images/homework_timeseries_dataviz.png" src="_images/homework_timeseries_dataviz.png" style="width: 720.0px; height: 134.16px;" /></a>
+<a class="reference internal image-reference" href="_images/homework_timeseries_dataviz.png"><img alt="_images/homework_timeseries_dataviz.png" src="_images/homework_timeseries_dataviz.png" style="width: 720.0px; height: 134.16px;" />
+</a>
 </figure>
 <ol class="arabic simple" start="3">
 <li><p>Repita el paso 2 ahora <strong>sin utilizar rolling</strong>. Esto es, realice el pronóstico solo utilizando <code class="docutils literal notranslate"><span class="pre">forecast()</span></code> para los diferentes horizontes de predicción, <strong>7, 14, 21 y 28 días</strong>.</p></li>
@@ -1463,11 +1487,10 @@ predicted=175.540522, expected=176.550003
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="common_errors.html"
@@ -1487,10 +1510,7 @@ predicted=175.540522, expected=176.550003
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1498,6 +1518,7 @@ predicted=175.540522, expected=176.550003
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1538,6 +1559,7 @@ By Lihki Rubio PhD in Mathematical Engineering
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright Department of Mathematics and Statistics.
@@ -1564,8 +1586,8 @@ By Lihki Rubio PhD in Mathematical Engineering
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
