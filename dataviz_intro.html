@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Introducción a la visualización de datos con Python &#8212; Visualización de Datos con Python y R</title>
+    <title>Introducción a la visualización de datos con Python &#8212; Análisis y Predicción de Series de Tiempo</title>
   
   
   
@@ -36,6 +36,8 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=530fe47d" />
+    <link rel="stylesheet" type="text/css" href="_static/.ipynb_checkpoints/custom-checkpoint.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -62,10 +64,12 @@
     <script defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'dataviz_intro';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/custom.js?v=14184634"></script>
+    <script src="_static/.ipynb_checkpoints/custom-checkpoint.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Visualización estática" href="static_dataviz.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="intro.html" />
+    <link rel="prev" title="Profesor: Dr. Lihki Rubio" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -154,8 +158,8 @@
       
     
     
-    <img src="_static/logo_uninorte.png" class="logo__image only-light" alt="Visualización de Datos con Python y R - Home"/>
-    <script>document.write(`<img src="_static/logo_uninorte.png" class="logo__image only-dark" alt="Visualización de Datos con Python y R - Home"/>`);</script>
+    <img src="_static/fotolihki.jpg" class="logo__image only-light" alt="Análisis y Predicción de Series de Tiempo - Home"/>
+    <script>document.write(`<img src="_static/fotolihki.jpg" class="logo__image only-dark" alt="Análisis y Predicción de Series de Tiempo - Home"/>`);</script>
   
   
 </a></div>
@@ -176,7 +180,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    <no title>
+                    Profesor: Dr. Lihki Rubio
                 </a>
             </li>
         </ul>
@@ -237,53 +241,6 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdataviz_intro.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
 
 
 
@@ -5464,7 +5421,7 @@ memory usage: 4.1+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e187fe7991e4c739617ad0fee83d9f54d3b12ecedafdfb3d18697ecf9bfd2b5d.png" src="_images/e187fe7991e4c739617ad0fee83d9f54d3b12ecedafdfb3d18697ecf9bfd2b5d.png" />
+<img alt="_images/316d9476a26e1f5ff8c4f1482bcde9f8b5fc7ced6b3d89ecb6b1d99169ddecb5.png" src="_images/316d9476a26e1f5ff8c4f1482bcde9f8b5fc7ced6b3d89ecb6b1d99169ddecb5.png" />
 </div>
 </div>
 <p>Aquí, las líneas negras (barras de error) de los rectángulos indican la incertidumbre (o dispersión de los valores) en torno a la estimación de la media. Las funciones mencionadas van mucho más allá de un simple recuento: aplican una función que calcula una medida de tendencia central (por defecto es el valor medio) y muestran, aplicando <code class="docutils literal notranslate"><span class="pre">bootstrapping</span></code>, el intervalo de confianza del 95% para dicha medida. Por defecto, este valor está fijado en un 95% de confianza. ¿Cómo lo cambiamos? Utilizando el parámetro <strong>ci=68</strong>, por ejemplo, lo fijamos en el 68%. También podemos representar la desviación estándar en los precios utilizando <strong>ci=sd</strong>.</p>
@@ -5479,7 +5436,7 @@ memory usage: 4.1+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4c60506301fe0ddbb39ba7435dcfb7329cbe45316175ae646c165d43d3cd6b34.png" src="_images/4c60506301fe0ddbb39ba7435dcfb7329cbe45316175ae646c165d43d3cd6b34.png" />
+<img alt="_images/f8041e6906bf300bd1019aad5444c9f02e4c32fe7e99336e20b144bcb0559025.png" src="_images/f8041e6906bf300bd1019aad5444c9f02e4c32fe7e99336e20b144bcb0559025.png" />
 </div>
 </div>
 </section>
@@ -5620,7 +5577,7 @@ memory usage: 4.1+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/68ceb07ba269ff49cb4b83c860d6a03c20517365e45316186771feb493930fe7.png" src="_images/68ceb07ba269ff49cb4b83c860d6a03c20517365e45316186771feb493930fe7.png" />
+<img alt="_images/0b04482180b5ab8db201ee5fcbbb4336bcb9394fd9e8c06b7205ee59c6912fd1.png" src="_images/0b04482180b5ab8db201ee5fcbbb4336bcb9394fd9e8c06b7205ee59c6912fd1.png" />
 </div>
 </div>
 <p>Aquí podemos observar que los patrones de precios de los diamantes de diferentes colores son similares para cada calidad de talla.</p>
@@ -5759,7 +5716,7 @@ memory usage: 4.1+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e49e17f062742bf89f322674b5eafd2792cca3d1350abbc86e044d2d87767e47.png" src="_images/e49e17f062742bf89f322674b5eafd2792cca3d1350abbc86e044d2d87767e47.png" />
+<img alt="_images/f32524c2f89ba6295f8ec3fedf1c66ac8a89e513f319313150b8a975b9544059.png" src="_images/f32524c2f89ba6295f8ec3fedf1c66ac8a89e513f319313150b8a975b9544059.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -5770,7 +5727,7 @@ memory usage: 4.1+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4a04a9d99dcb6675ca02abe9daae275c686c2147c29d6d8547ed82cb6d24e35b.png" src="_images/4a04a9d99dcb6675ca02abe9daae275c686c2147c29d6d8547ed82cb6d24e35b.png" />
+<img alt="_images/4840eb97309846397fae453f9da08025d258bb2aa7ec50a2b37f46a4d0afff61.png" src="_images/4840eb97309846397fae453f9da08025d258bb2aa7ec50a2b37f46a4d0afff61.png" />
 </div>
 </div>
 <p>En la llamada anterior a <code class="docutils literal notranslate"><span class="pre">ax.legend()</span></code>, el parámetro <code class="docutils literal notranslate"><span class="pre">ncol</span></code> denota el número de columnas en las que deben organizarse los valores de la leyenda, y el parámetro <code class="docutils literal notranslate"><span class="pre">loc</span></code> especifica la ubicación de la leyenda y puede tomar cualquiera de los ocho valores <code class="docutils literal notranslate"><span class="pre">'upper</span> <span class="pre">left',</span> <span class="pre">'upper</span> <span class="pre">right',</span> <span class="pre">'lower</span> <span class="pre">left',</span> <span class="pre">'lower</span> <span class="pre">right'</span></code>.</p>
@@ -5787,7 +5744,7 @@ memory usage: 4.1+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c5636905f4b2eccf27f933f9c4f95555834d863fdc717338e8d514451c5de902.png" src="_images/c5636905f4b2eccf27f933f9c4f95555834d863fdc717338e8d514451c5de902.png" />
+<img alt="_images/5e8bd82accdecc7598dac6df360932d4f6fb80fa7a876da6deb98133ab8ff966.png" src="_images/5e8bd82accdecc7598dac6df360932d4f6fb80fa7a876da6deb98133ab8ff966.png" />
 </div>
 </div>
 <ul class="simple">
@@ -5804,7 +5761,7 @@ memory usage: 4.1+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/aab9946adc792a72f3200e09529e9bfb1f56ddf76af96a0700c5ce91e67a2a52.png" src="_images/aab9946adc792a72f3200e09529e9bfb1f56ddf76af96a0700c5ce91e67a2a52.png" />
+<img alt="_images/42fcda5bb83e7882e6884440ff0b30051905a3b9d1c0af0f62b31b902975fe4c.png" src="_images/42fcda5bb83e7882e6884440ff0b30051905a3b9d1c0af0f62b31b902975fe4c.png" />
 </div>
 </div>
 <p>La función de rotación es especialmente útil cuando las etiquetas de ticks son largas y se amontonan en el eje <span class="math notranslate nohighlight">\(x\)</span>.</p>
@@ -5942,17 +5899,12 @@ memory usage: 4.1+ MB
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">diamonds_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;cut&quot;</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">diamonds_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;cut&quot;</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">72</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">diamonds_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;cut&quot;</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">):</span>
-                                                                                    <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
+<img alt="_images/6ebe0d8e54b1ea30d666f914d86da36a678ccc45a9644fcdc678af63e80e0a24.png" src="_images/6ebe0d8e54b1ea30d666f914d86da36a678ccc45a9644fcdc678af63e80e0a24.png" />
 </div>
 </div>
 <ul class="simple">
@@ -6115,9 +6067,6 @@ memory usage: 4.1+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.3, 23551, &#39;excellent polish and symmetry ratings;\nreflects almost all the light that enters it&#39;)
-</pre></div>
-</div>
 <img alt="_images/334f108b76853041a87337a4e38bcfa335fab0423284ca3422d68e4426ab60ae.png" src="_images/334f108b76853041a87337a4e38bcfa335fab0423284ca3422d68e4426ab60ae.png" />
 </div>
 </div>
@@ -6161,16 +6110,16 @@ memory usage: 4.1+ MB
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "ml_tf"
         },
         kernelOptions: {
-            name: "python3",
+            name: "ml_tf",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'ml_tf'</script>
 
                 </article>
               
@@ -6188,7 +6137,7 @@ memory usage: 4.1+ MB
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">Profesor: Dr. Lihki Rubio</p>
       </div>
     </a>
     <a class="right-next"
@@ -6244,7 +6193,7 @@ memory usage: 4.1+ MB
   <div class="footer-item">
     
 <p class="component-author">
-By Lihki Rubio PhD in Mathematical Engineering
+By Lihki Rubio, Ph.D.
 </p>
 
   </div>
@@ -6254,7 +6203,7 @@ By Lihki Rubio PhD in Mathematical Engineering
 
   <p class="copyright">
     
-      © Copyright Department of Mathematics and Statistics.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -6267,6 +6216,9 @@ By Lihki Rubio PhD in Mathematical Engineering
   
   <div class="footer-item">
     
+<div class="extra_footer">
+  <p>Lihki Rubio, Ph.D. All rights reserved.</p>
+</div>
   </div>
   
 </div>

@@ -1,0 +1,112 @@
+Traceback (most recent call last):
+  File "C:\Users\USER\miniconda3\envs\ml_tf\lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Users\USER\miniconda3\envs\ml_tf\lib\site-packages\nbclient\client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "C:\Users\USER\miniconda3\envs\ml_tf\lib\site-packages\jupyter_core\utils\__init__.py", line 173, in wrapped
+    return loop.run_until_complete(inner)
+  File "C:\Users\USER\miniconda3\envs\ml_tf\lib\asyncio\base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "C:\Users\USER\miniconda3\envs\ml_tf\lib\site-packages\nbclient\client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\USER\miniconda3\envs\ml_tf\lib\site-packages\nbclient\client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\USER\miniconda3\envs\ml_tf\lib\site-packages\nbclient\client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from bokeh.resources import INLINE
+import bokeh.io
+from bokeh import *
+bokeh.io.output_notebook(INLINE)
+------------------
+
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [1;32mIn[1], line 1[0m
+[1;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mbokeh[39;00m[38;5;21;01m.[39;00m[38;5;21;01mresources[39;00m [38;5;28;01mimport[39;00m INLINE
+[0;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mbokeh[39;00m[38;5;21;01m.[39;00m[38;5;21;01mio[39;00m
+[0;32m      3[0m [38;5;28;01mfrom[39;00m [38;5;21;01mbokeh[39;00m [38;5;28;01mimport[39;00m [38;5;241m*[39m
+
+File [1;32m~\miniconda3\envs\ml_tf\lib\site-packages\bokeh\resources.py:58[0m
+[0;32m     56[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mtemplates[39;00m [38;5;28;01mimport[39;00m CSS_RESOURCES, JS_RESOURCES
+[0;32m     57[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mtypes[39;00m [38;5;28;01mimport[39;00m ID, PathLike
+[1;32m---> 58[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mmodel[39;00m [38;5;28;01mimport[39;00m Model
+[0;32m     59[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01msettings[39;00m [38;5;28;01mimport[39;00m LogLevel, settings
+[0;32m     60[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mutil[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdataclasses[39;00m [38;5;28;01mimport[39;00m dataclass, field
+
+File [1;32m~\miniconda3\envs\ml_tf\lib\site-packages\bokeh\model\__init__.py:25[0m
+[0;32m     18[0m log [38;5;241m=[39m logging[38;5;241m.[39mgetLogger([38;5;18m__name__[39m)
+[0;32m     20[0m [38;5;66;03m#-----------------------------------------------------------------------------[39;00m
+[0;32m     21[0m [38;5;66;03m# Imports[39;00m
+[0;32m     22[0m [38;5;66;03m#-----------------------------------------------------------------------------[39;00m
+[0;32m     23[0m 
+[0;32m     24[0m [38;5;66;03m# Bokeh imports[39;00m
+[1;32m---> 25[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mdata_model[39;00m [38;5;28;01mimport[39;00m DataModel
+[0;32m     26[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mmodel[39;00m [38;5;28;01mimport[39;00m Model
+[0;32m     27[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mutil[39;00m [38;5;28;01mimport[39;00m Qualified, collect_models, get_class
+
+File [1;32m~\miniconda3\envs\ml_tf\lib\site-packages\bokeh\model\data_model.py:24[0m
+[0;32m     17[0m log [38;5;241m=[39m logging[38;5;241m.[39mgetLogger([38;5;18m__name__[39m)
+[0;32m     19[0m [38;5;66;03m#-----------------------------------------------------------------------------[39;00m
+[0;32m     20[0m [38;5;66;03m# Imports[39;00m
+[0;32m     21[0m [38;5;66;03m#-----------------------------------------------------------------------------[39;00m
+[0;32m     22[0m 
+[0;32m     23[0m [38;5;66;03m# Bokeh imports[39;00m
+[1;32m---> 24[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mhas_props[39;00m [38;5;28;01mimport[39;00m abstract
+[0;32m     25[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mmodel[39;00m [38;5;28;01mimport[39;00m Model
+[0;32m     27[0m [38;5;66;03m#-----------------------------------------------------------------------------[39;00m
+[0;32m     28[0m [38;5;66;03m# Globals and constants[39;00m
+[0;32m     29[0m [38;5;66;03m#-----------------------------------------------------------------------------[39;00m
+
+File [1;32m~\miniconda3\envs\ml_tf\lib\site-packages\bokeh\core\has_props.py:62[0m
+[0;32m     60[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01m.[39;00m[38;5;21;01mutil[39;00m[38;5;21;01m.[39;00m[38;5;21;01mstring[39;00m [38;5;28;01mimport[39;00m append_docstring, nice_join
+[0;32m     61[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mproperty[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdescriptor_factory[39;00m [38;5;28;01mimport[39;00m PropertyDescriptorFactory
+[1;32m---> 62[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mproperty[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdescriptors[39;00m [38;5;28;01mimport[39;00m PropertyDescriptor, UnsetValueError
+[0;32m     63[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mproperty[39;00m[38;5;21;01m.[39;00m[38;5;21;01moverride[39;00m [38;5;28;01mimport[39;00m Override
+[0;32m     64[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mproperty[39;00m[38;5;21;01m.[39;00m[38;5;21;01msingletons[39;00m [38;5;28;01mimport[39;00m Undefined
+
+File [1;32m~\miniconda3\envs\ml_tf\lib\site-packages\bokeh\core\property\descriptors.py:104[0m
+[0;32m    102[0m [38;5;66;03m# Bokeh imports[39;00m
+[0;32m    103[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01msingletons[39;00m [38;5;28;01mimport[39;00m Undefined
+[1;32m--> 104[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mwrappers[39;00m [38;5;28;01mimport[39;00m PropertyValueColumnData, PropertyValueContainer
+[0;32m    106[0m [38;5;28;01mif[39;00m TYPE_CHECKING:
+[0;32m    107[0m     [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01m.[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdocument[39;00m[38;5;21;01m.[39;00m[38;5;21;01mevents[39;00m [38;5;28;01mimport[39;00m DocumentPatchedEvent
+
+File [1;32m~\miniconda3\envs\ml_tf\lib\site-packages\bokeh\core\property\wrappers.py:77[0m
+[0;32m     68[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtyping[39;00m [38;5;28;01mimport[39;00m (
+[0;32m     69[0m     TYPE_CHECKING,
+[0;32m     70[0m     Any,
+[1;32m   (...)[0m
+[0;32m     73[0m     Tuple,
+[0;32m     74[0m )
+[0;32m     76[0m [38;5;66;03m# External imports[39;00m
+[1;32m---> 77[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
+[0;32m     79[0m [38;5;66;03m# Bokeh imports[39;00m
+[0;32m     80[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01m.[39;00m[38;5;21;01m.[39;00m[38;5;21;01mutil[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdependencies[39;00m [38;5;28;01mimport[39;00m import_optional
+
+File [1;32m~\miniconda3\envs\ml_tf\lib\site-packages\numpy\__init__.py:134[0m
+[0;32m    131[0m [38;5;28;01mimport[39;00m [38;5;21;01msys[39;00m
+[0;32m    132[0m [38;5;28;01mimport[39;00m [38;5;21;01mwarnings[39;00m
+[1;32m--> 134[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01m_globals[39;00m [38;5;28;01mimport[39;00m _NoValue, _CopyMode
+[0;32m    135[0m [38;5;66;03m# These exceptions were moved in 1.25 and are hidden from __dir__()[39;00m
+[0;32m    136[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mexceptions[39;00m [38;5;28;01mimport[39;00m (
+[0;32m    137[0m     ComplexWarning, ModuleDeprecationWarning, VisibleDeprecationWarning,
+[0;32m    138[0m     TooHardError, AxisError)
+
+File [1;32m~\miniconda3\envs\ml_tf\lib\site-packages\numpy\_globals.py:20[0m
+[0;32m      1[0m [38;5;124;03m"""[39;00m
+[0;32m      2[0m [38;5;124;03mModule defining global singleton classes.[39;00m
+[0;32m      3[0m 
+[1;32m   (...)[0m
+[0;32m     16[0m 
+[0;32m     17[0m [38;5;124;03m"""[39;00m
+[0;32m     18[0m [38;5;28;01mimport[39;00m [38;5;21;01menum[39;00m
+[1;32m---> 20[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01m_utils[39;00m [38;5;28;01mimport[39;00m set_module [38;5;28;01mas[39;00m _set_module
+[0;32m     22[0m __all__ [38;5;241m=[39m [[38;5;124m'[39m[38;5;124m_NoValue[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124m_CopyMode[39m[38;5;124m'[39m]
+[0;32m     25[0m [38;5;66;03m# Disallow reloading this module so as to preserve the identities of the[39;00m
+[0;32m     26[0m [38;5;66;03m# classes defined here.[39;00m
+
+[1;31mModuleNotFoundError[0m: No module named 'numpy._utils'
+

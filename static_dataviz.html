@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Visualización estática &#8212; Visualización de Datos con Python y R</title>
+    <title>Visualización estática &#8212; Análisis y Predicción de Series de Tiempo</title>
   
   
   
@@ -36,6 +36,8 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=530fe47d" />
+    <link rel="stylesheet" type="text/css" href="_static/.ipynb_checkpoints/custom-checkpoint.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -62,6 +64,8 @@
     <script defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'static_dataviz';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/custom.js?v=14184634"></script>
+    <script src="_static/.ipynb_checkpoints/custom-checkpoint.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="De la visualización estática a la interactiva: Bokeh" href="interactive_dataviz.html" />
@@ -154,8 +158,8 @@
       
     
     
-    <img src="_static/logo_uninorte.png" class="logo__image only-light" alt="Visualización de Datos con Python y R - Home"/>
-    <script>document.write(`<img src="_static/logo_uninorte.png" class="logo__image only-dark" alt="Visualización de Datos con Python y R - Home"/>`);</script>
+    <img src="_static/fotolihki.jpg" class="logo__image only-light" alt="Análisis y Predicción de Series de Tiempo - Home"/>
+    <script>document.write(`<img src="_static/fotolihki.jpg" class="logo__image only-dark" alt="Análisis y Predicción de Series de Tiempo - Home"/>`);</script>
   
   
 </a></div>
@@ -176,7 +180,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    <no title>
+                    Profesor: Dr. Lihki Rubio
                 </a>
             </li>
         </ul>
@@ -237,53 +241,6 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fstatic_dataviz.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
 
 
 
@@ -657,7 +614,7 @@ memory usage: 28.1+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/85e3c22e8f0415004f5fdd5d92e27e4775022536fed31a371e434c5f348ed484.png" src="_images/85e3c22e8f0415004f5fdd5d92e27e4775022536fed31a371e434c5f348ed484.png" />
+<img alt="_images/ecb7e6fb281ff38740b881c38789160fac90b74568c9be8c7ab55aa63f92ed5a.png" src="_images/ecb7e6fb281ff38740b881c38789160fac90b74568c9be8c7ab55aa63f92ed5a.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">Observación:</span></code> Como podemos ver, los puntos conectados por la línea sólida representan la media de la característica del eje <span class="math notranslate nohighlight">\(y\)</span> en la coordenada <span class="math notranslate nohighlight">\(x\)</span> correspondiente. <code class="docutils literal notranslate"><span class="pre">El</span> <span class="pre">área</span> <span class="pre">sombreada</span> <span class="pre">alrededor</span> <span class="pre">de</span> <span class="pre">la</span> <span class="pre">línea</span> <span class="pre">muestra</span> <span class="pre">el</span> <span class="pre">intervalo</span> <span class="pre">de</span> <span class="pre">confianza</span> <span class="pre">para</span> <span class="pre">la</span> <span class="pre">característica</span> <span class="pre">del</span> <span class="pre">eje</span></code> <span class="math notranslate nohighlight">\(y\)</span> (por defecto, <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> establece el intervalo de confianza del <code class="docutils literal notranslate"><span class="pre">95%</span></code>). El parámetro <code class="docutils literal notranslate"><span class="pre">ci</span></code> puede utilizarse para cambiar a un intervalo de confianza diferente.</p>
@@ -668,7 +625,7 @@ memory usage: 28.1+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f45740dd070cd40b87e5507575f7f6159712bd593a267d13f07db51c39c21fb2.png" src="_images/f45740dd070cd40b87e5507575f7f6159712bd593a267d13f07db51c39c21fb2.png" />
+<img alt="_images/4158d9ebdf0d495cd4f6cce7d810395335c0b4e74fad5c7d92e4bd96c2edd05e.png" src="_images/4158d9ebdf0d495cd4f6cce7d810395335c0b4e74fad5c7d92e4bd96c2edd05e.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">Observación:</span></code> Como podemos ver en el gráfico anterior, el intervalo de <code class="docutils literal notranslate"><span class="pre">confianza</span> <span class="pre">del</span> <span class="pre">68%</span></code> se traduce en un rango de valores de características en el que están presentes el 68% de los puntos de datos. Los gráficos de líneas son excelentes técnicas de visualización para <code class="docutils literal notranslate"><span class="pre">escenarios</span> <span class="pre">en</span> <span class="pre">los</span> <span class="pre">que</span> <span class="pre">tenemos</span> <span class="pre">datos</span> <span class="pre">que</span> <span class="pre">cambian</span> <span class="pre">con</span> <span class="pre">el</span> <span class="pre">tiempo</span></code>, eje <span class="math notranslate nohighlight">\(x\)</span>, podría representar la fecha o el tiempo, y el gráfico ayudaría a visualizar cómo un valor varía a lo largo de ese periodo.</p>
@@ -1342,16 +1299,16 @@ memory usage: 28.1+ KB
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "ml_tf"
         },
         kernelOptions: {
-            name: "python3",
+            name: "ml_tf",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'ml_tf'</script>
 
                 </article>
               
@@ -1423,7 +1380,7 @@ memory usage: 28.1+ KB
   <div class="footer-item">
     
 <p class="component-author">
-By Lihki Rubio PhD in Mathematical Engineering
+By Lihki Rubio, Ph.D.
 </p>
 
   </div>
@@ -1433,7 +1390,7 @@ By Lihki Rubio PhD in Mathematical Engineering
 
   <p class="copyright">
     
-      © Copyright Department of Mathematics and Statistics.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1446,6 +1403,9 @@ By Lihki Rubio PhD in Mathematical Engineering
   
   <div class="footer-item">
     
+<div class="extra_footer">
+  <p>Lihki Rubio, Ph.D. All rights reserved.</p>
+</div>
   </div>
   
 </div>
